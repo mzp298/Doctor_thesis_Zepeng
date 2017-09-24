@@ -1,0 +1,1173 @@
+%!TEX root=../Thesis_Zepeng.tex
+\chapter{Handling general loadings}\label{chp:5}
+\minitoc
+
+Fatigue failure is a damage accumulation process in which material property deteriorates continuously under fatigue loading and the damage depends on the size of stress and strain. With the accumulation of fatigue damage, some accidents occur for these components. Thus, it is important to formulate an accurate method to evaluate the fatigue damage accumulation and effectively predict the fatigue life of these components.
+
+The basis of the Stress-Life method is the Wohler S-N diagram, which plots nominal stress amplitude S versus cycles to failure N. Certain materials have a fatigue limit or endurance limit which represents a stress level below which the material does not fail and can be cycled infinitely. If the applied stress level is below the endurance limit of the material, the structure is said to have an infinite life. This is the characteristic of steel and titanium in benign environmental conditions. Many non-ferrous metals and alloys, such as aluminum, magnesium and copper alloys, do not exhibit well-defined endurance limits. These materials instead displays a continuously decreasing S-N response. An effective endurance limit for these materials is sometimes defined as the stress that causes failure at $1\times10^8$ or $5\times10^8$ loading cycles.
+
+The problem is then to define criteria able to predict this endurance limit. The micro-macro approach applied to the field of endurance was born with the work of \cite{van1973khmu}, and since it has been used many times, including by \cite{papadopoulos2001long} to take better account of loading path effects. For simplicity and to avoid too costly identification procedures of fatigue data, criteria are often expressed using two parameters. The first relates generally to a shear stress $\tau$(on a plane or on average over an elementary volume) while the second $\sigma$ reflects the normal stress effects(mean and amplitude) often through the hydrostatic stress are the most numerous(\cite{crossland1956effect}, \cite{sines1959behavior}, \cite{FFE:FFE452}, \cite{thu2008effet}).  The normal stress acting on the material plane is sometimes defined from a critical plane(\cite{findley1959}), or through integration at every plane of an elementary volume(\cite{liu1993berechnung}).  In particular, a probabilistic approach based on this type of integration is proposed in \cite{thu2008effet} .
+
+Other authors use energy based approaches. \cite{ellyin1974criterion} is one of the first to propose a fatigue criterion based on cyclic shear deformation energy. This approach was taken up and complemented by \cite{lefebvre1981cognitive} and \cite{ellyin1991phase} for the case of multiaxial loadings. In France, this approach is reflected in the work of \cite{Froustey1992} and then in \cite{palin1996fatigue} and \cite{banvillet2001prevision}. In recent years, a new class of criteria coupling mesoplasticity and damage has also emerged. In \cite{lemaitre1999two}, for example, the author use the approach introduced by \cite{lemaitre1985mecanique} based on the thermodynamics of irreversible processes and the mechanics of continuous media.   Models based on plasticity-damage coupling were also proposed in \cite{flaceliere2004contribution},\cite{monchiet2006contributions}. In the case of fatigue, we usually employ in this damage framework the concept of the loading cycle instead of time to evaluate the evolution of damage and to measure the fatigue lifetime. The equations then depend on the load through globally defined quantities over a cycle, such as amplitude, maximum value, mean value. The growth equation of fatigue damage is therefore taken in the form:
+$$\delta D=f(D)\delta N$$
+$$\delta N=f_n\delta t$$
+where $\delta t$ is a time sampling of the history in a given number of time intervals $\delta t_1,\delta t_2 ... \delta t_i, ...$ and $f_n$ is the mean frequency of those cycles during the considered time step.
+
+The problem in these approaches is then to take into account the presence of complex variations of the stress tensor. Heuristic formulations with different multiaxial fatigue criteria have been proposed, but most of them still requires the notion of load cycles. The objective of this work is to contribute to the development of life models that take into account such complex variations while avoiding the notion of load cycle. Our fundamental thought is to assume within a micro-macro approach that the local dissipated energy at small scale contributes to the damage which governs fatigue at failure. We follow the Dang Van paradigm. The structure is elastic  at the macroscopic scale. At each material point, there is a stochastic distribution of weak points which will undergo strong plastic yielding, which contributes to energy dissipation and cause damage, without affecting the overall macroscopic stress.
+
+Our model considers a plastic behavior at the mesoscopic scales  with a dependence of the yield function not only on the deviatoric part of the stress but also on the hydrostatic part. A kinematic hardening under the assumption of associative plasticity is also introduced.
+
+Instead of using the number of cycles, we will use in addition as in \cite{lemaitre1999two} the concept of nonlinear damage accumulation during the loading history. To approach real life loading history more accurately, non-linear damage accumulation laws are also considered in our model to take into account the sequencing effect. Fatigue will then be determined from the energy plastically dissipated at all scales during plastic shakedown cycles and from a phenomenological fatigue law linking damage evolution and accumulated mesoscopic plastic dissipation.
+
+The chapter is organized as follows. From section \ref{sec:5.1} to \ref{sec:5.3}, we present the existing methods and background of our strategy.  In section \ref{sec:5.4} we propose the notion of weakening scales and multiscale yield function and describe the plastic dissipation resulting from this notion. And in section \ref{sec:5.5}, based on microscopic plasticity we construct the energy dissipation formula. Section \ref{sec:5.6} gives the proposed nonlinear damage accumulation law and summarizes the full model that we propose. Then we combine the energy dissipation law and nonlinear damage accumulation law with its numerical implementation presented in section \ref{sec:5.7}, while section \ref{sec:5.8} is devoted to various validations on typical load histories classically treated in the literature. Parameter identification strategy is presented in section \ref{sec:5.9}.
+
+
+\section{Multiscale energy dissipation approach}
+\label{sec:5.1}
+The object of this work is to propose an energy based fatigue approach which takes into account impurities and hardness in the material which affect the fatigue life while handling multidimensional time varying loading histories.
+
+Our fundamental thought is to assume that the local dissipated energy at small scale contributes to the damage which governs fatigue at failure. The proposal of our model is to consider a plastic behavior at the mesoscopic scale with a dependence of the yield function not only on the deviatoric part of the stress but also on the hydro static part. A kinematic hardening under the assumptions of associative plasticity is also considered. We follow the Dang Van paradigm. The structure is elastic at the macroscopic scale. At each material points, there is a stochastic distribution of weak points which will undergo strong plastic yielding ,which contribute to energy dissipation and cause damage, without affecting the overall macroscopic stress.
+
+Instead of using the number of cycles, we use the concept of loading time. To elaborate real life loading history more accurately, mean stress effect is taken into account in mesoscopic yield function, and non-linear damage accumulation law are also considered in our model to take into account the sequencing effect. Fatigue will then be determined from the plastic shakedown cycle and from a phenomenological fatigue law linking lifetime and accumulated mesoscopic plastic dissipation.
+
+\section{Kinematic Hardening Models}
+\subsection{Linear Kinematic Hardening}
+A hardening rule is needed to
+describe the behavior of the
+material once it is plastically
+deformed or yielded. One possible hardening rule is the
+isotropic rule, which assumes
+that strain hardening corresponds
+to an enlargement of the yield
+surface (i.e. an increase in  yield stress )
+without change of shape or
+position in the stress space. Another is the kinematic rule,
+which assumes that strain
+hardening shifts the yield surface
+without changing its size or shape.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures//kinhard.png} 
+	\caption{Kinematic hardening: a) uniaxial stress-strain diagram, b) evolution of the
+		yield surface in the biaxial stress plane}
+	\label{kinhard}
+\end{figure}
+Kinematic hardening rules are necessary,especially for the case of unloading and cyclic loading.In Kinematic Hardening the current loading surface is assumed not to expand but to move as a rigid body
+within the stress space (\figref{kinhard}(b)). The use
+of kinematic hardening is, for example, necessary to model the so-called Bauschinger
+effect (Bauschinger, 1881). This effect is often observed in metals subjected to cyclic
+loading. Even if the magnitudes of the yield stress in tension and in compression
+are initially the same, this is no longer the case when the material is preloaded into
+the plastic range and then unloaded. For example, after previous yielding in tension,
+yielding in compression may start at a stress level lower than the initial yield stress
+(\figref{kinhard}(a)).
+
+Kinematic hardening leads to a translation of the loading surface, i.e. to a shift of
+the origin of the initial yield surface. If the initial yield surface is described by a yield
+function of the form
+$$f(\sigma) = F(\sigma) -\sigma_0 $$
+the shifted surface is obviously described by
+$$f(\sigma,\sigma_b ) = F(\sigma-\sigma_b ) -\sigma_0$$
+where $\sigma_b$ is the so-called backstress that represents the center of the shifted elastic
+domain and plays the role of a tensorial hardening variable. Now we need a kinematic
+hardening law that governs the evolution of the back stress. Melan (1938b) proposed
+a law of the form
+\begin{equation}
+\sigma_b =\overline{H}_K \dot{\varepsilon}_p
+\label{lineark}
+\end{equation}
+where $ \dot{\varepsilon}_p$ is the rate of effective plastic strain. According to which the rate of the back stress is proportional to the plastic strain rate. It is a macroscopic variable representing the
+dislocation sub-structure resistance to deformation. 
+The proportionality factor $\overline{H}_K$ is directly related to the plastic modulus and is derived from a simple
+monotonic uniaxial curve.The linear hardening law Eq.\eqref{lineark} is often credited to Prager (1955, 1956); we will call it the Melan–Prager hardening rule. 
+\subsection{Non-linear Kinematic Hardening}
+%\begin{figure}[h!]
+%		\includegraphics[width=\textwidth]{figures//kinehardening.gif} 
+%		\caption{Dissipated energy in one cycle and number of cycles %to failure when $\beta=-1$}
+%		\label{kinehardening}
+%\end{figure}
+To describe cyclic plasticity, one of the famous model is the non-linear kinematic hardening model formulated by Armstrong and Frederick. It is based on a physical mechanism of strain hardening and dynamic recovery and is capable of simulating the
+multiaxial Bauschinger effect (movement of the yield surface in the stress space). Therefore, the model has been examined and implemented in commercial software and finite element analysis.
+
+The Armstrong-Frederick model (AF) is a modification of the Melan–Prager linear kinematic hardening model. The only modification of this simple model is the "recal" term which changes the evolution law for the symmetric backstress tensor $\sigma_b$ from a classical linear kinematic hardening law (Melan–Prager) to a nonlinear kinematic hardening law. The term is proportional to the current back stress multiplied by the norm of the plastic strain rate. According to the Armstrong-Frederick rule, the evolution of the
+back stress is governed by the differential equation:
+
+\begin{equation}
+\dot{\bm{\sigma}}_b=\underbrace{\overline{H}_K \dot{\varepsilon}_p}_{lin. kin. hardening} -\underbrace{\gamma\dot{p}\bm{\sigma}_b}_{recall - term, nonlinear hardening}
+\label{nonlineark}
+\end{equation}
+where
+$\dot{p}$ is the accumulated plastic strain rate given as $\sqrt{\dfrac{2}{3}}||\dot{\varepsilon}_p||$ . The constants
+$\overline{H}_K$
+and
+$\gamma$
+are determined from uniaxial tests.
+At the onset of yielding, the
+back stress is still zero and Eq.\eqref{nonlineark} gives the same response as the linear hardening
+law Eq.\eqref{lineark}. As the back stress develops, the additional term becomes activated and
+slows down the rate at which the back stress grows (i.e. reduces the tangent plastic
+modulus).
+
+\section{Mean stress effect in local model}
+\label{sec:5.3}
+Positive mean stress clearly reduces the fatigue life of the material. In design evaluation of multiaxial fatigue with mean stress, a simplified, conservative relation between mean stress and equivalent alternating stress is necessary. We can improve the model by modifying the yield function $\sigma_y$ and the localization tensor.
+
+\textbf{Christensen approach}
+%We can improve the model by modifying the yield function $\sigma_y$ and the localization tensor. There are several different models of yield function(Johnson Cook model if there is strain hardening, Christensen for mean stress effect), or we could integrate yield function with damage. Moreover, Sylvain Calloch at ENSTA Bretagne may have physical evidence and interpretation on the thermal dissipation in fatigue loading. 
+
+The yield function that was given by Christensen\cite{christensen2000yield} integrates measures of damage, as well as intrinsic yield strength and concept of transitions. The derived yield function formalism resulted in the form as:
+
+\begin{equation}
+\frac{\alpha K}{\sqrt{3}}\sigma_{kk}+\frac{(1+\alpha)^2}{2}s_{ij}s_{ij}\leqslant\frac{K^2}{(1+\alpha)},
+\label{eq:yieldfunc}
+\end{equation}
+where $\alpha$ changes the shape of the yield function, thus it is called the shape parameter. 
+$$\alpha=\frac{\left| \sigma_{11}^C\right| }{\sigma_{11}^T}-1,$$
+the new parameter $K$ is called the ideal or intrinsic strength which uniformly expands or contrasts the yield function, thus is is called the scale parameter:
+$$K=\frac{(\sigma_{11}^C)^2}{\sqrt{3}\sigma_{11}^T}.$$
+The intrinsic strength would occur if there were no damage or microstructure disturbance. 
+$\sigma_{11}^C$ and $\sigma_{11}^T$ are respectively compressive and tensile yield stress in uniaxial states($\left| \sigma_{11}^C\right| \geqslant\sigma_{11}^T$, for ductile materials, $\frac{1}{2}\leqslant\dfrac{\left| \sigma_{11}^C\right| }{\sigma_{11}^T}\leqslant 1$). The yield stress in uniaxial and shear states are give by:
+
+\begin{equation}
+\begin{split}
+&\sigma_{11}^C=\frac{-\sqrt{3}K}{(1+\alpha)}\\
+&\sigma_{12}^Y=\frac{K}{(1+\alpha)^{3/2}} \\
+&\sigma_{11}^T=\frac{\sqrt{3}K}{(1+\alpha)^2}.\\
+\end{split}
+\label{eq:uniyields}
+\end{equation}
+
+At $\alpha=0$, relations Eq.\eqref{eq:yieldfunc} and Eq.\eqref{eq:uniyields} show the behavior to be that of purely Mises type. This is taken to be the ideal condition where the intrinsic strength $K$ solely determines the yield strength. As the shape parameter increases beyond the value $\alpha=1$, the yield function behaves in accordance with  a state of increasing crack density or any other physical weakening. The term fracture, as used here for behavior at or near $\alpha=1$, actually corresponds to fracture mechanics for non-interacting cracks. Beyond this range near $\alpha=1$ or $\alpha\to\infty$ has simply been called yield or failure. Parameter $\alpha$ could be easily viewed as a damage measure or microstructure parameter since it represents microstructure changes on any scale that causes deviation from the ideal state. 
+
+It is concluded a decrease in mean stress $\sigma_{kk}$ reduces the effective value of $\alpha$. That is, moving the behavior toward ductile case. Alternatively, increasing the mean stress moves $\alpha$ toward larger values, which is taken to be that of brittle behavior.
+
+The fully expanded form of the yield function Eq.\eqref{eq:yieldfunc} is:
+\begin{equation}
+\begin{split}
+&\frac{\alpha K}{\sqrt{3}}(\sigma_{11}+\sigma_{22}+\sigma_{33})\\
++&(1+\alpha)^2\left[\frac{(\sigma_{11}-\sigma_{22})^2+(\sigma_{22}-\sigma_{33})^2+(\sigma_{33}-\sigma_{11})^2}{6}
++(\sigma_{12}^2+\sigma_{23}^2+\sigma_{31}^2) \right]\\
+\leqslant&\frac{K^2}{(1+\alpha)}.\\
+\end{split}
+\end{equation}
+
+The most compact form of Eq.\eqref{eq:yieldfunc} is:
+\begin{equation}
+\frac{1}{2}s_{ij}s_{ij}\leqslant\eta K^2,
+\end{equation}
+where $\eta$ is a nondimensional scaling factor on $K^2$, determined by mean normal stress.
+$$\eta=\frac{1-\dfrac{\alpha(1+\alpha)}{\sqrt{3}K}\sigma_{kk}}{(1+\alpha)^3}<1$$
+
+
+The mean stress $\sigma_{kk}$ has a positive relationship with the shape parameter $\alpha$. We suppose the material endures transition from ductile to brittle when $\alpha$ reaches 1. That means $\alpha$ has a very similar physical meaning with the damage parameter $D$.
+
+\textbf{The Gerber parabola}
+Several models are available
+addressing the influence of tensile mean stress on fatigue life. Among these are the Gerber (Germany, 1874), Goodman
+(England, 1899), and Soderberg (USA, 1930) models.  The modified Goodman criterion is often used as a design criterion
+because it is more conservative than the Gerber criterion. The use of the Gerber criterion in the determination of member size is generally more computationally  intensive and so rather unattractive for many designers.
+
+The effect of mean stress on the fatigue strength is commonly presented in Haigh diagrams as shown in \figref{haigh}, where $S_a / S_f$ is plotted against $S_m / S_u$. So is the fatigue strength at a given life under fully reversed ($S_m = 0$,$R = -1$) conditions. $S_u$ is the ultimate tensile strength. $S_f$ is the reversed fatigue strength. The data points thus represent combinations of $S_a$ and $S_m$ giving that life. The results were obtained for small unnotched specimens, tested at various tensile mean stresses. The straight lines are the modified Goodman and the Soderberg lines, and the curved line is the Gerber parabola. These are empirical relationships that are represented by the following equations:
+
+\vspace{6pt}
+Modified Goodman: $S_a/S_f + S_m/S_u = 1$
+
+\vspace{6pt}
+Gerber: $S_a/ S_f + (S_m/ S_u)^2 = 1$
+
+\vspace{6pt}
+Soderberg: $S_a/S_f+S_m/S_y=1$
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures//Gerber.png} 
+	\caption{Haigh diagram showing test data points for the effect of mean stress, and the Gerber, modified Goodman and Soderberg relations.}
+	\label{haigh}
+\end{figure}
+
+The idea is to consider as in Maitournam and Krebs\cite{Maitournam2011232} that the yield limit $\sigma_y$ can be reduced in presence of positive mean stress. The mesoscopic yield function can therefore be written as:
+\begin{equation}
+f\left(s\right)=||\uline{\uline{S}}(s)-\uline{\uline{b}}(s)||+\left( \lambda \Sigma_H-\sigma_y\right) /s\leqslant 0
+\label{yieldfun}
+\end{equation}
+with $\uline{\uline{S}}$ denoting the deviatoric part of the stress tensor at microscale, and $\uline{\uline{b}}(s)$ the corresponding backstress at the same scale. The material remain in elastic regime when $f<0$ and in plastic regime when $f=0$.
+
+
+\section{Weakening scales and yield function}
+\label{sec:5.4}
+\subsection{The concept of weakening scales} 
+
+We follow the Dang Van paradigm. The structure is elastic at the macroscopic scale. At each material points, there is a stochastic distribution of weak points which will undergo strong plastic yielding, without contributing to the overall macroscopic stress. From a microscopic point of view, there is a distribution of weakening scales, namely $s\in[1,\infty)$. In order to introduce our concept, lest us imagine that we can measure the macroscopic stress intensity at present time by a given value $S_{a}$. Let $\sigma_y$ be the yield limit before weakening. Then we imagine that for a given scale $s$:
+
+\vspace{6pt}
+\noindent
+$\bullet$ either $1\leqslant s\leqslant \sigma_y/S_{a}$, then $S_{a}\leqslant \sigma_y/s$, the material stays in the elastic regime and there is no energy dissipation at this scale.
+
+\vspace{6pt}
+\noindent
+$\bullet$ or $\sigma_y/S_{a}\leqslant s\leqslant \infty$, then $S_{a}\geqslant \sigma_y/s$, the material is in plastic regime at this scale, which evolves through kinematic hardening, say from zero initial plastic strain $\uuline{\varepsilon}_p(s)$ and zero initial backstress $\uuline{b}(s)$ at initial time $t_0$. This is then dissipated energy at scale $s$ contributing to the fatigue limit.
+
+
+\vspace{6pt}
+
+\subsection{Distribution of weakening scales}
+
+We assume the weakening scales have a  probability distribution function of power law:
+\begin{equation}
+P(s) = Hs^{-\beta}=(\beta-1)s^{-\beta},
+\label{eq.ps}
+\end{equation}
+
+where $\beta$ is a material constant. 
+The choice of a power law has two reasons: on one hand, this type of distribution corresponds to a scale invariant process, on the other hand it leads in cyclic loading to a prediction of a number of cycles to life limit as a power law function of the stress intensity. More general laws can also be proposed, without changing the spirit of the model.
+
+%The integrated probability ranging from macroscopic to microscopic stress  is unity. From this we can conclude:
+%$$\int_{1}^{\infty}P(s)ds=\left[ \frac{Hs^{1-\beta}}{1-\beta}\right] _{1}^{\infty}=0-\frac{H}{1-\beta}=1.$$
+%Then we know $H=\beta-1$, so the distribution is given by:
+%$$P(s) = Hs^{-\beta}=(\beta-1)s^{-\beta}$$
+The probability of weakening scales is shown in \figref{ps1} and \figref{ps2}. We can see that smaller $\beta$ leads to larger probability of weakening for large $s$.
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.9\textwidth]{figures//ps1.png} 
+\caption{Weakening scales $s$ probability distribution curve when $\beta=1.5$ }
+\label{ps1}
+\end{figure}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.9\textwidth]{figures//ps2.png} 
+\caption{Weakening scales $s$ probability distribution curve when $\beta=5$ }
+\label{ps2}
+\end{figure}
+
+\subsection{Yield function with mean stress effect}
+
+Positive mean stress clearly reduces the fatigue life of the material. In design evaluation of multiaxial fatigue with mean stress, a simplified, conservative relation between mean stress and equivalent alternating stress is necessary. We can improve the model to come by modifying the yield function $\sigma_y$ and the localization tensor.
+
+The idea is to consider as in Maitournam and Krebs\cite{Maitournam2011232} that the yield limit $\sigma_y$ can be reduced in presence of positive mean stress. The mesoscopic yield function at scale $s$ can therefore be written as:
+\begin{equation}
+f\left(s\right)=||\uline{\uline{S}}(s)-\uline{\uline{b}}(s)||+\left( \lambda \Sigma_H-\sigma_y\right) /s\leqslant 0
+\label{yieldfun}
+\end{equation}
+with $\uline{\uline{S}}$ denoting the deviatoric part of the stress tensor at microscale, and $\uline{\uline{b}}(s)$ the corresponding backstress at the same scale. The material remain in elastic regime when $f<0$ and in plastic regime when $f=0$.
+
+\subsection{Local plastic model}
+We can now describe the mesoscopic stress state.  The model considers a plastic 
+behavior at the mesoscopic scale. The mesoscopic stress evolution equations are thus:
+
+% \begin{numcases}{}
+% 	\dot{\uline{\uline{S}}}(s,M,t)=dev\dot{\uline{\uline{\Sigma}}}(M,t)-\dfrac{E}{1+\nu}\dot{\uline{\uline{\varepsilon}}}^p(s,M,t), & Taylor-Lin scale transition model with unit localization tensor\cite{Bosia201239}.\\
+% 	\dot{\uline{\uline{b}}}(s,M,t)=\dfrac{kE}{E-k} \dot{\uline{\uline{\varepsilon}}}^p(s,M,t) , & kinematic hardening model.\\
+% 	\dot{\uline{\uline{\varepsilon}}}^p(s,M,t)=\gamma\dfrac{\partial f(s,M,t)}{\partial \uline{\uline{S}}}, & plastic flow rule assuming $\gamma=0$ when $f<0$ and  $\gamma\geqslant0$ when $f=0$.
+% \end{numcases}
+
+\begin{equation}
+\dot{\uline{\uline{S}}}(s,M,t)=dev\dot{\uline{\uline{\Sigma}}}(M,t)-\dfrac{E}{1+\nu}\dot{\uline{\uline{\varepsilon}}}^p(s,M,t), 
+\label{eq.mesostress}
+\end{equation}
+which defines a Taylor-Lin scale transition model with unit localization tensor\cite{Bosia201239}. It is complemented by
+\begin{equation}
+\dot{\uline{\uline{b}}}(s,M,t)=\dfrac{kE}{E-k} \dot{\uline{\uline{\varepsilon}}}^p(s,M,t), 
+\label{eq.backstress}
+\end{equation}
+which is our kinematic hardening model, and by
+\begin{equation}
+\dot{\uline{\uline{\varepsilon}}}^p(s,M,t)=C\dfrac{\partial f(s,M,t)}{\partial \uline{\uline{S}}}, 
+\label{eq.plasticflow}
+\end{equation}
+which is the associated plastic flow rule assuming $C=0$ when $f<0$ and  $C\geqslant0$ when $f=0$.
+
+Here E denotes the Young's modulus and k the hardening parameter. The local dissipated energy rate per unit volume at weakening scales $s$  is given by the local entropy dissipation:
+\begin{equation}
+\dot{w}(s,M,t)=(\uuline{S}-\uuline{b})(s,M,t):\uuline{\dot{\varepsilon}}^p(s,M,t).
+\label{dissipated}
+\end{equation}
+
+\section{Construction of an energy based fatigue approach}
+\label{sec:5.5}
+In a preliminary step, we will consider a simple macroscopic loading history $\uuline{\Sigma}(M, t)$ which is uniaxial
+and time periodic of deviatoric amplitude $S_{a}$ and constant mean stress $\Sigma_{H}$, and a Von Mises flow rule to see if we get a prediction of local failure for a number of cycles $N_F$ varying as $S_{a}^{-\gamma}.$
+
+In uniaxial cyclic loading, there will be 3 kinds of loading patterns, as is shown in \figref{backstress}:
+
+\vspace{6pt}
+\begin{enumerate}
+
+\item	Elastic regime, in phase 2 and 4,where we have no plastic flow $\dot{\uline{\uline{\varepsilon}}}^p(s,M,t)=0$ ,  and where the stress is below the yield limit $|\uline{\uline{S}}-\uline{\uline{b}}|< \left( \sigma_y-\lambda \Sigma_H\right)/s. $ 
+\vspace{6pt}
+
+\item Plastic regime according to plastic flow rule, with increasing plastic deformation, in phase 5 and 1, where	$\dot{\uline{\uline{\varepsilon}}}^p(s,M,t)=\xi\dfrac{\uline{\uline{S}}(s)-\uline{\uline{b}}(s)}{||\uline{\uline{S}}(s)-\uline{\uline{b}}(s)||}> 0$ with  $\xi= dev\dot{\uline{\uline{\Sigma}}}\left(\dfrac{kE}{E-k}+\dfrac{E}{1+\nu} \right) ^{-1}$(detailed in annex) ,  $\uline{\uline{S}}-\uline{\uline{b}}= \left(\sigma_y-\lambda \Sigma_H\right)/s$ and $\dot{\uline{\uline{S}}}-\dot{\uline{\uline{b}}}=0.$ 
+\vspace{6pt}
+
+\item Plastic regime in the other direction, in phase 3, where we now have	$\dot{\uline{\uline{\varepsilon}}}^p(s,M,t)<0$,  then $\uline{\uline{S}}-\uline{\uline{b}}=- \left(\sigma_y-\lambda \Sigma_H\right)/s$ and $\dot{\uline{\uline{S}}}-\dot{\uline{\uline{b}}}=0$.
+
+\end{enumerate}	
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.9\textwidth]{figures//backstress.png} 
+\caption{Uniaxial load with plastic dissipation}
+\label{backstress}
+\end{figure}
+
+In phase 1, a direct analysis yields the energy dissipation at scale $s$:
+\begin{equation}dW=(S-b)d\varepsilon^p=\dfrac{(E-k)(1+\nu) }{E(E+k\nu)}\dfrac{ \left(\sigma_y-\lambda \Sigma_H\right)}{s}\left(S_{a}-\dfrac{ \left(\sigma_y-\lambda \Sigma_H\right)}{s}\right).
+\label{dw}
+\end{equation}
+
+A similar analysis yields $$dW(phase 1)=dW(phase 5)=\dfrac{1}{2}dW(phase 3).$$
+
+We can then calculate  the local dissipated energy $W$  at point $M$ during one cycle by cumulating the input of all sub-scales plastic regime with their probabilities \cite{zepeng}.
+\begin{equation}
+\begin{split}
+W_{cyc}&=4\int_{ \left(\sigma_y-\lambda \Sigma_H\right) /S_{a}}^{\infty}dW(s,M,t)P(s)ds
+\\&=4\int_{ \left(\sigma_y-\lambda \Sigma_H\right) /S_{a}}^{\infty}\dfrac{(E-k)(1+\nu) }{E(E+k\nu)}\dfrac{ \left(\sigma_y-\lambda \Sigma_H\right)}{s}\left(S_{a}-\dfrac{ \left(\sigma_y-\lambda \Sigma_H\right)}{s}\right)\left( \beta-1\right) s^{-\beta}ds
+\\&=\dfrac{4(E-k)(1+\nu)\left( \beta-1\right) }{ E(E+k\nu)\beta\left( \beta+1\right) }\dfrac{S_{a}^{\beta+1}}{ \left(\sigma_y-\lambda \Sigma_H\right)^{\beta-1}}.
+\end{split}
+\label{eq:w}
+\end{equation}
+
+So we have a power law relationship between stress intensity and the dissipated energy per cycle.
+\begin{equation}
+W_{cyc}=C_1S_{a}^{\beta+1},
+\label{eq.wcyc}
+\end{equation}
+with 
+$$C_1=f(\lambda,\beta)=\dfrac{4(E-k)(1+\nu)\left( \beta-1\right) }{ E(E+k\nu)\beta\left( \beta+1\right)\left(\sigma_y-\lambda \Sigma_H\right)^{\beta-1} }.$$
+If the dissipated energy accumulates until a failure value $W_0$, we can get directly the number of cycles to failure from Eq.\eqref{eq.wcyc} as:
+\begin{equation}
+N_{F}=\dfrac{W_0}{W_{cyc}}=\dfrac{W_0}{C_1}S_{a}^{-\beta-1}.
+\label{eq.NFcyc}
+\end{equation}
+As for the time to failure in cyclic loading, it will be:
+$$T_{F}=N_{F}t_{cyc}.$$
+From Eq.\eqref{eq:w}, we then obtain that in uniaxial cyclic loading the model predicts as expected a power law dependence of the number of cycles to failure in function of $S_{a}$.
+However, experiments shows that the damage or the energy accumulation of a material evolves non-linearly in time. We should introduce below a method to handle such a nonlinearity.
+
+\section{Nonlinearity of damage accumulation}
+\label{sec:5.6}
+\subsection{Energy approach with Chaboche law}
+The Chaboche law\cite{lemaitre1990mechanics} is essentially a damage incremental law for cyclic loads with a deviatoric stress intensity ${A}_{\uppercase\expandafter{\romannumeral2}}$ and hydrostatic mean part $\Sigma_H$, defining the damage increase by:
+
+\begin{equation}\delta D = \left( 1 -(1-D)^{\gamma+1}\right)^\alpha \left(\frac{{A}_{\uppercase\expandafter{\romannumeral2}} }{M(\sigma_H)\left( 1-D\right)}\right)^\gamma \delta N ,
+\label{chabochemulti}
+\end{equation} 
+
+using an effective intensity ${A}_{\uppercase\expandafter{\romannumeral2}}^*={A}_{\uppercase\expandafter{\romannumeral2}}/\left( 1-D\right) $ evolving with damage $D$. And the mean stress effect is present both in exponential factor $\alpha$ and in denominator $M(\sigma_H)$.
+$$\alpha=1 - a\left\langle \dfrac{\dfrac{1}{2}{A}_{\uppercase\expandafter{\romannumeral2}}-\sigma_{-1}M(\sigma_H) }{\sigma_{u} -{A}_{\uppercase\expandafter{\romannumeral2}}}\right\rangle,$$
+$$M(\sigma_H) =M_0 \left(1-3c\sigma_{H,max}\right).$$
+
+Eq.\eqref{chabochemulti} writes equivalently:
+\begin{equation}\delta [1-(1-D)^{\gamma+1}]^{1-\alpha}=(1-\alpha)(\gamma+1)\left(\dfrac{{A}_{\uppercase\expandafter{\romannumeral2}} }{M(\Sigma_H)}\right)^\gamma \delta N=\dfrac{1}{N_F(\sigma)}\delta N.
+\label{integration}
+\end{equation}
+Here $N_F(\sigma)$ denotes the number of cycles at intensity $\sigma$ to failure as obtained by integration of Eq.\eqref{integration} from $D=0$ to $D=1$. 
+
+%
+%The nonlinear damage incremental law using energy dissipation:
+%\begin{equation}
+%\begin{split}
+%  \delta D &=\dfrac{\left( 1 -(1-D)^{\gamma+1}\right)^\alpha}{\left(1-D \right)^\gamma} \delta W
+%  \\&= \dfrac{\left( 1 -(1-D)^{\gamma+1}\right)^\alpha}{\left(1-D \right)^\gamma} \dfrac{W_{cyc}\delta N}{W_0}
+%  \\&= \dfrac{\left( 1 -(1-D)^{\gamma+1}\right)^\alpha}{\left(1-D \right)^\gamma} \dfrac{4(E-k)(1+\nu)\left( \beta-1\right) }{ E(E+k\nu)\beta\left( \beta+1\right) }\dfrac{S_{a}^{\beta+1}}{\left(\sigma_y-\lambda \Sigma_H\right)^{\beta-1}}\dfrac{\delta N}{W_0}.
+%\end{split}
+%\label{recoverchaboche}
+%\end{equation} 
+%
+%We compare Eq.\eqref{chabochemulti} and Eq.\eqref{recoverchaboche}, in Chaboche model there is:
+%$$\beta+1=\gamma. $$
+
+Similar to Eq.\eqref{integration}, we define here the ``equivalent damage'' $\tilde{D}$(\figref{eq.Dhat}) :
+
+\begin{equation}
+\tilde{D}=1-(1-D)^{\gamma+1},
+\label{eq.Dhat}
+\end{equation}
+with $D$ the damage variable introduced by Chaboche in its model to scale the stress intensity:
+$${A}_{\uppercase\expandafter{\romannumeral2}} \longrightarrow \dfrac{{A}_{\uppercase\expandafter{\romannumeral2}}}{1-D}.$$
+
+We have 
+
+$\bullet$ $\tilde{D}=0$ when $D=0$ (undamaged material),
+
+$\bullet$ $\tilde{D}=1$ when $D=1$ (failure of material),	
+
+and a nonlinear relation in between as in \figref{fig.Dhat}:
+$$\delta\tilde{D}=\left(\gamma+1 \right)\left( 1-D\right)^\gamma \delta D.$$	
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{figures//Dhat.png} 
+\caption{The relation between $\tilde{D}$ and $D$ when $\gamma=2$}
+\label{fig.Dhat}
+\end{figure}
+
+Change of damage measure $\tilde{D} = 1 - (1-D)^{\gamma+1}$ makes the evolution \eqref{chabochemulti} explicit. It writes
+\begin{equation}
+\dfrac{d\tilde{D}}{dN} = c_D {\tilde{D}}^\alpha \left(\dfrac{{A}_{\uppercase\expandafter{\romannumeral2}}}{M(\Sigma_{H})} \right) ^\gamma,
+\label{eq.diffchaboche}
+\end{equation}
+yielding after integration from $\tilde{D}=0$ to $\tilde{D}=1$  a number of cycles to fatigue at constant load given by
+$$
+N_F =\dfrac{1}{(1-\alpha)}\left(\dfrac{{A}_{\uppercase\expandafter{\romannumeral2}}}{M(\Sigma_{H})} \right) ^{-\gamma}.
+$$
+
+This method as written requires cycle counting which is difficult and technical for complex load histories. In addition, it allows only a limited influence of multiaxiality.
+
+
+Now in our model we use the same growth rule as in Chaboche in cyclic load regime, but replace stress intensity by multiscale dissipated energy  in Eq.\eqref{eq.diffchaboche}, which removes cycle counting.
+
+The evolution \eqref{eq.diffchaboche} then writes
+$$
+\dfrac{d\tilde{D}}{dt} ={\tilde{D}}^\alpha \dot{W}/W_0,
+$$
+or in a differential form
+\begin{equation}
+d \tilde{D}=\tilde{D}^\alpha\dfrac{d W}{W_0}=\tilde{D}^\alpha\dfrac{W_{cyc}d N}{W_0}.
+\label{eq.DWcyc}
+\end{equation}
+
+The number of cycles to failure in constant loading case, obtained by integrating $\tilde{D}$ from $\tilde{D}_0$ to 1 is then:
+$$N_F=\dfrac{W_0}{\left( 1-\alpha\right)W_{cyc} }\left( 1-D_0^{1-\alpha}\right) ,$$
+with initial damage $D_0=0$, we finally get:
+\begin{equation}
+N_F=\dfrac{W_0}{\left( 1-\alpha\right)W_{cyc} }=\dfrac{W_0}{(1-\alpha)C_1}S_{a}^{-\beta-1}.
+\label{eq.NFWcyc}
+\end{equation}
+
+From Eq.\eqref{eq.NFWcyc}, we see $(-\beta-1)=-\gamma$ is related to the slops in S-N curve and that $\dfrac{W_0}{(1-\alpha)C_1}$ defines the number of cycles to failure.
+
+% 
+%\subsection{Generalized damage accumulation}
+%Eq.\eqref{integration} is a general accumulation law which can be applied for any cyclic loading sequence provided that we can identify the multiscale value of the dissipated energy per cycle. 
+%
+%But the notion of cycle itself may be hard to identify for general loadings. The idea is then to replace the relative increment of dissipated energy per cycle by the relative increment of dissipated energy per unit time, yielding Eq.\eqref{eq.DW}:
+%\begin{equation}
+%\delta\tilde{D}= \tilde{D}^\alpha \dfrac{W}{W_0} = \tilde{D}^\alpha \dfrac{\dot{W}\delta t}{W_0}
+%\label{eq.DW}
+%\end{equation}
+%giving equivalent differential form of damage accumulation:
+%\begin{equation}
+%\label{eq.DW2}
+%\end{equation}
+%The time to failure, obtained by integrating $\tilde{D}$ from 0 to 1 is:
+%\begin{equation}
+%T_F = \frac{1}{1-\alpha}\dfrac{W_0}{\dot{W}}.
+%\label{eq.tf}
+%\end{equation}
+%
+%In differential form, the relation \eqref{eq.diffform} writes from Eq.\eqref{eq.DW} and Eq.\eqref{eq.tf}:
+%\begin{equation}
+%\delta \tilde{D}^{1-\alpha}=\frac{\delta t}{T_F}.
+%\label{eq.diffform}
+%\end{equation}
+%
+%When we integrate Eq.\eqref{eq.DW} from $0$ to $\tilde{D}$ at constant loading conditions. The damage, expressed as a function of $t/T_F$ is:
+%\begin{equation}
+%\tilde{D}=\left( \frac{t}{T_F}\right) ^{\frac{1}{1-\alpha}}.
+%\label{eqD}
+%\end{equation}
+%This expression is in good agreement with experimental results\cite{lemaitre1990mechanics}. 
+%
+%In a general loading case, $\dot{W}$ is the microscopic energy dissipation rate of unit defect and $W_0$ is the energy threshold of unit defect. By integrating Eq.\eqref{dissipated} over all microscales, we get:
+%\begin{equation}\dot{W}(M,t)=\int_{s=1}^{\infty}\dot{w}(s,M,t)P(s)ds=\int_{s=1}^{\infty}\left(\uuline{S}-\uuline{b} \right) (s,M,t):\uuline{\dot{\varepsilon}^p}(s,M,t)P(s)ds.\label{Wdot}
+%\end{equation}
+%The evolution of $\uuline{S}$, $\uuline{b}$ and $\uuline{\dot{\varepsilon}}^p$ are given previously. Eq.\eqref{eq.DW} and \eqref{Wdot} are therefore our proposed damage incremental law with energy dissipation.
+%
+%This is a nonlinear law with a constant $\alpha$, there will be no sequence effect. In other words,
+%when applying two successive cycles of different intensities, the failure will occur at the same number of cycles whatever the order of the loading(high then low versus low then high). In numerical implementation of complex loading case, to take into account the load sequence effect, $\alpha$ changes at every time step.
+
+
+
+\subsection{Sequence effect}
+
+Experiments show fatigue tests started with high stress then change to low stress has less fatigue life than the combination of high stress life proportion plus the low one. This phenomenon of sequence effect is load history dependent, so we need a stress induced parameter to describe it. 
+
+This is done in Chaboche  with three ingredients:
+
+\begin{enumerate} 
+\vspace{6pt}
+\item a damage sensitive effective stress: 
+$$\sigma_D^{eff} = J_2(\uline{\uline{\Sigma}})/(1-D)={A}_{\uppercase\expandafter{\romannumeral2}}/(1-D);$$
+
+\vspace{6pt}
+
+\item a $(\sigma_D^{eff})^\gamma$ controlled  law for damage growth
+$$\dfrac{dD}{dN} =c_\gamma {\tilde{D}}^\alpha (\sigma_D^{eff})^\gamma;$$
+
+\vspace{6pt}
+
+\item  a load dependence of exponent $\alpha$ (from $1$ at zero load to $0$ at large loads). In Chaboche model, the proposition of $\alpha$ is
+\begin{equation}
+\alpha = 1 - a\left\langle \frac{ \sigma_{eq}-\sigma_{fatigue}}{ \sigma_{u} - \sigma_{eq}}\right\rangle
+\end{equation}
+in order to recover the proper high-low sequencing effect.
+\end{enumerate}
+
+Many fatigue damage accumulation models are based on the two level loading experiments which is one of the basic random loading analysis. To facilitate the validation and interpretation of an $\alpha$ dependence on stress we use two-stress level loading, the specimen is firstly loaded at stress $\Sigma_1$ for $T_1$ cycles and then at stress $\Sigma_2$ for $T_2$ cycles until failure. We can then observe if the experimental results are satisfactory.
+
+After a loading time $T_1$, we  cycle  from $\tilde{D}=0$ to $\tilde{D}= \tilde{D}_1$. By integrating Eq.\eqref{eq.DWcyc}, we get:
+\begin{equation}
+\left( 1-\tilde{D}_1\right) ^{1-\alpha_1}=\dfrac{T_1}{T_{F1}},
+\label{23a}
+\end{equation}
+with $T_{F1}$ the time to failure with this loading.
+
+Then we cycle from  ${\tilde D}={\tilde D}_1$ to failure ${\tilde D}=1$, which yields
+\begin{equation}
+1-\left( 1-\tilde{D}_1\right)^{1-\alpha_2}=\dfrac{T_2}{T_{F2}}.
+\label{23b}
+\end{equation}
+
+From Eq.\eqref{23a} and Eq.\eqref{23b}, after elimination of $\left( 1-D_1\right)$ we get:
+\begin{equation} 
+\dfrac{T_2}{T_{F2}} =1-\left( \dfrac{T_1}{T_{F1}}\right) ^\eta,
+\end{equation}
+with
+\begin{equation}
+\eta=\dfrac{1-\alpha_2}{1-\alpha_1}.
+\label{eq.eta}
+\end{equation}
+
+In the case of high-low loading sequence we have $\Sigma_1>\Sigma_2$,  which gives $\alpha_1<\alpha_2$, so it comes to:
+$$\eta=\frac{1-\alpha_2}{1-\alpha_1}<1 \implies
+\frac{T_2}{T_{F2}}=1-\left( \frac{T_1}{T_{F1}}\right) ^\eta<1-\frac{T_1}{T_{F1}} \implies
+\frac{T_1}{T_{F1}}+\frac{T_2}{T_{F2}}<1.$$
+
+The $\alpha$ dependence on stress intensity does therefore predict a sequencing effect where a low loading sequence following a high one will reduce the life of the structure.
+
+To get the same effect in our construction, we propose here to introduce $s_{min}$, which is the minimum scale that experiences plastic dissipation thus causes energy loss:
+\begin{equation}
+s_{min}=\dfrac{\left(\sigma_y-\lambda \Sigma_H\right)}{S_{a}}.
+\label{eq.smin}
+\end{equation}
+
+We propose a load dependent $\alpha$ through $s_{min}$. Possible choice
+of $\alpha$ is expressed as Eq.\eqref{eq.alpha}:
+\begin{equation}
+\alpha=1-a\left( \dfrac{\frac{1}{s_{min}}}{1-\frac{1}{s_{min}}} \right) .
+\label{eq.alpha}
+\end{equation}
+
+There is no notion of fatigue limit in our model, $\sigma_{faigue}=0$. The intensity of loading
+$$\frac{ \sigma_{eq}-\sigma_{fatigue}}{ \sigma_{u} - \sigma_{eq}}= \frac{ 1}{\frac{\sigma_{u}}{\sigma_{eq}} -1}$$
+is measured by 
+$$\left( \dfrac{\frac{1}{s_{min}}}{1-\frac{1}{s_{min}}}\right) =\left(s_{min}-1 \right) ^{-1}.$$
+This means that we measure the distance of load to ultimate failure by local variable $s_{min}$ through 
+
+$$\frac{\sigma_{u}}{\sigma_{eq}} -1 \longrightarrow \left( s_{min}-1\right)  $$
+
+
+We can see from \figref{fig.sequence} that cycling $1$ for fifty percent of its failure time leaves a reserve before failure to cycle $2$ much less than fifty percent. To conclude, the cumulative damage under high-low loading sequence, as we deduced, has the addition of partial lives less than unit. Similarly, the cumulative damage under low-high loading sequence has addition of partial lives more than 1
+$$\frac{T_1}{T_{F1}}+\frac{T_2}{T_{F2}}>1.$$
+The curve is depicted in \figref{fig.sequence}.
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.8\textwidth]{figures//sequence.png} 
+\caption{High to low and low to high loading sequence comparison(with the proposed model)}
+\label{fig.sequence}
+\end{figure}
+For constant two-level stress loading, $\alpha_1=\alpha_2$, the Chaboche law returns to the Miner rule where:
+$$\frac{T_1}{T_{F1}}+\frac{T_2}{T_{F2}}=1.$$
+
+\newpage
+\subsection{The final model}
+In summary, our damage based fatigue life criterion using a damage evolution governed by a multiscale plastic energy dissipation, has four ingredients.
+\begin{itemize}
+\item  a scale dependent yield limit $$\frac{1}{s} (\sigma_y- \lambda \Sigma_H^{macro})$$ associated to a microscopic plastic evolution governed by the standard plastic evolution laws Eq.\eqref{eq.mesostress} - Eq.\eqref{eq.plasticflow};
+
+\vspace{6pt}	
+
+\item a multiscale plastic energy dissipation
+\begin{equation}
+\dot{W}(M,t)=\int_{s=1}^{\infty}\left(\uline{\uline{S}}-\uline{\uline{b}} \right) (s,M,t):\uline{\uline{\dot{\varepsilon}}}^p(s,M,t) s^{-\beta}ds;
+\label{eq.final2}
+\end{equation}
+
+\vspace{6pt}	
+
+\item a load intensity sequencing effect that we have represented by the formula : 
+\begin{equation}
+1 - \alpha = a (s_{min}-1)^{- \beta};
+\label{eq.final3}
+\end{equation}
+
+\vspace{6pt}	
+
+\item a exponential damage evolution law : 
+\begin{equation}
+\dfrac{d\tilde{D}}{dt} ={\tilde{D}}^\alpha \dot{W}/W_0.
+\label{eq.final4}
+\end{equation}
+\end{itemize}
+
+In this model we have four independent coefficients in addition to the construction of the local plastic model Eq.\eqref{eq.mesostress} - Eq.\eqref{eq.plasticflow} :
+
+\begin{enumerate}
+\item reference density of damage energy : $W_0$ (in MPa)
+
+\item mean stress effect coefficient : $\lambda$
+
+\item slope of SN curve : $\beta+1$
+
+\item sensitivity to load intensity $a$. 
+\end{enumerate}
+
+\newpage
+\section{Numerical strategy}
+\label{sec:5.7}
+\subsection{Scale discretization}
+Our first approach takes one cycle as unit time. We compute analytically the energy dissipation at each scale during this cycle. The method is valid for simple loading history and which includes the integration on all weakening scales. The damage $\tilde{D}$ is then accumulated after each cycle by numerical integration of Eq.\eqref{eq.final4}.
+
+However, there are certain limitations of this method. Firstly we need a load history decomposition in cycles. Secondly in real life the perfect close loop cycle is hardly applicable. Finally, we need to compute the average $\alpha$ per cycle.
+
+Thus we propose in a more general method which can be integrated by a step by step strategy. We compute numerically the dissipation at different scales using an implicit Euler time integration of the constitutive laws of section 2.4. After which we make a numerical integration on different scales. Then we can update the damage and go to next time step. 
+
+Instead of doing the scale integration directly which can be difficult for complex loading, the Gaussian Quadrature rule with Legendre points is used to give the value of local dissipated energy rate.
+
+To use the Gaussian quadrature rule the limit range of integral must be from $-1$ to $1$, while the total dissipated energy  is expressed by integrating all the weakening scale $s$ ranging from 1 to infinity with their occurrence probabilities:
+$$\dot{W}=\int_{1}^{\infty}\dot{w}(s) (\beta-1)(s)^{-\beta}ds.$$
+
+\noindent
+To change the limit range of integral from $[1,\infty]$ to $[1,0]$ we take as new integration variable
+$u(s)= s^{1-\beta}$. Therefore the dissipated energy summed on all scales is:
+\begin{equation}
+\begin{split}
+\dot{W}&=\int_{1}^{\infty}\dot{w}(s) (\beta-1)(s)^{-\beta}ds
+\\&=\int_{0}^{1}\dot{w}\left( u^{\frac{1}{1-\beta}}\right)du
+\\&=\frac{1}{2}\int_{-1}^{1}\dot{w}\left[  \left( \frac{x+1}{2}\right) ^{\frac{1}{1-\beta}}\right] dx
+\end{split}
+\label{allscale}
+\end{equation}
+given $u=\dfrac{x+1}{2}$. So the dissipated energy rate integrated over all scales takes the form of Eq.\eqref{allscalerate}:
+\begin{equation}
+\dot{W}=\frac{1}{2}\int_{-1}^{1}\dot{w}\left[  \left( \frac{x+1}{2}\right) ^{\frac{1}{1-\beta}},t\right] dx\approx\frac{1}{2}\sum_{i}\omega_i\dot{w}\left[  \left( \frac{x_i+1}{2}\right) ^{\frac{1}{1-\beta}},t\right],
+\label{allscalerate}
+\end{equation}
+where $\omega_i$ and $x_i$ are respectively the weights and nodes of the Gauss Legendre integration rule used for the numerical integration.  In this work, we used 64 points\cite{legendre} with $s_i=\left( \dfrac{x_i+1}{2}\right) ^{\frac{1}{1-\beta}}$ being the associated scale.
+
+\subsection{Local plastic dissipation}
+The material could be both in elastic and plastic regime at different scales. To be more elaborate, we reuse the fundamental equations in different regimes. At scale $s$, we have a dissipation rate given by:
+$$\dot{w}(s)=\left( \uline{\uline{S}}-\uline{\uline{b}}\right):\dot{\uline{\uline{\varepsilon}}}^p, $$
+which differs between plastic and elastic regime.
+
+\vspace{6pt}
+\noindent
+\textbf{Elastic regime:}
+
+\vspace{6pt}
+\noindent
+There we have
+plastic strain rate
+$\dot{\uline{\uline{\varepsilon}}}^p=0$, back stress rate $\dot{\uline{\uline{b}}}=0$ and deviatoric stress rate $\dot{\uline{\uline{S}}}=dev\dot{\uline{\uline{\Sigma}}}$, leading to
+$$\dot{\uline{\uline{S}}}-\dot{\uline{\uline{b}}}=dev\dot{\uline{\uline{\Sigma}}},$$ 
+meaning
+$$\left( \uline{\uline{S}}-\uline{\uline{b}}\right) (t+dt)=\left( \uline{\uline{S}}-\uline{\uline{b}}\right) (t)+dev\dot{\uline{\uline{\Sigma}}}dt.$$
+At each time step we define a trial stress:
+\begin{equation}
+\left( \uline{\uline{S}}-\uline{\uline{b}}\right)_{trial}:=\left( \uline{\uline{S}}-\uline{\uline{b}}\right)(t+dt).
+\label{trial}
+\end{equation}
+We are in elastic regime at scale $s$ as long as we satisfy
+
+$$\left( \uline{\uline{S}}-\uline{\uline{b}}\right)_{trial}\leqslant\left( \sigma_y-\lambda \Sigma_H\right)/s.$$
+
+\vspace{6pt}
+\noindent
+\textbf{Plastic regime:}
+
+\vspace{6pt}
+\noindent
+When we leave elastic regime at scale s, we have:
+\begin{numcases}{}
+\dot{\uline{\uline{\varepsilon}}}^p=\xi\dfrac{\uline{\uline{S}}-\uline{\uline{b}}}{\left| \left|\uline{\uline{S}}-\uline{\uline{b}}\right| \right|}, \xi>0, & plastic   flow,\\
+\left| \left|\uline{\uline{S}}-\uline{\uline{b}}\right| \right|= \left(\sigma_y-\lambda \Sigma_H\right)/s, & yield   limit,\\
+\left( \uline{\uline{S}}-\uline{\uline{b}}\right) :\left( \dot{\uline{\uline{S}}}-\dot{\uline{\uline{b}}}\right) =0, & yield   limit   time invariance,\\
+\dot{\uline{\uline{b}}}=\dfrac{kE}{E-k}\dot{\uline{\uline{\varepsilon}}}^p, & kinematic   hardening  rule,\\
+\dot{\uline{\uline{S}}}=dev\dot{\uline{\uline{\Sigma}}}-\dfrac{E}{1+\nu} \dot{\uline{\uline{\varepsilon}}}^p, & localisation  rule.
+\end{numcases}
+
+In all cases, we get
+\begin{equation}
+\left( \uline{\uline{S}}-\uline{\uline{b}}\right) (s,t+dt)=\dfrac{\left( \uline{\uline{S}}-\uline{\uline{b}}\right)_{trial} (s,t+dt)}{1+\eta},
+\end{equation}
+
+with $$\eta=max\left\lbrace \underbrace{0}_{elastic\; regime}, \underbrace{\dfrac{\left| \left|\uline{\uline{S}}-\uline{\uline{b}}\right| \right|_{trial}}{ \left(\sigma_y-\lambda \Sigma_H\right)/s}-1}_{plastic \; regime\; when\; this\; number\; is\; positive}\right\rbrace, $$
+
+$$\left( \uline{\uline{S}}-\uline{\uline{b}}\right)_{trial} (s,t+dt)=\left( \uline{\uline{S}}-\uline{\uline{b}}\right)(s,t)+dev\dot{\uline{\uline{\Sigma}}}(t)dt.$$
+
+That is to say, when the structure is in elastic regime at time $t$ and scale $s$, we have $\left( \uline{\uline{S}}-\uline{\uline{b}}\right)(s,t)=\left( \uline{\uline{S}}-\uline{\uline{b}}\right)_{trial} (s,t)$. Otherwise, if  the norm of $\left( \uline{\uline{S}}-\uline{\uline{b}}\right)_{trial} (s,t)$ is greater than the local yield limit $ \left(\sigma_y-\lambda \Sigma_H\right)\left(1-\tilde{D}\right)^\delta/s$, $\left( \uline{\uline{S}}-\uline{\uline{b}}\right)(s,t)$ will be projected on the yield limit. 
+
+Knowing the distinction between elastic and plastic regime under multiple scales, we compute the general expression of the dissipated energy rate.
+\begin{equation}
+\dot{w}(s)=\left( \uline{\uline{S}}-\uline{\uline{b}}\right) :\dot{\uline{\uline{\varepsilon}}}^p=\gamma\dfrac{  \left(\sigma_y-\lambda \Sigma_H\right)}{s}.
+\label{w}
+\end{equation}
+
+From Eq.\eqref{eta} and Eq.\eqref{eta2} in annex, we get:
+
+\begin{equation}
+	\begin{split}
+		E\gamma dt&=\left\langle \left| \left|\uline{\uline{S}}-\uline{\uline{b}}\right| \right|_{trial}-\dfrac{ \left(\sigma_y-\lambda \Sigma_H\right)}{s}\right\rangle /\left(\dfrac{1}{1+\nu}+\dfrac{k}{E-k} \right)
+		\\&=\left\langle \left| \left|\uline{\uline{S}}-\uline{\uline{b}}\right| \right|_{trial}-\dfrac{ \left(\sigma_y-\lambda \Sigma_H\right)}{s}\right\rangle\dfrac{(E-k)(1+\nu) }{(E+k\nu)},
+	\end{split}
+	\label{gamma}
+\end{equation}
+where $\langle$ $\rangle$ is Macaulay bracket symbol defined as $\langle m\rangle=0$ if $m\leqslant0$, otherwise $\langle m\rangle=m$.
+
+We replace $\gamma$ deduced from Eq.\eqref{gamma} in Eq.\eqref{w} to give the expression of local energy dissipation rate at scale $s$:
+\begin{equation}
+\dot{w}(s)dt=\dfrac{(E-k)(1+\nu) }{E(E+k\nu)}\left\langle  \left| \left|\uline{\uline{S}}-\uline{\uline{b}}\right| \right|_{trial}-\dfrac{ \left(\sigma_y-\lambda \Sigma_H\right)}{s}\right\rangle \dfrac{ \left(\sigma_y-\lambda \Sigma_H\right)}{s}.
+\label{dW}
+\end{equation}
+
+With Eq.\eqref{allscalerate}, the final expression of energy dissipation $W$ during time step $dt$ writes:
+
+\begin{equation}
+\begin{split}
+W&=\dot{W}dt
+\\&=\frac{1}{2}\sum_{i}\omega_i\dot{w}\left[  \left( \frac{x+1}{2}\right) ^{\frac{1}{1-\beta}}\right]dt
+\\&=\dfrac{(E-k)(1+\nu) }{2E(E+k\nu)}\sum_{i}\omega_i\left\langle  \left| \left|\uline{\uline{S}}-\uline{\uline{b}}\right| \right|_{trial}-\dfrac{\left(\sigma_y-\lambda \Sigma_H\right) }{\left( \dfrac{x_i+1}{2}\right) ^{\frac{1}{1-\beta}}}\right\rangle \dfrac{\left(\sigma_y-\lambda \Sigma_H\right) }{\left( \dfrac{x_i+1}{2}\right)^{\frac{1}{1-\beta}}}.
+\end{split}
+\label{finaldw}
+\end{equation}
+
+The mean stress effect term in Chaboche model is $s_{-1}\left(1-3\dfrac{\sigma_H}{\sigma_u} \right)$, where the fatigue limit at zero mean stress $s_{-1}$ is reduced in the presence of $\sigma_H$. In our model, the yield limit decreases with positive mean stress. 
+
+
+\subsection{Damage integration algorithm}
+
+Numerically if we divide one cycle into several number of steps, the  change of $\alpha$ is extremely nonlinear with time. From \figref{fig.alpmean} we can see the mean value of $\alpha$ depends on loading pattern. 
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures//alp_mean_methods.png} 
+	\caption{The evolution of $\alpha$ in bending and torsion with $\Sigma=\sigma_y/2$, $a=0.3$ and $200$ time steps in one cycle}
+	\label{fig.alpmean}
+\end{figure}
+
+
+Because of the possible large variations in time  of $\alpha$, the evolution problem in damage is very nonlinear and thus, one needs to develop and validate an improved numerical time integration strategy at least  for two specific cases: the constant amplitude case and the random load case.
+
+We propose in constant amplitude load to numerically calculate $W_{cyc}$ and the mean values of $\alpha$ through one cycle or several cycles(out-of-phase condition) and apply the result to life prediction by using  Eq.\eqref{eq.NFWcyc}:
+\begin{equation}
+N_F= \dfrac{W_0}{\left( 1-\alpha_m\right) W_{cyc}},
+\label{eq.cycNF}
+\end{equation}
+which is obtained by direct integration of our damage law assuming time uniform dissipation in one cycle and frozen $\alpha$.
+In this way the numerical cost is not as high as for the numerical implementation of all the loading points in random loading case.
+
+Because of the symmetrical shape of the evolution of $\alpha$, numerically the mean value of $\alpha$ does not strongly depend on the number of steps per cycle. In the verification process we have compared $100\sim1000$ time steps per cycle. 
+
+For complex cyclic load cases, the idea is to accurately compute the history of plastic dissipation during one cycle (multiscale calculation with time refinement), and to use this precomputed result in the time integration of the scalar damage evolution law with a time stepping which is adapted to the time variation of $\alpha$. 
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures//alpha_opt_vs_alpha_stepnumber.png} 
+	\caption{Comparing numerical strategy with optimal time steps in one cycle with the old one, in this way the number of steps in unit cycle is reduced from 400 to 35, meaning reduction factor=0.0875 (with $\Delta\alpha=0.05$)}
+	\label{fig.alpha_opt_vs_alpha_stepnumber}
+\end{figure}
+
+If $\alpha$ varies significantly, we use optimal time step numerical method to update $D$ during one time step. In more details, let us suppose that our first few cycles calculation with fine time steps $\Delta t$ has produced a sequence $\alpha(i)$ and $W_{cyc}(i)$ of exponent and dissipation at time $i\Delta t$.
+
+We then construct an adaptive time stepping strategy with variable time steps $\Delta t_{ref}(j)$, reference exponent $\alpha_{ref}(j)$ and dissipated energy $W_{ref}(j)$ by regrouping together adjacent time steps $\Delta t(i)$ with similar exponents $\alpha(i)$. This sequence is incremented as follows.
+
+
+For $t_{ref}(j)$ and $\alpha_{ref}(j)=\alpha(t_{ref}(j))$ given, we set
+$$\Delta t_{ref}(j)=\sum_{\substack{t(i)\geqslant t_{ref}(j)\\\left\| \alpha(i)-\alpha_{ref}(j)\right\|\leqslant \Delta\alpha }}\Delta t, \quad t_{ref}(j+1)=t_{ref}(j)+\Delta t_{ref}(j).$$
+The same goes for the dissipated energy:
+$$\Delta W_{ref}(j)=\sum_{\substack{t(i)\geqslant t_{ref}(j)\\\left\| \alpha(i)-\alpha_{ref}(j)\right\|\leqslant \Delta\alpha} }W_{cyc}(i) , \quad W_{ref}(j+1)=W_{ref}(j)+\Delta W_{ref}(j).$$
+
+We finally use these new time steps with corresponding $\alpha_{ref}$ and $W_{ref}$ to update the damage by looping on the new optimal time steps $j$ and cycles $N$, and updating damage in each cycle by:
+
+$$D=D+D^{\alpha_{ref}(j)}\dfrac{\Delta W_{ref}(j)}{W_0}.$$
+
+
+\textbf{Complexity analysis}
+
+The optimal time step method clearly reduces the numerical cost. Typically, we assume the material has fatigue life of $1\times10^{6}$ cycles to failure and we implement $1000$ time steps in unit cycle. The reduction factor of points in unit cycle for example as in \figref{fig.alpha_opt_vs_alpha_stepnumber} equals $35/400=0.0875$. We can then compare the cost between full numerical strategy and the new one.
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{l|l}
+\hline
+Full numerical strategy: & $1000$ time steps $\times$ $64$ scales $\times$  $1\times10^{6}$ cycles       \\ \hline
+Optimal cyclic strategy: & \begin{tabular}[l]{@{}l@{}} $1000$ time steps $\times$ $64$ scales $\times$  $5$ cycles until stabilization  \\$+$ $1\times10^{6}$ cycles $\times$ ($1000$ time steps $\times$ reduction factor)      \end{tabular}  \\ \hline
+Ratio between optimal and full: & $\approx \dfrac{reduction \; factor}{64 \; scales}=\dfrac{1}{731}$       \\ \hline
+\end{tabular}
+\end{table}
+
+The same strategy is applied to random loading situations which are made of repeated sequence of random loads:
+
+\begin{itemize}
+	\item calculation of dissipated energy and exponent on one sequence;
+	
+	\vspace{6pt}	
+	
+	\item time coarsening;
+	
+	\vspace{6pt}	
+	
+	\item repeated integration of damage through the different sequences.
+		
+	\vspace{6pt}
+\end{itemize}
+                          
+
+\begin{Figure}[]{S-N curve of bending test on 30NCD16 steel using numerical and analytical method (Eq.\eqref{eq.cycNF}) with different time steps.}
+	\centerline{
+		\graphfile*[38]{figures//SN_num_ana_stepnumber=100.png}[100 time steps in unit cycle($\beta=1.1$, $a=0.001$).]
+		\graphfile*[38]{figures//SN_num_ana_stepnumber=1000.png}[1000 time steps in unit cycle($\beta=1.1$, $a=0.001$).]}
+	\\
+	\centerline{
+		\graphfile*[38]{figures//SN_num_ana_stepnumber=100_err.png}[Relative error$\left( \dfrac{NF_{num}-NF_{analytical}}{NF_{analytical}}\right)$  with 100 time steps in unit cycle  ($\beta=1.1$, $a=0.001$)]
+		\graphfile*[38]{figures//SN_num_ana_stepnumber=1000_err.png}[Relative error$\left( \dfrac{NF_{num}-NF_{analytical}}{NF_{analytical}}\right)$  with 1000 time steps in unit cycle  ($\beta=1.1$, $a=0.001$)]}
+	\label{fig.sn-num-ana}
+\end{Figure}
+%
+%\begin{figure}[!h]
+%	\centering
+%	\includegraphics[width=0.6\textwidth]{figures//SN_num_ana_stepnumber=100.png} 
+%	\caption{S-N curve using numerical and analytical method with 100 time steps in unit cycle}
+%	\label{fig.SNsteps1}
+%\end{figure}
+%\begin{figure}[!h]
+%	\centering
+%	\includegraphics[width=0.6\textwidth]{figures//SN_num_ana_stepnumber=400.png} 
+%	\caption{S-N curve using numerical and analytical method with 400 time steps in unit cycle}
+%	\label{fig.SNsteps2}
+%\end{figure}
+%\begin{figure}[!h]
+%	\centering
+%	\includegraphics[width=0.6\textwidth]{figures//SN_num_ana_stepnumber=100_err.png} 
+%	\caption{Relative error$\left( \dfrac{NF_{num}-NF_{analytical}}{NF_{analytical}}\right)$  between analytical and numerical results with optimal time steps methods ($\beta=1.1$, 20 time steps in unit cycle)}	
+%	\label{fig.SNstepserr1}
+%\end{figure}
+%\begin{figure}[!h]
+%	\centering
+%	\includegraphics[width=0.6\textwidth]{figures//SN_num_ana_stepnumber=400_err.png} 
+%	\caption{Relative error$\left( \dfrac{NF_{num}-NF_{analytical}}{NF_{analytical}}\right)$  between analytical and numerical results with optimal time steps methods ($\beta=1.1$, 400 time steps in unit cycle)}	
+%	\label{fig.SNstepserr2}
+%\end{figure}
+
+\newpage
+In \figref{fig.sn-num-ana} we compare numerical and analytical formula using method 1 and 3 in the following description. After verifying the convergence between these two methods, to reduce numerical cost, we then study the convergence between method 2 and 1(\figref{fig.SNnumerical2methods} to \figref{fig.errorNumAna0.01})
+\begin{enumerate}
+	\item  Numerical results with varying $\alpha$(equally divide time in unit cycle and do the scale integration all along the fatigue life time, which can be of high numerical cost)$$\delta D=D^\alpha\frac{\dot{W}}{W_0}\delta t$$
+	\vspace{6pt}
+	
+	\item  Numerical results with optimal time steps(equally divide $\alpha$, here we have $\Delta\alpha=0.01$, to reduce time steps needed, after several cycles adaptation we iterate the recorded scalar values of $\alpha_{ref}$, $W_{ref}$ and $t_{ref}$ to decide fatigue life time.)
+	$$\delta D=D^{\alpha_{ref}}\frac{W_{ref}}{W_0}\delta t_{ref}.$$
+	\vspace{6pt}
+	
+	\item  Analytical results after integration of D (with mean alpha from numerical strategy)$$N_F=\frac{W_0}{( 1-\alpha_m)W_{cyc}},$$ 
+	which is derived from the differential equation
+	$$\delta D=D^{\alpha_m}\frac{W_{cyc}}{W_0}\delta N.$$
+\end{enumerate}	
+We can see the more time steps we divide in one cycle, the closer results between method 1 and method 2. This numerical validation results indicates, in constant amplitude loading, we are able to use the optimal numerical method 2 with mean value of $\alpha$ numerically calculated from the first several cycles, given there are sufficient time steps in unit cycle. 
+
+Although method 2 is much more numerically efficient than the original numerical method 1. It is still not cheap in the experimental fitting process. We need the analytical formula method 3 to do the fitting process. To validate the feasibility, we now compare only the analytical(method 3) one and optimal time steps(method 2) one. The results are shown in \figref{fig.SNnumerical2methods} and \figref{fig.SNnumerical2methods2}, the relation ship between relative error and $\Delta \alpha$ with 2000 time steps in unit cycle is shown in  \figref{fig.errorNumAna0.02} and \figref{fig.errorNumAna0.01}.
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures//SN_opt_ana_200_delta_alp=0.02.png} 
+	\caption{S-N curve using analytical and numerical results with optimal time steps methods ($\Delta \alpha=0.02$ in unit cycle), yielding 200 full time steps reduced to 17 optimal time steps}
+	\label{fig.SNnumerical2methods}
+\end{figure}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures//SN_opt_ana_200_delta_alp=0.01.png} 
+	\caption{S-N curve using analytical and numerical results with optimal time steps methods ($\Delta \alpha=0.01$ in unit cycle), yielding 200 full time steps reduced to 26  optimal time steps}
+	\label{fig.SNnumerical2methods2}
+\end{figure}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures//SN_opt_ana_200_delta_alp=0.02_err.png} 
+	\caption{Relative error$\left( \dfrac{NF_{opt}-NF_{analytical}}{NF_{analytical}}\right)$  between analytical and numerical results with optimal time steps methods ($\Delta \alpha=0.02$ in unit cycle)}	
+	\label{fig.errorNumAna0.02}
+\end{figure}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures//SN_opt_ana_200_delta_alp=0.01_err.png} 
+	\caption{Relative error$\left(\dfrac{NF_{opt}-NF_{analytical}}{NF_{analytical}}\right)$  between analytical and numerical results with optimal time steps methods ($\Delta \alpha=0.01$ in unit cycle)}
+	\label{fig.errorNumAna0.01}
+\end{figure}
+
+Now we can conclude that with more time steps in unit cycle, we get closer results with the original numerical method(method 2) in HCF regime. With smaller $\Delta \alpha$ value, we get less relative error between numerical(method 3) and analytical(method 1) results. This indicates that in constant amplitude cyclic loading, it is feasible to use the analytical formula, given $\alpha_m$ is calculated using sufficient large time steps and small $\Delta \alpha$ in the first several cycles.
+
+\newpage
+\section{Validation on recovery tests}
+\label{sec:5.8}
+\subsection{Recovery of Chaboche law on cyclic loading}
+The test is first performed on a sinusoidal uniaxial load $\Sigma_{11}(t)=Asin(t)$, giving a deviatoric amplitude$S_{a}(t)=\sqrt{J_{2,a}(dev\uuline{\Sigma(t)})}$  so that $S_{a}(t)=\left\| \sqrt{\dfrac{1}{3}}\Sigma_{11}(t)\right\| $. We use parameters in Table.\ref{tab:Sin} to recover the classic Chaboche law in cyclic loading.
+\begin{table}[!h]
+\centering
+\begin{tabular}{ll}
+\hline
+\textbf{Parameters}                                         & \textbf{Value}                    \\ \hline
+Young's modulus                                             & $E=215$ GPa                       \\
+Hardening parameter                                         &  $k=1$ GPa \\
+Weakening scales distribution exponent                      & $\beta=1.2$                             \\
+Hydrostatic pressure sensitivity                            & $\lambda_{+-}=0$                     \\
+Macroscopic yield stress                                    & $\sigma_y=416$ MPa              \\
+Sequencing effect sensitivity                               & $a=0.5$                        \\
+Dissipated energy to failure per unit volume                & $W_0=3$ MJ(MPa)                       \\ \hline
+\end{tabular}
+\caption{Material parameters in a simple cyclic load }
+\label{tab:Sin}
+\end{table}
+
+We use matlab to numerically realize our analytical method. We plot $\left\|  \uline{\uline{S}}-\uline{\uline{b}}\right\|_{trial}$ and $\left\|  \uline{\uline{S}}-\uline{\uline{b}}\right\|$ at two different scales($s_{3}=1.21$ and $s_{10}=1.13$) as shown in \figref{fig.trialsin0} and \figref{fig.trialsinm}. The local yield limit is reduced in the presence of positive hydrostatic stress whereas negative ones have beneficial effects.
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{figures//trialsin_0.png} 
+\caption{Microscopic $\left(  \uline{\uline{S}}-\uline{\uline{b}}\right)_{trial}$ and $\left( \uline{\uline{S}}-\uline{\uline{b}}\right)$ evolution with time under different weakening scales($s_{3}=1.21$ and $s_{10}=1.13$) in sinusoidal load with zero mean stress}
+\label{fig.trialsin0}
+\end{figure}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{figures//trialsin_m.png} 
+\caption{Microscopic $\left(  \uline{\uline{S}}-\uline{\uline{b}}\right)_{trial}$ and $\left( \uline{\uline{S}}-\uline{\uline{b}}\right)$ evolution with time under different weakening scales($s_{3}=1.21$ and $s_{10}=1.13$) in sinusoidal load with non-zero mean stress}
+\label{fig.trialsinm}
+\end{figure}
+
+The dissipated energy per time step is depicted in \figref{fig.W3methods}. We scale $S_{a}$ in the plot to see more clearly the relation between energy dissipation and stress intensity. The choice of $\alpha$ does not affect $W$; it only concerns damage accumulation rate. Smaller $\alpha$ causes faster accumulation.
+
+The ``jump'' in energy evolution is due to activation of new scales while in-between two scales the dissipated energy follows the stress increment at each time step. In other words, because in our method the dissipated energy $W$(\figref{fig.W3methods}), sums energy dissipation at all scales, any additional violation of $\left\|S-b \right\|_{trial}$ at local yield limit(\figref{fig.trialsin0}) introduces an additional dissipation. 
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.95\textwidth]{figures//W_3methods.png} 
+\caption{Validation of dissipated energy in all scales with analytical and numerical method }
+\label{fig.W3methods}
+\end{figure}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures//W_3methods_enlarge.png} 
+	\caption{Validation of dissipated energy in all scales with analytical and numerical method(enlargement of \figref{fig.W3methods})}
+	\label{fig.W3methodsenlarge}
+\end{figure}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.95\textwidth]{figures//W_3methods2_100steps.png} 
+\caption{Dissipated energy accumulation through time with different methods, there are 1000 time steps in unit cycle}
+\label{fig.W3methods1000}
+\end{figure}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.95\textwidth]{figures//W_3methods_100steps_enlarge.png} 
+\caption{Dissipated energy accumulation through time with of 3 methods enlargement}
+\label{fig.W3methods2enlarge}
+\end{figure}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.95\textwidth]{figures//W_3methods_diff_100steps.png} 
+\caption{Relative difference $\dfrac{W_{analytical}-W_{numerical}}{W_{analytical}}$ between analytical energy loss and numerical one with $\alpha$ varying with time}
+\label{fig.W3methodsdiff}
+\end{figure}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{figures//D_3methods2_100steps.png} 
+\caption{Damage evolution with time under sinusoidal load with different methods, there are 1000 time steps in unit cycle}
+\label{damsin1000}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{figures//D_3methods_100steps_enlarge.png} 
+\caption{Damage evolution with time under sinusoidal load with two different methods enlargement}
+\label{damsinenglarge}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{figures//D_3methods_diff_100steps.png} 
+\caption{Relative difference $\dfrac{D_{analytical}-D_{numerical}}{D_{analytical}}$ evolution with time}
+\label{Damagediff}
+\end{figure}
+We take the mean value of $\alpha$ during all the iteration process of numerical method as $\alpha_{m}$. The energy and damage accumulation is shown in \figref{fig.W3methods1000} and \figref{damsin1000}. Here we give 1000 time steps in one cycle to see the relative difference between changing $\alpha$ and $\alpha_{m}$, also $\dot{W}$ and $W_{cyc}/stepnumber$  method. The more time steps we give, the more precision we get. The relative difference between analytical energy loss and numerical one is shown in \figref{fig.W3methodsdiff} from which we conclude that the three methods converge in terms of elastic energy dissipation, but due to nonlinear effects the damage evolution does not have the same history per cycle. The frozen $\alpha$ delays damage, the varying $\alpha$ increases damage during the phase of strong loading.
+
+The cyclic load calculation is only valid for very simple such as proportional loading in fatigue. However, the convergence of the two methods is based on the small value of $\beta$(close to 1), in case of large values of $\beta$(typically around 5), the numerical strategy gives shorter life than the analytical one due to extreme non-linearity. The relative error is around 20\% as shown in \figref{fig.W3methods_bigbeta} and \figref{fig.damsin_bigbeta}. Nevertheless the analytical formula can still be used as a comparison group to verify the numerical results. And in the identification process we need the analytical form to fit the $S-N$ curve of a certain material. The outcome is satisfactory. Hence, to be more general for any loading history, we adopt the numerical method after identification of $\beta$. 
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures//W3methods_bigbeta.png} 
+	\caption{Validation of dissipated energy in all scales with analytical and numerical method with $\beta=5$ }
+	\label{fig.W3methods_bigbeta}
+\end{figure}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{figures//damsin_bigbeta.png} 
+	\caption{Damage evolution with time under sinusoidal load with $\beta=5$, there are 100 time steps in unit cycle}
+	\label{fig.damsin_bigbeta}
+\end{figure}
+
+\clearpage
+\subsection{Numerical recovery of sequence effect}
+We adopt the parameter $\alpha$ to take into account the sequence effect. The high-low loading sequence clearly reduces the fatigue life, as depicted in \figref{sequence}. In order to cover this phenomenon, we let $\alpha$ change with time. Here $a$ is the sequence effect sensitivity. According to Eq.\eqref{eq.smin}, we have:
+$$
+s_{min}(t)=\dfrac{\Sigma_y-\lambda \Sigma_H(t)}{S_{a}(t)},
+$$
+which is the minimum weakening scale that activates energy loss.  We use a general law for $\alpha$ of the type $\alpha = \alpha (s_{min})$ with the idea that for us $s_{min}$ is a measure of present intensity of macroscopic stress. It is therefore a mechanical based stress norm. 
+
+\begin{Figure}[]{Two level sequence effect. By comparing the vertical figures we can see high stress gives high $(1-\alpha)$ value which causes fast damage accumulation speed. The evolution of $(1-\alpha)$ is highly nonlinear and follows the value of stress at each time step.}
+\centerline{
+\graphfile*[40]{figures//high-low-Smax.png}[]
+\graphfile*[40]{figures//low-high-Smax.png}[]}
+\\
+\centerline{
+\graphfile*[40]{figures//high-low-alp.png}[]
+\graphfile*[40]{figures//low-high-alp.png}[]}
+\\
+\centerline{
+\graphfile*[40]{figures//high-low-D.png}[]
+\graphfile*[40]{figures//low-high-D.png}[]}
+\label{sequence}
+\end{Figure}
+
+
+\clearpage
+\subsubsection{Major damage effect}
+
+To see the influence of sequence effect factor of $\alpha$, we first fix $\alpha$ for all tests to see the results. When $\alpha$ is fixed, it becomes denominator in the final expression of $N_F$ (Eq.\eqref{eq.NFWcyc}) and has the same impact as $W_0$. We find  that the fatigue life of random loading is widely dispersed (\figref{fig.randomdispersion}). In this case we need to use $\alpha=f(s_{min})$ which evolves with time to make large stress intensity deal more damage.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{figures//randomdispersion.png} 
+	\caption{Fatigue life of random loading dispersion}
+	\label{fig.randomdispersion}
+\end{figure}
+
+After comparison with the experimental data we find out that large stresses cause much more damage than the smaller ones. It is necessary to include this major stress induced damage to our stress intensity parameter $\alpha$. With the new $\alpha$ used in Eq.\eqref{eq.final3} compared to Eq.\eqref{eq.alpha} we are able to calibrate our model better with the experimental results by using 
+\begin{equation}
+\alpha=1-a\left(  \dfrac{\frac{1}{s_{min}}}{1-\frac{1}{s_{min}}} \right) ^{1.1}.
+\label{eq.majoralp}
+\end{equation}
+
+
+We use the power to magnify large stress impact and minify lower stress damage.  The demonstration of major damage effect using magnification power is depicted in \figref{fig.sequenceours}. With larger value of power, the sequence effect is more significant(bigger dispersion between high-low and low-high sequence).
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{figures//sequence_ours.png} 
+\caption{Major damage effect using different magnification poweron sequence effect figure. High stress is 1MPa and low stress is 0.8MPa.}
+\label{fig.sequenceours}
+\end{figure}
+
+The larger value of $S_{a}$ causes more damage in the presence of the power $\beta$, leading to faster increase of 
+$$(1-\alpha)=a\left(  \dfrac{\frac{1}{s_{min}}}{1-\frac{1}{s_{min}}} \right) ^1.1=a(s_{min}-1)^{-1.1}.$$ 
+which causes faster damage accumulation. We can also see this effect in \figref{fig.alpha}. However, $\alpha$ must be positive. 
+
+To assess large stress correctly we define the larger stress intensity as the expression in the bracket in the second term of $\alpha$ is greater than 1($\left( \dfrac{1}{ s_{min}(t)-1 } \right)>1$), then we use power $\beta$ to magnify this term, in this way the damage is accelerated for large stresses. The deviatoric stress $S_{a}$, above which the damage is magnified,  is determined from: 
+$$\alpha(t)=1-a\left( \dfrac{1}{ s_{min}(t)-1 } \right)^{1.1},$$
+$$s_{min}(t)=\dfrac{\Sigma_y-\lambda \Sigma_H(t)}{S_{a}(t)}<2,$$
+$$S_{large}(t)>\dfrac{\Sigma_y-\lambda \Sigma_H(t)}{2}.$$ 
+
+The major damage effect can be seen in \figref{fig.SmaxSequence}.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{figures//alp_Smax_fb.png} 
+\caption{(1-$\alpha$) term with and without the magnification power $f(\beta)$}
+\label{fig.SmaxSequence}
+\end{figure}
+
+\clearpage
+\section{Identification strategy}
+\label{sec:5.9}
+The positive hydrostatic stress and negative one have different effect on the yield limit. It is necessary to adopt 2 parameters to describe this behavior. So we divide the hydrostatic sensitivity $\lambda$ into 2 parts. $\lambda_+$ and $\lambda_-$. In the analytical formula, the amplitude of the stress intensity is adopted and the average value of tension hydrostatic stress(+) and compressive hydrostatic stress(-).
+
+For a good lifetime prediction, it is necessary to first identify the appropriate parameters of the model. For this purpose, we use the analytical formula Eq.\eqref{eq.cycNF} obtained in uniaxial cyclic loading case.
+
+With distinction of the hydrostatic stress in the presence of non-zero mean stress, Eq.\eqref{eq:w} now writes:
+
+\begin{equation}
+W_{cyc}=\dfrac{2(E-k)(1+\nu)\left( \beta-1\right) }{ E(E+k\nu)\beta\left( \beta+1\right) }\left[ \dfrac{S_{a}^{\beta+1}}{ \left(\sigma_y-\lambda_+ \overline{\Sigma}_{H+}(t)\right)^{\beta-1}}+\dfrac{S_{a}^{\beta+1}}{ \left(\sigma_y-\lambda_- \overline{\Sigma}_{H-}(t)\right)^{\beta-1}}\right] .
+\label{eq:wcycnew}
+\end{equation}
+
+\begin{equation}N_{Fnum}=\dfrac{W_0}{\left( 1-\alpha\right) }\dfrac{E(E+k\nu)\beta\left( \beta+1\right) }{ 2(E-k)(1+\nu)\left( \beta-1\right) }\dfrac{1}{\dfrac{S_{a}^{\beta+1}}{\left(\sigma_y-\lambda_+\overline{\Sigma}_{H+}(t)\right)^{\beta-1}}+\dfrac{S_{a}^{\beta+1}}{\left(\sigma_y-\lambda_-\overline{\Sigma}_{H-}(t)\right)^{\beta-1}}}.\label{eq:NFnew}
+\end{equation}
+
+
+To use our analytical model Eq.\eqref{eq:NFnew} to fit the experiments, we employ matlab Least-Squares (model fitting) algorithm. 
+
+The best fitted parameters in uniaxial cyclic loading case are deduced from the minimization of the sum of square of difference between uniaxial numerical and experimental results:
+\begin{equation}
+\min_{\beta,\lambda,W_0}\left\lbrace \sum_{i}\left(N_{Fnum}-N_{Fexp} \right)_{torsion}^2\right\rbrace 
+\label{eq.leastsquares}
+\end{equation}
+
+Assume there are $i$ sets of experimental data, to clarify the identification process, we have:
+\begin{itemize}
+	\item Experimental data: $\Sigma_{(i)}$, $m_{(i)}$, $N_{Fexp(i)}$, $\sigma_y$, $E$, $k$, $\nu$.
+	\item Parameter constants: $\beta$, $\lambda_{+-}$, $W_0$
+	\item Input data from experimental data: $S_{max(i)}$, $\Sigma_{H(i)}$
+	\item Input data from experimental data and parameter constants: $\alpha_{(i)}$
+	\item Output data: $N_{Fnum(i)}$
+\end{itemize}
+
+In this process, $\sigma_y$, $E$, $k$ and $\nu$ are given elastoplastic material constants. For each test (i), the load parameters are $S_{max(i)}$, $\Sigma_{H(i)}$, and the experimental number of cycles to failure is $N_{Fexp(i)}$.
+
+The exponent $\alpha_{(i)}$ is cycle average obtained by $$\alpha_{(i)}=mean\left[1-a\left( \dfrac{1}{\dfrac{\Sigma_y-\lambda_{+-} \Sigma_{H}(t)}{S_{a}(t)}-1 } \right)^{1.1}\right] (i).$$
+
+The parameters to be calibrated are $W_0$, $\beta$ and $\lambda$. Since the exponent $\alpha_{(i)}$ depends on $\beta$ and $\lambda$, we proceed iteratively by:
+
+\begin{enumerate}
+	\item We first identify the S-N curve slope $\beta$ and the energy scale $W_0$ using the analytical formula with torsion tests because there is no $\lambda_{+-}$ impact in this kind of loading. We start from an initial guess $\beta$ from which we can deduce $\alpha_{(i)}$ and identify $\beta$ and $W_0$ by least squares. Because our analytical formula is not derivable in all ranges, when the identified value of $\beta$ or $W_0$ get stuck in local minimum value, we regenerate a random $\beta$ or $W_0$ in their range so as to get the global least square value.
+	\item Then, the parameter $\lambda_{+-}$ are identified from numerical bending tests.
+\end{enumerate}
+
+The final parameters correspond to the $\lambda$ leading to the lowest identification error in $\beta$ and $W_0$. This strategy handles the nonlinearity in $\beta$ and is well adapted to the low sensitivity in $\lambda$.
+
+The analytical formula Eq.\eqref{eq:NFnew} with mean stress effect converges with the numerical method very well in the case of small $\beta$ and $\lambda_{+-}$. 
+
+
+\textbf{Parameter sensitivity analysis}
+
+The parameters we introduced during the deduction need to be calibrated. The source of the parameter identification are listed in Table.\ref{paras}.
+We perform a sensitivity analysis to see the influence of each parameter by comparing the results obtained respectively for the reference value, an upper bound and a lower bound of each parameter.
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{l|c}
+		\hline
+		\textbf{Parameters}                                  & \multicolumn{1}{c}{\textbf{Strategy}} \\ \hline
+		Hydrostatic pressure sensitivity $\lambda$           & hydrostatic stress sensitivity (identified)         \\
+		Non-linearity of damage accumulation  $a$        & amplification factor of load intensity (guessed)     \\
+		Weakening scales distribution exponent  $\beta$      & to be calibrated (identified)                   \\
+		Dissipated energy to failure per defect  $W_0$ & energy scaling (identified)              \\ \hline
+	\end{tabular}
+	\caption{Parameters concerned}
+	\label{paras}
+\end{table}
+
+We analyze the sensitivity of parameters separately as in Table.\ref{tab.sensitivity_const1}(uniaxial) and Table.\ref{tab.sensitivity_random1}(random loading). The parameter $\beta$ has more influence on the random loading case because it acts not only as the S-N curve slope but also the power magnification factor of large stress intensity. The $\lambda$ has little influence because both tests are conducted on very small or zero mean stress load history.
+
+
+In Miner's law the parameter $\alpha$ is zero, the maximum value is below 1. For $\alpha=1$ the damage accumulation line becomes flat and there will be unlimited lifetime. To keep $\alpha$ in the range of $[0,1]$ where in random amplitude tests there is $S_{a}=163.3MPa$; we set the sensitivity of load intensity  $a$  to a maximum value of $0.29$ to keep $\alpha$ positive. 
+
+The weakening scale distribution exponent(also the slope of S-N curve of the material) $\beta$ ranges from $1$ to $5$. The hydrostatic pressure sensitivity $\lambda$ is from positive mean stress test, which has the range of $0\sim0.8$. In constant amplitude cyclic loading, the dissipated energy to failure per defect $W_0$(in MPa) is related to fatigue lifetime of the material.
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{lrrrrrrr}
+		\hline
+		\multicolumn{8}{c}{\textbf{Constant,amplitude sensitivity test with $f(\beta)=\beta$}}                                                                                                                                                                                                                                           \\ \hline
+		& \multicolumn{1}{r}{\textbf{Ref}} & \multicolumn{1}{r}{\textbf{Min}} & \multicolumn{1}{r}{\textbf{Max}} & \multicolumn{1}{r}{\textbf{Ref\_n}} & \multicolumn{1}{r}{\textbf{Min\_n}} & \multicolumn{1}{r}{\textbf{Max\_n}} & \multicolumn{1}{r}{\textbf{Sensitivity}} \\ \hline
+		\textbf{$\beta$}   & 1.1                                          & 1.05                             & 1.50                             & 414233                                     & 
+		783723 	                              & 243300 
+		&-3.19 
+		\\
+		\textbf{$\lambda$} & 0.1                                          & 0.05                             & 0.50                             & 414233                                    & 449598 
+		& 443376 
+		& 0.00                                    \\
+		\textbf{$W_0$}     & 3.27e8                                     & 1.00e8                         & 5.00e8                         & 414233                                     & 137498 
+		& 687209 
+		& 1.08                                    \\
+		\textbf{$a$}       & 0.1                                          & 0.05                             & 0.15                             & 414233                                  & 672869 
+		& 324754 
+		& -0.84                                   \\ \hline
+	\end{tabular}
+	\caption{Parameters sensitivity at cyclic loading of ep02 on AW-6106 T6 aluminum}
+	\label{tab.sensitivity_const1}
+\end{table}
+
+\clearpage
