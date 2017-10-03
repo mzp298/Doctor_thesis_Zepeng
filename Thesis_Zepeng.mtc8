@@ -1,12 +1,12 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.1}The notion of damage in fatigue}{\reset@font\mtcSfont 45}{section.4.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.1.1}Linear and nonlinear accumulation of damage}{\reset@font\mtcSSfont 46}{subsection.4.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.1.2}Classic Chaboche damage law}{\reset@font\mtcSSfont 48}{subsection.4.1.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.2}Verification method of Chaboche law}{\reset@font\mtcSfont 54}{section.4.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.3}Chaboche law containing different criteria}{\reset@font\mtcSfont 55}{section.4.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.1}Chaboche law with Crossland criterion}{\reset@font\mtcSSfont 55}{subsection.4.3.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.2}Chaboche law with Dang Van criterion}{\reset@font\mtcSSfont 55}{subsection.4.3.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}Numerical testing on different loading patterns}{\reset@font\mtcSfont 55}{section.4.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.1}Test on pure rotation}{\reset@font\mtcSSfont 57}{subsection.4.4.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.2}Test on 4-point bending}{\reset@font\mtcSSfont 58}{subsection.4.4.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.3}Test on rotative bending}{\reset@font\mtcSSfont 59}{subsection.4.4.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.5}Cycle Counting Method}{\reset@font\mtcSfont 62}{section.4.5}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.1}The notion of damage in fatigue}{\reset@font\mtcSfont 47}{section.4.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.1.1}Linear and nonlinear accumulation of damage}{\reset@font\mtcSSfont 48}{subsection.4.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.1.2}Classic Chaboche damage law}{\reset@font\mtcSSfont 50}{subsection.4.1.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.2}Verification method of Chaboche law}{\reset@font\mtcSfont 56}{section.4.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.3}Chaboche law containing different criteria}{\reset@font\mtcSfont 57}{section.4.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.1}Chaboche law with Crossland criterion}{\reset@font\mtcSSfont 57}{subsection.4.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.2}Chaboche law with Dang Van criterion}{\reset@font\mtcSSfont 57}{subsection.4.3.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}Numerical testing on different loading patterns}{\reset@font\mtcSfont 57}{section.4.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.1}Test on pure rotation}{\reset@font\mtcSSfont 59}{subsection.4.4.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.2}Test on 4-point bending}{\reset@font\mtcSSfont 60}{subsection.4.4.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.3}Test on rotative bending}{\reset@font\mtcSSfont 61}{subsection.4.4.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.5}Cycle Counting Method}{\reset@font\mtcSfont 64}{section.4.5}}

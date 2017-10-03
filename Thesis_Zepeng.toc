@@ -1,115 +1,25 @@
 \select@language {american}
 \contentsline {chapter}{R{\'e}sum{\'e}}{v}{Doc-Start}
 \contentsline {chapter}{Acknowledgements}{vii}{Doc-Start}
-\contentsline {chapter}{List of Figures}{xiv}{chapter*.2}
-\contentsline {xchapter}{}{xiv}{chapter*.2}
-\contentsline {chapter}{List of Tables}{xvi}{chapter*.3}
-\contentsline {xchapter}{}{xvi}{chapter*.3}
+\contentsline {chapter}{List of Figures}{xi}{chapter*.2}
+\contentsline {xchapter}{}{xi}{chapter*.2}
+\contentsline {chapter}{List of Tables}{xiii}{chapter*.3}
+\contentsline {xchapter}{}{xiii}{chapter*.3}
 \vspace {2em}
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}General introduction}{1}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}Industrial background and motivation}{2}{subsection.1.1.1}
-\contentsline {subsection}{\numberline {1.1.2}Context and background}{3}{subsection.1.1.2}
-\contentsline {subsection}{\numberline {1.1.3}Outline of the work}{3}{subsection.1.1.3}
-\contentsline {chapter}{\numberline {2}Fatigue life calculation methods}{5}{chapter.2}
-\contentsline {section}{\numberline {2.1}Basquin curve}{5}{section.2.1}
-\contentsline {section}{\numberline {2.2}Basic fatigue criteria }{7}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Criteria based on stress}{8}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Criteria based on energy}{13}{subsection.2.2.2}
-\contentsline {subsubsection}{Energy dissipation based on strain energy density}{13}{section*.8}
-\contentsline {subsubsection}{A critical plane approach based on energy concepts}{14}{section*.9}
-\contentsline {subsubsection}{Lamefip Criterion}{16}{section*.11}
-\contentsline {subsection}{\numberline {2.2.3}Criteria based on plasticity-damage coupling}{17}{subsection.2.2.3}
-\contentsline {subsubsection}{Criterion of Monchiet et al}{18}{section*.12}
-\contentsline {section}{\numberline {2.3}Calculation method without cycle counting}{19}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Morel's method}{19}{subsection.2.3.1}
-\contentsline {chapter}{\numberline {3}Space gradient effects}{27}{chapter.3}
-\contentsline {section}{\numberline {3.1}Introduction}{28}{section.3.1}
-\contentsline {section}{\numberline {3.2}A first gradient approach (\cite {luu2014formulation})}{29}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}General formulation}{29}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}The classical Crossland criterion}{30}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Formulation of Crossland criterion with gradient effect}{31}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}Optimized Crossland Criterion formulation}{31}{section.3.3}
-\contentsline {section}{\numberline {3.4}Optimized Papadopoulos Criterion formulation}{32}{section.3.4}
-\contentsline {section}{\numberline {3.5}Optimized Dang Van Criterion formulation}{33}{section.3.5}
-\contentsline {section}{\numberline {3.6}Calibration of the critera}{34}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Fully reversed 4-point bending and rotating cantilever bending fatigue tests}{34}{subsection.3.6.1}
-\contentsline {subsubsection}{With Crossland criterion}{34}{section*.22}
-\contentsline {subsubsection}{With Papadopoulos criterion}{36}{section*.24}
-\contentsline {subsubsection}{With Dang Van criterion}{37}{section*.25}
-\contentsline {subsubsection}{Comparison with experimental data}{37}{section*.26}
-\contentsline {subsection}{\numberline {3.6.2}Bending-torsion fatigue tests}{39}{subsection.3.6.2}
-\contentsline {subsubsection}{With Crossland criterion}{39}{section*.30}
-\contentsline {subsubsection}{With Papadopoulos criterion}{40}{section*.31}
-\contentsline {subsubsection}{With Dang Van criterion}{40}{section*.32}
-\contentsline {subsubsection}{Comparison with experimental data}{41}{section*.33}
-\contentsline {section}{\numberline {3.7}Discussion}{43}{section.3.7}
-\contentsline {section}{\numberline {3.8}Conclusion and perspectives}{43}{section.3.8}
-\contentsline {chapter}{\numberline {4}Time varying load : the standard approach}{45}{chapter.4}
-\contentsline {section}{\numberline {4.1}The notion of damage in fatigue}{45}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Linear and nonlinear accumulation of damage}{46}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Classic Chaboche damage law}{48}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Verification method of Chaboche law}{54}{section.4.2}
-\contentsline {section}{\numberline {4.3}Chaboche law containing different criteria}{55}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Chaboche law with Crossland criterion}{55}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Chaboche law with Dang Van criterion}{55}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}Numerical testing on different loading patterns}{55}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Test on pure rotation}{57}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Test on 4-point bending}{58}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Test on rotative bending}{59}{subsection.4.4.3}
-\contentsline {section}{\numberline {4.5}Cycle Counting Method}{62}{section.4.5}
-\contentsline {chapter}{\numberline {5}Handling general loadings}{67}{chapter.5}
-\contentsline {section}{\numberline {5.1}Multiscale energy dissipation approach}{69}{section.5.1}
-\contentsline {section}{\numberline {5.2}Kinematic Hardening Models}{70}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Linear Kinematic Hardening}{70}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Non-linear Kinematic Hardening}{71}{subsection.5.2.2}
-\contentsline {section}{\numberline {5.3}Mean stress effect in local model}{71}{section.5.3}
-\contentsline {section}{\numberline {5.4}Weakening scales and yield function}{73}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}The concept of weakening scales}{73}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}Distribution of weakening scales}{74}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}Yield function with mean stress effect}{74}{subsection.5.4.3}
-\contentsline {subsection}{\numberline {5.4.4}Local plastic model}{75}{subsection.5.4.4}
-\contentsline {section}{\numberline {5.5}Construction of an energy based fatigue approach}{75}{section.5.5}
-\contentsline {section}{\numberline {5.6}Nonlinearity of damage accumulation}{77}{section.5.6}
-\contentsline {subsection}{\numberline {5.6.1}Energy approach with Chaboche law}{77}{subsection.5.6.1}
-\contentsline {subsection}{\numberline {5.6.2}Sequence effect}{79}{subsection.5.6.2}
-\contentsline {subsection}{\numberline {5.6.3}The final model}{81}{subsection.5.6.3}
-\contentsline {section}{\numberline {5.7}Numerical strategy}{83}{section.5.7}
-\contentsline {subsection}{\numberline {5.7.1}Scale discretization}{83}{subsection.5.7.1}
-\contentsline {subsection}{\numberline {5.7.2}Local plastic dissipation}{83}{subsection.5.7.2}
-\contentsline {subsection}{\numberline {5.7.3}Damage integration algorithm}{85}{subsection.5.7.3}
-\contentsline {section}{\numberline {5.8}Validation on recovery tests}{90}{section.5.8}
-\contentsline {subsection}{\numberline {5.8.1}Recovery of Chaboche law on cyclic loading}{90}{subsection.5.8.1}
-\contentsline {subsection}{\numberline {5.8.2}Numerical recovery of sequence effect}{99}{subsection.5.8.2}
-\contentsline {subsubsection}{Major damage effect}{101}{section*.86}
-\contentsline {section}{\numberline {5.9}Identification strategy}{104}{section.5.9}
-\contentsline {chapter}{\numberline {6}Numerical implementation and validation}{107}{chapter.6}
-\contentsline {section}{\numberline {6.1}Experimental verification}{107}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Introduction}{107}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Random amplitude 1D tests from Cetim on AW-6106 T6 aluminum}{109}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Experimental validation of the model on aluminum 6082 T6}{115}{subsection.6.1.3}
-\contentsline {subsubsection}{Presentation of aluminum 6082 T6}{115}{section*.104}
-\contentsline {subsubsection}{Specimens of aluminum 6082 T6}{115}{section*.106}
-\contentsline {subsubsection}{Fatigue tests on aluminum 6082 T6}{115}{section*.108}
-\contentsline {subsubsection}{Application of the model}{115}{section*.111}
-\contentsline {section}{\numberline {6.2}Experimental validation of the model on 30NCD16 steel}{119}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Presentation of steel 30NCD16}{119}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Fatigue tests performed by Dubar on steel 30 NCD 16}{119}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Identification of model parameters for steel 30 NCD 16}{119}{subsection.6.2.3}
-\contentsline {section}{\numberline {6.3}Experimental validation of the model on SM45C steel}{123}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Presentation of steel SM45C}{123}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Fatigue tests performed by Dubar on steel SM45C}{124}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Identification of model parameters for steel SM45C}{125}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4}Experimental validation of the model on 10 HNAP steel}{129}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Presentation of the material}{129}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Description of fatigue tests on 10 HNAP steel}{129}{subsection.6.4.2}
-\contentsline {subsection}{\numberline {6.4.3}Identification of model parameters of 10HNAP steel}{132}{subsection.6.4.3}
-\contentsline {subsection}{\numberline {6.4.4}Simulation of fatigue tests performed on 10HNAP steel}{132}{subsection.6.4.4}
-\contentsline {section}{\numberline {6.5}Conclusions}{139}{section.6.5}
-\contentsline {chapter}{\numberline {7}General conclusions}{141}{chapter.7}
+\contentsline {chapter}{\numberline {1}Time varying load : the standard approach}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}The notion of damage in fatigue}{1}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Linear and nonlinear accumulation of damage}{2}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Classic Chaboche damage law}{4}{subsection.1.1.2}
+\contentsline {section}{\numberline {1.2}Verification method of Chaboche law}{10}{section.1.2}
+\contentsline {section}{\numberline {1.3}Chaboche law containing different criteria}{11}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Chaboche law with Crossland criterion}{11}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Chaboche law with Dang Van criterion}{11}{subsection.1.3.2}
+\contentsline {section}{\numberline {1.4}Numerical testing on different loading patterns}{11}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Test on pure rotation}{13}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Test on 4-point bending}{14}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.3}Test on rotative bending}{15}{subsection.1.4.3}
+\contentsline {section}{\numberline {1.5}Cycle Counting Method}{18}{section.1.5}
 \vspace {2em}
-\contentsline {chapter}{References}{143}{chapter.7}
-\contentsline {section}{Appendices}{151}{chapter*.146}
-\contentsline {section}{\numberline {.1}DETAILED EXPLOITATION}{151}{section.Alph0.1}
+\contentsline {chapter}{References}{23}{figure.caption.26}
 \select@language {french}
 \select@language {american}

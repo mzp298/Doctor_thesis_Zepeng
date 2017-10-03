@@ -53,7 +53,7 @@ complex loads. Manufacturers are looking for a model of lifetime
 of their components, which is simple to use, great applicability to metallic materials
 and which treats almost all cases of possible loads. In the domain of
 limited endurance, very few criteria are proposed. At present, none of them
-can not be used in design offices, and does not fully meet the demand for a tool to
+can be used in design offices, and does fully meet the demand for a tool to
 predictive lifetime. Indeed, most of the existing approaches rely on
 methods of counting cycles, whose extension to the case of multiaxial stresses turns out to be
 difficult or even impossible because of the difficulty of extracting and defining cycles.
@@ -65,6 +65,10 @@ individuals. (\cite{koutiri2011effet}) It therefore seems essential to character
 damage of this type of loading and to implement a modeling
 able to reflect these particular fatigue conditions.
 
+The aim of this thesis is thus to establish a deterministic model of lifetime
+on metal structures working in limited endurance in high cycle fatigue, which handles almost all load cases
+(with constant and variable amplitudes) without recourse to cycle counting.
+
 This thesis work is part of a regional project of "Chaire André Citroën"; one of whose objectives is to develop teaching by encouraging initiatives in the automotive sector and confronting students with typical technological innovations and major scientific challenges. The aim of this work is to study the fatigue-related criteria with a large number of cycles, taking into account the effects of variation in time or space. Three contributions were developed:
 
 - Extension of the fatigue criteria to take into account the loading in the vicinity of the working point
@@ -75,11 +79,9 @@ This thesis work is part of a regional project of "Chaire André Citroën"; one 
 
 The study presented in this report focuses more particularly on the last theme, with, as will be seen, a particular emphasis on the effect of micro-structural heterogeneities on fatigue.
 
-The aim of this thesis is thus to establish a deterministic model of lifetime
-on metal structures working in limited endurance in high cycle fatigue, which handles almost all load cases
-(with constant and variable amplitudes) without recourse to cycle counting.
 
-The approach to solving the problem posed has four main stages:
+
+The approach for solving the problem posed has four main stages:
 
 $\bullet$ Proposing a strategy to decouple the effects of stress gradient and size effect.
 
@@ -99,7 +101,7 @@ rupture of machine parts or structures in operation. Its progressive character
 masked until sudden breakage does not allow easy prediction of the durability of the
 structure.
 
-The main factors influencing the fatigue resistance of materials are very numerous
+The main factors influencing the fatigue resistance of materials are  numerous
 (loading mode, temperature, micro-structural heterogeneities, residual stresses ...),
 making it a complex phenomenon to study. A lot of work has been done in the goal of
 better understanding the influence of these different factors. One of the main parameters
@@ -118,24 +120,23 @@ micro-plasticity considered to be the main cause of onset
 of a crack. The second uses the fracture mechanics framework to estimate the number
 of cycles necessary for the propagation of a pre-existing crack (\cite{koutiri2011effet}). 
 
-In our work we concentrate on the first phase and consider the mechanisms related to the stochastic distribution of pre-existing micro-cracks which undergo strong plastic yielding in cyclic load history. The number of cycles to failure is determined from the plastic shakedown cycle occurring at these microscales.
+In our work we concentrate on the first phase and consider the mechanisms related to the stochastic distribution of pre-existing micro-cracks at different scales which undergo strong plastic yielding in cyclic load history. The number of cycles to failure is determined from the plastic shakedown cycle occurring at these microscales.
 
 \subsection{Outline of the work}
-The bibliographical study conducted in the first part of this thesis aims to
+The bibliographical study conducted in the first part of this thesis  (Chapter \ref{chp:2}) aims to
 overview the basic multiaxial fatigue criteria and the physical basis of their origin. Models using the elastic adaptation concept, plasticity / damage on the mesoscopic scale as well as energy
 are compared. We will show that some loading effects are correctly reflected, however for others, the predictions are very different from one approach to another.
 
-The second part is devoted to the extension of some classic high cycle fatigue (HCF) criteria in order  to take into account a sensitivity of the criteria to stress spatial variations, and second to compare the performances of the extensions through several experimental fatigue tests. The gradient beneficial effect on bending-torsion in comparison with tension-compression is presented. Mechanisms of different approaches are compared and a more practical and simple expression is proposed taking into account the gradient of the stress amplitude and the maximum hydrostatic stress. The generalization of the approach to other multiaxial fatigue criteria is also proposed.  The proposition is then tested and applied to different simple situations such as cantilever rotative bending. The relative errors between the exact solutions and the experimental data are estimated. Biaxial  bending-torsion tests are also simulated to demonstrate the capabilities of the approach. 
+The second part (Chapter \ref{chp:3}) is devoted to the extension of some classic high cycle fatigue (HCF) criteria in order  to take into account a sensitivity of the criteria to stress spatial variations, and second to compare the performances of the extensions through several experimental fatigue tests. The gradient beneficial effect on bending-torsion in comparison with tension-compression is presented. Mechanisms of different approaches are compared and a more practical and simple expression is proposed taking into account the gradient of the stress amplitude and the maximum hydrostatic stress. The generalization of the approach to other multiaxial fatigue criteria is also proposed.  The proposition is then tested and applied to different simple situations such as cantilever rotative bending. The relative errors between the exact solutions and the experimental data are estimated. Biaxial  bending-torsion tests are also simulated to demonstrate the capabilities of the approach. 
 
-The non-linearity of damage accumulation in fatigue is discussed in the third part using the application of loadings
-The objective of this section is to review and use the development life model that takes into account the presence of complex variations of the load cycle. We focus on Chaboche damage accumulation law in case of multiaxial high cycle fatigue. Heuristic formulations with different multiaxial fatigue criteria have been proposed and will be briefly reviewed.
+The non-linearity of damage accumulation in fatigue is discussed in the third part (Chapter \ref{chp:4}). The objective of this section is to review and use the development life model that takes into account the presence of complex variations of the load cycle. We focus on Chaboche damage accumulation law in case of multiaxial high cycle fatigue. Heuristic formulations with different multiaxial fatigue criteria have been proposed and will be briefly reviewed.
 
-The fourth part then considers the problem of handling complex time histories in multiaxial loading. 
+Chapter \ref{chp:5} then considers the problem of handling complex time histories in multiaxial loading. 
 Cycle counting method to compare the effect of variable amplitude load histories to fatigue data and curves obtained with simple constant amplitude load cycles is presented, together with different approaches and limitations for handling multiaxial loading.
 
-From this context, we then develop our new model. It is based on a priori given simplified probabilistic description of local material weak points. At each such point, a local plastic model with kinematic hardening is introduced, with a given distribution $p(s)$ of yield weakening factors. To take into account a dependence of the macroscopic fatigue behavior to the hydrostatic stress, the yield limit at each local point is supposed to depend on this macroscopic hydrostatic stress. The model will then suppose that the fatigue accumulation depends on the energy which is dissipated by plasticity of all these points during the loading history.  This energy through all scales $s$ will be combined with the nonlinear damage accumulation laws of chapter\cite{chp:4} to produce a simplified ``multiscale'' model of microscopic damage evolution.
+From this context, we then develop our new model. It is based on a priori given simplified probabilistic description of local material weak points. At each such point, a local plastic model with kinematic hardening is introduced, with a given distribution $p(s)$ of yield weakening factors. To take into account a dependence of the macroscopic fatigue behavior to the hydrostatic stress, the yield limit at each local point is supposed to depend on this macroscopic hydrostatic stress. The model will then suppose that the fatigue accumulation depends on the energy which is dissipated by plasticity of all these points during the loading history.  This energy through all scales $s$ will be combined with the nonlinear damage accumulation laws of chapter \cite{chp:4} to produce a simplified ``multiscale'' model of microscopic damage evolution.
 
 %It will be shown that the use of an probabilistic, taking into account the impurities and hardness in the material method is proposed. A kinematic hardening under the assumptions of associative plasticity is also considered. Usually, the effect of the average stress on loading levels below the yield strength of the material seems well documented in the scientific literature. Beyond this threshold, the mechanisms of damage in play appear less known because less studied. The proposal of our model is to consider a plastic behavior at the mesoscopic scale with a dependence of the yield function not only on the deviatoric part of the stress but also on the hydrostatic part. For fatigue behavior observed under random loading history, the energy approach makes it possible to combine effectively  with the damage accumulation law discussed in Section III.
 
-The fifth chapter of the document deals with the numerical implementation of our method and its validation on different experimental results. Instead of doing the integration directly which can be difficult for complex loading, the Gaussian
+The sixth chapter of the document deals with the numerical implementation of our method and its validation on different experimental results. Instead of doing the integration directly which can be difficult for complex loading, the Gaussian
 Quadrature rule with Legendre points is used to give the value of local dissipated energy rate. Cyclic and random tests on aluminum alloy used for automobile suspension arm is calibrated with our model. Then in the last chapter a multidimensional  application is performed showing the capability of prediction on fatigue life of different material and loading patterns.

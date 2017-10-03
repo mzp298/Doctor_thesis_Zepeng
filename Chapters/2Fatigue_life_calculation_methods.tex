@@ -2,7 +2,7 @@
 \chapter{Fatigue life calculation methods}\label{chp:2}
 \minitoc
 
-To obtain a better knowledge of the impact of different type of stresses and mechanism of energy dissipation in HCF, many researchers have carried out tests often difficult to implement and to control. From the data obtained and sometimes from the observations of the associated mechanisms, they have developed models that account more or less faithfully for the experiment. The approaches used are very varied, but since the field of fatigue that interests us (HCF) is often governed by priming, we make the choice in this chapter to treat only models established in the framework of Mechanics of continuous media. It will therefore be a question of the state of the art of the most successful existing models but above all we will try to compare the predictions obtained when dealing with the equivalent stress and energy dissipation. This study will make it possible to reveal the great variety of the predictions obtained and to direct our work towards a better understanding of the behavior for the loads appearing the most problematic.
+To obtain a better knowledge of the impact of different types of stresses and mechanism of energy dissipation in high cycle fatigue(HCF), many researchers have carried out tests often difficult to implement and to control. From the data obtained and sometimes from the observations of the associated mechanisms, they have developed models that account more or less faithfully for the experiment. The approaches used are very varied, but since the field of fatigue that interests us (HCF) is often governed by priming, we make the choice in this chapter to treat only models established in the framework of Mechanics of continuous media. It will therefore be a question of the state of the art of the most successful existing models but above all we will try to compare the predictions obtained when dealing with the equivalent stress and energy dissipation. This study will make it possible to reveal the great variety of the predictions obtained and to direct our work towards a better understanding of the behavior for the loads appearing the most problematic.
 
 
 
@@ -24,7 +24,7 @@ representing the mean of the data from several tests.
 	\caption{Idealized S-N curve for high cycle fatigue.}
 	\label{fig.basquin}
 \end{figure}
-figsn.png
+
 Certain materials have a fatigue limit or endurance limit which represents a stress level below
 which the material does not fail and can be cycled infinitely. If the applied stress level is below
 the endurance limit of the material, the structure is said to have an infinite life. This is
@@ -35,12 +35,12 @@ Many non-ferrous metals and alloys, such as aluminum, magnesium, and copper allo
 exhibit well-defined endurance limits. These materials instead display a continuously
 decreasing S-N response. In such cases a fatigue strength $S_f$ for
 a given number of cycles must be specified. An effective endurance limit for these materials is
-sometimes defined as the stress that causes failure at $1x10^8$ or $5x10^8$ loading cycles.
+sometimes defined as the stress that causes failure at $1\times10^8$ or $5\times10^8$ loading cycles.
 
-The concept of an endurance limit is used in infinite-life or safe stress designs. It is due to
+The concept of an endurance limit is then used in infinite-life or safe stress designs. The possibility of infinite cycling is due to
 interstitial elements (such as carbon or nitrogen in iron) that pin dislocations, thus preventing
 the slip mechanism that leads to the formation of microcracks. Care must be taken when
-using an endurance limit in design applications because it can disappear due to:
+using an endurance limit in design applications because infinite cycling potentiality can disappear due to:
 
 \vspace{6pt}
 $\bullet$ Periodic overloads (unpin dislocations)
@@ -53,7 +53,7 @@ $\bullet$ High temperatures (mobilize dislocations)
 The endurance limit by itself is not a true property of a material, since other significant influences such
 as surface finish cannot be entirely eliminated. However, a test values ($S_e'$) obtained from
 polished specimens provide a baseline to which other factors can be applied. Influences that
-can affect the endurance limit include:
+can then affect the endurance limit include:
 
 \vspace{6pt}
 $\bullet$ Surface Finish
@@ -68,7 +68,6 @@ $\bullet$ Size
 
 $\bullet$ Environment
 
-$\bullet$ Reliability
 \vspace{6pt}         
 
 \textbf{Power Relationship}   
@@ -81,9 +80,12 @@ N=BS^\frac{1}{b}
 \end{equation}
 To calculate the slope of the Basquin equation from two significant curve points, we need to solve the system of equations:
 $$N_1=N_2\left(\dfrac{S_1}{S_2}\right)^\frac{1}{b},$$
+yielding
 $$b=\dfrac{logS_1-logS_2}{logN_1-logN_2},$$
-where $b$ is the slope of the line.
-$$B=N_1S_1^{-\frac{1}{b}}=N_2S_2^{-\frac{1}{b}}.$$
+where $b$ is the slope of the line. Then the coefficient $B$ in Eq.\ref{eq.basquin} is given by 
+$$B=N_1S_1^{-\frac{1}{b}}=N_2S_2^{-\frac{1}{b}},$$
+with $S_1$ denoting the stress range value of the considered test.
+
 For the constant B, in industry  the stress range value (from the maximum cyclic stress to the minimum cyclic stress) is often considered. If the stress values of the S-N curve are given as alternating stresses (which is the common practice), multiply these stresses by 2 to calculate the constant B (stress range = 2* alternating stress, assuming a zero mean stress and full reversal of the cyclic load). If the S-N curve data are given in stress range values, apply them directly in the equation for estimating the constant B. 
 
 The power relationship is only valid for fatigue lives that are on the design line. For ferrous metals this range is from $1\times10^3$ to $1\times10^6$ cycles. For non-ferrous metals, this range is from
@@ -94,16 +96,16 @@ Basquin curves are quite simple but how can we apply them to more complex loadin
 \textit{This limitation is at the origin of the development of more detailed criteria to be described in the next section.}
 
 \section{Basic fatigue criteria }
-This bibliographic chapter reviews different methods to calculate the lifetime of multiaxial high cycle fatigue. In fact, the equivalent stress of multiaxial loading and variable amplitude loading reveals the necessity of study these methods. These criteria allows to determine whether the stress trajectory in the stress space leads to the failure of the points concerned.
+This bibliographic chapter reviews different methods to calculate the lifetime of multiaxial high cycle fatigue. In fact, the difficulty of defining the equivalent stress in situations with multiaxial loading and variable amplitude loading reveals the necessity of study these methods. These criteria allows to determine whether the stress trajectory in the stress space leads to the failure of the points concerned.
 
 Papadopoulos suggested, in particular, to group families of fatigue criteria into four categories:
 \begin{itemize}
 	\item Criteria based on strain
 	\item Criteria based on stress
 	\item Criteria based on energy
-	\item Criteria based on plasticity-damage coupling
+	\item Criteria based on plasticity-damage coupling.
 \end{itemize}
-Generally, the criteria developed in strain(and sometimes in energy) are adapted to the oligocyclic fatigue where the tests are often carried out with imposed strain. Approaches in stress(and sometimes in energy), as well as those based on the coupling plasticity and damage(which have begun to emerge in recent years) are being applied in the domain of endurance. In particular, we will focus on the last three categories and analyze the different approaches.
+Generally, the criteria developed in strain(and sometimes in energy) are adapted to the oligocyclic fatigue where the tests are often carried out with imposed strain. Approaches in stress(and sometimes in energy), as well as those based on the coupling plasticity and damage(which have begun to emerge in recent years) are being applied in the domain of endurance. Therefore, we will focus on the last three categories and analyze the different approaches.
 
 \subsection{Criteria based on stress}
 \vspace{6pt}
@@ -115,12 +117,12 @@ Three types of approach can be distinguished:
 	\item The criteria based on mean stress in an elementary volume
 \end{itemize}
 For simplicity and to avoid too costly identification procedures of fatigue data, criteria are often expressed using two
-parameters. The first relates generally to a shear stress (on a plane or on average over an elementary volume) while
+parameters to characterize the local load. The first relates generally to a shear stress (on a plane or on average over an elementary volume) while
 the second reflects the normal stress effects (mean and amplitude) through the hydrostatic stress or the normal stress.
 The criteria using the hydrostatic stress are the most numerous (\cite{crossland1956effect}, \cite{sines1959behavior}, \cite{FFE:FFE452}, \cite{thu2008effet}). The micro-macro approach applied to the field of endurance was born with the work of (\cite{van1973khmu}), and since it has been used many times, including by (\cite{papadopoulos1993fatigue}) to take better account of loading path effects.
 
 
-Many fatigue limit criteria can be written as:
+Many fatigue limit criteria can thus be written as:
 \begin{equation}
 f(\tau)+g(\sigma) \leqslant 0
 \label{eq.generalfatigue}
@@ -133,7 +135,7 @@ particular, a probabilistic approach based on this type of integration.
 
 \textbf{Crossland Criterion}
 
-In several industries, the required design lifetime of many components often exceeds $ 10^8 $ cycles. This requirement is applicable to aircraft (gas turbine disks $ 10^{10} $ cycles), automobiles (car engine $ 10^8 $ cycles), and railways (high speed train $ 10^9 $ cycles). Although a large amount of fatigue data has been published in the form of S-N (where S is stress and N cycles numbers) curves, the data in the literature has been usually limited to fatigue lives up to $ 10^7 $ cycles (\cite{wachtman2009mechanical}). Using traditional fatigue criteria, a near hyperbolic relationship between stress and fatigue life is assumed, with an asymptotic limit defined as the endurance stress. To predict this asymptotic limit, the Crossland Criterion is probably the most widely known. Crossland proposed that the second invariant of the deviatoric stress tensor and the hydrostatic pressure are the variables governing the endurance limit. 
+ Using traditional fatigue criteria, a near hyperbolic relationship between stress and fatigue life is assumed, with an asymptotic limit defined as the endurance stress. To predict this asymptotic limit, the Crossland Criterion is probably the most widely known. Crossland proposed that the second invariant of the deviatoric stress tensor and the hydrostatic pressure are the variables governing the endurance limit. 
 
 The classical Crossland criterion defines the fatigue limit of metallic specimens subjected to multi-axial in-phase cyclic stress (\cite{crossland1956effect}) : 
 \begin{equation}f(\sqrt{J_{2,a}},P_{max})=\tau_{eq}+aP_{max}-b\leqslant 0\end{equation}
@@ -261,7 +263,7 @@ max T_a+\alpha_\infty \Sigma_{h,max}\leqslant \gamma_\infty
 \end{equation}
 where $\alpha_\infty$ and $\gamma_\infty$ are material parameters to be determined (\cite{papadopoulos2001long}), and where we take
 $$\Sigma_{h,max}=\max\limits_{t}\left\lbrace \frac{1}{3}tr(\uline{\uline{\sigma}}(t))\right\rbrace $$
-He introduced the resolved shear stress $\tau$:
+To define $T_a$, he introduced the resolved shear stress $\tau$:
 \begin{equation}
 \begin{split}
 \tau=&[sin\theta cos\varphi\sigma_{xx}+sin\theta sin\varphi\sigma_{xy}+cos\theta\sigma_{xz}](-sin\varphi cos\chi-cos\theta cos\varphi sin\chi)+\\&[sin\theta cos\varphi\sigma_{xy}+sin\theta sin\varphi\sigma_{yy}+cos\theta\sigma_{yz}](cos\varphi cos\chi-cos\theta sin\varphi sin\chi)+\\&[sin\theta cos\varphi\sigma_{xz}+sin\theta sin\varphi\sigma_{yz}+cos\theta\sigma_{zz}]sin\theta sin\chi .
@@ -291,7 +293,7 @@ maxT_a+3\left( \frac{t_{-1}}{f_{-1}}-\frac{1}{2}\right) \Sigma_{h,max}\leqslant 
 \end{equation}
 In the particular case of the fully reversed uniaxial tension, the criterion is written as (\cite{papadopoulos2001long}):
 $$\dfrac{\Sigma_{xx,a}}{2}+\alpha_\infty\dfrac{\Sigma_{xx,m}}{3} \leqslant\gamma_\infty$$
-\textit{These criteria are all based on the notion of cyclic loading, which can be a limitation in general case.}
+\textit{In conclusion of this part in stress based criteria, we need to observe that these criteria are all based on the notion of cyclic loading, which can be a limitation in general case.}
 \subsection{Criteria based on energy}
 Depending on the type of density of deformation energy considered per cycle, the
 Energy criteria are divided into three groups (\cite{macha1999energy}):
@@ -382,7 +384,7 @@ W_a=\frac{1}{2}\sigma_a\varepsilon_a
 \label{eq.lagodaWa}
 \end{equation}
 
-Assuming $W(t)$ as the fatigue damage parameter accord-
+Taking $W(t)$ as the fatigue damage parameter accord-
 ing to Eq. \ref{eq.lagodaWt}, we can rescale the standard character-
 istics of cyclic fatigue ($\sigma_a-N_F$) and ($\varepsilon_a-N_F$) and obtain a new one, ($W_a-N_F$ ). In the case of high-cycle fatigue, when the characteristic curve ($\sigma_a-N_F$) is used in order to predict the number of cycles $N_F$ to failure, the axis $\sigma_a$ should be replaced by $W_a$, where $W_a$ and $\sigma_a$ are related by:
 
@@ -402,7 +404,7 @@ characteristic ($\varepsilon_a-N_F$) is used, we can do similar rescaling.
 %$$W_a=\frac{(\sigma_f')^2}{2E}(2N_F)^{2b}$$
 
 The full approach is described in \figref{fig.algorithm}. Having tensors of strain and stress histories we can
-determine courses of normal strain energy density (stage
+determine histories of normal strain energy density (stage
 3) in all the planes according to Eq. \ref{eq.lagodaWt} with the distinguished direction $\bar{\eta}$.
 \begin{equation}
 W_{\eta}(t)=0.25\varepsilon_\eta(t)\sigma_\eta(t)[sgn\varepsilon_\eta(t)+sgn\sigma_\eta(t)]
@@ -428,7 +430,7 @@ $\hat{l}_\eta=cos\alpha$, $\hat{m}_\eta=sin\alpha$, $\hat{n}_\eta=0$.
 	\caption{Algorithm of fatigue life determination with use of the energy parameter in the critical plane under biaxial random tension-compression.}
 	\label{fig.algorithm}
 \end{figure}
-In stage 4 the critical plane is determined by $\max \limits_{\eta}\Delta W_{\eta}(t)$ according to
+In stage 4 the critical plane is determined by choosing the plane of maximal energy variation $\max \limits_{\eta}\Delta W_{\eta}(t)$ according to
 the damage accumulation method Eq.\ref{eq.lagodaWeta}. Fatigue lives
 were determined at particular expected planes according
 to the following stages. When the energy density history
@@ -436,7 +438,7 @@ at the given plane in stage 6 has been determined, the
 energy cycles are counted with the rain flow method;
 next damage is accumulated according to Palmgren-
 Miner hypothesis taking into account energy
-cycle of amplitude larger than a $W_{af}$ with $a=\frac{1}{4}$.
+cycles of amplitude larger than a $W_{af}$ (with $a=\frac{1}{4}$ and $W_{af}$ the fatigue limit expressed in strain energy density).
 $$S(T_0)=\sum_{i=1}^{j}\dfrac{n_i}{N_0(W_{af}/W_{ai})^{m'}} \qquad for \quad W_{ai} \geqslant aW_{af},$$
 $$S(T_0)=0 \qquad for \quad W_{ai} \leqslant aW_{af},$$
 where $S(T_0)$ is material damage up to time $T_0$ ; $j$ is number of class intervals of the histogram of the amplitudes
@@ -445,10 +447,10 @@ expressed by strain energy density;  $m'$ is slope of fatigue curve; $N_0$ is a 
 limit $W_{af}$ ; $n_i$ is a number of cycles with amplitude $W_{ai}$.
 
 When the degree of damage at observation time $T_0$ is
-determined, the fatigue life is calculated by:
+determined, the fatigue life is calculated by extrapolation:
 $$T_{cal}=\dfrac{T_0}{S(T_0)}.$$
 
-\textit{This method is able to take general loadings, but still requires cycle counting. And the determination of critical plane in multiaxial load is laborious. Also, they use the miner's damage law which can not account for the sequencing effect.}
+\textit{This method is able to handle general loadings, but still requires cycle counting. And the determination of critical plane in multiaxial load is laborious. Also, they use the miner's damage law which can not account for the sequencing effect.}
 
 \subsubsection{Lamefip Criterion}
 The so-called Lamefip criterion, presented here with its latest version (\cite{benabes2006approche}), makes it possible to handle all types of loads and to take into account the effect of the stress gradients. This criterion is based on the notion of the volume of influence around the ``critical point" and uses as a parameter the volume density of straining work supplied per cycle to each volume element.
@@ -459,7 +461,7 @@ devoted to the field of endurance or limited endurance, uses for damage paramete
 
 The proposal is based on two main hypothesis : (i) the strain work given to the material per loading cycle is considered as the driving force for fatigue crack initiation and (ii) it is calculated after macroscopic elastic shakedown.
 
-Many authors use cycle counting techniques to extract, from a random stress tensor sequence, cycles from which the damage could be estimated. These techniques have two main drawbacks : (i) the choice of the cycle counting algorithm influences the calculated fatigue life since the number of counted cycles is algorithm dependent (\cite{dowling1983fatigue}), and (ii) for multiaxial non-proportional stress states, in many approaches from the literature, the variable chosen for cycle counting differs from the damage parameter. To avoid such drawbacks an incremental model has been developed. The strain work density given at a point M is written in an incremental way as follows :
+Many authors use cycle counting techniques (chapter \cite{chp:4}) to extract, from a random stress tensor sequence, cycles from which the damage could be estimated. These techniques have two main drawbacks : (i) the choice of the cycle counting algorithm influences the calculated fatigue life since the number of counted cycles is algorithm dependent (\cite{dowling1983fatigue}), and (ii) for multiaxial non-proportional stress states, in many approaches from the literature, the variable chosen for cycle counting differs from the damage parameter. To avoid such drawbacks an incremental model has been developed. The strain work density given at a point M is written in an incremental way as follows :
 
 $$dW_g(M,t)=\sum_{i=1}^{3}\sum_{j=1}^{3}\left\langle \sigma_{ij}\left( M,t\right)\dot{\epsilon}_{ij}\left( M,t \right)\right\rangle  dt .$$
 
@@ -479,10 +481,10 @@ dW_g^e(M,t)=\sum_{i=1}^{3}\sum_{j=1}^{3}\left\langle\sigma_{ij}\left( M,t\right)
 \begin{equation}W_g(M,T)=\int_{t}dW_g(M,t).\label{eq.lamefip2}
 \end{equation}
 
-To take into account the material sensitivity to the stress triaxiality, the triaxiality degree at a point M is defined by the ratio of the strain work associated with the spherical part of the stress tensor over the total strain work of \cite{banvillet2003volumetric}, but in an incremental way :
+To take into account the material sensitivity to the stress triaxiality, the triaxiality degree, $dT$, at a point M is defined by the ratio of the strain work associated with the spherical part of the stress tensor over the total strain work of \cite{banvillet2003volumetric}, but in an incremental way :
 $$dT(M,t)=\dfrac{dW_g^{Sph}(M,t)}{dW_g(M,t)} \qquad if \qquad  dW_g(M,t)\neq0,\ otherwise \quad dT(M,t)=0,$$
 with
-$$dW_g^{Sph}(M,t)=\dfrac{1}{3}\sum_{k=1}^{3}\sigma_{kk}(M,t)\sum_{l=1}^{3}\dot{\epsilon}_{ll}^e(M,t)H\left( \sum_{k=1}^{3}\sigma_{kk}(M,t)\sum_{l=1}^{3}\dot{\epsilon}_{ll}^e(M,t)\right)dt .$$
+$$dW_g^{Sph}(M,t)=\left\langle \dfrac{1}{3}\sum_{k=1}^{3}\sigma_{kk}(M,t)\sum_{l=1}^{3}\dot{\epsilon}_{ll}^e(M,t)\right\rangle dt.$$
 The material sensitivity to stress triaxiality is considered by using an empirical function
 $F(dT,\beta_m)$ (Eq.\eqref{eq.lamefip3}) depending on the material parameter $\beta_m$ identified from two fully reversed
 fatigue limits (rotating bending and torsion). At any instant, for a multiaxial stress state, the
@@ -511,27 +513,75 @@ V^*(C_i)=\left\lbrace points \; M(x,y,z) \; around \; C_i \; so \; that \; {W_g}
 
 $${W_g}_{C_i}=\dfrac{1}{V^*(C_i)}\int_{V^*(C_i)}\left[{W_g}_{eq}(M,T)- W_g^*\right] $$
 
-In the case of uniaxial loading, the values of $W_g^*$ are expressed as:
-$$W_g^*=\dfrac{2s_{-1}^2-f_{rot-1}^2}{E}$$
+In the case of uniaxial loading, the values of $W_g^*$ which serves as reference in Eq.\ref{eq.lamefip5} are given by:
+$$W^*_{g,uniax}=\dfrac{2s_{-1}^2-f_{rot-1}^2}{E}$$
 $f_{rot-1}$ and $s_{-1}$ denote respectively the endurance limits in alternating rotational bending and traction.
 The final criterion proposed by \cite{banvillet2003volumetric} is summarized in the following relation:
-$${W_g}_{C_i}<{W_g}_{eq}.$$
+$${W_g}_{C_i}<{W_g}_{eq},$$
 
-Where ${W_g}_{eq}$ Is the permissible limit value of ${W_g}_{C_i}$  at the limit of fatigue.
+where ${W_g}_{eq}$ Is the permissible limit value of ${W_g}_{C_i}$  at the limit of fatigue.
 
 \textit{This approach is possible to predict the $S–N$ curves from
 	a uniaxial one since the proposal is load type and mean
-	load sensitive. However, the threshold work is another form of the fatigue limit which can be inaccurate microscopically. In addition, it does not deal with random loading.}
+	load sensitive. However, the threshold work is another form of the fatigue limit which can be inaccurate microscopically.}
 
 \subsection{Criteria based on plasticity-damage coupling}
 In recent years, a new class of criteria coupling mesoplasticity and damage has emerged.  \cite{lemaitre1999two} have, for example, used the approach introduced by \cite{lemaitre1985mecanique} based on the thermodynamics of irreversible processes and the mechanics of continuous media.  \cite{flaceliere2004contribution} also proposed a model based on a plasticity-damage coupling and attempted to account for the phenomena of damage observed experimentally on a C35 steel. In this work, we will focus on a more recent approach proposed by \cite{monchiet2006contributions}.
 \subsubsection{Criterion of Monchiet et al}
-In order to account for the coupling plasticity-damage in HCF, \cite{monchiet2006contributions} uses a micro-mechanical approach based on the work of  \cite{gurson1977continuum}. The damage is represented by a magnitude $f$ related to the development of porosity in the sliding bands at the origin of the initiation of the fatigue cracks. A yield surface, of the type defined by Gurson, is used:
+In order to account for the coupling plasticity-damage in high cycle fatigue, \cite{monchiet2006contributions} uses a micro-mechanical approach based on the work of  \cite{gurson1977continuum}. The damage is represented by a magnitude $f$ related to the development of porosity in the sliding bands at the origin of the initiation of the fatigue cracks. 
+
+The model  is built on the following main assumptions. 
+
+\begin{itemize}
+	\item  Initiation of cracks in sliding bands by the presence of a high level of porosity in these bands.
+	\item A localization law gives access to the mechanical fields at the mescopic scale.
+	\item The elastic adaptation concept is used to access local mechanical fields in a stabilized state.
+	\item A plasticity potential of Gurson type is introduced on the mescopic scale in order to show the effects of the plasticity-damage coupling.
+\end{itemize}
+
+The function of charge used (with $\Delta$ tensor of order two defining the orientation of the system of slip considered and equals to 
+$\dfrac{1}{2}\left(\vec{n}\otimes\vec{m}+\vec{m}\otimes\vec{n} \right)  $ where $\vec{n}$ is normal to slip plan and $\vec{m}$ the sliding direction)
 \begin{equation}
-\dfrac{\Sigma_{equ}^2}{\Sigma_0^2}+2fcosh\left(\dfrac{3}{2}\dfrac{\Sigma_h}{\Sigma_0}\right)-1-f^2\leqslant 0 ,
+F=\left( \dfrac{\overline{\overline{B}}:\overline{\overline{\Delta}}}{\tau_d}\right) ^2+2fcosh\left(\dfrac{\sqrt{3}}{2}\dfrac{B_h}{\tau_h}\right)-1-f^2\leqslant 0 ,
 \label{eq.monchiet1}
 \end{equation}
-where $\Sigma_{equ}$ is the equivalent stress, $\Sigma_h$ The hydrostatic stress and $\Sigma_0$ the elastic limit of the matrix.
+where $\overline{\overline{B}}=\overline{\overline{\Sigma}}-\overline{\overline{X}}$, with $\overline{\overline{X}}$ the  kinematic hardening variable. $\overline{\overline{X}}$  decomposes into a hydrostatic part $X_h$ and a slip component on the predominant system, denoted $X_d$. $\Sigma_h$. Isotropic hardening is introduced by replacing the plasticity threshold $\tau_0$ by two parameters $\tau_d$ and $\tau_h$.
+
+Without going into the details of this model adapted to the problem of fatigue at large number of cycles, it seems very important, in order to understand the rest of the work, to resume the way in which hardening is introduced into the load function. The main difference with the conventional charge function proposed by Gurson is the existence of a isotope combined kinematic hardening with decomposition into deviatoric parts (parameters $\tau_d$ and $X_d$) and hydrostatic (parameters $\tau_h$ and $X_h$).
+
+To obtain the expressions of these variables, the authors follow the same approach as \cite{leblond1995improved}, by postulating paths of purely deviatoric stress and purely the effect of fatigue damage at high mean hydrostatic values. The aim is to identify the parameters of hardening from specific exact solutions. The authors reach the relationships:
+\begin{equation}\tau_d = \tau_0 + R_d
+\label{eq.monchiet10}
+\end{equation}
+\begin{equation}\tau_h = \tau_0 + R_h
+\label{eq.monchiet11}
+\end{equation}
+\begin{equation}R_d=R_0\gamma_{cum}
+\label{eq.monchiet12}
+\end{equation}
+\begin{equation}R_h=hR_0\gamma_{cum}+R_0\xi_{cum}^h
+\label{eq.monchiet13}
+\end{equation}
+with $R_0$ isotropic hardening parameter and $h$ latent hardening parameter. It is important to note that plastic slip $\gamma$ and the parameter $\xi^h$ are cumulative, due to applications to fatigue. In the rest of the presentation $\gamma_{cum}$ and $\xi_{cum}^h$
+represent the quantities in the adapted state. For kinematic hardening, the parameters obtained are as follows:
+\begin{equation}
+X_d=((1-f)c)\gamma
+\label{eq.monchiet14}
+\end{equation}
+\begin{equation}
+X_h=\dfrac{2p_1c}{\sqrt{3}}\xi^h
+\label{eq.monchiet15}
+\end{equation}
+
+with $c$ the parameter of kinematic hardening, $p_1$ the parameter of cubic anisotropy.
+The variable $\xi^h$ equals :
+\begin{equation}
+\xi^h=\dfrac{2}{\sqrt{3}}\left\lbrace dilog\left(\dfrac{f_a}{f}\right) -dilog\left(1-f_g \right)  \right\rbrace 
+\label{eq.monchiet16}
+\end{equation}
+with $dilog(x)=\int_{1}^{x}\dfrac{ln(x')}{1-x'}dx'$.
+
+The criterion therefore postulates that a fatigue crack appears in a sliding band when the fraction of porosity inside this band reaches a critical value $f_c$
 
 Plasticity occurs locally when the equivalent stress reaches the yield limit. The authors take into account two mechanisms of damage in the evolution of the porosity:
 
@@ -568,41 +618,50 @@ f_c=\left\lbrace A_0\left\lbrace k_a\gamma_{c}-1+exp\left(-k_a\gamma_{c} \right)
 \label{eq.monchiet5.5}
 \end{equation}
 
-Where $T_a$ is defined the same as the one used in Papadopoulos criterion as reviewed in Eq.\eqref{Ta}. The use of Eq.\eqref{eq.monchiet4} and Eq.\eqref{eq.monchiet5} leads, for the limiting cases $k_a \gg 1$ to Eq.\eqref{eq.monchiet6}, and for $k_a << 1$ to Eq.\eqref{eq.monchiet7}, when noting $\epsilon_c$ the critical plastic deformation, equal to $f_c / 3$ in the case of $\gamma_{cum} 0$, 
+The use of Eq.\eqref{eq.monchiet4} and Eq.\eqref{eq.monchiet5} leads, for the limiting cases $k_a \gg 1$ to Eq.\eqref{eq.monchiet6}, and for $k_a \ll 1$ to Eq.\eqref{eq.monchiet7}, when noting $\epsilon_c$ the critical plastic deformation, equal to $f_c / 3$ in the case of $\gamma_{cum}=0$. In other words, we have
 
 either 
 \begin{equation}
-\dfrac{\gamma_{cum}}{\gamma_{c}}+\dfrac{\epsilon_h^p}{\epsilon_c}=1, \left( k_a \gg 1\right) 
+\dfrac{\gamma_{cum}}{\gamma_{c}}+\dfrac{\epsilon_{h,m}^p}{\epsilon_c}=1 \left( k_a \ll 1\right) ,
 \label{eq.monchiet6}
 \end{equation}
 
 or
 \begin{equation}
-\left( \dfrac{\gamma_{cum}}{\gamma_{c}}\right) ^2+\dfrac{\epsilon_h^p}{\epsilon_c}=1. \left( k_a \ll 1\right) 
+\left( \dfrac{\gamma_{cum}}{\gamma_{c}}\right) ^2+\dfrac{\epsilon_{h,m}^p}{\epsilon_c}=1 \left( k_a \gg 1\right) .
 \label{eq.monchiet7}
 \end{equation}
 
-The effect of the mean stress is taken into account by the term of hydrostatic deformation. Since $\gamma_{cum}$ and $\epsilon_h^p$ are defined on the grain scale, the macroscopic expression of the criterion requires to link these quantities to the macroscopic magnitudes of the loading.
+$k_a$ is a parameter involved in the crack nucleation law along the sliding bands. The author recalls that this mechanism is characterized by a saturated state for high values of cumulated plastic deformations. This coefficient $k_a$ makes it possible to adjust the speed of convergence towards this saturated state. $\epsilon_{h,m}^p$ is the average hydrostatic part of the plastic deformation due to the growth of the cavities.
 
-The next step is to look for elastic adaptation conditions and to apply a micro-macro path. The numerical results obtained make it possible to establish the following relations between the loading parameters and the parameters of the local criterion, where the macroscopic  load surface is then written:
+In order to relate these two quantities to the macroscopic constraints, the authors seek the adapted state. They indicate that a necessarily safe condition is obtained when every state of stress satisfies the condition $F (\Sigma(t)) \leqslant 0$(\figref{fig.adaptation}a).  A sufficient condition for the macroscopic affine loading paths is obtained when the ends of the cycle belong to the load surface,
+Let $\Sigma_A$ and $\Sigma_B$ satisfy $F (\Sigma_A(t)) = F (\Sigma_B (t)) = 0$, (\figref{fig.adaptation}b). In a suitable regime, the loading cycle is symmetrized around the mean stresses, (\figref{fig.adaptation}c).
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures//adaptation.png} 
+	\caption{Finding the appropriate state for an affine load path A-B(\cite{koutiri2011effet}).}
+	\label{fig.adaptation}
+\end{figure}
+
+The effect of the mean stress is taken into account by the term of hydrostatic deformation. The hydrostatic pressure is related to the hydrostatic plastic deformation. 
 \begin{equation}
-F=\left( \dfrac{T_a}{\tau_d}\right) ^2+2f_ccosh\left\lbrace\dfrac{\sqrt{3}}{2}\dfrac{\Sigma_{h,m}}{\tau_h} \right\rbrace-1-f_c^2\leqslant 0.
-\label{eq.monchiet8}
-\end{equation}
-In Eq.\eqref{eq.monchiet8}, $\tau_d$ and $\tau_h$ are the deviatoric and hydrostatic part of the plastic flow threshold associated with an isotropic hardening. $\Sigma_{h,a}$ is the hydrostatic pressure. $T_a$ is accumulated plastic flow.
-
-The isotropic hardening was taken into account by replacing the
-$\tau_d$ and $\tau_h$, defined by: $\tau_d = \tau_0 + R_d$ and $\tau_h = \tau_0 + R_h$. The quantities $R_d$ and $R_h$ are the two isotropic hardening variables. 
-
-The hydrostatic pressure is related to the hydrostatic plastic deformation by:
-\begin{equation}
-\Sigma_{h,m}=-\left( \dfrac{4c}{f_cln(f_c)}\left( 1-f_c\right)+3k^{\ast} \right) \epsilon_h^p.
+\Sigma_{h,m}=\left( \dfrac{4p_1^2c}{f_cln(f_c)}\left( 1-f_c\right)+3k^{\ast} \right) \epsilon_{h,m}^p.
 \label{eq.monchiet9}
 \end{equation}
-
-
-
 In Eq.\eqref{eq.monchiet9}, $c$ and $k^{\ast}$ are parameters related respectively to the kinematic hardening and to the homogenization scheme.
+
+The parameters of the loading can be linked to the parameters of work-hardening thanks to the relations representative of the adapted state(Eq.\ref{eq.monchiet1}, Eq.\ref{eq.monchiet9} and Eq.\ref{eq.monchiet10} to Eq.\ref{eq.monchiet13}).
+
+The parameter $\xi_{cum}^h$ can not be obtained analytically. On the basis of numerical simulations, the authors propose an approximate expression:
+\begin{equation}
+\xi_{cum}^h=\dfrac{\sqrt{3}\tau_0}{R_0}\left\lbrace \dfrac{\Sigma_{h,a}}{2\tau_0}-1+exp\left(-\dfrac{\Sigma_{h,a}}{2\tau_0} \right) \right\rbrace .
+\label{eq.monchiet17}
+\end{equation}
+
+
+
+
 
 The implementation of this criterion requires the identification of 12 parameters:
 \begin{flushleft}
@@ -652,10 +711,6 @@ negligible).
 			$\uline{\tau}$& mesoscopic resolved shear stress vector acting on an easy glide direction &  &  &  \\
 			$\gamma^p$& mesoscopic shear plastic strain &  &  &  \\
 			$\Gamma$ & accumulated plastic mesostrain &  &  &  \\
-			$T_\sigma$ & measure proportional to an upper bound of the plastic mesostrain  &  &  &  \\
-			& accumulated on an elementary
-			material plane $\Delta$, also average value of $T_a$&  &  &  \\
-			$T_\Sigma$ & maximum value of  $T_\sigma$&  &  &  \\
 			$H$ & phase-difference coefficient.&  &  &  \\
 		\end{tabular}
 	\end{table}
@@ -692,9 +747,8 @@ and $\gamma^p$  is  the magnitude of the plastic mesoscopic shear strain deduced
 	\label{glid}
 \end{figure}
 
-\textbf{Initiation of slip in the crystal}
 
-The plasticity criterion is determined by Schmid's law with isotropic and kinematic hardening:
+Schmid's law with isotropic and kinematic hardening:
 \begin{equation}
 f(\uline{\tau},\uline{b},\tau_y)=(\uline{\tau}-\uline{b})\cdot(\uline{\tau}-\uline{b})-\tau_y^2=0
 \label{Schmid}
@@ -706,7 +760,7 @@ been adopted on $\tau_y$ to describe the crystal behavior from
 initial yield to failure (\figref{3phases}a). The damage variable is the accumulated plastic mesostrain $\Gamma$ (\figref{3phases}b).
 In the first phase, we have a linear increase $\dot{\tau}_y=g\dot{\Gamma}$, in the second phase when $\tau_y$ reaches a saturation $\tau_{lim}$, $\dot{\tau}_y=0$, and then above a certain threshold, we have softening $\dot{\tau}_y=-h\dot{\Gamma}$.
 
-In the description and implementation of his method, the author draws heavily on the work developed by Papadopoulos including the use of a measure of cumulative mesoscopic plastic deformation   and modeling the behavior of grain in three distinct phases (hardening, saturation and softening); he considers the cumulative mesoscopic plastic deformation $\Gamma$ as damage parameter and assumes that the initiation of a fatigue crack occurs when the latter reaches a
+In the description and implementation of his method, Morel draws heavily on the work developed by Papadopoulos including the use of a measure of cumulative mesoscopic plastic deformation   and modeling the behavior of grain in three distinct phases (hardening, saturation and softening); he considers the cumulative mesoscopic plastic deformation $\Gamma$ as damage parameter and assumes that the initiation of a fatigue crack occurs when the latter reaches a
 critical value $D = D_R = \Gamma_R$ (\figref{3phases}). 
 \begin{figure}[h!]
 	\centering
@@ -715,45 +769,17 @@ critical value $D = D_R = \Gamma_R$ (\figref{3phases}).
 	\label{3phases}
 \end{figure}
 
-\textbf{Loading limit estimation}
-
-The estimation of the yield limit in the saturation phase $\tau_{lim}$ (defining the cyclic behavior of the crystal) is
-carried out by the definition of a limit loading, such that:
-\begin{equation}
-T_{\Sigma lim}+\alpha P_{max lim}=\beta
-\end{equation}
-\begin{equation}
-T_{\Sigma lim}=\frac{-\alpha P_m+\beta}{\alpha+\frac{T_\Sigma}{P_a}}\cdot\frac{T_\Sigma}{P_a},
-\label{Tlim}
-\end{equation}
-where $T_{\Sigma}$ is the maximum value of the macroscopic stress $T_{\sigma}$ and $P_a$ the hydrostatic stress amplitude.
-The actual and limit loadings are said to be ``similar''. Let $C_A$ and $\tau_{lim}$ be the amplitudes of the macroscopic
-shear stress acting on the critical plane corresponding to
-the actual and limit loadings respectively. More precisely, $C_A$ is the length of the longest chord of the load tregectory. $\tau_{lim}$ can be
-easily deduced from the relation in the paper (\cite{morel1998fatigue}) between two ‘similar’ loadings (actual
-and limit):
-$$\dfrac{T_{\Sigma}}{C_A}=\dfrac{T_{\Sigma lim}}{\tau_{lim}}\Rightarrow\tau_{lim}=\dfrac{T_{\Sigma lim}}{H}$$
-
-where H constitutes a ‘phase-difference coefficient’:
-
-\begin{equation}
-H=\frac{T_{\Sigma}}{C_A}
-\label{eqH}
-\end{equation}
-It is worth mentioning that the more open the elliptic
-path, the higher the coefficient H.  
-
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.9\textwidth]{figures//H.png} 
-	\caption{Different paths and corresponding values of the phase-difference coefficient $H$ (\cite{Morel2000101}).}
+	\caption{Different paths of loading in the plane and corresponding values of the phase-difference coefficient $H$ (\cite{Morel2000101}).For a proportional
+		loading, H is equal to $\sqrt{\pi}$. In the case of a particular
+		circular path, H reaches the maximum value $\sqrt{2\pi}$(\figref{figH}). 
+		The linear path and the circular one lead to two bounds of
+		the coefficient H.}
 	\label{figH}
 \end{figure}
-For a proportional
-loading, H is equal to $\sqrt{\pi}$. In the case of a particular
-circular path, H reaches the maximum value $\sqrt{2\pi}$(\figref{figH}). 
-The linear path and the circular one lead to two bounds of
-the coefficient H.
+
 
 \textbf{Number of cycles to failure}
 
@@ -776,48 +802,33 @@ the model parameters requires two endurance limits
 (parameters a and b of the endurance criterion) and a
 single S–N curve (parameters $p$, $q$ and $r$).
 
-\textbf{Damage accumulation}
-
-Damage accumulation calculation is still carried out
-by adopting the three successive linear isotropic hardening rules of crystal behaviour (\figref{3phases}). Consequently, the
-mechanical parameters used for damage accumulation
-are the macroscopic resolved shear stress on a given
-gliding system and the hydrostatic stress.
-
-Damage calculation by morel's method for a loading of $N_{(I)}$ cycles of a general loading sequence $\uline{\uline{\Sigma}}(t)_{0\leqslant t\leqslant T(I)}$ is described as follows:
-
-The underlying model is as in Dang Van, or in Papadopoulos: the material behaves plastically at a certain mesoscale, and the damage is related to the plastic deformation observed in the worst slip system characterized by a direction $\uline{m}$ in a plane of normal $\uline{n}$. The meso and macro shear stress
-$$T=\uline{m}\cdot \uline{\uline{\Sigma}}\cdot \uline{n} \; and \; \tau=\uline{m}\cdot \uline{\uline{\sigma}}\cdot \uline{n}$$
-are related by the Lin Taylor rule
-$$\tau=T-\mu\gamma^p$$
-with a local plastic slip $\gamma^p$ governed by the plastic flow rule associated to the yield surface
-$$(\tau-b)^2-\tau_y\leqslant 0.$$
-There is a kinematic hardening(with slope $c$) to govern the evolution of $b$ and an isotropic hardening with saturation to govern the evolution of $\sigma_y$.
-
-In Morel's model as seen above, the fatigue control mechanism is embedded in the construction of the saturation limit $\tau_{lim}$ of $\tau_y$ which is constructed separately on each slip system using fatigue test data. More precisely, we assume that the given material has an endurance limit in uniaxial loading given as in Papadopoulos by
+The fatigue control mechanism is embedded in the construction of the saturation limit $\tau_{lim}$ of $\tau_y$ which is constructed separately on each slip system using fatigue test data. More precisely, we assume that the given material has an endurance limit in uniaxial loading given as in Papadopoulos by
 $$\Delta T/2+\alpha P_{max}=\beta$$
 with material coefficients $\alpha$ and $\beta$, $\Delta T/2$ the amplitude of the resolved shear stress, and $P_{max}$ the maximum hydrostatic stress. For a given cyclic shear loading on the considered slip line of amplitude $T_a$, average hydrostatic stress $P_m$ and amplitude of hydrostatic stress $P_a$, we introduce the amplitude scaling $k$ where we have
 $$kT_a+\alpha\left( kP_a+P_m\right)=\beta  $$
- $$\Rightarrow \; k=\dfrac{\beta-\alpha P_m}{T_a+\alpha P_a}$$ 
- which will send this loading to the endurance curve, and a shape factor $\sqrt{\pi}\leqslant H\leqslant \sqrt{2\pi}$ characterizing the shape of the loading path in the considered plane of normal $\uline{n}$. The local saturation limit $\tau_{lim}(\uline{m},\uline{n})$ is then defined by the amplitude of the shear loading $T_a$ once multiplied by the scaling factor $k$ and corrected by the shape factor $H$, giving
+which is given by
+ $$ k=\dfrac{\beta-\alpha P_m}{T_a+\alpha P_a}$$ 
+ and which will send this loading to the endurance curve, and a shape factor $\sqrt{\pi}\leqslant H\leqslant \sqrt{2\pi}$ characterizing the shape of the loading path in the considered plane of normal $\uline{n}$(Figure.\ref{figH}). The local saturation limit $\tau_{lim}(\uline{m},\uline{n})$ is then defined by the amplitude of the shear loading $T_a$ once multiplied by the scaling factor $k$ and corrected by the shape factor $H$, giving
 $$\tau_{lim}(\uline{m},\uline{n})=\frac{k}{H}T_a(\uline{m},\uline{n})=\frac{1}{H}\frac{\beta-\alpha P_m}{T_a+\alpha P_a}T_a(\uline{m},\uline{n}).$$
-By using the amplitude scaling factor $\tau_{lim}$ becomes resolved shear stress limit which is Papadopoulos fatigue criteria implicit. In this framework, Morel's method uses three successive steps for computing the damage created by the repeated loading sequence:
+
+\textbf{General loading}
+ In this framework, Morel's method uses three successive steps for computing the damage created by repeated loading sequences:
 
 \begin{enumerate}
 \item Find the critical plane $\uline{n}$ maximizing the in plane plastic deformation $\int_{\uline{m}}\gamma^p$ which will be induced by the loading sequence, assuming linear isotropic hardening without saturation.
 \item On this plane  $\uline{n}_c$, on each direction $\uline{m}$, compute the plastic history, that is
 \begin{enumerate}
 	\item compute the shear history $T(t)=\uline{m}\cdot \uline{\uline{\Sigma}}\cdot \uline{n}_c$
-	\item decompose in local loading cycles $(i)$ counted $n_{(i)}$ times with load amplitude $T_a^{(i)}$, mean hydrostatic load of mean $P_m^{(i)}$ and amplitude $P_a^{(i)}$, using a standard scalar rainflow counting method
+	\item decompose in local loading cycles $(i)$ counted $n_{(i)}$ times with load amplitude $T_a^{(i)}$, mean hydrostatic load of mean $P_m^{(i)}$ and amplitude $P_a^{(i)}$, using a standard scalar rainflow counting method (chapter \cite{chp:4})
 	\item compute the local saturation limit $$\tau_{lim}^{(i)}=\frac{1}{H}\frac{\beta-\alpha P_m^{(i)}}{T_a^{(i)}+\alpha P_a^{(i)}}T_a^{(i)}$$ and its sequence average $\left\langle \tau_{lim} \right\rangle$ 
 	\item compute the accumulated plastic strain 
 	\begin{equation}
-\Gamma_{\uline{m},\uline{n}_s}=\sum_{(i)}n_{(i)}\dfrac{4}{c+\mu}\left(T_a^{(i)}-\tau_{lim} \right)_+
+\Gamma_{\uline{m},\uline{n}_s}=\sum_{(i)}n_{(i)}\dfrac{4}{c+\mu}\left(T_a^{(i)}-\tau_{lim}^{(i)} \right)_+
 \label{eq.morel_plastic}
 	\end{equation}
 \end{enumerate}
-\item Find the critical direction $\uline{n}_s$ maximizing among the directions $\uline{m}$ with the accumulated plastic strain $\Gamma_{\uline{m},\uline{n}_s}$, and use this accumulated plastic strain to compute the incremental damage occurring during the repeated loading sequence
-\begin{equation}\Delta D=l\dfrac{\Gamma_{\uline{m},\uline{n}_s}}{\left\langle \tau_{lim} \right\rangle_{\uline{m},\uline{n}_s}}
+\item Find the critical direction $\uline{m}_s$ maximizing among the directions $\uline{m}$ with the accumulated plastic strain $\Gamma_{\uline{m_s},\uline{n}_s}$, and use this accumulated plastic strain to compute the incremental damage occurring during the repeated loading sequence
+\begin{equation}\Delta D=l\dfrac{\Gamma_{\uline{m_s},\uline{n}_s}}{\left\langle \tau_{lim} \right\rangle_{\uline{m_s},\uline{n}_s}}
 	\label{NFsimple}
 \end{equation}
 thus assuming linear damage accumulation.

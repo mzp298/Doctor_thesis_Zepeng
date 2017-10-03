@@ -8,14 +8,14 @@ The objective of the work is first to extend some classic high cycle fatigue (HC
 
 \section{Introduction}
 
-In several industries, the required design lifetime of many components often exceeds $ 10^8 $ cycles. This requirement is applicable to aircraft (gas turbine disks $ 10^{10} $ cycles), automobiles (car engine $ 10^8 $ cycles), and railways (high speed train $ 10^9 $ cycles) (\cite{wachtman2009mechanical}). Although a large amount of fatigue data has been published in the form of S-N (where S is stress and N  the number of cycles to fatigue) curves, the data in the literature have been usually limited to fatigue lives up to $ 10^7 $ cycles. Using traditional fatigue criteria, a near hyperbolic relationship between stress and fatigue life is assumed, with an asymptotic limit defined as the fatigue limit (or endurance stress). 
+In several industries, the required design lifetime of many components often exceeds $ 10^8 $ cycles. This requirement is applicable to aircraft (gas turbine disks $ 10^{10} $ cycles), automobiles (car engine $ 10^8 $ cycles), and railways (high speed train $ 10^9 $ cycles) (\cite{wachtman2009mechanical}). Although a large amount of fatigue data has been published in the form of S-N (where S is stress and N  the number of cycles to fatigue) curves, the data in the literature have been usually limited to fatigue lives up to $ 10^7 $ cycles. Beyond that, a near hyperbolic relationship between stress and fatigue life is assumed, with an asymptotic limit defined as the fatigue limit (or endurance stress). 
 A large number of multiaxial fatigue criteria, generalizing this notion of fatigue limit, are available in the literature (\cite{Papadopoulos1997219}, \cite{ballard1995high}, \cite{suresh1998fatigue}). They are  used to design industrial components against failure. Nevertheless, most of these criteria present some drawbacks,  for instance when dealing with out-of-phase loading or with metals of different kinds from those used to develop the criteria. In fact, most of them are not designed to cope with high stress gradients such as those introduced  by surface treatments or notches, or to handle  scale effects as  specially present in nano or micro components. 
 
 More precisely, as mentioned by Luu et al. (\cite{luu2014formulation}), in problems related to small electronic components and electro-mechanical devices, at sufficiently small sizes, factors as size, gradient and loading effects affecting fatigue limits are not captured by classical fatigue criteria. In particular,  for the same stress distribution as well as nominal maximum stress of the material, the smaller the sample size is, the smaller the surface or the volume of the most stressed zone is, the higher the fatigue limit is.  Moreover, the nominal fatigue limit increases in the presence of stress gradient corresponding to a decreasing stress from the surface. Papadopoulos illustrates with experimental example and makes clearer the ``beneficial gradient effect" (\cite{Papadopoulos1996513}). 
 
 The quantitative estimate of the contribution of the pure size effect made in \cite{Papadopoulos1996513}, using the results of the constant moment tests on specimens of the same radius but different lengths(\figref{fig.sizeeffect}(a)) or of the same length with different radius(\figref{fig.sizeeffect}(b)), is recalled and
 used. The slope of the linear trend observed for the (fatigue limit-R)
-data in \figref{fig.sizeeffect}(a) is much higher than the one for the (fatigue limit-L) data in \figref{fig.sizeeffect}(b).
+data in \figref{fig.sizeeffect}(b) is much higher than the one for the (fatigue limit-L) data in \figref{fig.sizeeffect}(a).
 \begin{Figure}[!h]{Constant moment bending fatigue limit data: (a) constant radius R; (b) constant length L (Results of Pogoretskii and Karpenko\cite{Pogoretskii1966}, represented by Weber\cite{weber1999fatigue}).}[fig.sizeeffect]
 	\graphfile*[34]{figures//sizeeffect_length.png}[]
 	\graphfile*[34]{figures//sizeeffect_radius.png}[]
@@ -124,7 +124,7 @@ Surfaces with stresses decreasing in depth are, here and after, considered. Fail
 	\label{crossland-x0-2}
 \end{equation}
 
-To obtain a suitable expression, an expansion of Eq.(\ref{crossland-x0-2}) in performed in the neighborhood of ${x_0}$. The sought formula should account for the beneficial effect of the stress gradient. Considering that the stress is decreasing in depth, a negative sign is associated with the norm of the gradient of stress tensor in to the proposed formula. In addition, the gradient term should not only affect hydrostatic stress but also shear stress.
+To obtain a suitable expression, an expansion of Eq.(\ref{crossland-x0-2}) in performed in the neighborhood of ${x_0}$. The sought formula should account for the beneficial effect of the stress gradient. Considering that the stress is decreasing in depth, we consider the most favorable point in the neighborhood(inf) thus  a negative sign is associated with the norm of the gradient of stress tensor in to the proposed formula. In addition, the gradient term should not only affect hydrostatic stress but also shear stress.
 
 An objective formulation based on the maximum value of deviatoric stress invariants $\sqrt{J_{2,a}}$ and of $\sigma_{H,max}$ in the neighborhood, is finally:
 
@@ -372,20 +372,45 @@ We can observe that the corresponding bending limit is thus
 The case of cantilever fully reversed bending corresponds to the four point bending test except that there, the bending moment is function of $x$. Thus, the maximum stress $\sigma_{max}$ for a given section is a function of $x$. But, the $y$ dimension of the beam is much smaller than its $x$ dimension, which allows us to neglect gradients in $x$ . All  expressions of the four point bending case thus  apply to this case. 
 
 \newpage
-\begin{Figure}[!h]{Fatigue limits with gradient effect for different radii. (\cite{Massonnet1955},  \cite{Moore1944},  \cite{Pogoretskii1966},  \cite{Papadopoulos1996513}). In the absence of gradient effect, we get the horizontal lines indicated in black. We observe that the three criteria here give very similar results when they are calibrated on uniaxial tests.}[fig.gradientcalibration]
-\graphfile*[45]{figures//carbonsteel.png}[]
-\graphfile*[45]{figures//1220steel.png}[]
-\\
-\graphfile*[45]{figures//1035steel.png}[]
-\graphfile*[45]{figures//40khsteel.png}[]
-\end{Figure}
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{figures//carbonsteel.png} 
+		\caption{Fatigue limits with gradient effect for different radii. (\cite{Massonnet1955})}
+		\label{fig.gradientcalibration1}
+	\end{center}
+\end{figure}
 
-\figref{fig.gradientcalibration} shows some test results of rotating bending fatigue limits
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{figures//1220steel.png} 
+		\caption{Fatigue limits with gradient effect for different radii. (\cite{Moore1944})}
+		\label{fig.gradientcalibration2}
+	\end{center}
+\end{figure}
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{figures//1035steel.png} 
+		\caption{Fatigue limits with gradient effect for different radii. (\cite{Pogoretskii1966})}
+		\label{fig.gradientcalibration3}
+	\end{center}
+\end{figure}
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{figures//40khsteel.png} 
+		\caption{Fatigue limits with gradient effect for different radii. (\cite{Papadopoulos1996513})}
+		\label{fig.gradientcalibration4}
+	\end{center}
+\end{figure}
+\newpage
+
+\figref{fig.gradientcalibration1} to \figref{fig.gradientcalibration4} shows some test results of rotating bending fatigue limits
 from the literature in which the fatigue limits are plotted against
-the specimen radii. \figref{fig.gradientcalibration}(a,b,c) are related to cantilever bending
-tests and \figref{fig.gradientcalibration}(d) depicts constant moment tests.
+the specimen radii. In the absence of gradient effect, we get the horizontal lines indicated in black. We observe that the three criteria here give very similar results when they are calibrated on uniaxial tests. \figref{fig.gradientcalibration1}, \figref{fig.gradientcalibration2} and \figref{fig.gradientcalibration3} are related to cantilever bending
+tests and \figref{fig.gradientcalibration4} depicts constant moment tests.
 
-Eq.(\ref{crossland-fr}) with $a$ et $b$ calibrated from given $S_{ref}$ and $t_{ref}$ is used to estimate the characteristic length $l_g$ in order to give the best correlation between simulated and experimental fatigue limit obtained in rotating cantilever bending tests for different materials and radii. The results are sketched in Fig.(\ref{fig.gradientcalibration}) and the corresponding parameters are shown in Table.\ref{tab.paras}.
+Eq.(\ref{crossland-fr}) with $a$ et $b$ calibrated from given $S_{ref}$ and $t_{ref}$ is used to estimate the characteristic length $l_g$ in order to give the best correlation between simulated and experimental fatigue limit obtained in rotating cantilever bending tests for different materials and radii. The results are sketched and the corresponding parameters are shown in Table.\ref{tab.paras}.
 
 \begin{table}[!h]
 	\centering
@@ -477,6 +502,7 @@ Crossland criterion with beneficial gradient term as shown in Eq.(\ref{modified 
 	\begin{split}
 		\sqrt{J_{2,a}}+a\sigma_{H,max}-l_g\parallel{\nabla\sqrt{J_{2,a}}}+a\nabla{\sigma_{H,max}}\parallel&=\\\sqrt{\dfrac{\sigma_a^2}{3}+\tau_a^2}+\dfrac{a\sigma_a}{3}-l_g\left( \dfrac{\sqrt{\dfrac{\sigma_a^2}{3}+\tau_a^2}}{y}+\dfrac{a\sigma_a}{3y}\right) &\leqslant b.
 	\end{split}
+	\label{eq.arcblack}
 \end{equation}
 \subsubsection{With Papadopoulos criterion}
 We can find the resolved shear stress $\tau(\varphi,\theta,\chi ,t)$ with Eq.\eqref{eqres}. Although the intermediate calculations are complicated, the result achieves the very simple form \cite{Papadopoulos1997219}. The generalized shear stress amplitude $T_a$ is then:
@@ -511,7 +537,7 @@ Dang Van criterion with beneficial gradient term as shown in Eq.(\ref{Dang Van})
 \end{equation}
 
 \subsubsection{Comparison with experimental data}
-This classical Crossland ellipse arc delimits in the $s_{ref}-t_{ref}$  plane the safe domain against fatigue failure. In the case of fully reversed in-phase tension-compression and torsion fatigue tests, it gives the ``ellipse arc equation'' (\cite{Papadopoulos1996513}) :
+This classical Crossland ellipse arc delimits in the $s_{ref}-t_{ref}$  plane the safe domain against fatigue failure. In the case of fully reversed in-phase tension-compression and torsion fatigue tests, it gives the ``ellipse arc equation'' (\cite{Papadopoulos1996513}) which is Eq.\eqref{eq.arcblack} with $b=t_{ref}$ and $a=\dfrac{3t_{ref}}{s_{ref}}-\sqrt{3}$:
 \begin{equation}
 	\left( \dfrac{\tau_a}{t_{ref}}\right) ^2+\left( \dfrac{2s_{ref}}{\sqrt{3}t_{ref}}-1\right) \left( \dfrac{\sigma_a}{s_{ref}}\right) ^2+\left( 2-\dfrac{2s_{ref}}{\sqrt{3}t_{ref}}\right) \dfrac{\sigma_a}{s_{ref}}\leqslant 1
 	\label{crossland}
@@ -519,7 +545,7 @@ This classical Crossland ellipse arc delimits in the $s_{ref}-t_{ref}$  plane th
 
 However, if one tries to predict the behavior of the material in combined bending and torsion, which involves  the gradients of normal and shear stresses, high discrepancies between predictions and experimental data will be found. 
 
-By introducing the values of $\sqrt{J_{2,a}}$ and $\sigma_{H,max}$ in the the classical Crossland criterion, along with the change of parameter $\alpha_\infty$  from $\left(\dfrac{3 t_{-1}}{s_{-1}}-\sqrt{3}\right)$ to $\left(\dfrac{3 t_{-1}}{f_{-1}}-\sqrt{3}\right)$ in Eq.\eqref{eq:crossland}, we obtain the ``Papadopoulos ellipse arc" based on $\left(t_{-1},f_{-1} \right) $ in the plane of amplitudes $\sigma_a$ and $\tau_a$:
+By introducing the values of $\sqrt{J_{2,a}}$ and $\sigma_{H,max}$ in the the classical Crossland criterion, along with the change of parameter $a$  from $\left(\dfrac{3 t_{-1}}{s_{-1}}-\sqrt{3}\right)$ to $\left(\dfrac{3 t_{-1}}{f_{-1}}-\sqrt{3}\right)$ in Eq.\eqref{eq:crossland}, we obtain the ``Papadopoulos ellipse arc" based on $\left(t_{-1},f_{-1} \right) $ in the plane of amplitudes $\sigma_a$ and $\tau_a$:
 \begin{equation}
 	\left(\dfrac{\tau_a}{t_{-1}}\right)^2+\left(\dfrac{2f_{-1}}{\sqrt{3}t_{-1}}-1\right)\left(\dfrac{\sigma_a}{f_{-1}}\right)^2+\left(2-\dfrac{2f_{-1}}{\sqrt{3}t_{-1}}\right)\dfrac{\sigma_a}{f_{-1}}\leqslant 1
 	\label{papa}
@@ -530,7 +556,7 @@ proposed in \cite{Papadopoulos1996513}. Nevertheless, these criteria do not take
 stress gradient and consequently do not distinguish between $t_{-1}$
 and $t_{ref}$.
 
-It can be seen that the Crossland ellipse arc (Eq. \ref{crossland}) based on the $s_{ref}$-$ t_{ref}$ fatigue limits and the Crossland ellipse arc (Eq. \ref{papa}) based on $f_{-1}$-$t_{-1}$ are different demonstrating clearly the effect of stress gradient. The first curve, obtained within zero normal stress gradient assumption, does not fit the experimental data from combined bending-twisting tests having a non-zero stress gradient.  The difference between test points and classical Crossland ellipse arc near the x-axis where the normal load is predominant, is a proof of the beneficial ``size’’ and gradient effects. Indeed, the difference between two kinds of fatigue test can be clearly seen: the bending test (test points) includes the beneficial effects of the normal stress gradient; the tension–compression test (Crossland ellipse arc) excludes these effects due to the gradient-free stress state.  To account for the shear gradient amplitude effect, a clear distinction must be made between $t_{ref}$
+It can be seen from \figref{4340} that the Crossland ellipse arc (Eq. \ref{crossland}) based on the $s_{ref}$-$ t_{ref}$ fatigue limits and the Crossland ellipse arc (Eq. \ref{papa}) based on $f_{-1}$-$t_{-1}$ are different demonstrating clearly the effect of stress gradient. The first curve, obtained within zero normal stress gradient assumption, does not fit the experimental data from combined bending-twisting tests having a non-zero stress gradient.  The difference between test points and classical Crossland ellipse arc near the x-axis where the normal load is predominant, is a proof of the beneficial ``size’’ and gradient effects. Indeed, the difference between two kinds of fatigue test can be clearly seen: the bending test (test points) includes the beneficial effects of the normal stress gradient; the tension–compression test (Crossland ellipse arc) excludes these effects due to the gradient-free stress state.  To account for the shear gradient amplitude effect, a clear distinction must be made between $t_{ref}$
 determined at the radius $R_{\infty}$ of specimen large enough and $t_{-1}$ determined at the radius $R$ of the considered specimen.
 Then all
 these above analyses affirm, first, the ``size effect'' on fatigue limits
@@ -542,7 +568,7 @@ Our proposal takes into account both gradients of hydrostatic stress and shear s
 
 \begin{figure}[!h]
 	\includegraphics[width=\textwidth]{figures//4340.png}
-	\caption{Fully reversed combined bending-twisting fatigue limit data (\cite{findley1956theory}, \cite{Papadopoulos1996513}) compared with updated values computed with gradient effects with $l_g = 2.5 \, mm$. In absence of gradient effect, we would get the inner gray ellipse corresponding to classical Crossland criterion.}
+	\caption{Fully reversed combined bending-twisting fatigue limit data (\cite{findley1956theory}, \cite{Papadopoulos1996513}) compared with updated values computed with gradient effects using 	Eq.\ref{eq.arcblack}, Eq.\ref{modified Papadopoulos}, Eq.\ref{Dang Van}, Eq.\ref{crossland} and Eq.\ref{papa} with $l_g = 2.5 \, mm$. In absence of gradient effect, we would get the inner gray ellipse corresponding to classical Crossland criterion.}
 	\label{4340}
 \end{figure}
 
