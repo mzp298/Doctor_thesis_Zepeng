@@ -1,26 +1,89 @@
 \select@language {american}
 \contentsline {xchapter}{}{xi}{chapter*.2}
-\contentsline {xchapter}{}{xiii}{chapter*.3}
+\contentsline {xchapter}{}{xiv}{chapter*.3}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Time varying load : the standard approach}{1}{chapter.1}
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Linear accumulation of damage with linear evolution\relax }}{2}{figure.caption.5}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Damage with nonlinear evolution and linear accumulation, where high then low stress loading sequence leads to the same fatigue life.\relax }}{3}{figure.caption.6}
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Damage with nonlinear evolution and nonlinear accumulation, where high stress and low stress follow different damage evolution curve. This leads to the summation of fatigue life proportion difference between different loading sequence.\relax }}{4}{figure.caption.7}
-\contentsline {figure}{\numberline {1.4}{\ignorespaces Damage accumulation in terms of N in constant loading condition, with D and N are related by the evolution equation \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {D-N}\unskip \@@italiccorr )}}\relax }}{7}{figure.caption.8}
-\contentsline {figure}{\numberline {1.5}{\ignorespaces Influence of function $\alpha $ in fatigue damage versus fatigue life ratio ($\gamma =0.1$)\relax }}{8}{figure.caption.9}
-\contentsline {figure}{\numberline {1.6}{\ignorespaces Influence of function $\gamma $ in a plot of damage versus fatigue life ratio with $\alpha =0.8$\relax }}{9}{figure.caption.10}
-\contentsline {figure}{\numberline {1.7}{\ignorespaces $A_{\uppercase {ii}}-N_F$ curve in rotation at r=0.1\relax }}{13}{figure.caption.11}
-\contentsline {figure}{\numberline {1.8}{\ignorespaces Two-stress level loading in pure rotation at r=0.1\relax }}{14}{figure.caption.13}
-\contentsline {figure}{\numberline {1.9}{\ignorespaces $A_{\uppercase {ii}}-N_F$ curve in 4-point bending at y=3\relax }}{15}{figure.caption.14}
-\contentsline {figure}{\numberline {1.10}{\ignorespaces Two-stress level loading in 4-point bending at y=3\relax }}{15}{figure.caption.16}
-\contentsline {figure}{\numberline {1.11}{\ignorespaces $A_{\uppercase {ii}}-N_F$ curve in rotative bending at r=3\relax }}{16}{figure.caption.17}
-\contentsline {figure}{\numberline {1.12}{\ignorespaces Two-stress level loading in rotative bending at r=0.5\relax }}{17}{figure.caption.19}
-\contentsline {figure}{\numberline {1.13}{\ignorespaces Complex Cyclic Loading\relax }}{19}{figure.caption.20}
-\contentsline {figure}{\numberline {1.14}{\ignorespaces Reorder to Start from Absolute Maximum(retrieved from ``How to Calculate Fatigue Life When The Load History Is Complex'', February 13, 2015, author: Michael Bak, https://caeai.com/blog/how-calculate-fatigue-life-when-load-history-complex)\relax }}{20}{figure.caption.21}
-\contentsline {figure}{\numberline {1.15}{\ignorespaces Imagine Filling with Water and Extract Stress Range and Mean Stress(retrieved from ``How to Calculate Fatigue Life When The Load History Is Complex'', February 13, 2015, author: Michael Bak, https://caeai.com/blog/how-calculate-fatigue-life-when-load-history-complex)\relax }}{20}{figure.caption.22}
-\contentsline {figure}{\numberline {1.16}{\ignorespaces Drain Water Starting at Lowest Valley and Repeat Cycle Extraction(retrieved from ``How to Calculate Fatigue Life When The Load History Is Complex'', February 13, 2015, author: Michael Bak, https://caeai.com/blog/how-calculate-fatigue-life-when-load-history-complex)\relax }}{20}{figure.caption.23}
-\contentsline {figure}{\numberline {1.17}{\ignorespaces Rainflow counting method demonstration\relax }}{21}{figure.caption.24}
-\contentsline {figure}{\numberline {1.18}{\ignorespaces Suspension load\relax }}{21}{figure.caption.25}
-\contentsline {figure}{\numberline {1.19}{\ignorespaces Example of the Number of cycles at Various Stress Ranges and Mean Stress Combinations from the Suspension Load History in Figure~\ref {loadhistory}\relax }}{22}{figure.caption.26}
-\select@language {french}
-\select@language {american}
+\contentsline {xchapter}{Handling general loadings}{1}{chapter.1}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Kinematic hardening: a) uniaxial stress-strain diagram, b) evolution of the yield surface in the biaxial stress plane\relax }}{3}{figure.caption.5}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Haigh diagram showing test data points for the effect of mean stress, and the Gerber, modified Goodman and Soderberg relations.\relax }}{6}{figure.caption.6}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Weakening scales $s$ probability distribution curve when $\beta =1.5$ \relax }}{7}{figure.caption.7}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Weakening scales $s$ probability distribution curve when $\beta =5$ \relax }}{8}{figure.caption.8}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Uniaxial load with plastic dissipation\relax }}{10}{figure.caption.9}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces The relation between $\mathaccentV {tilde}07E{D}$ and $D$ when $\gamma =2$\relax }}{12}{figure.caption.10}
+\contentsline {figure}{\numberline {1.7}{\ignorespaces High to low and low to high loading sequence comparison in 4-point bending($F_{low}=5000 N, F_{high}=30000 N, Radius=0.2m, \Sigma _u=1.67E8$), with the proposed damage accumulation law (Eq.\textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eq.DWcyc}\unskip \@@italiccorr )}}) induced equation Eq.\textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eq.sequence}\unskip \@@italiccorr )}} and Chaboche type $\alpha $ (Eq.\textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eq.alpchaboche}\unskip \@@italiccorr )}}) containing Crossland criterion\relax }}{14}{figure.caption.11}
+\contentsline {figure}{\numberline {1.8}{\ignorespaces The evolution of $\alpha $ in bending and torsion with $\Sigma _y=1080 MPa$, $\Sigma _{bending}=\Sigma _{torsion}=500 MPa$, $a=0.3$ and $200$ time steps in one cycle\relax }}{19}{figure.caption.12}
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Comparing numerical strategy with optimal time steps in one cycle with the old one, in this way the number of steps in unit cycle is reduced from 400 to 35, meaning a cost reduction factor of 0.0875 (with $\Delta \alpha =0.05$, $a=0.4$, $\lambda =0.1$, $\Sigma _y=230 MPa$, $\Sigma _{bending}=225 MPa$)\relax }}{19}{figure.caption.13}
+\contentsline {figure}{\numberline {1.10}{\ignorespaces S-N curve of bending test on 30NCD16 steel using numerical and analytical method (Eq.\textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eq.cycNF}\unskip \@@italiccorr )}}) with different time steps. Data are those of table.\ref {tab:Sin}\relax }}{21}{figure.caption.15}
+\contentsline {subfigure}{\numberline {a}{\ignorespaces {30 time steps in unit cycle($\beta =1.1$, $a=0.001$).}}}{21}{figure.caption.15}
+\contentsline {subfigure}{\numberline {b}{\ignorespaces {100 time steps in unit cycle($\beta =1.1$, $a=0.001$).}}}{21}{figure.caption.15}
+\contentsline {subfigure}{\numberline {c}{\ignorespaces {Relative error$\left ( \genfrac {}{}{}0{NF_{num}-NF_{analytical}}{NF_{analytical}}\right )$ with 30 time \\ steps in unit cycle ($\beta =1.1$, $a=0.001$)}}}{21}{figure.caption.15}
+\contentsline {subfigure}{\numberline {d}{\ignorespaces {Relative error$\left ( \genfrac {}{}{}0{NF_{num}-NF_{analytical}}{NF_{analytical}}\right )$ with 100 time \\ steps in unit cycle ($\beta =1.1$, $a=0.001$)}}}{21}{figure.caption.15}
+\contentsline {figure}{\numberline {1.11}{\ignorespaces S-N curve using analytical and numerical results with optimal time steps methods ($\beta =1.1$, $a=0.01$, $\Delta \alpha =2E-5$ in unit cycle), yielding 200 full time steps reduced to 197 optimal time steps\relax }}{23}{figure.caption.16}
+\contentsline {figure}{\numberline {1.12}{\ignorespaces S-N curve using analytical and numerical results with optimal time steps methods ($\beta =1.1$, $a=0.01$, $\Delta \alpha =1E-5$ in unit cycle), yielding 200 full time steps reduced to 199 optimal time steps\relax }}{23}{figure.caption.17}
+\contentsline {figure}{\numberline {1.13}{\ignorespaces Relative error $\left ( \genfrac {}{}{}0{NF_{opt}-NF_{analytical}}{NF_{analytical}}\right )$ between analytical and numerical results with optimal time steps methods ($\beta =1.1$, $a=0.01$, $\Delta \alpha =2\times 10^{-5}$ in unit cycle)\relax }}{24}{figure.caption.18}
+\contentsline {figure}{\numberline {1.14}{\ignorespaces Relative error $\left (\genfrac {}{}{}0{NF_{opt}-NF_{analytical}}{NF_{analytical}}\right )$ between analytical and numerical results with optimal time steps methods ($\beta =1.1$, $a=0.01$, $\Delta \alpha =1\times 10^{-5}$ in unit cycle)\relax }}{24}{figure.caption.19}
+\contentsline {figure}{\numberline {1.15}{\ignorespaces Microscopic $\left ( \uline {\uline {S}}-\uline {\uline {b}}\right )_{trial}$ and $\left ( \uline {\uline {S}}-\uline {\uline {b}}\right )$ evolution with time under different weakening scales($s_{3}=1.21$ and $s_{10}=1.13$) in sinusoidal load with zero mean stress\relax }}{25}{figure.caption.21}
+\contentsline {figure}{\numberline {1.16}{\ignorespaces Microscopic $\left ( \uline {\uline {S}}-\uline {\uline {b}}\right )_{trial}$ and $\left ( \uline {\uline {S}}-\uline {\uline {b}}\right )$ evolution with time under different weakening scales($s_{3}=1.21$ and $s_{10}=1.13$) in sinusoidal load with mean stress=300 MPa\relax }}{26}{figure.caption.22}
+\contentsline {figure}{\numberline {1.17}{\ignorespaces Validation of dissipated energy in all scales with analytical(method 3) and numerical method(method 1) with $\beta =1.1$,$\Sigma =0.85\sigma _y$. The time evolution of $\alpha $ does not play a role in the dissipation calculation which is normal since $\alpha $ does not enter in the dissipation calculation \relax }}{26}{figure.caption.23}
+\contentsline {figure}{\numberline {1.18}{\ignorespaces Validation of dissipated energy in all scales with analytical and numerical method(enlargement of Figure~\ref {fig.W3methods})\relax }}{27}{figure.caption.24}
+\contentsline {figure}{\numberline {1.19}{\ignorespaces Dissipated energy accumulation through time with different methods, there are 100 time steps in unit cycle\relax }}{27}{figure.caption.25}
+\contentsline {figure}{\numberline {1.20}{\ignorespaces Dissipated energy accumulation through time with of 3 methods(enlargement of Figure~\ref {fig.W3methods100})\relax }}{28}{figure.caption.26}
+\contentsline {figure}{\numberline {1.21}{\ignorespaces Relative difference $\genfrac {}{}{}0{W_{analytical}-W_{numerical}}{W_{analytical}}$ between analytical energy loss and numerical one with $\alpha $ varying with time of Figure~\ref {fig.W3methods100}\relax }}{28}{figure.caption.27}
+\contentsline {figure}{\numberline {1.22}{\ignorespaces Damage evolution with time under sinusoidal load with different methods, there are 100 time steps in unit cycle($\beta =1.1$,$\Sigma =0.85\sigma _y$)\relax }}{29}{figure.caption.28}
+\contentsline {figure}{\numberline {1.23}{\ignorespaces Damage evolution with time under sinusoidal load with two different methods(enlargement of Figure~\ref {fig.damsin100})\relax }}{29}{figure.caption.29}
+\contentsline {figure}{\numberline {1.24}{\ignorespaces Relative difference $\genfrac {}{}{}0{D_{analytical}-D_{numerical}}{D_{analytical}}$ evolution with time of Figure~\ref {fig.damsin100}\relax }}{30}{figure.caption.30}
+\contentsline {figure}{\numberline {1.25}{\ignorespaces Validation of dissipated energy in all scales with analytical and numerical method with $\beta =5$, $\Sigma =0.4\sigma _y$ \relax }}{30}{figure.caption.31}
+\contentsline {figure}{\numberline {1.26}{\ignorespaces Validation of dissipated energy in all scales with analytical and numerical method with $\beta =5$, $\Sigma =0.8\sigma _y$ \relax }}{31}{figure.caption.32}
+\contentsline {figure}{\numberline {1.27}{\ignorespaces Damage evolution with time under sinusoidal load with $\beta =5$, $\Sigma =0.4\sigma _y$. In such a severe loading and with extreme non-linearity, the simple Chaboche like formula with frozen $\alpha $ departs from the outcome of the full numerical model\relax }}{31}{figure.caption.33}
+\contentsline {figure}{\numberline {1.28}{\ignorespaces Damage evolution with time under sinusoidal load with $\beta =5$, $\Sigma =0.8\sigma _y$\relax }}{32}{figure.caption.34}
+\contentsline {figure}{\numberline {1.29}{\ignorespaces Two level sequence effect. By comparing the vertical figures we can see high stress gives high $(1-\alpha )$ value which causes fast damage accumulation speed. The evolution of $(1-\alpha )$ is highly nonlinear and follows the value of stress at each time step.\relax }}{34}{figure.caption.35}
+\contentsline {subfigure}{\numberline {a}{\ignorespaces {}}}{34}{figure.caption.35}
+\contentsline {subfigure}{\numberline {b}{\ignorespaces {}}}{34}{figure.caption.35}
+\contentsline {subfigure}{\numberline {c}{\ignorespaces {}}}{34}{figure.caption.35}
+\contentsline {subfigure}{\numberline {d}{\ignorespaces {}}}{34}{figure.caption.35}
+\contentsline {subfigure}{\numberline {e}{\ignorespaces {}}}{34}{figure.caption.35}
+\contentsline {subfigure}{\numberline {f}{\ignorespaces {}}}{34}{figure.caption.35}
+\contentsline {figure}{\numberline {1.30}{\ignorespaces Fatigue life of random loading dispersion\relax }}{35}{figure.caption.37}
+\contentsline {figure}{\numberline {1.31}{\ignorespaces Major damage effect using different magnification power of Eq.\textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eq.majoralp}\unskip \@@italiccorr )}} on sequence effect. Here high stress is 1MPa and low stress is 0.8MPa. We see that using a large power $f$ in Eq.\textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eq.majoralp}\unskip \@@italiccorr )}} induces a stronger sequence effect.\relax }}{36}{figure.caption.38}
+\contentsline {figure}{\numberline {1.32}{\ignorespaces (1-$\alpha $) term which stands for the load intensity evolution, both with and without the magnification power $f$\relax }}{37}{figure.caption.39}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Numerical implementation and validation}{41}{chapter.2}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Complex loading of a car suspension arm (data from PSA tests)\relax }}{42}{figure.caption.42}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Specimen geometry for fatigue tests of AW-6106 T6 aluminum(sample given by PSA)\relax }}{42}{figure.caption.43}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Random loading history on BATCH\_A\_06 of AW-6106 T6 aluminum (see Tab.\ref {tab:Cetim})\relax }}{43}{figure.caption.45}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Comparison between experimental and numerical results of 1D cyclic and random loading on aluminum fatigue tests by CETIM with constant $\alpha $ from the first row of Tab.\ref {tab.cetim.alp}\relax }}{46}{figure.caption.52}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Comparison between experimental and numerical results of 1D cyclic and random loading on aluminum fatigue tests by Cetim with load dependent $\alpha $. Coefficients data are given in the second row of Tab.\ref {tab.cetim.alp}\relax }}{46}{figure.caption.53}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Specimen geometry for fatigue tests of aluminum 6082 T6 (dimension in millimeters)\ref {susmel2003multiaxial}\relax }}{47}{figure.caption.55}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces The loading path and loading waveform of multiaxial corrosion fatigue (stress control) (a) loading path of proportional and non-proportional, (b) loading waveform of proportional loading, (c) loading waveform of non-proportion (\cite {HUANG2017259})\relax }}{50}{figure.caption.59}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces The $90^\circ $ out-of-phase loading path has been found to produce the largest degree of non-proportional hardening. (\cite {EFATIGUE})\relax }}{50}{figure.caption.60}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Calibration on on 6082 T6 aluminum (\cite {susmel2003multiaxial}). Comparison between experimental results and our model used with coefficients given in Tab.\ref {tab.6082T6para}. We obtain a good correlation in bending and torsion tests. The out of phase test are not satisfactory in these batches: P32BT8, P41BT15, P36BT11.\relax }}{51}{figure.caption.61}
+\contentsline {subfigure}{\numberline {a}{\ignorespaces {Bending and torsion tests on 6082 T6 aluminum(R=-1)}}}{51}{figure.caption.61}
+\contentsline {subfigure}{\numberline {b}{\ignorespaces {Bending-torsion tests on 6082 T6 aluminum(R=-1)}}}{51}{figure.caption.61}
+\contentsline {subfigure}{\numberline {c}{\ignorespaces {Bending-torsion $90^\circ $ out of phase tests on 6082 T6 aluminum(R=-1)}}}{51}{figure.caption.61}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Calibration on 30NCD16 (\cite {Dubar1992}). We can observe that the bending-torsion experimental values are largely dispersed\relax }}{54}{figure.caption.67}
+\contentsline {subfigure}{\numberline {a}{\ignorespaces {Bending and torsion tests on 30NCD16(R=-1)}}}{54}{figure.caption.67}
+\contentsline {subfigure}{\numberline {b}{\ignorespaces {Bending-torsion tests with mean stress on 30NCD16}}}{54}{figure.caption.67}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Calibration on 30NCD16 (\cite {Dubar1992}). In figure (c) data 29(same $N_F$ with data30 but with smaller $\sigma _{x,m}$) and 32(2-D with large mean stress) from Tab.\ref {tab.30ncd16bt} are more dispersed. The numerical tests are carried out using the coefficients of Tab.\ref {30ncdpara2}\relax }}{54}{figure.caption.68}
+\contentsline {subfigure}{\numberline {a}{\ignorespaces {Bending and torsion tests on 30NCD16(R=-1)}}}{54}{figure.caption.68}
+\contentsline {subfigure}{\numberline {b}{\ignorespaces {Bending-torsion tests with mean stress on 30NCD16}}}{54}{figure.caption.68}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Fatigue curves on SM45C steel by \cite {lee2013out}\relax }}{56}{figure.caption.71}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Calibration on SM45C\relax }}{59}{figure.caption.76}
+\contentsline {subfigure}{\numberline {a}{\ignorespaces {Bending and torsion test on SM45C steel(R=-1)}}}{59}{figure.caption.76}
+\contentsline {subfigure}{\numberline {b}{\ignorespaces {Bending test with mean stress on SM45C steel ($\sigma _m=196 MPa$)}}}{59}{figure.caption.76}
+\contentsline {subfigure}{\numberline {c}{\ignorespaces {Bending-torsion 90 degree out-of-phase tests on SM45C steel}}}{59}{figure.caption.76}
+\contentsline {subfigure}{\numberline {d}{\ignorespaces {Bending-torsion 90 degree out-of-phase tests with mean stress on SM45C steel}}}{59}{figure.caption.76}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Calibration on SM45C. The numerical tests are carried out using the coefficients of Tab.\ref {sm45cpara}\relax }}{60}{figure.caption.77}
+\contentsline {subfigure}{\numberline {a}{\ignorespaces {Bending and torsion test on SM45C steel (R=-1)}}}{60}{figure.caption.77}
+\contentsline {subfigure}{\numberline {b}{\ignorespaces {Bending test with mean stress on SM45C steel ($\sigma _m=196 MPa$)}}}{60}{figure.caption.77}
+\contentsline {subfigure}{\numberline {c}{\ignorespaces {Bending-torsion 90 degree out-of-phase tests on SM45C steel}}}{60}{figure.caption.77}
+\contentsline {subfigure}{\numberline {d}{\ignorespaces {Bending-torsion 90 degree out-of-phase tests with mean stress on SM45C steel}}}{60}{figure.caption.77}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Bending-torsion fatigue tests on cylindrical specimens (\cite {carpinteri2003multiaxial})\relax }}{62}{figure.caption.82}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Bending-torsion fatigue tests on cylindrical specimens (\cite {carpinteri2003multiaxial})\relax }}{63}{figure.caption.83}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Multiaxial random loading sequence\relax }}{64}{figure.caption.86}
+\contentsline {figure}{\numberline {2.18}{\ignorespaces $S_{a}$ of bending tests with mean stress on 10HNAP\relax }}{66}{figure.caption.91}
+\contentsline {figure}{\numberline {2.19}{\ignorespaces $Hydro_{+-}$ of bending tests with mean stress on 10HNAP\relax }}{67}{figure.caption.92}
+\contentsline {figure}{\numberline {2.20}{\ignorespaces Bending and torsion test on 10HNAP steel(R=-1). Data are presented in Tab.\ref {tab.10HNAPbending} and \ref {tab.10HNAPtorsion}. The torsion best fit and the bending numerical results(optimal time step of method 2 deduced in Chapter \ref {chp:5}) are obtained with the coefficients of Tab.\ref {tab.10HNAP.para}\relax }}{68}{figure.caption.93}
+\contentsline {figure}{\numberline {2.21}{\ignorespaces Wöhler tensile curves for various mean stress values. Data are presented in Tab.\ref {tab.10HNAPmean} and results are obtained with the coefficients of Tab.\ref {tab.10HNAP.para}\relax }}{69}{figure.caption.94}
+\contentsline {figure}{\numberline {2.22}{\ignorespaces Calibration on 10HNAP steel, bending and torsion tests on 10HNAP(R=-1). Data are presented in Tab.\ref {tab.10HNAPbending} and \ref {tab.10HNAPtorsion} and results obtained with the coefficients of Tab.\ref {tab.10HNAP.para}\relax }}{70}{figure.caption.95}
+\contentsline {figure}{\numberline {2.23}{\ignorespaces Calibration on 10HNAP steel, bending tests with various mean stress on 10HNAP, data from Tab.\ref {tab.10HNAPmean} and results obtained with the coefficients of Tab.\ref {tab.10HNAP.para}\relax }}{71}{figure.caption.96}
+\contentsline {figure}{\numberline {2.24}{\ignorespaces Random bending-torsion 2D tests on 10HNAP, data from Tab.\ref {tab.10HNAPrand1} and \cite {jabbado:pastel-00002116}. Results are obtained with the coefficients of Tab.\ref {tab.10HNAP.para.random} ($\alpha _{M} = \pi /8$ and r = 0.2)\relax }}{72}{figure.caption.97}
+\contentsline {figure}{\numberline {2.25}{\ignorespaces Random bending-torsion 2D tests on 10HNAP, data from Tab.\ref {tab.10HNAPrand2} and \cite {jabbado:pastel-00002116}. Results are obtained with the coefficients of Tab.\ref {tab.10HNAP.para.random} ($\alpha _{M} = \pi /4$ and r = 0.5)\relax }}{73}{figure.caption.98}

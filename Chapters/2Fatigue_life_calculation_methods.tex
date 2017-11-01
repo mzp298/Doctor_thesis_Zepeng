@@ -461,7 +461,7 @@ devoted to the field of endurance or limited endurance, uses for damage paramete
 
 The proposal is based on two main hypothesis : (i) the strain work given to the material per loading cycle is considered as the driving force for fatigue crack initiation and (ii) it is calculated after macroscopic elastic shakedown.
 
-Many authors use cycle counting techniques (chapter \cite{chp:4}) to extract, from a random stress tensor sequence, cycles from which the damage could be estimated. These techniques have two main drawbacks : (i) the choice of the cycle counting algorithm influences the calculated fatigue life since the number of counted cycles is algorithm dependent (\cite{dowling1983fatigue}), and (ii) for multiaxial non-proportional stress states, in many approaches from the literature, the variable chosen for cycle counting differs from the damage parameter. To avoid such drawbacks an incremental model has been developed. The strain work density given at a point M is written in an incremental way as follows :
+Many authors use cycle counting techniques (chapter \ref{chp:4}) to extract, from a random stress tensor sequence, cycles from which the damage could be estimated. These techniques have two main drawbacks : (i) the choice of the cycle counting algorithm influences the calculated fatigue life since the number of counted cycles is algorithm dependent (\cite{dowling1983fatigue}), and (ii) for multiaxial non-proportional stress states, in many approaches from the literature, the variable chosen for cycle counting differs from the damage parameter. To avoid such drawbacks an incremental model has been developed. The strain work density given at a point M is written in an incremental way as follows :
 
 $$dW_g(M,t)=\sum_{i=1}^{3}\sum_{j=1}^{3}\left\langle \sigma_{ij}\left( M,t\right)\dot{\epsilon}_{ij}\left( M,t \right)\right\rangle  dt .$$
 
@@ -791,7 +791,7 @@ of cycles to initiation (S–N curve) can be achieved:
 \end{equation}
 where $p$, $q$ and $r$ are functions of the hardening parameters of the three phases defined above.
 
-From Eq.\eqref{Tlim} and Eq.\eqref{eqH} we can find the yield point $\tau_s$ of the crystal in the saturation phase as a function of the amplitude $P_a$ and the mean value $P_m$ of the hydrostatic pressure, the phase difference of coefficient $H$ and two material related parameters $\alpha$ and $\beta$ :
+From Eq.\eqref{taus} we can find the yield point $\tau_s$ of the crystal in the saturation phase as a function of the amplitude $P_a$ and the mean value $P_m$ of the hydrostatic pressure, the phase difference of coefficient $H$ and two material related parameters $\alpha$ and $\beta$ :
 \begin{equation}
 \tau_{lim}=\tau_s=\frac{-\alpha P_m+\beta}{\alpha\frac{P_a}{C_A}+H}
 \label{taus}
@@ -811,7 +811,10 @@ which is given by
  and which will send this loading to the endurance curve, and a shape factor $\sqrt{\pi}\leqslant H\leqslant \sqrt{2\pi}$ characterizing the shape of the loading path in the considered plane of normal $\uline{n}$(Figure.\ref{figH}). The local saturation limit $\tau_{lim}(\uline{m},\uline{n})$ is then defined by the amplitude of the shear loading $T_a$ once multiplied by the scaling factor $k$ and corrected by the shape factor $H$, giving
 $$\tau_{lim}(\uline{m},\uline{n})=\frac{k}{H}T_a(\uline{m},\uline{n})=\frac{1}{H}\frac{\beta-\alpha P_m}{T_a+\alpha P_a}T_a(\uline{m},\uline{n}).$$
 
+\vspace{6pt}
 \textbf{General loading}
+\vspace{6pt}
+
  In this framework, Morel's method uses three successive steps for computing the damage created by repeated loading sequences:
 
 \begin{enumerate}
@@ -819,7 +822,7 @@ $$\tau_{lim}(\uline{m},\uline{n})=\frac{k}{H}T_a(\uline{m},\uline{n})=\frac{1}{H
 \item On this plane  $\uline{n}_c$, on each direction $\uline{m}$, compute the plastic history, that is
 \begin{enumerate}
 	\item compute the shear history $T(t)=\uline{m}\cdot \uline{\uline{\Sigma}}\cdot \uline{n}_c$
-	\item decompose in local loading cycles $(i)$ counted $n_{(i)}$ times with load amplitude $T_a^{(i)}$, mean hydrostatic load of mean $P_m^{(i)}$ and amplitude $P_a^{(i)}$, using a standard scalar rainflow counting method (chapter \cite{chp:4})
+	\item decompose in local loading cycles $(i)$ counted $n_{(i)}$ times with load amplitude $T_a^{(i)}$, mean hydrostatic load of mean $P_m^{(i)}$ and amplitude $P_a^{(i)}$, using a standard scalar rainflow counting method (chapter \ref{chp:4})
 	\item compute the local saturation limit $$\tau_{lim}^{(i)}=\frac{1}{H}\frac{\beta-\alpha P_m^{(i)}}{T_a^{(i)}+\alpha P_a^{(i)}}T_a^{(i)}$$ and its sequence average $\left\langle \tau_{lim} \right\rangle$ 
 	\item compute the accumulated plastic strain 
 	\begin{equation}

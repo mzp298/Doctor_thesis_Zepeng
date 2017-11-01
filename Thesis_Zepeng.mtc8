@@ -1,12 +1,24 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.1}The notion of damage in fatigue}{\reset@font\mtcSfont 47}{section.4.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.1.1}Linear and nonlinear accumulation of damage}{\reset@font\mtcSSfont 48}{subsection.4.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.1.2}Classic Chaboche damage law}{\reset@font\mtcSSfont 50}{subsection.4.1.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.2}Verification method of Chaboche law}{\reset@font\mtcSfont 56}{section.4.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.3}Chaboche law containing different criteria}{\reset@font\mtcSfont 57}{section.4.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.1}Chaboche law with Crossland criterion}{\reset@font\mtcSSfont 57}{subsection.4.3.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.2}Chaboche law with Dang Van criterion}{\reset@font\mtcSSfont 57}{subsection.4.3.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}Numerical testing on different loading patterns}{\reset@font\mtcSfont 57}{section.4.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.1}Test on pure rotation}{\reset@font\mtcSSfont 59}{subsection.4.4.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.2}Test on 4-point bending}{\reset@font\mtcSSfont 60}{subsection.4.4.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.3}Test on rotative bending}{\reset@font\mtcSSfont 61}{subsection.4.4.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.5}Cycle Counting Method}{\reset@font\mtcSfont 64}{section.4.5}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.1}Multiscale energy dissipation approach}{\reset@font\mtcSfont 71}{section.5.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.2}Kinematic Hardening Models}{\reset@font\mtcSfont 73}{section.5.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.1}Linear Kinematic Hardening}{\reset@font\mtcSSfont 73}{subsection.5.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.2}Non-linear Kinematic Hardening}{\reset@font\mtcSSfont 74}{subsection.5.2.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.3}Mean stress effect in local model}{\reset@font\mtcSfont 74}{section.5.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.4}Weakening scales and yield function}{\reset@font\mtcSfont 77}{section.5.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.4.1}The concept of weakening scales}{\reset@font\mtcSSfont 77}{subsection.5.4.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.4.2}Distribution of weakening scales}{\reset@font\mtcSSfont 77}{subsection.5.4.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.4.3}Yield function with mean stress effect}{\reset@font\mtcSSfont 78}{subsection.5.4.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.4.4}Local plastic model}{\reset@font\mtcSSfont 78}{subsection.5.4.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.5}Construction of an energy based fatigue approach}{\reset@font\mtcSfont 79}{section.5.5}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.6}Nonlinearity of damage accumulation}{\reset@font\mtcSfont 80}{section.5.6}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.6.1}Energy approach with Chaboche law}{\reset@font\mtcSSfont 80}{subsection.5.6.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.6.2}Sequence effect}{\reset@font\mtcSSfont 82}{subsection.5.6.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.6.3}The final model}{\reset@font\mtcSSfont 85}{subsection.5.6.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.7}Numerical strategy}{\reset@font\mtcSfont 86}{section.5.7}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.7.1}Scale discretization}{\reset@font\mtcSSfont 86}{subsection.5.7.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.7.2}Calculation of local plastic dissipation}{\reset@font\mtcSSfont 86}{subsection.5.7.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.7.3}Damage integration algorithm}{\reset@font\mtcSSfont 88}{subsection.5.7.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.8}Validation on recovery tests}{\reset@font\mtcSfont 95}{section.5.8}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.8.1}Recovery of Chaboche law on cyclic loading}{\reset@font\mtcSSfont 95}{subsection.5.8.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.8.2}Numerical recovery of sequence effect}{\reset@font\mtcSSfont 103}{subsection.5.8.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Major damage effect}{\reset@font\mtcSSSfont 105}{section*.94}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.9}Identification strategy}{\reset@font\mtcSfont 108}{section.5.9}}

@@ -28,7 +28,7 @@ Therefore, in periodic tests, damage evolution is considered to be linear in tha
 $$D=N/N_F.$$
 For a test at two stress levels, the evolution is as shown schematically in \figref{linear accumulation}. In fact, the linear accumulation rule can be applied even to a damage which evolves nonlinearly. For this it is sufficient that a one-to-one relationship between $D$ and $N/N_F$ exists, or even that the damage evolution curve be a unique function(independent of the applied cycle) of the life ratio $N/N_F$ . 
 
-There are, therefore, two ways of defining a damage incremental law incorporating the linear accumulation rule. It can be linear of the form and shown in \figref{linearevolution}:
+There are, therefore, two ways of defining a damage incremental law incorporating the linear accumulation rule. It can be linear of the form described below and shown in \figref{linearevolution}:
 $$\delta D= \delta N/N_F(...),$$
 \begin{figure}[!h]
 	\centering
@@ -39,7 +39,7 @@ $$\delta D= \delta N/N_F(...),$$
 where $N_F$ is the number of cycles to failure defined by the chosen parametric data.
 The damage evolution can be nonlinear such as:
 $$\delta D= \frac{(1-D)^{-k}}{k+1}\frac{\delta N}{N_F(...)}.$$
-Here in any case, the damage evolution curve as function of life ratio $\delta N/N_F$ is supposed to be independent of the local state of stress (\figref{linear accumulation}).
+Above, the damage evolution curve as function of life ratio $\delta N/N_F$ is supposed to be independent of the local state of stress (\figref{linear accumulation}).
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures//linearaccumulation.png} 
@@ -50,19 +50,19 @@ In contrast, if the damage evolution curve,as a function of the life ratio $N/N_
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures//nonlinearaccumulation.png} 
-	\caption{Damage with nonlinear evolution and nonlinear accumulation, where high stress and low stress follow different damage evolution curve. This leads to the summation of fatigue life proportion difference between different loading sequence.}
+	\caption{Damage with nonlinear evolution and nonlinear accumulation, where high stress and low stress follow different damage evolution curve. This leads to differences into the summation of fatigue life proportion between different loading sequences.}
 	\label{nonlinear accumulation}
 \end{figure}
 There, $D_1$ represents the state of internal damage at the end of the first level $\sigma_1$. Evolution at the second level $\sigma_2$ continues from the same state, and it is clear that the sum of the life ratio is less than 1. From the point of view of the damage law, this nonlinearity always corresponds to the case where the variables which represent the load $\sigma$ and the damage variable $D$ have coupled evolution.
 
-The Palmgren-Miner linear accumulation law gives good results only for loads for which there is little variation in the amplitude and mean value of stress. The assumption of linear damage is open to many objections. For example, sequence and interaction of events may have major influences on life, the rate of damage accumulation may depend on the load amplitude, experimental evidence often indicates that $\sum_{i}N_i/N_{F_i}\neq 1$ for a low-to-high or a high-to-low loading sequence, all effects which are not taken into account in the linear damage assumption.
+The Palmgren-Miner linear accumulation law gives good results for loads for which there is little variation in the amplitude and mean value of stress. The assumption of linear damage is open to many objections. For example, sequence and interaction of events may have major influences on life, the rate of damage accumulation may depend on the load amplitude, experimental evidence often indicates that $\sum_{i}N_i/N_{F_i}\neq 1$ for a low-to-high or a high-to-low loading sequence, all effects which are not taken into account in the linear damage assumption.
 
 \newpage
 \subsection{Classic Chaboche damage law}
 
 In cyclic loading, one way of writing a damage law which expresses the experimental results is to assume that the damage per cycle is a function of the maximum and the mean values of the stress:
 $$\delta D/\delta N=f(\sigma_{Max},\sigma_m).$$
-In order to recover, after integration, one of the many forms proposed to represent the Wohler curves, Chaboche proposes to use a law such as:
+In order to recover, after integration, one of the many forms proposed to represent the Wohler curves, Chaboche (\cite{FFE:FFE1}) proposes to use a law such as:
 \begin{equation}
 \delta D/\delta N=\frac{\sigma_{Max}-\sigma_l(\sigma_m)}{\sigma_{u}-\sigma_{Max}}\left( \frac{\sigma_{Max}-\sigma_m}{B(\sigma_m)}\right) ^{\gamma}.
 \label{generalchaboche}
@@ -77,17 +77,17 @@ $\sigma_u$ : ultimate stress of the material.
 
 The number of cycles to failure is obtained by an obvious integration, with the condition:
 
-$N=0 \to D=0$(initial undamaged state)
+$N=0 \to D=0$(initial undamaged state),
 
-$N=N_F \to D=1$(macro-crack initiation)
+$N=N_F \to D=1$(macro-crack initiation).
 
-so that by integration Eq.\eqref{generalchaboche} from $D=0$ to $D=1$ we get:
+By integration Eq.\eqref{generalchaboche} from $D=0$ to $D=1$ we therefore get:
 \begin{equation}N_F=\frac{\sigma_{u}-\sigma_{Max}}{\sigma_{Max}-\sigma_l(\sigma_m)}\left(\frac{\sigma_{Max}-\sigma_m}{B(\sigma_m)}\right)^{-\gamma}.
 \label{NF}
 \end{equation}
 
 Eq.\eqref{generalchaboche} then writes:
-$$\delta D=\delta N/N_F.$$
+$$\delta D=\dfrac{\delta N}{N_F(\sigma_{Max},\sigma_{u})}.$$
 
 The constants are determined from conventional data:$\sigma_u$ is usually known, $s_{-1},b$ fit the results on the fatigue limits with relation $\sigma_l(\sigma_m)=\sigma_m+s_{-1}(1-b\sigma_m)$. Exponent $\gamma$ is obtained from the S-N curve for reversed conditions, by plotting $\sigma_{Max}$ as function of $N_F(\sigma_{Max}-\sigma_l(\sigma_m))/(\sigma_{u}-\sigma_{Max})$, as deduced from Eq.\eqref{NF}. Coefficient $B(\sigma_m)$ is obtained from one point of the S-N curve.
 
@@ -95,7 +95,7 @@ The constants are determined from conventional data:$\sigma_u$ is usually known,
 \textbf{Uniaxial case}
 \vspace{6pt}
 
-The equation studied below allows us to describe the effects of nonlinear accumulation in the case of non-periodic cyclic loads\cite{FFE:FFE1}. A simple way to introduce such effects in the damage growth equation consists in rendering the load and damage variables non-separable. For example, we may take:
+The equation studied below allows us to describe the effects of nonlinear accumulation in the case of non-periodic cyclic loads (\cite{FFE:FFE1}). A simple way to introduce such effects in the damage growth equation consists in rendering the load and damage variables non-separable. For example, we may take:
 $$\delta D=D^{\alpha(\sigma_{Max},\sigma_m)}\left(\frac{\sigma_{Max}-\sigma_m}{B(\sigma_m)}\right)^\gamma\delta N$$
 The exponent $\alpha$ depends on the loading $(\sigma_{Max},\sigma_m)$, which results in non-separability. A reference choice is
 
@@ -103,12 +103,12 @@ The exponent $\alpha$ depends on the loading $(\sigma_{Max},\sigma_m)$, which re
 $$\alpha(\sigma_{Max},\sigma_m)=1-a\left\langle\dfrac{\sigma_{Max}-\sigma_l(\sigma_m)}{\sigma_u-\sigma_{Max}}\right\rangle$$
 \vspace{6pt}
 
-The exponent $\alpha$ represents the effect of the internal variables(for example the hardening state of the material), which depends on the loading $(\sigma_{Max},\sigma_m)$, resulting in non-separability. It induces allows a non-linear damage cumulative rule as it is experimentally observed above. $a$ and $\gamma$ are material parameters. The coefficients $\gamma$ is determined from experimental Woehler's curves. 
+The exponent $\alpha$ represents the effect of the internal variables(for example the hardening state of the material), which depends on the loading $(\sigma_{Max},\sigma_m)$, resulting in non-separability. It induces allows a non-linear damage cumulative rule as it is experimentally observed. Above, $a$ and $\gamma$ are material parameters. The coefficients $\gamma$ is determined from experimental Woehler's curves. 
 
-The concept of effective stress applied to fatigue provides an indirect measure. The measured evolutions are extremely nonlinear. With this concept, damage can really be measured only in the last part of the life-time, when microscopic initiations have already occurred(this is the phase of micro-propagation of defects). And these damage evolutions are extremely nonlinear. To reproduce this phenomenological aspect it is sufficient to make a change of variable by replacing $D$ in the previous equation by:
+The concept of effective stress applied to fatigue provides an indirect measure. The measured evolutions are extremely nonlinear. With this concept, damage can really be measured only in the last part of the life-time, when microscopic initiations have already occurred(this is the phase of micro-propagation of defects). And these damage evolutions are extremely nonlinear. To reproduce this phenomenological aspect it is sufficient to make a change of variable by replacing $D$ in the previous equation by a different measure of damage described by:
 $$1-(1-D)^{\gamma+1}.$$
 The differential law can be written as:
-\begin{equation}\delta D=[1-(1-D)^{\gamma+1}]^{\alpha(\sigma_{Max},\sigma_m)}\big[\frac{\sigma_{Max}-\sigma_m}{M(\sigma_m)}\big]^\gamma\delta N
+\begin{equation}\delta D=[1-(1-D)^{\gamma+1}]^{\alpha(\sigma_{Max},\sigma_m)}\big[\frac{\sigma_{Max}-\sigma_m}{M(\sigma_m)(1-D)}\big]^\gamma\delta N
 \label{diff}
 \end{equation}
 
@@ -126,10 +126,10 @@ and we find by comparing with Eq.\eqref{NF} that $M(\sigma_m)=B(\sigma_m)(\gamma
 \begin{equation}\delta [1-(1-D)^{\gamma+1}]^{1-\alpha}=\frac{\delta N}{N_F}
 \label{diffform}
 \end{equation}
-When we integrate Eq.\eqref{easyintegration} from $0$ to $D$ at constant loading conditions. The damage, expressed as a function of $N/N_F$ is:
+When we integrate Eq.\eqref{easyintegration} from $0$ to $D$ at constant loading conditions, the damage, expressed as a function of $N/N_F$ is:
 \begin{equation}D=1-\left[ 1-\left( \frac{N}{N_F}\right) ^{\frac{1}{1-\alpha}}\right] ^{\frac{1}{\gamma+1}}.
 \end{equation}
-This expression is in good agreement with experimental results\cite{lemaitre1990mechanics}. 
+This expression is in good agreement with experimental results (\cite{lemaitre1990mechanics}). 
 
 \vspace{6pt}
 \textbf{Multiaxial case}
@@ -163,7 +163,7 @@ We can get the $D-N$ curve in \figref{DN} by integrating Eq.\eqref{chabochemulti
 \label{D-N}
 \end{equation} 
 
-\begin{figure}[h!]
+\begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures//D-N.png} 
 	\caption{Damage accumulation in terms of N in constant loading condition, with D and N are related by the evolution equation \eqref{D-N}}
@@ -190,22 +190,22 @@ Finally, $\sigma_H$ is the mean hydrostatic stress defined by:
 \begin{equation}\sigma_H=\frac{1}{6}[\max tr(\uline{\uline{\sigma}}(n))+\min tr(\uline{\uline{\sigma}}(n))],\end{equation}
 
 
-The damage is expressed the same as in uniaxial case:
+In terms of number of cycles at given load, the damage is expressed as in uniaxial case:
 \begin{equation}D=1-\left[ 1-\left( \frac{N}{N_F}\right) ^{\frac{1}{1-\alpha}}\right] ^{\frac{1}{\gamma+1}}.
 \label{damage}
 \end{equation}
 
-\begin{figure}[h!]
+\begin{figure}[!h]
 	\centering
 	\includegraphics[width=\textwidth]{figures//Dratio1.png}
 	\vspace{-12pt}
 	\caption{Influence of function $\alpha$ in fatigue damage versus fatigue life ratio ($\gamma=0.1$)}
 	\label{Alpha}
 \end{figure}
-These theories account for the nonlinear nature of fatigue damage accumulation by using nonlinear relations such as Eq.\eqref{damage} where the power $\alpha$ depends on the load level(see \figref{Alpha}).
+These theories account for the nonlinear nature of fatigue damage accumulation by using nonlinear relations such as Eq.\eqref{damage} where the power $\alpha$ depends on the load level(see \figref{Alpha}). The same equation with frozen $\alpha$ leads to linear damage accumulation.
 
 
-\begin{figure}[h!]
+\begin{figure}[!h]
 	\centering
 	\includegraphics[width=\textwidth]{figures//Dratio2.png}
 	\vspace{-12pt}
@@ -218,7 +218,7 @@ These theories account for the nonlinear nature of fatigue damage accumulation b
 To facilitate our verification of the law we use two-stress level loading, the specimen is firstly loaded at stress $\sigma_1$ for $N_1$ cycles and then at stress $\sigma_2$ for $N_2$ cycles until failure. We can then observe if the experimental results are satisfactory.\\
 After $N_1$ cycles, we have from Eq.\eqref{damage}, a damage $D_1$ given by:
 \begin{equation}
-[1-(1-D_1)^{\gamma+1}]^{1-\alpha_1}=\frac{N_1}{N_{F1}}
+[1-(1-D_1)^{\gamma+1}]^{1-\alpha_1}=\frac{N_1}{N_{F1}}.
 \label{eq.23a}
 \end{equation}
 By integrating Eq.\eqref{diffform} from $D=D_1$ to $D=1$, we get:
@@ -236,12 +236,12 @@ with
 		\begin{split}
 			\eta&=\frac{1-\alpha_2}{1-\alpha_1}
 			\\&=\frac{A_{\uppercase\expandafter{\romannumeral2 2}} - A_{\uppercase\expandafter{\romannumeral2}}^\ast(P_{m2})}{A_{\uppercase\expandafter{\romannumeral2 1}} - A_{\uppercase\expandafter{\romannumeral2}}^\ast(P_{m1})}\frac{ \sigma_{u} - \sigma_{eqMax1}}{ \sigma_{u} - \sigma_{eqMax2}}
-			\\&=\frac{\sqrt{J_{2,a_2}} - s_{-1}(1-3bP_{m_2})}{\sqrt{J_{2,a_1}} - s_{-1}(1-3bP_{m_1})}\frac{ \sigma_{u} - \max(2\sqrt{J_{2,a_1}})}{  \sigma_{u} - \max(2\sqrt{J_{2,a_2}})}
+			\\&=\frac{\sqrt{J_{2,a_2}} - s_{-1}(1-3bP_{m_2})}{\sqrt{J_{2,a_1}} - s_{-1}(1-3bP_{m_1})}\frac{ \sigma_{u} - \max(2\sqrt{J_{2,a_1}})}{  \sigma_{u} - \max(2\sqrt{J_{2,a_2}})}.
 	\end{split}
 \label{eq.etachaboche}
 \end{equation}
 
-In the case of high-low loading sequence($\sigma_1>\sigma_2 \; or \; \alpha_1<\alpha_2$):
+In the case of high-low loading sequence($\sigma_1>\sigma_2 \; thus \; \alpha_1<\alpha_2$):
 
 $$\eta=\frac{1-\alpha_2}{1-\alpha_1}<1\Rightarrow \frac{N_2}{N_{F2}}=1-(\frac{N_1}{N_{F1}})^\eta<1-\frac{N_1}{N_{F1}},$$
 
@@ -311,7 +311,7 @@ $$A_{\uppercase\expandafter{\romannumeral2}}=\sqrt{J_2}_a=\frac{1}{2}\max\limits
 For Dang Van criterion:
 $$A_{\uppercase\expandafter{\romannumeral2}}= \max\tau(n).$$ 
 
-\newpage
+
 \subsection{Test on pure rotation}
 
 From the fatigue zone we select $r=0.1$ as the radius to study. We select here:
@@ -324,7 +324,7 @@ $\gamma=6$
 
 
 $A_{\uppercase\expandafter{\romannumeral2}}-N_F$ figure is shown in \figref{JNrotation}. 
-\begin{figure}[h!]
+\begin{figure}[!h]
 	\centering
 	\includegraphics[width=\textwidth]{figures//JNrotation.png} 
 	\caption{$A_{\uppercase\expandafter{\romannumeral2}}-N_F$ curve in rotation at r=0.1}
@@ -361,10 +361,10 @@ Substituting the above to Eq.\eqref{eq.etachaboche}, we can get $\eta$ in High-L
 
 The predicted results are shown in \figref{2stressR}.
 
-\begin{figure}[h!]
+\begin{figure}[!h]
 	\centering
 	\includegraphics[width=\textwidth]{figures//2stressR.png} 
-	\caption{Two-stress level loading in pure rotation at r=0.1}
+	\caption{Two-stress level loading in pure rotation at r=0.1. The lower curve displays the relative proportion of cycles in high-low sequence, the upper curve displays the same information in a low-high sequence}
 	\label{2stressR}
 \end{figure}
 
@@ -379,7 +379,7 @@ $\sigma_{u}=1.67MPa$
 $\gamma=6$
 
 The $A_{\uppercase\expandafter{\romannumeral2}}-N_F$ figure is shown in \figref{JNbending}.
-\begin{figure}[h!]
+\begin{figure}[!h]
 	\centering
 	\includegraphics[width=\textwidth]{figures//JNbending.png} 
 	\caption{$A_{\uppercase\expandafter{\romannumeral2}}-N_F$ curve in 4-point bending at y=3}
@@ -416,10 +416,10 @@ and in Low-High sequence as shown in Table.\ref{tab.etabending}:
 
 The predicted results are shown in \figref{2stressB}.
 
-\begin{figure}[h!]
+\begin{figure}[!h]
 	\centering
 	\includegraphics[width=\textwidth]{figures//2stressB.png} 
-	\caption{Two-stress level loading in 4-point bending at y=3}
+	\caption{Two-stress level loading in 4-point bending at y=3. The lower curve displays the relative proportion of cycles in high-low sequence, the upper curve displays the same information in a low-high sequence}
 	\label{2stressB}
 \end{figure}
 
@@ -428,7 +428,7 @@ The predicted results are shown in \figref{2stressB}.
 From the fatigue zone we select $r=0.5$ as the radius to study. 
 The $A_{\uppercase\expandafter{\romannumeral2}}-N_F$ figure is shown in \figref{JNRB}.
 
-\begin{figure}[h!]
+\begin{figure}[!h]
 	\centering
 	\includegraphics[width=\textwidth]{figures//JNRB.png} 
 	\caption{$A_{\uppercase\expandafter{\romannumeral2}}-N_F$ curve in rotative bending at r=3}
@@ -465,22 +465,22 @@ and in Low-High sequence as shown in Table.\ref{tab.etarb}:
 	\label{tab.etarb}
 \end{table}
 
-The predicted results are shown in \figref{2stressRB}.
+The predicted results are shown in \figref{2stressRB} which are very close to a situation of linear damage accumulation.
 
-\begin{figure}[h!]
+\begin{figure}[!h]
 	\centering
 	\includegraphics[width=\textwidth]{figures//2stressRB.png} 
-	\caption{Two-stress level loading in rotative bending at r=0.5}
+	\caption{Two-stress level loading in rotative bending at r=0.5. The lower curve displays the relative proportion of cycles in high-low sequence, the upper curve displays the same information in a low-high sequence}
 	\label{2stressRB}
 \end{figure}
 \clearpage
 
 \textbf{Discussion}
 
-The Chaboche law is based on this assumption: fatigue damage occurs and accumulates only when the loading stress is higher than its fatigue limit. However, Eq.\eqref{chabochemulti} neglects the damage contribution of the loading stress which is lower than the fatigue limit. According to some experimental results such as: Lu and Zheng \cite{xi2008strengthening} \cite{xi2009strengthening} \cite{xi2009changes}, Sinclair \cite{sinclair1952investigation}, and Makajima et al. \cite{nakajima2007coaxing}, it has shown that the damage of low amplitude loads is one
+The Chaboche law is based on this assumption: fatigue damage occurs and accumulates only when the loading stress is higher than its fatigue limit. Therefor, Eq.\eqref{chabochemulti} neglects the damage contribution of the loading stress which is lower than the fatigue limit. According to some experimental results such as: Lu and Zheng \cite{xi2008strengthening} \cite{xi2009strengthening} \cite{xi2009changes}, Sinclair \cite{sinclair1952investigation}, and Makajima et al. \cite{nakajima2007coaxing}, however, it appears that the damage of low amplitude loads is one
 of the main reasons for prediction errors. 
 
-Impurities in the material affect the fatigue life. So does the material's hardness, and especially its surface condition. How the components were heat-treated in the factory is another factor. The operating temperature makes a difference, too. Worse still is the structural component's shape: notches and sharp corners create concentrations of stress that can initiate cracks. Thus further studies should be carried out concerning these factors.
+Impurities in the material affect the fatigue life. So does the material's hardness, and especially its surface condition. How the components were heat-treated in the factory is another factor. The operating temperature makes a difference, too. Worse still is the structural component's shape: notches and sharp corners create concentrations of stress that can initiate cracks. Thus further studies should be carried out concerning these factors whilst studying damage accumulation.
 
 \section{Cycle Counting Method}
 \label{sec:5.1}
@@ -514,7 +514,7 @@ described in various works \cite{ASTM1985}:
 
 The object of all cycle counting methods is to compare the effect of variable amplitude load histories to fatigue data and curves obtained with simple constant amplitude load cycles. Rainflow counting is a process to obtain cyclic data of complex loading. Its name comes from the original description from the Japanese researchers Matsuiski and Endo where they describe the process in terms of rain falling off a pagoda style roof. A more insightful description based on cyclic plasticity is usually used to explain the method.
 
-\begin{figure}[h!]
+\begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.4\textwidth]{figures//rainflow.jpg} 
 	\caption{Complex Cyclic Loading}
@@ -528,9 +528,9 @@ Rainflow counting will identify four cycles, A-D-I, B-C-B, E-F-E and G-H-G. Rain
 \vspace{6pt}
 The five-step procedure to extract the cyclic data is summarized as follows:
 
-1.  Determine the peaks and valleys of the stress/strain during cycling, and in order to start from the absolute maximum (\figref{Reorder}).
+1.  Determine the peaks and valleys of the stress/strain during cycling, and recognize in order to center at the absolute maximum stress (\figref{Reorder}).
 
-2.  Visualize as draining water from the deepest valley (\figref{StressRange}).
+2.  Visualize the resulting landscape draining water from the deepest valley (\figref{StressRange}).
 
 3.  Measure total depth drained (stress range) and mean depth (mean stress) of this valley, (\figref{StressRange}), and the number of these cycles in the load history. 
 
@@ -538,56 +538,67 @@ The five-step procedure to extract the cyclic data is summarized as follows:
 
 5.  Use the damage rule to obtain the life from all cycles.
 
-\begin{figure}[h!]
+\begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{figures//Reorder.png} 
 	\caption{Reorder to Start from Absolute Maximum(retrieved  from ``How to Calculate Fatigue Life When The Load History Is Complex'', February 13, 2015, author: Michael Bak, https://caeai.com/blog/how-calculate-fatigue-life-when-load-history-complex)}
 	\label{Reorder}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{figures//StressRange.png} 
 	\caption{Imagine Filling with Water and Extract Stress Range and Mean Stress(retrieved  from ``How to Calculate Fatigue Life When The Load History Is Complex'', February 13, 2015, author: Michael Bak, https://caeai.com/blog/how-calculate-fatigue-life-when-load-history-complex)}
 	\label{StressRange}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{figures//DrainWater.png} 
 	\caption{Drain Water Starting at Lowest Valley and Repeat Cycle Extraction(retrieved  from ``How to Calculate Fatigue Life When The Load History Is Complex'', February 13, 2015, author: Michael Bak, https://caeai.com/blog/how-calculate-fatigue-life-when-load-history-complex)}
 	\label{DrainWater}
 \end{figure}   
 
-\begin{figure}[h!]
+\begin{figure}[!h]
 	\centering
 	\includegraphics[width=\textwidth]{figures//rfdemo.png} 
 	\caption{Rainflow counting method demonstration}
 	\label{rfdemo}
 \end{figure}  
 
-Once all the cycles have been categorized, the Palmgren-Miner Rule is applied. Even though the linear damage rule ignores sequence effects, it is most widely used because of its simplicity and the fact that though many nonlinear damage models have been developed, unfortunately none can encompass many of the complicating factors encountered during complex variable amplitude loading. As an example, for this case assuming mean stress is ignored:
+Once all the cycles have been categorized, the Palmgren-Miner Rule is applied. Even though the linear damage rule ignores sequence effects, it is most widely used because of its simplicity and the fact that though many nonlinear damage models have been developed, unfortunately none can encompass many of the complicating factors encountered during complex variable amplitude loading. As an example, for this case assuming mean stress is ignored, we get in this example:
 
 $$\sum_i \frac{N_i}{N_{F_i}}=\frac{1}{N_{F_{450}}}+\frac{1}{N_{F_{200}}}+\frac{1}{N_{F_{50}}}+...=1.$$
 
 where n is replaced with the number of actual cycles of its corresponding type in the load history, for instance $N_{F_{450}}$ represents the life obtained from the $S-N$ data for a stress range of $450MPa$.  From this equation, the number of total cycles through the entire load history can be found.
 
-The rainflow procedure can be automated so that cyclic content of complex loading can be extracted efficiently.  For example, fatigue computer codes such as $nCode DesignLife$ will accept files of test data, or the input of multiple load steps from a static or transient finite element analysis, and use the rainflow approach to automatically extract the cyclic data.  In addition, $DesignLife$ automates the Palmgrem-Miner Damage Rule calculation to determine number of cycles to failure, with the term cycle here defined as one pass through the entire time history. A computer program that accomplishes rainflow cycle counting applied to a complex history such as that in \figref{loadhistory} results in a table of ranges and means shown in \figref{loadhistory1}.
+The rainflow procedure can be automated so that cyclic content of complex loading can be extracted efficiently.  For example, fatigue computer codes such as $nCode DesignLife$ will accept files of test data, or the input of multiple load steps from a static or transient finite element analysis, and use the rainflow approach to automatically extract the cyclic data.  In addition, $DesignLife$ automates the Palmgrem-Miner Damage Rule calculation to determine number of cycles to failure, with the term cycle here defined as one pass through the entire time history. A computer program in matlab that accomplishes rainflow cycle counting applied to a complex history such as that in \figref{randomdemo} results in a histogram of amplitudes and mean values shown in \figref{randomdemoampl}, \figref{randomdemomean} and \figref{randomdemo3d}.
 
-\begin{figure}[h!]
+\begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.9\textwidth]{figures//loadhistory.png} 
-	\caption{Suspension load}
-	\label{loadhistory}
+	\includegraphics[width=\textwidth]{figures//randomdemo.png} 
+	\caption{One million normally distributed random stresses around -100MPa}
+	\label{randomdemo}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[!h]
 	\centering
-	\includegraphics[width=\textwidth]{figures//loadhistory1.png} 
-	\caption{Example of the Number of cycles at Various Stress Ranges and Mean Stress Combinations from the Suspension Load History in \figref{loadhistory}}
-	\label{loadhistory1}
+	\includegraphics[width=\textwidth]{figures//randomdemo_ampl.png} 
+	\caption{Amplitudes distribution extracted from \figref{randomdemo}}
+	\label{randomdemoampl}
 \end{figure}
 
-
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{figures//randomdemo_mean.png} 
+	\caption{Mean stresses distribution extracted from \figref{randomdemo}}
+	\label{randomdemomean}
+\end{figure}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{figures//randomdemo_3d.png} 
+	\caption{Rainflow matrix extracted from \figref{randomdemo}}
+	\label{randomdemo3d}
+\end{figure}
 
 

@@ -6,24 +6,23 @@
 \subsection{Introduction}
 The aim of this chapter is to validate the predictive model proposed. This consists in simulating tests available in the literature to determine the lifetime at initiation of crack by the application of the model and to compare these with the experimental lifetimes. The validation of the model involves a wide variety of metallic materials. The loads tested are of two types: cyclic loading of multiaxial stress of constant amplitude and repeated sequences of uniaxial stresses of variable amplitudes. The fatigue data of the materials used and the loads tested are taken from laboratory experiments or the literature.
 
-\newpage
 \subsection{Random amplitude 1D tests from Cetim on AW-6106 T6 aluminum}
 
-What makes automobile fatigue so difficult to predict is that, unlike standard tests done in a laboratory, an automobile's structure has to endure a complex, mostly random, set of static as well as cyclical stresses when in service, such as in \figref{complexloading} which could represent load data from testing or measurement, extracting the cyclic information can be challenging. 
-\begin{figure}[h!]
+What makes automobile fatigue so difficult to predict is that, unlike standard tests done in a laboratory, an automobile's structure has to endure a complex, mostly random, set of static as well as cyclical stresses when in service. For example in \figref{complexloading} which could represent load data from testing or measurement, extracting the cyclic information can be challenging. 
+\begin{figure}[!h]
 	\centering
-	\includegraphics[width=\textwidth]{figures//complexloading.png} 
-	\caption{Complex Cyclic Loading}
+	\includegraphics[width=\textwidth]{figures//xyz_suspension.png} 
+	\caption{Complex loading of a car suspension arm (data from PSA tests)}
 	\label{complexloading}
 \end{figure}
 
-As we mentioned before, the mean value of $\alpha$ depends on the loading pattern(sinusoidal, linear division points between max and min stresses in unit cycle,...), but the our optimal time step numerical strategy is not loading pattern dependent because it equally divides the range of $\alpha$ during the load history, which means it only concerns the variation amplitude of stress intensity. So in random loading case with only recorded maximum and minimum load history, we divide linearly between every 2 recorded points into $100$ time steps, and issue numerical results with optimal time step method.
+As we mentioned before, the mean value of $\alpha$ depends on the loading pattern(sinusoidal, linear division points between max and min stresses in unit cycle,...), but our optimal time step numerical strategy is not loading pattern dependent because it equally divides the range of $\alpha$ during the load history, which means the variation amplitude of stress intensity. So in random loading case with only recorded maximum and minimum load history, we first divide linearly between every 2 recorded points into $100$ time steps, and then perform numerical tests with optimal time step method.
 
-The tests are performed on aluminum batches, the characteristics of the sample are shown in table.\ref{tab:cetim}.
+The first tests are performed on aluminum batches, the characteristics of the sample are shown in Tab.\ref{tab:cetim}.
 \begin{figure}[!h]
 \centering
-\includegraphics[width=0.7\textwidth]{figures//aluminum_cetim.png} 
-\caption{Specimen geometry for fatigue tests of AW-6106 T6 aluminum}
+\includegraphics[width=\textwidth]{figures//aluminum_cetim.png} 
+\caption{Specimen geometry for fatigue tests of AW-6106 T6 aluminum(sample given by PSA)}
 \label{fig:aluminum}
 \end{figure}
 \begin{table}[!h]
@@ -37,19 +36,19 @@ Macroscopic yield stress                                    & $\sigma_y=230$ MPa
 Thickness & $e=2.9mm$                        \\
 Width		 & $l= 9.95mm$                        \\ \hline
 \end{tabular}
-\caption{Material parameters}
+\caption{Material parameters of AW-6106 T6 aluminum}
 \label{tab:cetim}
 \end{table}
 
-There are 12 validated uniaxial fatigue tests on the AW-6106 T6 aluminum sample, in which 2 are constant amplitude load case and 10 random  load case. 
-The cyclic stress of test number 1(ep01) and test number 2(ep02) are respectively $131.9MPa$ and $97.0MPa$. We first identify the same parameters feasible to both loading cases. 
+There are 12 validated uniaxial fatigue tests on the AW-6106 T6 aluminum sample, in which 2 are of constant amplitude load case and 10 involve random  load case. 
+The cyclic stress of test number 1(ep01) and test number 2(ep02) are respectively $131.9MPa$ and $97.0MPa$. We first identify the parameters from these two tests. 
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{figures//EP_a_06_random.png} 
-\caption{Random loading history on batch 06 of AW-6106 T6 aluminum}
+\caption{Random loading history on BATCH\_A\_06 of AW-6106 T6 aluminum (see Tab.\ref{tab:Cetim})}
 \end{figure}	
-The detailed tests information are shown in table.\ref{tab:Cetim}. There are 27000($\pm 2.4\%$) recorded points per repetition. 
+The detailed tests information are shown in Tab.\ref{tab:Cetim}. There are 27000($\pm 2.4\%$) recorded points per repetition. 
 
 \begin{table}[!h]
 \centering
@@ -81,14 +80,14 @@ BATCH\_B\_10      & nom                & 225.88                               & 
 BATCH\_B\_11      & nom                & 225.88                               & 178                                      & 4684211                              \\
 BATCH\_B\_12      & nom                & 225.88                               & 123                                      & 3236842                              \\ \hline
 \end{tabular}
-\caption{Cetim fatigue tests result on AW-6106 T6 aluminum}
+\caption{Fatigue tests result on AW-6106 T6 aluminum, test data provided by CETIM}
 \label{tab:Cetim}
 \end{table}
 
-We assume the material parameters like Young's modulus, hardening parameter, hydrostatic pressure sensitivity, macroscopic yield stress, Wohler curve exponent and sequence effect parameters are known. We first identify the weakening scales distribution, and dissipated energy to failure from cyclic tests ep01 and ep02. Then change the parameter $n_0$ to see if our assumption is correct or need to be changed. 
+We assume the material parameters like Young's modulus $E$, hardening parameter $k$, hydrostatic pressure sensitivity $\lambda_+$(for $\overline{\Sigma}_H=0$ in all cases), macroscopic yield stress $\sigma_y$ and sequence effect sensitivity $a$ are known. We first identify the weakening scales distribution $\beta$, and dissipated energy to failure $W_0$ from cyclic tests ep01 and ep02. Then fit the major damage effect parameter $f$ to see if our assumption is correct or need to be changed. 
 
 
-The numerical fitting process show that the damage is caused mainly by large stresses. The definition of major stress now need to be specified according to the material. To take into account this effect we first find out the proportion stress above a certain value in the repetition signal of random loading, as shown in Table.\ref{tab.majordamage}.  Here ep\_a and ep\_b are the same material. Since the samples were extracted from aluminum profiles of industrial products,  the two batches correspond to two different times of sampling in the production. The variation is supposed to be representative of the regular tolerances you might have in the production. ep\_a\_01 and ep\_a\_02 are constant amplitude loading which helps identify the power of weakening scale distribution $\beta$. ep\_a\_03 is low cycle fatigue data.  ep\_b\_02 and ep\_b\_03 have infinite life time. The data in the table are grabbed from random signal high cycle fatigue loading history.
+The numerical fitting process show that the damage is caused mainly by large stresses (see later). The definition of major stress which affects the value of $\alpha$ now needs to be specified according to the material. To take into account this effect we first find out the proportion stress above a certain value in the repetition signal of random loading, as shown in Tab.\ref{tab.majordamage}.  Here ep\_a and ep\_b are the same material. Since the samples were extracted from aluminum profiles of industrial products,  the two batches correspond to two different times of sampling in the production. The variation is supposed to be representative of the regular tolerances you might have in the production. ep\_a\_01 and ep\_a\_02 are constant amplitude loading which helps identify the power of weakening scale distribution $\beta$. ep\_a\_03 is low cycle fatigue data.  ep\_b\_02 and ep\_b\_03 have infinite life time. The data in the table are grabbed from random signal high cycle fatigue loading history.
 
 \begin{table}[!h]
 \centering
@@ -117,7 +116,7 @@ The numerical fitting process show that the damage is caused mainly by large str
 \textbf{ep\_b\_11}           & 4.636\%        & 1.664\%        & 0.790\%        & 0.209\%         & 0.049\%         & 0.034\%         & 0.004\%         \\
 \textbf{ep\_b\_12}           & 0.775\%        & 0.141\%        & 0.007\%        & 0.000\%         & 0.000\%         & 0.000\%         & 0.000\%         \\ \hline
 \end{tabular}
-\caption{Proportion of stress(MPa) above which there is major damage with $\Sigma_y$=230MPa, test data provided by CETIM on AW-6106 T6 aluminum.}
+\caption{Proportion of stress(MPa) above different threshold with $\Sigma_y$=230MPa, test data provided by CETIM on AW-6106 T6 aluminum.}
 \label{tab.majordamage}
 \end{table}
 
@@ -137,7 +136,7 @@ The numerical fitting process show that the damage is caused mainly by large str
 \label{tab.sensitivity_random1}
 \end{table}
 
-From Table.\ref{tab.sensitivity_const2} and Table.\ref{tab.sensitivity_random2} we can see $f(\beta)$ has positive correlation with $\beta$ in high cycle fatigue which is the regime we focus on. So we give $f(\beta)=\beta$ in high cycle random loading case to minimize the parameters to collaborate.
+From Tab.\ref{tab.sensitivity_const2} and Tab.\ref{tab.sensitivity_random2} we can see $f$ has positive correlation with $\beta$ in high cycle fatigue which is the regime we focus on.  However, very large value of $f$ may ignore the small stress variations in the loading history, which goes against our assumption that small stresses also contribute to material damage. So we give $f=1.1$ in high cycle random loading case to minimize the relative error.
 \begin{table}[!h]
 \centering
 \begin{tabular}{lrrrrrrr}
@@ -168,7 +167,7 @@ From Table.\ref{tab.sensitivity_const2} and Table.\ref{tab.sensitivity_random2} 
 \caption{Parameters sensitivity at random loading of ep05 on AW-6106 T6 aluminum}
 \label{tab.sensitivity_random2}
 \end{table}
-The sensitivity of parameters is calculated by dividing the percentage of variation of  number of points to failure with respect to the reference number of points to failure, by the percentage of variation of parameter with respect to the reference parameter. As is shown in Eq.\eqref{eq.sensitivity}.
+The sensitivity of parameters is calculated by dividing the percentage of variation of  number of points to failure with respect to the reference number of points to failure, by the percentage of variation of parameter with respect to the reference parameter, as shown in Eq.\eqref{eq.sensitivity}.
 \begin{equation}
 sensitivity = \dfrac{\left( Max_n-Min_n\right)/Ref_n}{\left( Max-Min\right)/Ref}.
 \label{eq.sensitivity}
@@ -191,44 +190,44 @@ sensitivity = \dfrac{\left( Max_n-Min_n\right)/Ref_n}{\left( Max-Min\right)/Ref}
 %\end{Figure}
 %The different parameters impacts are shown in purple curves. We can see the weakening scale $\beta$ changes the inclination of S-N curve. $\beta$ is also the magnification factor which magnify large stress damage as well as minify small stress damage.  Not surprisingly the hydrostatic stress sensitivity $\lambda$ has more influence on large stress. The amplification factor of load intensity in damage accumulation $a$ and  energy scaling in damage accumulation law $W_0$ adapts to fatigue life without changing the shape the S-N curve.
 
-The reference parameters value we use are in Tab.\ref{tab.cetim.alp}.  
+After the fitting process, the reference parameters value we use are in Tab.\ref{tab.cetim.alp}.
 \begin{table}[!h]
 \centering
-\begin{tabular}{lrrrr}
+\begin{tabular}{lrrrrr}
 \hline
-\textbf{Constant $\alpha$} & \textbf{$W_0$(MPa)} & \textbf{$\lambda$} & \textbf{$\beta$}  & \textbf{$\alpha$}\\
-& 326.9         & 0.1               & 1.1            & 0.7                         \\ \hline
-\textbf{Changing $\alpha$} & \textbf{$W_0$(MPa)} & \textbf{$\lambda$} & \textbf{$\beta$}  & \textbf{$a$}\\
-& 326.9         & 0.1               & 1.1            & 0.1                         \\ \hline
+\textbf{Constant $\alpha$} & \textbf{$W_0$(MPa)} & \textbf{$\lambda_+=\lambda_-$} & \textbf{$\beta$}  & \textbf{$\alpha$}& \textbf{$f$}\\
+& 326.9         & 0.1               & 1.1            & 0.7      & 1.1                    \\ \hline
+\textbf{Changing $\alpha$} & \textbf{$W_0$(MPa)} & \textbf{$\lambda_+=\lambda_-$} & \textbf{$\beta$}  & \textbf{$a$} & \textbf{$f$}\\
+& 326.9         & 0.1               & 1.1            & 0.1         & 1.1                \\ \hline
 \end{tabular}
 \caption{The parameters in 1D cyclic and random loading on AW-6106 T6
 aluminum fatigue tests by Cetim}
 \label{tab.cetim.alp}
 \end{table}
 
-The best fitted results with constant $\alpha$ are shown in \figref{fig.Cetimerralpfix}. The dispersion is relatively large. In conclusion, we are not able to predict the random stress amplitude fatigue life with fixed $\alpha$, because random stresses not only cause different energy dissipations, but also have influence on damage accumulation speed, so we have to update the value of $\alpha$ at each time step. 
+The best fitted results with constant $\alpha$ are shown in \figref{fig.Cetimerralpfix}. The dispersion is relatively large. In conclusion, we are not able to predict the random stress amplitude fatigue life with fixed $\alpha$, because random stresses not only cause different energy dissipations, but also show a distinctive load sequence effect. So we have to update the value of $\alpha$ at each time step. 
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{figures//Cetim_err_alpfix.png} 
-\caption{Comparison between experimental and numerical results of 1D cyclic and random loading on aluminum fatigue tests by CETIM with constant $\alpha$}
+\caption{Comparison between experimental and numerical results of 1D cyclic and random loading on aluminum fatigue tests by CETIM with constant $\alpha$ from the first row of Tab.\ref{tab.cetim.alp}}
 \label{fig.Cetimerralpfix}
 \end{figure}
 
-We can find that the numerical results are satisfactory with major damage effect. The dispersion figure with distinction of major damage is depicted in \figref{fig.Cetimerr}. Here it is necessary to control the parameter $a$ to make sure $\alpha>0$ in the most severe situation.
+We can find that the numerical results are satisfactory when we introduce a major damage influence through the construction of a load dependent $\alpha$. The dispersion figure with distinction of major damage is depicted in \figref{fig.Cetimerr}. Here it is necessary to control the parameter $a$ to make sure $\alpha>0$ in the most severe situation.
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{figures//Cetim_err.png} 
-\caption{Comparison between experimental and numerical results of 1D cyclic and random loading on aluminum fatigue tests by Cetim}
+\caption{Comparison between experimental and numerical results of 1D cyclic and random loading on aluminum fatigue tests by Cetim with load dependent $\alpha$. Coefficients data are given in the second row of Tab.\ref{tab.cetim.alp}}
 \label{fig.Cetimerr}
 \end{figure}
 
 \clearpage
-\subsection{Experimental validation of the model on aluminum 6082 T6}
-\subsubsection{Presentation of aluminum 6082 T6}
+\section{Experimental validation of the model on aluminum 6082 T6}
+\subsection{Presentation of aluminum 6082 T6}
 
-The material tested is aluminum 6082 T6, used by \cite{susmel2003multiaxial} to validate their method of lifetime prediction. The mechanical properties of this material are summarized in Table.\ref{tab.al6082t6}.
+The material tested is aluminum 6082 T6, used by \cite{susmel2003multiaxial} to validate their method of lifetime prediction. The mechanical properties of this material are summarized in Tab.\ref{tab.al6082t6}.
 
 \begin{table}[!h]
 \centering
@@ -240,19 +239,23 @@ The material tested is aluminum 6082 T6, used by \cite{susmel2003multiaxial} to 
 \caption{Mechanical and dynamic characteristics of aluminum 6082 T6 (\cite{susmel2003multiaxial})}
 \label{tab.al6082t6}
 \end{table}
-\subsubsection{Specimens of aluminum 6082 T6}
-The specimens were made from the drawn bars (diameter 30 mm) and the geometrical shape of which is given in \figref{fig:aluminum6082T6}. They are successively polished with 6-μm diamond compounds until a good mirror-like finish is obtained.
+
+\vspace{6pt}
+\textbf{Specimens of aluminum 6082 T6}
+\vspace{6pt}
+
+The specimens were made from the drawn bars (diameter 30 mm) and the geometrical shape of which is given in \figref{fig:aluminum6082T6}. They are successively polished with $6-\mu m$ diamond compounds until a good mirror-like finish is obtained.
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.7\textwidth]{figures//aluminum6082T6sample.png} 
-\caption{Specimen geometry for fatigue tests of aluminum 6082 T6}
+\caption{Specimen geometry for fatigue tests of aluminum 6082 T6 (dimension in millimeters)\ref{susmel2003multiaxial}}
 \label{fig:aluminum6082T6}
 \end{figure}
 
-\subsubsection{Fatigue tests on aluminum 6082 T6}
+\subsection{Fatigue tests on aluminum 6082 T6}
 The simulated tests are purely alternate and summarized in Tables \ref{tab.AL6082T6BT1D} and \ref{tab.AL6082T6BT2D}. They consist of simple tests in bending, torsion and bending-torsion in phase and out-phase for two cases of biaxial stress ratio, $\lambda=\tau_{xy,a}/\sigma_{x,a}$
 ($\lambda>1$ and $\lambda<1$). The expected lifetimes range from $10^4$ to $1.5\times10^6$ cycles. 
-\begin{table}[]
+\begin{table}[!h]
 \centering
 \begin{tabular}{|l|l|l|l|l|l|}
 \hline
@@ -274,10 +277,10 @@ PC14T2 & 0 & 155 & $\infty$ & 0 & 16195 \\ \hline
 PC15T4 & 0 & 106 & $\infty$ & 0 & \textgreater1.1E6 \\ \hline
 PC16T4 & 0 & 104 & $\infty$ & 0 & 565150 \\ \hline
 \end{tabular}
-\caption{Simple bending and torsion tests (R = -1)\cite{susmel2003multiaxial}}
+\caption{Simple bending and torsion tests (R = -1), data from \cite{susmel2003multiaxial}}
 \label{tab.AL6082T6BT1D}
 \end{table}
-\begin{table}[]
+\begin{table}[!h]
 \centering
 \begin{tabular}{|l|l|l|l|l|l|}
 \hline
@@ -306,75 +309,74 @@ P38BT13 & 68 & 99 & 1.46 & 90 & 262980 \\ \hline
 P39BT13 & 68 & 99 & 1.46 & 90 & 398615 \\ \hline
 P41BT15 & 79 & 116 & 1.47 & 90 & 46045 \\ \hline
 \end{tabular}
-\caption{In-phase and out-of-phase bending-torsion tests (R = -1)\cite{susmel2003multiaxial}}
+\caption{In-phase and out-of-phase bending-torsion tests (R = -1), data from \cite{susmel2003multiaxial}}
 \label{tab.AL6082T6BT2D}
 \end{table}
 
 In the Tables \ref{tab.AL6082T6BT1D} and \ref{tab.AL6082T6BT2D}, $\sigma_{x,a}$ is the normal stress amplitude, $\tau_{xy,a}$ is the torsion amplitude, $\lambda$ is the biaxial stress ratio, $\delta$ is the phase shift between the components of applied stresses and $N_{f,5\%}$ represents the number of cycles at break, defined by a 5\% decrease in flexural or torsional stiffness.
 
-It is interesting to note that a reduced amount of plasticity was measured by strain gauges in the PC10T2, PC14T2 and P36BT11 tests\cite{susmel2003multiaxial}. They are therefore located in the field of oligocyclic fatigue. Therefore, they are not simulated as we only deal with the field of polycyclic fatigue3.
+It is interesting to note that a reduced amount of plasticity was measured by strain gauges in the PC10T2, PC14T2 and P36BT11 tests (\cite{susmel2003multiaxial}). They are therefore located in the field of oligocyclic fatigue. Therefore, they are not simulated as we only deal with the field of polycyclic fatigue3.
 
-\subsubsection{Application of the model}
+\newpage
+\subsection{Identification of model parameters on aluminum 6082 T6}
 
-\textbf{Identification of model parameters}
-\vspace{6pt}
 
-Once $\alpha_m$ is fixed in constant amplitude cyclic loading,it has the same influence as $W_0$. The parameters remain to calibrate are $\lambda$ on the mean stress sensitivity which makes a distinction between bending and torsion, and the exponent $\beta$ on the slope of $S-N$ curve. 
+Once the average coefficient $\alpha_m$ is fixed in constant amplitude cyclic loading,it has the same influence as $W_0$. The parameters remain to calibrate are $\lambda_{+}$ on the mean stress sensitivity which makes a distinction between bending and torsion, and the exponent $\beta$ on the slope of $S-N$ curve. The identification strategy is as described in Section \ref{sec:5.9}.
 
-In \figref{fig.al6082T6err}a and \figref{fig.al6082T6err}b the diagonal represents a good correlation between the experimental and predicted lifetimes. The line segments on either side of the diagonal correspond to a fatigue lifetime error of a factor of two. The parameters of the 6082 T6 aluminum model are given in Table.\ref{tab.6082T6para}.
+In \figref{fig.al6082T6err}a and \figref{fig.al6082T6err}b the diagonal represents a good correlation between the experimental and predicted lifetimes. The line segments on either side of the diagonal correspond to a fatigue lifetime error of a factor of two. The parameters of the 6082 T6 aluminum model are given in Tab.\ref{tab.6082T6para}.
 
-\begin{table}[]
+\begin{table}[!h]
 \centering
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|}
 	\hline
-	\textbf{$\beta$} & \textbf{$\lambda_+$} & \textbf{$\lambda_-$} & \textbf{$W_0$} & \textbf{$a$}  \\ \hline
-	5.126     & 0.9 &0         &1E8 Pa  & 0.4    \\ \hline
+	\textbf{$\beta$} & \textbf{$\lambda_+$} & \textbf{$\lambda_-$} & \textbf{$W_0$} & \textbf{$a$}  & \textbf{$f$}\\ \hline
+	5.126     & 0.9 &0         &1E8 Pa  & 0.4 & 1.1   \\ \hline
 \end{tabular}
 \caption{Parameter identification of AL6082T6 steel}
 \label{tab.6082T6para}
 \end{table}
 
-%\begin{Figure}[!h]{Calibration on on 6082 T6 aluminum (\cite{susmel2003multiaxial})}[fig.al6082T6sn]
-%	\graphfile*[42]{figures//AL6082T6_bt1D_sn.png}[Bending and torsion tests on 6082 T6 aluminum(R=-1)]
-%	\graphfile*[42]{figures//AL6082T6_bt2d_sn.png}[Bending-torsion tests on 6082 T6 aluminum(R=-1)]
-%	\\
-%	\graphfile*[42]{figures//AL6082T6_bt2d90_sn.png}[Bending-torsion $90^\circ$ out of phase tests on 6082 T6 aluminum(R=-1)]
-%\end{Figure}
+\vspace{6pt}
+\textbf{Non-proportional Hardening}
+\vspace{6pt}
 
-\begin{Figure}[]{Calibration on on 6082 T6 aluminum (\cite{susmel2003multiaxial})}[fig.al6082T6err]
+Non-proportional hardening is used to describe loading paths where the principal strain axes rotate during cyclic loading. The simplest example would be a bar subjected to alternating cycles of tension and torsion loading. Between the tension and torsion cycles the principal axis would rotate $45^\circ$. Out-of-phase loading is a special case of non-proportional loading and is used to denote cyclic loading histories with sinusoidal or triangular waveforms and a phase difference between the loads. (\cite{EFATIGUE})
+
+Materials show additional cyclic hardening during this type of loading that is not found in uniaxial or any proportional loading path. Here is an example for $90^\circ$ out-of-phase tension-torsion loading. (\figref{fig.outofphase})
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{figures//outofphase.jpg} 
+	\caption{The loading path and loading waveform of multiaxial corrosion fatigue (stress control) (a) loading path of proportional and non-proportional, (b) loading waveform of proportional loading, (c) loading waveform of non-proportion (\cite{HUANG2017259})}
+	\label{fig.outofphase}
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{figures//outofphasestress.png} 
+	\caption{The $90^\circ$ out-of-phase loading path has been found to produce the largest degree of non-proportional hardening. (\cite{EFATIGUE})}
+	\label{fig.outofphasestress}
+\end{figure}
+
+The $90^\circ$ out-of-phase loading path has been found to produce the largest degree of non-proportional hardening. The magnitude of the additional hardening observed for this loading path as compared to that observed in uniaxial or proportional loading is highly dependent on the microstructure and the ease with which slip systems develop in a material. A non-proportional effective stress, $S_{a90}=\sqrt{\sigma_{11}^2+\tau_{12}^2}$, can be introduced which is defined as the equivalent stress under $90^\circ$ out-of-phase loading at high plastic strains in the flat portion of the stress-strain curve. This term reflects the maximum degree of additional hardening that might occur for a given material.
+
+
+
+\begin{Figure}[!h]{Calibration on on 6082 T6 aluminum (\cite{susmel2003multiaxial}). Comparison between experimental results and our model used with coefficients given in Tab.\ref{tab.6082T6para}. We obtain a good correlation in bending and torsion tests. The out of phase test are not satisfactory in these batches: P32BT8, P41BT15, P36BT11.}[fig.al6082T6err]
 \graphfile*[52]{figures//AL6082T6_bt1D_err.png}[Bending and torsion tests on 6082 T6 aluminum(R=-1)]
 \graphfile*[52]{figures//AL6082T6_bt2d_err.png}[Bending-torsion tests on 6082 T6 aluminum(R=-1)]
 \\
 \graphfile*[52]{figures//AL6082T6_bt2d90_err.png}[Bending-torsion $90^\circ$ out of phase tests on 6082 T6 aluminum(R=-1)]
 \end{Figure}
 
-%-----------------------------NF error curve--------------------------
-%\begin{figure}[!h]
-%	\centering
-%	\includegraphics[width=\textwidth]{figures//bt1D_AL6082T6_err1.png} 
-%	\caption{Bending and torsion tests on 6082 T6 aluminum(R=-1)}
-%	\label{fig.bt1DAL6082T6err1}
-%\end{figure}
-%\begin{figure}[!h]
-%	\centering
-%	\includegraphics[width=\textwidth]{figures//bt2D_m_30AL6082T6_err1.png} 
-%	\caption{Bending-torsion tests on 6082 T6 aluminum(R=-1)}
-%	\label{fig.bt2Dm30AL6082T6err1}
-%\end{figure}
-%\begin{figure}[!h]
-%	\centering
-%	\includegraphics[width=\textwidth]{figures//bt2D_AL6082T6_err1.png} 
-%	\caption{Bending-torsion $90^\circ$ out of phase tests on 6082 T6 aluminum(R=-1)}
-%	\label{fig.bt2D30AL6082T6err1}
-%\end{figure}
-The model predictive results for the periodic loads of constant amplitude with a radial path are in good agreement with the durations of experimental life. For the latter condition, 90 deg out-of-phase loading was also investigated(\figref{fig.al6082T6err}c). These tests indicated a dramatic decrease in the number of cycles to failure,$N_F$ , as a result of out-of-phase loading. The influence of the plastic strain path on life is thus clearly demonstrated. It is shown that the total strain energy density, $ΔW_t = ΔW_e+ + ΔW_p$(\cite{ellyin1991phase}) , correlates with both the in-phase and out-of-phase cyclic tests, and therefore is a proper damage parameter to be used for life predictions. A brief description of how ΔW t can be calculated is given for the case of proportional loading. The predicted results are compared with the experimental data, and the agreement is found to be very good indeed.
+The model predictive results for the periodic loads of constant amplitude with a radial path are in good agreement with the durations of experimental life. For the latter condition, 90 deg out-of-phase loading was also investigated(\figref{fig.al6082T6err}c). These tests indicated a dramatic change in the number of cycles to failure , $N_F$ , as a result of out-of-phase loading. The influence of the plastic strain path on life is thus clearly demonstrated. It is shown that the total strain energy density, $ΔW_t = ΔW_e+ + ΔW_p$ (\cite{ellyin1991phase}) , correlates with both the in-phase and out-of-phase cyclic tests, and therefore is a proper damage parameter to be used for life predictions. Our microplasticity model does not take this strain path effect into account and we get inaccurate results on this test.
 
 
 
 \clearpage
 \section{Experimental validation of the model on 30NCD16 steel}
 \subsection{Presentation of steel 30NCD16}
-Tests with blocks of loading from database are compared to our model predictions. The material for testing is steel 30NCD16. The mechanical characteristics relating to each lot were determined by Dubar \cite{Dubar1992} by effecting monotonic tensile test batch. He eventually define ``average material" one who has characteristics listed in Table. \ref{30ncdchar}:
+Tests with blocks of loading from database are compared to our model predictions. The material for testing is steel 30NCD16. The mechanical characteristics relating to each lot were determined by Dubar (\cite{Dubar1992}) by effecting monotonic tensile test batch. He eventually define ``average material" one who has characteristics listed in Tab.\ref{30ncdchar}:
 
 \begin{table}[!h]
 \centering
@@ -389,7 +391,7 @@ Tests with blocks of loading from database are compared to our model predictions
 
 \subsection{Fatigue tests performed by Dubar on steel 30 NCD 16}
 Tests carried out under simple bending and torsional stresses are grouped together in
-Table. \ref{bendingr1} and \ref{torsionR1}.
+Tab.\ref{bendingr1} and \ref{torsionR1}.
 
 \begin{table}[!h]
 \centering
@@ -406,11 +408,7 @@ Table. \ref{bendingr1} and \ref{torsionR1}.
 8 & 200000 & 0 & 725 \\  \hline
 9 & 210000 & 0 & 720 \\  \hline
 10 & 230000 & 0 & 715 \\  \hline
-11 & 250000 & 0 & 708 \\ \hline  \hline
-12 & 51000 & 450 & 640 \\  \hline
-13 & 140000 & 450 & 620 \\   \hline
-14 & 120000 & 290 & 695 \\  \hline
-15 & 250000 & 290 & 660 \\ \hline
+11 & 250000 & 0 & 708 \\ \hline  
 \end{tabular}
 \caption{$30 NCD 16$ steel fully reversed bending tests \cite{Dubar1992}}
 \label{bendingr1}
@@ -433,11 +431,11 @@ Table. \ref{bendingr1} and \ref{torsionR1}.
 25 & 230000 & 445 \\ \hline
 26 & 250000 & 440 \\ \hline
 \end{tabular}
-\caption{$30 NCD 16$ steel fully reversed torsion tests \cite{Dubar1992}}
+\caption{$30 NCD 16$ steel fully reversed torsion tests (\cite{Dubar1992})}
 \label{torsionR1}
 \end{table}
 
-The results of combined bending-torsion tests in phase with or without mean stress $\sigma_{x,m}$ are given in the following table:
+The results of combined bending-torsion tests in phase with or without mean stress $\sigma_{x,m}$ are given in the Tab.\ref{torsionR1} and Tab.\ref{tab.30ncd16bt}:
 \begin{table}[!h]
 \centering
 \begin{tabular}{|c|c|c|c|c|}
@@ -451,45 +449,39 @@ The results of combined bending-torsion tests in phase with or without mean stre
 32 & 95000 & 450 & 490 & 285 \\ \hline
 33 & 120000 & 290 & 500 & 290 \\ \hline
 \end{tabular}
-\caption{$30 NCD 16$ steel bending-torsion tests \cite{Dubar1992}}
+\caption{$30 NCD 16$ steel bending-torsion tests (\cite{Dubar1992})}
 \label{tab.30ncd16bt}
 \end{table}
 
 \subsection{Identification of model parameters for steel 30 NCD 16}
-Indeed, the identification of the parameters consists in minimizing the relative difference between the experimental lifetimes and calculated for purely alternating bending tests (R = -1). This is clearly indicated in figure (3.13) by obtaining a good correlation between these different lifetimes
+The identification of the parameters consists in minimizing the relative difference between the experimental lifetimes and calculated ones for purely alternating bending tests (R = -1). Following the identification strategy of section \ref{sec:5.9}, it is clearly indicated in \figref{fig.30NCD16sn}a by obtaining a good correlation between these different lifetimes
 
 \begin{table}[!h]
 \centering
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|}
 	\hline
-	\textbf{$\beta$} & \textbf{$\lambda_+$} & \textbf{$\lambda_-$} & \textbf{$W_0$} & \textbf{$a$}  \\ \hline
-	5.3     & 0.55 &0         &4.97E8 Pa  & 0.4    \\ \hline
+	\textbf{$\beta$} & \textbf{$\lambda_+$} & \textbf{$\lambda_-$} & \textbf{$W_0$} & \textbf{$a$}& \textbf{$f$}  \\ \hline
+	5.3     & 0.55 &0         &4.97E8 Pa  & 0.4& 1.1   \\ \hline
 \end{tabular}
 \caption{Parameter identification of 30NCD16 steel}
 \label{30ncdpara2}
 \end{table}
 
-\begin{Figure}[!h]{Calibration on  30NCD16 (\cite{Dubar1992})}[fig.30NCD16]
-	\graphfile*[42]{figures//NCD16_bt1D_sn.png}[Bending and torsion tests on 30NCD16(R=-1)]
-	\graphfile*[42]{figures//NCD16_b1D_m_sn.png}[Bending tests with mean stress on 30NCD16(R=-1)]
-	\\
-	\graphfile*[42]{figures//NCD16_bt2D_m_sn.png}[Bending-torsion tests with mean stress on 30NCD16]
-	\graphfile*[42]{figures//NCD16_bt2D90_m_sn.png}[Bending-torsion 90 degree out-of-phase tests with mean stress on 30NCD16]
+\begin{Figure}[!h]{Calibration on  30NCD16 (\cite{Dubar1992}). We can observe that the bending-torsion experimental values are largely dispersed}[fig.30NCD16sn]
+	\graphfile*[52]{figures//NCD16_bt1D_sn.png}[Bending and torsion tests on 30NCD16(R=-1)]
+	\graphfile*[52]{figures//NCD16_bt2D_m_sn.png}[Bending-torsion tests with mean stress on 30NCD16]
 \end{Figure}
 
-\begin{Figure}[!h]{Calibration on  30NCD16 (\cite{Dubar1992})}[fig.30NCD16]
-\graphfile*[45]{figures//NCD16_bt1D_err.png}[Bending and torsion tests on 30NCD16(R=-1)]
-\graphfile*[45]{figures//NCD16_b1D_m_err.png}[Bending tests with mean stress on 30NCD16(R=-1)]
-\\
-\graphfile*[45]{figures//NCD16_bt2D_m_err.png}[Bending-torsion tests with mean stress on 30NCD16]
-\graphfile*[45]{figures//NCD16_bt2D90_m_err.png}[Bending-torsion 90 degree out-of-phase tests with mean stress on 30NCD16]
+\begin{Figure}[!h]{Calibration on  30NCD16 (\cite{Dubar1992}). In figure (c) data 29(same $N_F$ with data30 but with smaller $\sigma_{x,m}$) and 32(2-D with large mean stress)  from Tab.\ref{tab.30ncd16bt} are more dispersed. The numerical tests are carried out using the coefficients of Tab.\ref{30ncdpara2}}[fig.30NCD16err]
+\graphfile*[52]{figures//NCD16_bt1D_err.png}[Bending and torsion tests on 30NCD16(R=-1)]
+\graphfile*[52]{figures//NCD16_bt2D_m_err.png}[Bending-torsion tests with mean stress on 30NCD16]
 \end{Figure}
 
 
 \clearpage
 \section{Experimental validation of the model on SM45C steel}
 \subsection{Presentation of steel SM45C}
-This is a structural steel widespread use for the crankshafts and the structural components. The chemical composition and mechanical properties of this material is given in Table. \ref{SM45Cchem} and Table. \ref{SM45Cmec}.
+This is a structural steel widespread use for the crankshafts and the structural components. The chemical composition and mechanical properties of this material is given in Tab. \ref{SM45Cchem} and Tab. \ref{SM45Cmec}.
 
 \begin{table}[!h]
 \centering
@@ -523,11 +515,11 @@ A:	Elongation at break.
 \end{flushleft}
 \newpage
 \subsection{Fatigue tests performed by Dubar on steel SM45C}
-Preliminary fatigue tests in purely alternating torsion and purely alternating flexion were performed by Lee \cite{lee2013out}. These two types of tests were carried out with test pieces of the same geometric shape. In addition, the author had performed moderate stress bending fatigue tests to study its effect on the lifetime of SM45C steel. All uniaxial fatigue tests performed by Lee \cite{lee2013out} are illustrated in \figref{fig.SM45CSN}. This figure shows a reduction in bending life of SM45C steel in the presence of a positive mean stress. Crack initiation was detected when the stiffness of the specimen or specimen used was reduced by 10\%.
+Preliminary fatigue tests in purely alternating torsion and purely alternating flexion were performed by \cite{lee2013out}. These two types of tests were carried out with test pieces of the same geometric shape. In addition, the author had performed moderate stress bending fatigue tests to study its effect on the lifetime of SM45C steel. All uniaxial fatigue tests performed by \cite{lee2013out} are illustrated in \figref{fig.SM45CSN}. This figure shows a reduction in bending life of SM45C steel in the presence of a positive mean stress. Crack initiation was detected when the stiffness of the specimen or specimen used was reduced by 10\%.
 \begin{figure}[!h]
 \centering
-\includegraphics[width=0.8\textwidth]{figures//SM45C_SN.png} 
-\caption{Fatigue curves made on SM45C steel by Lee \cite{lee2013out}}
+\includegraphics[width=\textwidth]{figures//SM45C_SN.png} 
+\caption{Fatigue curves on SM45C steel by \cite{lee2013out}}
 \label{fig.SM45CSN}
 \end{figure}
 
@@ -535,37 +527,38 @@ Preliminary fatigue tests in purely alternating torsion and purely alternating f
 Preliminary fatigue tests were carried out under fully reversed bending and torsion separately.
 \begin{table}[!h]
 \centering
-\begin{tabular}{|c|c|c|c|}
+\begin{tabular}{crrr}
 \hline
-\begin{tabular}[c]{@{}c@{}}Bending Tests\\ （R=-1）\end{tabular}& \begin{tabular}[c]{@{}c@{}}N\\ {[}Cycles{]}\end{tabular} & \begin{tabular}[c]{@{}c@{}}$\sigma_{x,a}$\\ {[}MPa{]}\end{tabular} & \begin{tabular}[c]{@{}c@{}}$\sigma_{x,m}$\\ {[}MPa{]}\end{tabular}\\ \hline
-1                                                                       & 1.9E4                                                             & 620                                                                    & 0                            \\ \hline
-2                                                                       & 3.6E4                                                             & 590                                                                    & 0                              \\ \hline
-3                                                                       & 5.8E4                                                             & 552                                                                     & 0                             \\ \hline
-4                                                                       & 9E4                                                               & 535                                                                     & 0                             \\ \hline
-5                                                                       & 1.7E5                                                             & 505                                                                       & 0                           \\ \hline
-6                                                                       & 2.2E5                                                             & 490                                                                        & 0                          \\ \hline
-7                                                                       & 4.4E5                                                             & 470                                                                         & 0                         \\ \hline
-8                                                                       & 8E5                                                               & 465                                                                         & 0                         \\ \hline
-9                                                                       & 1.4E6                                                             & 462                                                                         & 0                         \\ \hline
-10                                                                      & 1.5E6                                                             & 465                                                                         & 0                         \\ \hline
-11                                                                      & 2.4E6                                                             & 460                                                                         & 0                         \\ \hline
-12                                                                      & 3.3E6                                                             & 460                                                                         & 0                         \\ \hline
-13                                                                      & 6E6                                                               & 440                                                                          & 0                        \\ \hline
-14                                                                      & 6.6E6                                                             & 458                                                                          & 0                        \\ \hline
-15                                                                      & 7E6                                                               & 430                                                                          & 0                        \\ \hline
-16                                                                      & 9E6                                                               & 448                                                                          & 0                        \\ \hline \hline
-17                                                                      & 4.5E4                                                               & 540                                                                          & 196                        \\ \hline
-18                                                                      & 5.4E4                                                               & 515                                                                          & 196                         \\ \hline
-19                                                                      & 7E4                                                               & 520                                                                          & 196                         \\ \hline
-20                                                                      & 7.1E4                                                               & 485                                                                          & 196                        \\ \hline
-21                                                                      & 1.1E5                                                               & 485                                                                          & 196                       \\ \hline
-22                                                                      & 1.5E5                                                               & 475                                                                          & 196                       \\ \hline
-23                                                                      & 2E5                                                               & 460                                                                          & 196                      \\ \hline
-24                                                                      & 2.1E5                                                               & 455                                                                          & 196                        \\ \hline
-25                                                                      & 3E5                                                               & 435                                                                          & 196                       \\ \hline
-26                                                                      & 4.3E5                                                              & 415                                                                          & 196                         \\ \hline
-27                                                                      & 6.9E5                                                               & 410                                                                          & 196                         \\ \hline
-28                                                                      & 5.8E5                                                               & 390                                                                          & 196                        \\ \hline
+\begin{tabular}[c]{@{}c@{}}Bending Tests\\ （R=-1）\end{tabular}& \begin{tabular}[c]{@{}c@{}}N\\ {[}Cycles{]}\end{tabular} & \begin{tabular}[c]{@{}c@{}}$\sigma_{x,a}$\\ {[}MPa{]}\end{tabular} & \begin{tabular}[c]{@{}c@{}}$\sigma_{x,m}$\\ {[}MPa{]}\end{tabular}\\ 
+\hline
+1 & 17520 & 632.1 & 0 \\
+2 & 33991 & 590.1 & 0 \\
+3 & 52427 & 552.0 & 0 \\
+4 & 91077 & 529.5 & 0 \\
+5 & 156882 & 506.5 & 0 \\
+6 & 222261 & 489.8 & 0 \\
+7 & 446115 & 466.7 & 0 \\
+8 & 822487 & 463.8 & 0 \\
+9 & 1279414 & 459.2 & 0 \\
+10 & 1453321 & 463.8 & 0 \\
+11 & 2440360 & 454.0 & 0 \\
+12 & 3428115 & 455.2 & 0 \\
+13 & 6880791 & 450.0 & 0 \\
+14 & 6213809 & 437.3 & 0 \\
+15 & 9342857 & 441.9 & 0 \\
+16 & 7240667 & 424.1 & 0 \\ \hline
+1 & 43043 & 541.5 & 196 \\
+2 & 55523 & 511.5 & 196 \\
+3 & 74725 & 514.4 & 196\\
+4 & 75362 & 493.6 & 196\\
+5 & 110407 & 490.7 & 196 \\
+6 & 146090 & 471.1 & 196 \\
+7 & 194951 & 455.5 & 196 \\
+8 & 212218 & 452.0 & 196 \\
+9 & 297990 & 430.1 & 196 \\
+10 & 440286 & 409.3 & 196 \\
+11 & 678727 & 407.6 & 196\\
+12 & 597603 & 386.8 & 196 \\ \hline
 \end{tabular}
 \caption{SM45C steel fully reversed bending tests(extracted from  \cite{lee2013out})}
 \label{SM45Cbendingr1}
@@ -573,19 +566,20 @@ Preliminary fatigue tests were carried out under fully reversed bending and tors
 
 \begin{table}[!h]
 \centering
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{crrr}
 \hline
-\begin{tabular}[c]{@{}c@{}}Torsion Tests\\ （R=-1）\end{tabular} & \begin{tabular}[c]{@{}c@{}}N\\ {[}Cycles{]}\end{tabular} & \begin{tabular}[c]{@{}c@{}}$\tau_{xy,a}$\\ {[}MPa{]}\end{tabular} \\ \hline
-1                                                                       & 2.9E4                                                             & 405                                                                                                \\ \hline
-2                                                                       & 5E4                                                               & 399                                                                                                \\ \hline
-3                                                                       & 7.8E4                                                             & 380                                                                                                \\ \hline
-4                                                                       & 1E5                                                               & 365                                                                                                \\ \hline
-5                                                                       & 1.8E5                                                             & 355                                                                                                \\ \hline
-6                                                                       & 1.9E5                                                             & 349                                                                                                \\ \hline
-7                                                                       & 3E5                                                               & 340                                                                                                \\ \hline
-8                                                                       & 5.8E5                                                             & 335                                                                                                \\ \hline
-9                                                                       & 8.2E5                                                             & 333                                                                                                \\ \hline
-10                                                                      & 2.25E6                                                            & 325                                                                                                \\ \hline
+\begin{tabular}[c]{@{}c@{}}Torsion Tests\\ （R=-1）\end{tabular} & \begin{tabular}[c]{@{}c@{}}N\\ {[}Cycles{]}\end{tabular} & \begin{tabular}[c]{@{}c@{}}$\tau_{xy,a}$\\ {[}MPa{]}\end{tabular} & \begin{tabular}[c]{@{}c@{}}$\sigma_{x,m}$\\ {[}MPa{]}\end{tabular}\\
+\hline
+1 & 27957 & 404.1 & 0 \\
+2 & 47749 & 394.9 & 0 \\
+3 & 76194 & 375.3 & 0 \\
+4 & 100000 & 363.1 & 0 \\
+5 & 162305 & 354.5 & 0 \\
+6 & 182807 & 345.8 & 0 \\
+7 & 296705 & 338.3 & 0 \\
+8 & 575636 & 331.4 & 0 \\
+9 & 822487 & 329.1 & 0 \\
+10 & 2203806 & 322.2 & 0 \\ \hline
 \end{tabular}
 \caption{SM45 steel fully reversed torsion tests(extracted from  \cite{lee2013out})}
 \label{SM45CtorsionR1}
@@ -619,49 +613,43 @@ Preliminary fatigue tests were carried out under fully reversed bending and tors
 & 351E3                                                                                 & 179                                                                                       & 357                                                                                         & 196                                                                                         \\
 & 394E3                                                                                 & 274                                                                                       & 182                                                                                         & 196                                                                                         \\ \hline
 \end{tabularx}
-\caption{With and without mean bending stress on out-of-phase($90^\circ$) fatigue of SM45C steel \cite{lee2013out}}
+\caption{Effect of mean bending stress on out-of-phase($90^\circ$) fatigue of SM45C steel (\cite{lee2013out})}
 \label{meanSM45C}
 \end{table}
-
-In the case of multiaxial bending-torsion block tests(Table. \ref{meanSM45C}), we could alternatively adopt Von Mises stress as the value of $S_{a}$:
-\begin{equation}
-S_{a}=\sigma_{von}=\sqrt{\frac{1}{2}\left[ (\sigma_{xx}-\sigma_{yy})^2+(\sigma_{yy}-\sigma_{zz})^2+(\sigma_{zz}-\sigma_{xx})^2\right]+3(\tau_{xy}^2+\tau_{yz}^2+\tau_{zx}^2) }
-\label{von}
-\end{equation}
 
 \newpage
 \subsection{Identification of model parameters for steel SM45C}
 
-We use the Von Mises yield strength combining the bending and torsion yield limits as $\sigma_y$. The fitted curve using experimental data in Table. \ref{meanSM45C} and data with mean stress effect is shown in \figref{fig.SM45C}b.
+We use the same identification strategy as described in Section \ref{sec:5.9}. The fitted curve using experimental data in Tab.\ref{meanSM45C} and data with mean stress effect is shown in \figref{fig.SM45C}b.
 The tests on SM45C steel have illustrated that the mean bending stress has an influence on both uniaxial and multiaxial fatigue life. 
 
-Although the uniaxial experimental data we extracted from Lee's curve \cite{lee2013out} of SM45C steel are slightly dispersed, we can find our model quite satisfactory in the case of SM45C steel. As for multiaxial 90 degree out of phase, fully reversed bending-torsion fatigue tests, our model is able to evaluate the cycles to failure.
+Although the uniaxial experimental data we extracted from Lee's curve (\cite{lee2013out}) of SM45C steel are slightly dispersed, we can find our model quite satisfactory in the case of SM45C steel. As for multiaxial 90 degree out of phase, fully reversed bending-torsion fatigue tests, our model is able to evaluate the cycles to failure.
 
 \begin{table}[!h]
 \centering
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|}
 	\hline
-	\textbf{$\beta$} & \textbf{$\lambda_+$} & \textbf{$\lambda_-$} & \textbf{$W_0$} & \textbf{$a$}  \\ \hline
-	8    & 1 &0         &4.17E8 Pa  & 0.4    \\ \hline
+	\textbf{$\beta(LCF/HCF)$} & \textbf{$\lambda_+$} & \textbf{$\lambda_-$} & \textbf{$W_0(LCF/HCF)$} & \textbf{$a$}& \textbf{$f$}  \\ \hline
+	6/15.8  & 1.4 &0         &2.6E8/5.6E5 Pa  & 0.1 & 1.1    \\ \hline
 \end{tabular}
 \caption{Parameter identification of SM45C steel}
 \label{sm45cpara}
 \end{table}
 
-\begin{Figure}[!h]{Calibration on  SM45C (\cite{lee2013out})}[fig.SM45C]
-	\graphfile*[42]{figures//SM45C_bt1D_sn.png}[Bending and torsion test on SM45C steel(R=-1)]
-	\graphfile*[42]{figures//SM45C_b1D_m_sn.png}[Bending test with mean stress on SM45C steel(R=-1,$\sigma_m=196 MPa$)]
+\begin{Figure}[!h]{Calibration on  SM45C}[fig.SM45C]
+	\graphfile*[52]{figures//SM45C_bt1D_sn.png}[Bending and torsion test on SM45C steel(R=-1)]
+	\graphfile*[52]{figures//SM45C_b1D_m_sn.png}[Bending test with mean stress on SM45C steel ($\sigma_m=196 MPa$)]
 	\\
-	\graphfile*[42]{figures//SM45C_bt2D90_sn.png}[Bending-torsion 90 degree out-of-phase tests on SM45C steel]
-	\graphfile*[42]{figures//SM45C_bt2D90_m_sn.png}[Bending-torsion 90 degree out-of-phase with mean stress tests on SM45C steel]
+	\graphfile*[52]{figures//SM45C_bt2D90_sn.png}[Bending-torsion 90 degree out-of-phase tests on SM45C steel]
+	\graphfile*[52]{figures//SM45C_bt2D90_m_sn.png}[Bending-torsion 90 degree out-of-phase tests with mean stress on SM45C steel]
 \end{Figure}
 
-\begin{Figure}[!h]{Calibration on  SM45C (\cite{lee2013out})}[fig.SM45C]
-\graphfile*[42]{figures//SM45C_bt1D_err.png}[Bending and torsion test on SM45C steel(R=-1)]
-\graphfile*[42]{figures//SM45C_b1D_m_err.png}[Bending test with mean stress on SM45C steel(R=-1,$\sigma_m=196 MPa$)]
+\begin{Figure}[!h]{Calibration on  SM45C. The numerical tests are carried out using the coefficients of Tab.\ref{sm45cpara}}[fig.SM45C]
+\graphfile*[52]{figures//SM45C_bt1D_err.png}[Bending and torsion test on SM45C steel (R=-1)]
+\graphfile*[52]{figures//SM45C_b1D_m_err.png}[Bending test with mean stress on SM45C steel ($\sigma_m=196 MPa$)]
 \\
-\graphfile*[42]{figures//SM45C_bt2D90_err.png}[Bending-torsion 90 degree out-of-phase tests on SM45C steel]
-\graphfile*[42]{figures//SM45C_bt2D90_m_err.png}[Bending-torsion 90 degree out-of-phase with mean stress tests on SM45C steel]
+\graphfile*[52]{figures//SM45C_bt2D90_err.png}[Bending-torsion 90 degree out-of-phase tests on SM45C steel]
+\graphfile*[52]{figures//SM45C_bt2D90_m_err.png}[Bending-torsion 90 degree out-of-phase tests with mean stress on SM45C steel]
 \end{Figure}
 
 
@@ -669,7 +657,7 @@ Although the uniaxial experimental data we extracted from Lee's curve \cite{lee2
 \section{Experimental validation of the model on 10 HNAP steel}
 \subsection{Presentation of the material}
 Fatigue tests were performed on the HNAP steel. It is a very low carbon steel
-which resembles the 10 CN 6. In Table.\ref{tab.10HNAPchem}, its chemical composition is given:	
+which resembles the 10 CN 6. In Tab.\ref{tab.10HNAPchem}, its chemical composition is given:	
 \begin{table}[!h]
 \centering
 \begin{tabular}{rrrrrrrrr}
@@ -677,10 +665,10 @@ which resembles the 10 CN 6. In Table.\ref{tab.10HNAPchem}, its chemical composi
 C      & Mn     & Si     & P      & S      & Cr     & Cu     & Ni     & Fe       \\
 0.12\% & 0.71\% & 0.41\% & 0.08\% & 0.03\% & 0.81\% & 0.30\% & 0.50\% & the rest \\ \hline
 \end{tabular}
-\caption{Chemical composition of 10 HNAP steel\cite{Bedkowski1994}}
+\caption{Chemical composition of 10 HNAP steel, data from \cite{Bedkowski1994}}
 \label{tab.10HNAPchem}
 \end{table}
-The mechanical properties of this steel are given in Table.\ref{tab.10HNAPmec}:
+The mechanical properties of this steel are given in Tab.\ref{tab.10HNAPmec}:
 \begin{table}[!h]
 \centering
 \begin{tabular}{rrrrr}
@@ -688,7 +676,7 @@ The mechanical properties of this steel are given in Table.\ref{tab.10HNAPmec}:
 $Re_{0.2\%}$ & $R_m$   & A    & $\nu$ & E          \\
 418 MPa     & 566 Mpa & 32\% & 0.29  & 215000 Mpa \\ \hline
 \end{tabular}
-\caption{Mechanical characteristics of steel 10 HNAP\cite{Bedkowski_1994}}
+\caption{Mechanical characteristics of steel 10 HNAP, data from \cite{Bedkowski1994}}
 \label{tab.10HNAPmec}
 \end{table}
 
@@ -705,75 +693,73 @@ E          & : Young's modulus.
 \end{table}
 
 \subsection{Description of fatigue tests on 10 HNAP steel}
-The Macha team performed a large number of fatigue tests on the HNAP steel. Thus, it performed not only simple tensile compression and torsion tests (R = -1) in order to establish The corresponding Wöhler curves but also tests under variable loading on cylindrical specimens of the same material\cite{ACHTELIC1994}. VIDAL\cite{VIDAL1996} carried out tensile tests on this material for various mean stress values. It has established the Wöhler curve in repeated traction in order to validate on this steel the method of Robert whose use requires three Wöhler curves in symmetrical alternating traction, symmetrical alternating torsion and repetitive traction.
+The Macha team performed a large number of fatigue tests on the HNAP steel. Thus, it performed not only simple tensile compression and torsion tests (R = -1) in order to establish the corresponding Wöhler curves but also tests under variable loading on cylindrical specimens of the same material (\cite{ACHTELIC1994}). \cite{VIDAL1996} carried out tensile tests on this material for various mean stress values. It has established the Wöhler curve in repeated traction in order to validate on this steel the method of Robert whose use requires three Wöhler curves in symmetrical alternating traction, symmetrical alternating torsion and repetitive traction.
 
 \vspace{6pt}
 \noindent
 \textbf{Wöhler curve in tension-compression}
 
-The model chosen by Macha and recovered by Jabbado\cite{jabbado:pastel-00002116} for the tensile-compression Wöhler curve is that of Basquin:
+The model chosen by Macha and recovered by  \cite{jabbado:pastel-00002116} for the tensile-compression Wöhler curve is that of Basquin:
 \begin{equation}
-lnN=68.361 − 9.82ln\left( \sigma_{-1}\right) 
+lnN=68.361 − 9.82ln\left( \sigma_{-1}\right) ,
 \end{equation}
 
 \noindent
+\vspace{6pt}
 \textbf{Wöhler curve in symmetrical alternating torsion}
+\vspace{6pt}
 
-The symmetric alternating torsion Wöhler curve was recovered by Jabbado\cite{jabbado:pastel-00002116} using following equation:
+The symmetric alternating torsion Wöhler curve was recovered by \cite{jabbado:pastel-00002116} using following equation:
 \begin{equation}
-lnN=21.55 − 0.0385\tau_{-1}
+lnN=21.55 − 0.0385\tau_{-1}.
 \end{equation}
 
 \noindent
+\vspace{6pt}
 \textbf{Tensile fatigue tests for various mean stress values}
+\vspace{6pt}
 
-VIDAL\cite{VIDAL1996} carried out tensile tests on HNAP steel for various values of mean stress. The results are summarized in Table.\ref{tab.10HNAPmean}. They allowed us to plot the Wöhler curves for different values of the mean stress $\sigma_m$. These curves are modeled by the Wöhler equation:
-\begin{equation}
-lnN=A − B\sigma_{max}
-\label{eq.10HNAPmean}
-\end{equation}
-In the Table.\ref{tab.10HNAPAB}, the values of the constants A and B of Eq.\eqref{eq.10HNAPmean}.
+\cite{VIDAL1996} carried out tensile tests on HNAP steel for various values of mean stress. The results are summarized in Tab.\ref{tab.10HNAPmean}. They allowed us to plot the Wöhler curves for different values of the mean stress $\sigma_m$. 
+
 \begin{table}[!h]
-\centering
-\begin{tabular}{ccl}
-\hline
-\multicolumn{1}{l}{$\sigma_a$(MPa)} & \multicolumn{1}{l}{$\sigma_m$(MPa)} & $N_{exp}$(cycles)    \\ \hline
-250                                 & 75                                  & 439300;402500        \\
-270                                 & 75                                  & 358200;854700;318700 \\
-290                                 & 75                                  & 252300;376300;379700 \\
-310                                 & 75                                  & 54800;123400;45000   \\ \hline
-250                                 & 150                                 & 157400;1333000       \\
-270                                 & 150                                 & 172100;121500;233100 \\
-290                                 & 150                                 & 124300;41900;60500   \\ \hline
-230                                 & 225                                 & 413900;204500;545200 \\
-250                                 & 225                                 & 122400;229600;104000 \\
-270                                 & 225                                 & 110000;29900;66000   \\ \hline
-190                                 & 300                                 & 497100;234300;524800 \\
-210                                 & 300                                 & 463500;367300;259500 \\
-230                                 & 300                                 & 219000;179400;222400 \\
-250                                 & 300                                 & 95300;118200;59100   \\ \hline
-\end{tabular}
-\caption{Experimental results of tensile tests for various values of $\sigma_m$}
+	\centering
+	\begin{tabular}{r|rr|rr|rr|rr}
+		\hline
+		$N_F$    & $\Sigma_{xx,a}$ & $\sigma_m$ & $\Sigma_{xx,a}$ & $\sigma_m$ & $\Sigma_{xx,a}$ & $\sigma_m$ & $\Sigma_{xx,a}$ & $\sigma_m$ \\ \hline
+		1.00E+05 & 311.30          & 75         & 224.42          & 150        & 257.98          & 225        & 251.82          & 300        \\
+		2.00E+05 & 289.36          & 75         & 208.40          & 150        & 242.47          & 225        & 224.42          & 300        \\
+		3.00E+05 & 276.53          & 75         & 197.03          & 150        & 233.40          & 225        & 208.40          & 300        \\
+		4.00E+05 & 267.43          & 75         & 188.21          & 150        & 226.96          & 225        & 197.03          & 300        \\
+		5.00E+05 & 260.37          & 75         & 181.00          & 150        & 221.97          & 225        & 188.21          & 300        \\
+		6.00E+05 & 254.60          & 75         & 174.91          & 150        & 217.89          & 225        & 181.00          & 300        \\
+		7.00E+05 & 249.72          & 75         & 169.63          & 150        & 214.44          & 225        & 174.91          & 300        \\
+		8.00E+05 & 245.49          & 75         & 164.97          & 150        & 211.46          & 225        & 169.63          & 300        \\
+		9.00E+05 & 241.77          & 75         & 160.81          & 150        & 208.82          & 225        & 164.97          & 300        \\
+		1.00E+06 & 238.43          & 75         & 233.29          & 150        & 206.47          & 225        & 160.81          & 300        \\ \hline
+	\end{tabular}
+\caption{Experimental results of tensile tests for various values of $\sigma_m$, data from \cite{VIDAL1996}}
 \label{tab.10HNAPmean}
 \end{table}
 
 \noindent
+\vspace{6pt}
 \textbf{Fatigue testing under variable loading}
+\vspace{6pt}
 
-Random multiaxial loading fatigue tests were performed on cylindrical HNAP steel specimens\cite{ACHTELIC1994}. The load considered is proportional and results from a combination of bending and torsion. The random signal is stationary and has a normal distribution as a probability distribution. Tests of this type have been analyzed and simulated by Carpinteri et al.\cite{carpinteri2003multiaxial}. They were provided to us in the form of tests carried out on the HNAP steel for two values of the angle $\alpha'$: $\alpha' = \pi / 8$ and $\alpha' = \pi / 4$ . $\alpha' $ is the angle made by the resultant moment $M$ with the bending moment $M_B$ (see \figref{fig.10HNAPsample}).
+Random multiaxial loading fatigue tests were performed on cylindrical HNAP steel specimens (\cite{ACHTELIC1994}). The load considered is proportional and results from a combination of bending and torsion. The random signal is stationary and has a normal distribution as a probability distribution. Tests of this type have been analyzed and simulated by Carpinteri et al. (\cite{carpinteri2003multiaxial}). They were provided to us in the form of tests carried out on the HNAP steel for two values of the angle $\alpha'$: $\alpha' = \pi / 8$ and $\alpha' = \pi / 4$ . $\alpha' $ is the angle made by the resultant moment $M$ with the bending moment $M_B$ (see \figref{fig.10HNAPsample}). The angle is kept constant during each individual test. 
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=0.7\textwidth]{figures//10HNAPsample.png} 
-\caption{Bending-torsion fatigue tests on cylindrical specimens\cite{carpinteri2003multiaxial}}
+\includegraphics[width=0.8\textwidth]{figures//10HNAPsample.png} 
+\caption{Bending-torsion fatigue tests on cylindrical specimens (\cite{carpinteri2003multiaxial})}
 \label{fig.10HNAPsample}
 \end{figure}
 
-The stationary random loading sequence contains 49152 values recorded by a time interval of 0.00375 seconds (frequency = 266.67 Hz). It is shown in \figref{fig.10HNAPrandom}. Its total duration is 184.32 seconds. This sequence is multiplied by load coefficients corresponding to bending $f (\sigma_{xx})$ and torsion $f (\tau_{xy})$ in order to obtain random multiaxial loading sequences. As the signal is stationary, the breaking life is determined in terms of number of sequences with break $N_{Sq}$. Knowing $N_{Sq}$ and the total time in seconds of the sequence studied, it is easy to express the lifetime of the piece in seconds. The results of fatigue tests under variable loads are summarized in Table.\ref{tab.10HNAPrand1} and Table.\ref{tab.10HNAPrand2} as a function of angle $\alpha'$ and ratio r; $r =f(\tau_{xy})/f(\sigma_{xx})$.
+The stationary random loading sequence contains 49152 values recorded by a time interval of 0.00375 seconds (frequency = 266.67 Hz). It is shown in \figref{fig.10HNAPrandom}. Its total duration is 184.32 seconds. This sequence is multiplied by load coefficients corresponding to bending $f (\sigma_{xx})$ and torsion $f (\tau_{xy})$ in order to obtain random multiaxial loading sequences. As the signal is stationary, the breaking life is determined in terms of number of sequences with break $N_{Sq}$. Knowing $N_{Sq}$ and the total time in seconds of the sequence studied, it is easy to express the lifetime of the piece in seconds. The results of fatigue tests under variable loads are summarized in Tab.\ref{tab.10HNAPrand1} and Tab.\ref{tab.10HNAPrand2} as a function of angle $\alpha'$ and ratio r; $r =f(\tau_{xy})/f(\sigma_{xx})$.
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{figures//10HNAPrandomblock.png} 
-\caption{Bending-torsion fatigue tests on cylindrical specimens\cite{carpinteri2003multiaxial}}
+\caption{Bending-torsion fatigue tests on cylindrical specimens (\cite{carpinteri2003multiaxial})}
 \label{fig.10HNAPrandom}
 \end{figure}
 
@@ -845,20 +831,77 @@ In \figref{fig.10HNAP2Drandom}, an example of a random multiaxial loading sequen
 \end{figure}
 
 \subsection{Identification of model parameters of 10HNAP steel}
-As mentioned earlier, the identification of the model parameters requires a Wöhler curve. This initiates the value of $\beta$, in the mean stress tests we have got the value of $\lambda$. And the value of $W_0$ and a comes from random loading. The parameters of the HNAP steel model can be identified by referring to Table.\ref{tab.10HNAP.para}. They are grouped in the following table:
+As the previous tests, we identify the slope $\beta$ in pure torsion tests without the mean stress effect. Then fit $\lambda_+$ and $W_0$ with bending tests($R=-1$). The parameters of the HNAP steel model can be identified by referring to Tab.\ref{tab.10HNAP.para}. They are grouped in Tab.\ref{tab.10HNAP.para}:
 \begin{table}[!h]
 \centering
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|}
 	\hline
-	\textbf{$\beta$} & \textbf{$\lambda_+$} & \textbf{$\lambda_-$} & \textbf{$W_0$} & \textbf{$a$}  \\ \hline
-	5.34    & 1.7 &0         &6.48E8 Pa  & 0.4    \\ \hline
+	\textbf{$\beta$} & \textbf{$\lambda_+$} & \textbf{$\lambda_-$} & \textbf{$W_0$} & \textbf{$a$} & \textbf{$f$} \\ \hline
+	5.3    & 1.7 &0         &6.48E8 Pa  & 0.4   & 1.1 \\ \hline
 \end{tabular}
 \caption{Model parameters for 10HNAP steel}
 \label{tab.10HNAP.para}
 \end{table}
 
+The constant amplitude loading tests corresponds to number of cycles to failure in the range of $1E5\sim1E6$. However, in random loading case, the total reversals to failure are $2E6\sim5E7$ (calculated from Tab.\ref{tab.10HNAPrand1} and \ref{tab.10HNAPrand2}). These two cases belongs to different mechanisms, so their sensitivity of sequence effect and mean stress effect can be different as shown in Tab.\ref{tab.10HNAP.para} and \ref{tab.10HNAP.para.random}.
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		\textbf{$\beta$} & \textbf{$\lambda_+$} & \textbf{$\lambda_-$} & \textbf{$W_0$} & \textbf{$a$} & \textbf{$f$} \\ \hline
+		5.3    & 0.3 &0         &2.2E8 Pa  & 0.001   & 1.1 \\ \hline
+	\end{tabular}
+	\caption{Model parameters for 10HNAP steel (random loading)}
+	\label{tab.10HNAP.para.random}
+\end{table}
+
+\newpage
 \subsection{Simulation of fatigue tests performed on 10HNAP steel}
-After determining the parameters of the HNAP steel model and calculated pcs for each of the tests tested, the number of priming cycles can be obtained by directly applying equation \eqref{eq.cycNF} for the proportional periodic loads of constant amplitude and for multiaxial loadings of variable amplitude.
+The constant amplitude unidimensional tests data are show in Tab.\ref{tab.10HNAPbending} and \ref{tab.10HNAPtorsion}.
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{ccc}
+		\hline
+		$N^o$ & $N_{F}$  & $\Sigma_{xx,a}$ \\ \hline
+		1     & 1.00E+05 & 326.69     \\
+		2     & 2.00E+05 & 304.42     \\
+		3     & 3.00E+05 & 292.11     \\
+		4     & 4.00E+05 & 283.68     \\
+		5     & 5.00E+05 & 277.30     \\
+		6     & 6.00E+05 & 272.20     \\
+		7     & 7.00E+05 & 267.96     \\
+		8     & 8.00E+05 & 264.34     \\
+		9     & 9.00E+05 & 261.19     \\
+		10    & 1.00E+06 & 258.41     \\ \hline
+	\end{tabular}
+	\caption{Constant amplitude bending tests performed on 10HNAP steel, data from \cite{VIDAL1996}}
+	\label{tab.10HNAPbending}
+\end{table}
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{ccc}
+		\hline
+		$N^o$ & $N_{F}$  & $\Sigma_{xy,a}$ \\ \hline
+		1     & 1.00E+05 & 260.70          \\
+		2     & 2.00E+05 & 242.70          \\
+		3     & 3.00E+05 & 232.17          \\
+		4     & 4.00E+05 & 224.70          \\
+		5     & 5.00E+05 & 218.90          \\
+		6     & 6.00E+05 & 214.16          \\
+		7     & 7.00E+05 & 210.16          \\
+		8     & 8.00E+05 & 206.69          \\
+		9     & 9.00E+05 & 203.63          \\
+		10    & 1.00E+06 & 200.90          \\ \hline
+	\end{tabular}
+	\caption{Constant amplitude torsion tests performed on 10HNAP steel, data from \cite{VIDAL1996}}
+\label{tab.10HNAPtorsion}
+\end{table}
+
+
+After determining the parameters of the 10HNAP steel model for each of the batches tested, the number of priming cycles can be obtained by directly applying equation \eqref{eq.cycNF} for the proportional periodic loads of constant amplitude and for multiaxial loadings of variable amplitude.
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=\textwidth]{figures//10HNAP_b1D_m_Smax.png} 
@@ -872,18 +915,18 @@ After determining the parameters of the HNAP steel model and calculated pcs for 
 	\label{fig.10HNAPhydro}
 \end{figure}
 
-In \figref{fig.10HNAP1} and \figref{fig.10HNAP2}, we give the prediction results of the torsion tests used to identify $\beta$ and $W_0$ of the model, then we use the bending with various mean stress to get the parameter $\lambda$. These are to be taken with caution because of the effect of the gradient because the specimens stressed in tension and in torsion are not of the same nature.
+In \figref{fig.10HNAP1} and \figref{fig.10HNAP2}, we give the prediction results of the torsion tests used to identify $\beta$ and $W_0$ of the model, then we use the bending with various mean stress to get the parameter $\lambda_+$. These are to be taken with caution because of the effect of the gradient because the specimens stressed in tension and in torsion are not of the same nature.
 %%-------------S_eq vs NF----------------------------
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=\textwidth]{figures//10HNAP_bt1D_sn.png} 
-	\caption{Bending and torsion test on 10HNAP steel(R=-1)}
+	\caption{Bending and torsion test on 10HNAP steel(R=-1). Data are presented in Tab.\ref{tab.10HNAPbending} and  \ref{tab.10HNAPtorsion}. The torsion best fit and the bending numerical results(optimal time step of method 2 deduced in Chapter \ref{chp:5}) are obtained with the coefficients of Tab.\ref{tab.10HNAP.para}}
 	\label{fig.bt1D10HNAPsn}
 \end{figure}
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=\textwidth]{figures//10HNAP_b1D_m_sn.png} 
-	\caption{Wöhler tensile curves for various mean stress values}
+	\caption{Wöhler tensile curves for various mean stress values. Data are presented in Tab.\ref{tab.10HNAPmean} and results are obtained with the coefficients of Tab.\ref{tab.10HNAP.para}}
 	\label{fig.b1Dm10HNAPsn}
 \end{figure}
 
@@ -891,25 +934,35 @@ In \figref{fig.10HNAP1} and \figref{fig.10HNAP2}, we give the prediction results
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=\textwidth]{figures//10HNAP_bt1D_err.png} 
-	\caption{Calibration on 10HNAP steel(\cite{jabbado:pastel-00002116}),bending and torsion tests on 10HNAP(R=-1)}
+	\caption{Calibration on 10HNAP steel, bending and torsion tests on 10HNAP(R=-1). Data are presented in Tab.\ref{tab.10HNAPbending} and  \ref{tab.10HNAPtorsion} and results obtained with the coefficients of Tab.\ref{tab.10HNAP.para}}
 	\label{fig.10HNAP1}
 \end{figure}
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=\textwidth]{figures//10HNAP_b1D_m_err.png} 
-	\caption{Calibration on 10HNAP steel(\cite{jabbado:pastel-00002116}),bending tests with various mean stress on 10HNAP}
+	\caption{Calibration on 10HNAP steel, bending tests with various mean stress on 10HNAP, data from Tab.\ref{tab.10HNAPmean}  and results obtained with the coefficients of Tab.\ref{tab.10HNAP.para}}
 	\label{fig.10HNAP2}
 \end{figure}
 
 
-The prediction results of the tensile tests for various values of the mean stress σm are summarized in \figref{fig.10HNAP2}. These results correlate well with the experimental lifetimes. 
+The prediction results of the tensile tests for various values of the mean stress $\sigma_m$ are summarized in \figref{fig.10HNAP2}. These results correlate well with the experimental lifetimes. 
 
-The tests of multiaxial loadings of variable amplitude are plotted in Figures (3.27) and (3.28) as a function of the angle $\alpha_{M}$ and the ratio r. In these figures, the prediction results of the proposed model and that presented by Carpinteri et al. [17]. For the first type of tests ($\alpha_{M} = \pi/8$ and r = 0.2), the best predictions are given by the proposed model.
-However, for the second type of tests ($\alpha_{M} = \pi/4$ and r = 0.5), the predictions of Carpenteri et al. [17] are relatively better.
 
-FIG. 3.27(random load results($\alpha_{M} = \pi/8$ and r = 0.2), fail too early due to big $\lambda_+$)
+The tests of multiaxial loadings of variable amplitude are plotted in \figref{fig.10HNAP_random02} and \figref{fig.10HNAP_random05} as a function of the angle $\alpha_{M}$ and the ratio $r$. In these figures, the prediction results of the proposed model and that presented by \cite{carpinteri2003multiaxial}. For the first type of tests ($\alpha_{M} = \pi/8$ and r = 0.2), and the second type of tests ($\alpha_{M} = \pi/4$ and r = 0.5), the predictions of \cite{carpinteri2003multiaxial} are both good. 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{figures//HNAP_random_r02_error.png} 
+	\caption{Random bending-torsion 2D tests on 10HNAP, data from Tab.\ref{tab.10HNAPrand1} and \cite{jabbado:pastel-00002116}. Results are obtained with the coefficients of Tab.\ref{tab.10HNAP.para.random} ($\alpha_{M} = \pi/8$ and r = 0.2)}
+	\label{fig.10HNAP_random02}
+\end{figure}
 
-FIG. 3.28(random load results($\alpha_{M} = \pi/4$ and r = 0.4), fail too early due to big $\lambda_+$)
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{figures//HNAP_random_r05_error.png} 
+	\caption{Random bending-torsion 2D tests on 10HNAP, data from Tab.\ref{tab.10HNAPrand2} and \cite{jabbado:pastel-00002116}. Results are obtained with the coefficients of Tab.\ref{tab.10HNAP.para.random} ($\alpha_{M} = \pi/4$ and r = 0.5)}
+	\label{fig.10HNAP_random05}
+\end{figure}
+
 
 \clearpage
 \section{Conclusions}
@@ -919,9 +972,9 @@ The strategy can be made more complex by introducing a local space averaging pro
 
 There are several advantages and drawbacks of our proposed model. The time implicit method does not take the unit of cycle so as to avoid cycle counting and relevant methods such as rain-flow filter. The possibility to handle different S-N curves corresponding to various materials and load conditions via changing the parameters. We also have the random loading suitability with nonlinear damage accumulation. The drawback is this strategy requires a scale by scale analysis which can be complicated for very high cycle fatigue. However, as introduced above, we can use the optimal time step method to calculate precisely the representative loading history sequence and use scalar integration for the rest of fatigue life. In this way the numerical cost can be dramatically reduced without losing the precision.
 
-Since our method is based on the Dang Van paradigm, to deal with mean stress effect and multiaxial loads we only have the parameter $\gamma$, which is insufficient to fit the experiments.
+Since our method is based on the Dang Van paradigm, to deal with mean stress effect and multiaxial loads we only have the parameter $\lambda_{+-}$, which is insufficient to fit the experiments. In fact, our microplasticity model is probably too crude to handle situations where there is  a clear strain path effect.
 
-Also, we need more experimental data and comparison with other peoples' methods.
+Also, we need more experimental data and comparison with other results form the literature.
 
 
 

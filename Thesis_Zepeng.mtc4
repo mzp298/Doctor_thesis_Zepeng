@@ -1,0 +1,24 @@
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.1}Multiscale energy dissipation approach}{\reset@font\mtcSfont 1}{section.1.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.2}Kinematic Hardening Models}{\reset@font\mtcSfont 3}{section.1.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.1}Linear Kinematic Hardening}{\reset@font\mtcSSfont 3}{subsection.1.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.2}Non-linear Kinematic Hardening}{\reset@font\mtcSSfont 4}{subsection.1.2.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.3}Mean stress effect in local model}{\reset@font\mtcSfont 4}{section.1.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.4}Weakening scales and yield function}{\reset@font\mtcSfont 7}{section.1.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.4.1}The concept of weakening scales}{\reset@font\mtcSSfont 7}{subsection.1.4.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.4.2}Distribution of weakening scales}{\reset@font\mtcSSfont 7}{subsection.1.4.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.4.3}Yield function with mean stress effect}{\reset@font\mtcSSfont 8}{subsection.1.4.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.4.4}Local plastic model}{\reset@font\mtcSSfont 8}{subsection.1.4.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.5}Construction of an energy based fatigue approach}{\reset@font\mtcSfont 9}{section.1.5}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.6}Nonlinearity of damage accumulation}{\reset@font\mtcSfont 10}{section.1.6}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.6.1}Energy approach with Chaboche law}{\reset@font\mtcSSfont 10}{subsection.1.6.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.6.2}Sequence effect}{\reset@font\mtcSSfont 12}{subsection.1.6.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.6.3}The final model}{\reset@font\mtcSSfont 15}{subsection.1.6.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.7}Numerical strategy}{\reset@font\mtcSfont 16}{section.1.7}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.7.1}Scale discretization}{\reset@font\mtcSSfont 16}{subsection.1.7.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.7.2}Calculation of local plastic dissipation}{\reset@font\mtcSSfont 16}{subsection.1.7.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.7.3}Damage integration algorithm}{\reset@font\mtcSSfont 18}{subsection.1.7.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.8}Validation on recovery tests}{\reset@font\mtcSfont 25}{section.1.8}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.8.1}Recovery of Chaboche law on cyclic loading}{\reset@font\mtcSSfont 25}{subsection.1.8.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.8.2}Numerical recovery of sequence effect}{\reset@font\mtcSSfont 33}{subsection.1.8.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Major damage effect}{\reset@font\mtcSSSfont 35}{section*.36}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.9}Identification strategy}{\reset@font\mtcSfont 38}{section.1.9}}

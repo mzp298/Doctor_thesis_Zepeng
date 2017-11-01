@@ -1,42 +1,27 @@
 \documentclass[a4paper, 11pt, twoside]{book}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
 \input{auxfiles/preambule}
-
 \numberwithin{equation}{section}
 \linespread{1.1}
-
 \begin{document}
 \dominitoc
 \frontmatter      % Begin Roman style (i, ii, iii, iv...) page numbering
-
 \pagestyle{empty}  % No headers or footers for the following pages
-
 %\includepdf[pages={1}]{front_cover.pdf}
 \input{auxfiles/titlepage}
-
 \cleardoublepage
-
 \null\vfill
-% Now comes the "Funny Quote", written in italics
 \begin{minipage}{5in}
   \textit{``Science is organized knowledge. Wisdom is organized life.''}
 \end{minipage}
-
 \begin{flushright}
 Immanuel Kant
 \end{flushright}
-
 \vfill\vfill\null
 \cleardoublepage  % Funny Quote page ended, start a new page
-%% ----------------------------------------------------------------
-
-\input{auxfiles/Resume}
-
-\cleardoublepage
- 
+%\input{auxfiles/Resume}
+%\cleardoublepage
 \input{auxfiles/Acknowledgements}
-
 \cleardoublepage
- 
 
 \pagestyle{fancy}
 \fancyhead{}  % Clears all page headers and footers
@@ -45,24 +30,11 @@ Immanuel Kant
 \fancyhead[LE]{\leftmark}
 \cfoot{}
 
-%% ----------------------------------------------------------------
-% \lhead{\emph{Contents}}  % Set the left side page header to "Contents"
 \adjustmtc
 \setcounter{tocdepth}{1}
 \tableofcontents  % Write out the Table of Contents
-
-%% ----------------------------------------------------------------
-% \lhead{\emph{List of Figures}}  % Set the left side page header to "List if Figures"
 \listoffigures  \addcontentsline{toc}{chapter}{List of Figures} \mtcaddchapter% Write out the List of Figures
-
-%% ----------------------------------------------------------------
-%\lhead{\emph{List of Tables}}  % Set the left side page header to "List of Tables"
 \listoftables  \addcontentsline{toc}{chapter}{List of Tables}  \mtcaddchapter   % Write out the List of Tables
-
-
-
-
-
 
 \cleardoublepage
 \pagestyle{empty}
@@ -72,41 +44,30 @@ Immanuel Kant
 \cleardoublepage
 \addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
 \input{auxfiles/Nomenclature}
-
-
-
 %\tableofcontents
 \mainmatter	  % Begin normal, numeric (1,2,3...) page numbering
-%\pagestyle{fancy}  
 \pagestyle{fancy}
 \adjustmtc
 
 %\include{Chapters/1Introduction} % Introduction
 %\include{Chapters/2Fatigue_life_calculation_methods} % Experiment 2
 %\include{Chapters/3Space_gradient_effects} % Results and Discussion
-\include{Chapters/4Time_varying_load_the_standard_approach} %chaboche part
-%\include{Chapters/5Handling_general_loadings} % Conclusion
-%\include{Chapters/6Numerical_implementation_and_validation} % Conclusion
-%%%\include{Chapters/7Multi_dimensional_application} % Conclusion
+%\include{Chapters/4Time_varying_load_the_standard_approach} %chaboche part
+\include{Chapters/5Handling_general_loadings} % Conclusion
+\include{Chapters/6Numerical_implementation_and_validation} % Conclusion
 %\include{Chapters/8General_conclusions}
-%% ----------------------------------------------------------------
-
-
-
-
+% ----------------------------------------------------------------
+%\include{Chapters/7Multi_dimensional_application} % Conclusion
 
 \backmatter
 %\printbibliography[notcategory=fullcited]
-
 \addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
-
 %% ----------------------------------------------------------------
 \label{Bibliography}
 \renewcommand\bibname{References}
 \addcontentsline{toc}{chapter}{References}
 \bibliographystyle{unsrtnat}  % Use the "unsrtnat" BibTeX style for formatting the Bibliography
 \bibliography{auxfiles/biblio}
-
 
 \pagestyle{empty}
 \mbox{}
@@ -127,8 +88,7 @@ Immanuel Kant
 %	\input{apendices//REGIME}
 %	\input{apendices//3DTENSOR}   
 %	\section{MATLAB CODE LISTING}
-%	\input{apendices//NCD16_bt2D_m_err1}
-
-%\includepdf[pages={1}]{back_cover.pdf}
-\input{auxfiles/backcover}
+%	\input{apendices//Damiter2}
+%
+%\input{auxfiles/backcover}
 \end{document}
