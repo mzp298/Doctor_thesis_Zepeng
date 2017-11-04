@@ -11,15 +11,13 @@
 \cleardoublepage
 \null\vfill
 \begin{minipage}{5in}
-  \textit{``Science is organized knowledge. Wisdom is organized life.''}
+  \textit{``The whole of science is nothing more than a refinement of everyday thinking.''}
 \end{minipage}
 \begin{flushright}
-Immanuel Kant
+Albert Einstein
 \end{flushright}
 \vfill\vfill\null
 \cleardoublepage  % Funny Quote page ended, start a new page
-%\input{auxfiles/Resume}
-%\cleardoublepage
 \input{auxfiles/Acknowledgements}
 \cleardoublepage
 
@@ -49,15 +47,14 @@ Immanuel Kant
 \pagestyle{fancy}
 \adjustmtc
 
-%\include{Chapters/1Introduction} % Introduction
-%\include{Chapters/2Fatigue_life_calculation_methods} % Experiment 2
-%\include{Chapters/3Space_gradient_effects} % Results and Discussion
-%\include{Chapters/4Time_varying_load_the_standard_approach} %chaboche part
-\include{Chapters/5Handling_general_loadings} % Conclusion
-\include{Chapters/6Numerical_implementation_and_validation} % Conclusion
-%\include{Chapters/8General_conclusions}
-% ----------------------------------------------------------------
-%\include{Chapters/7Multi_dimensional_application} % Conclusion
+\include{Chapters/1Introduction} % Introduction
+\include{Chapters/2Fatigue_life_calculation_methods} % others
+\include{Chapters/3Space_gradient_effects} % paper
+\include{Chapters/4Time_varying_load_the_standard_approach} %chaboche part
+\include{Chapters/5Handling_general_loadings} % core
+\include{Chapters/6Numerical_implementation_and_validation} % paper
+\include{Chapters/7General_conclusions}
+
 
 \backmatter
 %\printbibliography[notcategory=fullcited]
@@ -73,22 +70,22 @@ Immanuel Kant
 \mbox{}
 \clearpage
 
-%\appendix
-%\appendixpage
-%\addcontentsline{toc}{section}{Appendices}\markboth{APPENDICES}{}
-%\lstset{% general command to set parameter(s)
-%	basicstyle=\small, 
-%	keywordstyle=\color{red}, 
-%	identifierstyle=, % nothing happens
-%	commentstyle=\color{blue}, 
-%	stringstyle=\ttfamily, % typewriter type for strings
-%	showstringspaces=false} % no special string spaces
-%	\section{DETAILED EXPLOITATION}
-%	\input{apendices//EXPLOITATION}
-%	\input{apendices//REGIME}
-%	\input{apendices//3DTENSOR}   
-%	\section{MATLAB CODE LISTING}
-%	\input{apendices//Damiter2}
-%
-%\input{auxfiles/backcover}
+\appendix
+\appendixpage
+\addcontentsline{toc}{section}{Appendices}\markboth{APPENDICES}{}
+\lstset{% general command to set parameter(s)
+	basicstyle=\small, 
+	keywordstyle=\color{red}, 
+	identifierstyle=, % nothing happens
+	commentstyle=\color{blue}, 
+	stringstyle=\ttfamily, % typewriter type for strings
+	showstringspaces=false} % no special string spaces
+	\section{DETAILED EXPLOITATION}
+	\input{apendices//EXPLOITATION}
+	\input{apendices//REGIME}
+	\input{apendices//3DTENSOR}   
+	\section{MATLAB CODE LISTING}
+	\input{apendices//Damiter2}
+
+\input{auxfiles/backcover}
 \end{document}

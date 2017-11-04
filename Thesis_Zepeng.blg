@@ -1,8 +1,18 @@
 This is BibTeX, Version 0.99d (TeX Live 2014/W32TeX)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Thesis_Zepeng.aux
+A level-1 auxiliary file: Chapters/1Introduction.aux
+A level-1 auxiliary file: Chapters/2Fatigue_life_calculation_methods.aux
+A level-1 auxiliary file: Chapters/3Space_gradient_effects.aux
+Case mismatch error between cite keys LUU2014FORMULATION and luu2014formulation
+---line 43 of file Chapters/3Space_gradient_effects.aux
+ : \citation{LUU2014FORMULATION
+ :                             }
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: Chapters/4Time_varying_load_the_standard_approach.aux
 A level-1 auxiliary file: Chapters/5Handling_general_loadings.aux
 A level-1 auxiliary file: Chapters/6Numerical_implementation_and_validation.aux
+A level-1 auxiliary file: Chapters/7General_conclusions.aux
 The style file: unsrtnat.bst
 Database file #1: auxfiles/biblio.bib
 Warning--entry type for "zepeng" isn't style-file defined
@@ -16,96 +26,103 @@ Repeated entry---line 198 of file auxfiles/biblio.bib
  : @book{lemaitre1990mechanics
  :                            ,
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 346 of file auxfiles/biblio.bib
- :  
- :  @book{suresh1998fatigue,
-(Error may have been on previous line)
+Repeated entry---line 318 of file auxfiles/biblio.bib
+ : @article{Papadopoulos1997219
+ :                             ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 657 of file auxfiles/biblio.bib
+Repeated entry---line 336 of file auxfiles/biblio.bib
+ : @article{ballard1995high
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 674 of file auxfiles/biblio.bib
  : @article{banvillet2001prevision
  :                                ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 663 of file auxfiles/biblio.bib
+Repeated entry---line 680 of file auxfiles/biblio.bib
  : @article{lefebvre1981cognitive
  :                               ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 728 of file auxfiles/biblio.bib
+Repeated entry---line 745 of file auxfiles/biblio.bib
  : \@article{Maitournam2011232
  :                            ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 746 of file auxfiles/biblio.bib
+Repeated entry---line 763 of file auxfiles/biblio.bib
  : @article {FFE:FFE452
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 760 of file auxfiles/biblio.bib
+Repeated entry---line 777 of file auxfiles/biblio.bib
  : @thesis{zepeng
  :               ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 768 of file auxfiles/biblio.bib
+Repeated entry---line 785 of file auxfiles/biblio.bib
  : @book{lemaitre1990mechanics
  :                            ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 794 of file auxfiles/biblio.bib
+Repeated entry---line 811 of file auxfiles/biblio.bib
  : @article{Bosia201239
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 820 of file auxfiles/biblio.bib
+Repeated entry---line 837 of file auxfiles/biblio.bib
  : @article {FFE:FFE452
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 852 of file auxfiles/biblio.bib
+Repeated entry---line 869 of file auxfiles/biblio.bib
  : @misc{legendre
  :               ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 858 of file auxfiles/biblio.bib
+Repeated entry---line 875 of file auxfiles/biblio.bib
  : @article{Bedkowski1994
  :                       ,
 I'm skipping whatever remains of this entry
 Warning--entry type for "VIDAL1996" isn't style-file defined
---line 875 of file auxfiles/biblio.bib
-Repeated entry---line 909 of file auxfiles/biblio.bib
+--line 892 of file auxfiles/biblio.bib
+Repeated entry---line 926 of file auxfiles/biblio.bib
  : @article{Dubar1992
  :                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 923 of file auxfiles/biblio.bib
+Repeated entry---line 940 of file auxfiles/biblio.bib
  : @article{lee2013out
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 938 of file auxfiles/biblio.bib
+Repeated entry---line 955 of file auxfiles/biblio.bib
  : @article{ellyin1974criterion
  :                             ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 966 of file auxfiles/biblio.bib
+Repeated entry---line 983 of file auxfiles/biblio.bib
  : @article{Froustey1992
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 982 of file auxfiles/biblio.bib
+Repeated entry---line 999 of file auxfiles/biblio.bib
  : @article{papadopoulos2001long
  :                              ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 992 of file auxfiles/biblio.bib
+Repeated entry---line 1009 of file auxfiles/biblio.bib
  : @phdthesis{palin1996fatigue
  :                            ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1035 of file auxfiles/biblio.bib
+Repeated entry---line 1052 of file auxfiles/biblio.bib
  : @article{lemaitre1999two
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1045 of file auxfiles/biblio.bib
+Repeated entry---line 1062 of file auxfiles/biblio.bib
  : @article{lemaitre1985mecanique
  :                               ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1051 of file auxfiles/biblio.bib
+Repeated entry---line 1068 of file auxfiles/biblio.bib
  : @phdthesis{flaceliere2004contribution
  :                                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1057 of file auxfiles/biblio.bib
+Repeated entry---line 1074 of file auxfiles/biblio.bib
  : @phdthesis{monchiet2006contributions
  :                                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1118 of file auxfiles/biblio.bib
+Repeated entry---line 1128 of file auxfiles/biblio.bib
  : @article{carpinteri2003multiaxial
  :                                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1188 of file auxfiles/biblio.bib
+ : @article{Pogoretskii1966
+ :                         ,
 I'm skipping whatever remains of this entry
 Too many commas in name 1 of "ACHTELIC, H., BEDKOWSKY, W., GRZELAK, J., MACHA, E." for entry ACHTELIC1994
 while executing---line 1233 of file unsrtnat.bst
@@ -117,13 +134,16 @@ Too many commas in name 1 of "ACHTELIC, H., BEDKOWSKY, W., GRZELAK, J., MACHA, E
 while executing---line 1233 of file unsrtnat.bst
 Too many commas in name 1 of "ACHTELIC, H., BEDKOWSKY, W., GRZELAK, J., MACHA, E." for entry ACHTELIC1994
 while executing---line 1233 of file unsrtnat.bst
+Warning--can't use both author and editor fields in Van1999
+Warning--there's a number but no volume in Moore1944
 Warning--empty year in EFATIGUE
 Warning--empty journal in Bedkowski1994
 Warning--empty year in VIDAL1996
-Warning--empty title in findley1959
+Warning--can't use both volume and number fields in findley1959behavior
 Warning--empty journal in Froustey1992
 Warning--empty school in palin1996fatigue
 Warning--empty journal in lemaitre1985mecanique
+Warning--empty title in findley1959
 Warning--empty year in Legendre
 Too many commas in name 1 of "ACHTELIC, H., BEDKOWSKY, W., GRZELAK, J., MACHA, E." for entry ACHTELIC1994
 while executing---line 1315 of file unsrtnat.bst
@@ -146,45 +166,45 @@ while executing---line 1315 of file unsrtnat.bst
 Too many commas in name 1 of "ACHTELIC, H., BEDKOWSKY, W., GRZELAK, J., MACHA, E." for entry ACHTELIC1994
 while executing---line 1315 of file unsrtnat.bst
 Warning--empty journal in ACHTELIC1994
-You've used 35 entries,
+You've used 85 entries,
             2481 wiz_defined-function locations,
-            785 strings with 11079 characters,
-and the built_in function-call counts, 11995 in all, are:
-= -- 1126
-> -- 341
-< -- 32
-+ -- 166
-- -- 96
-* -- 776
-:= -- 1825
-add.period$ -- 115
-call.type$ -- 35
-change.case$ -- 64
-chr.to.int$ -- 35
-cite$ -- 46
-duplicate$ -- 675
-empty$ -- 1204
-format.name$ -- 139
-if$ -- 2613
-int.to.chr$ -- 1
-int.to.str$ -- 36
-missing$ -- 27
-newline$ -- 192
-num.names$ -- 99
-pop$ -- 292
+            1080 strings with 20780 characters,
+and the built_in function-call counts, 30683 in all, are:
+= -- 2816
+> -- 1119
+< -- 69
++ -- 492
+- -- 318
+* -- 2189
+:= -- 4790
+add.period$ -- 296
+call.type$ -- 85
+change.case$ -- 153
+chr.to.int$ -- 81
+cite$ -- 99
+duplicate$ -- 1647
+empty$ -- 2964
+format.name$ -- 436
+if$ -- 6607
+int.to.chr$ -- 5
+int.to.str$ -- 86
+missing$ -- 80
+newline$ -- 472
+num.names$ -- 249
+pop$ -- 669
 preamble$ -- 1
-purify$ -- 35
+purify$ -- 85
 quote$ -- 0
-skip$ -- 447
+skip$ -- 1008
 stack$ -- 0
-substring$ -- 640
-swap$ -- 120
-text.length$ -- 4
+substring$ -- 1581
+swap$ -- 267
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 242
-warning$ -- 9
-while$ -- 98
+type$ -- 568
+warning$ -- 12
+while$ -- 263
 width$ -- 0
-write$ -- 464
-(There were 39 error messages)
+write$ -- 1167
+(There were 42 error messages)

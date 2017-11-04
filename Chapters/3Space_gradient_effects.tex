@@ -11,21 +11,21 @@ The objective of the work is first to extend some classic high cycle fatigue (HC
 \section{Introduction}
 
 In several industries, the required design lifetime of many components often exceeds $ 10^8 $ cycles. This requirement is applicable to aircraft (gas turbine disks $ 10^{10} $ cycles), automobiles (car engine $ 10^8 $ cycles), and railways (high speed train $ 10^9 $ cycles) (\cite{wachtman2009mechanical}). Although a large amount of fatigue data has been published in the form of S-N (where S is stress and N  the number of cycles to fatigue) curves, the data in the literature have been usually limited to fatigue lives up to $ 10^7 $ cycles. Beyond that, a near hyperbolic relationship between stress and fatigue life is assumed, with an asymptotic limit defined as the fatigue limit (or endurance stress). 
-A large number of multiaxial fatigue criteria, generalizing this notion of fatigue limit, are available in the literature (\cite{Papadopoulos1997219}, \cite{ballard1995high}, \cite{suresh1998fatigue}). They are  used to design industrial components against failure. Nevertheless, most of these criteria present some drawbacks,  for instance when dealing with out-of-phase loading or with metals of different kinds from those used to develop the criteria. In fact, most of them are not designed to cope with high stress gradients such as those introduced  by surface treatments or notches, or to handle  scale effects as  specially present in nano or micro components. 
+A large number of multiaxial fatigue criteria, generalizing this notion of fatigue limit, are available in the literature (\cite{Papadopoulos1997219}, \cite{ballard1995high}, \cite{suresh1998fatigue},...). They are  used to design industrial components against failure. Nevertheless, most of these criteria present some drawbacks,  for instance when dealing with out-of-phase loading or with metals of different kinds from those used to develop the criteria. In fact, most of them are not designed to cope with high stress gradients such as those introduced  by surface treatments or notches, or to handle  scale effects as  specially present in nano or micro components. 
 
 More precisely, as mentioned by Luu et al. (\cite{luu2014formulation}), in problems related to small electronic components and electro-mechanical devices, at sufficiently small sizes, factors as size, gradient and loading effects affecting fatigue limits are not captured by classical fatigue criteria. In particular,  for the same stress distribution as well as nominal maximum stress of the material, the smaller the sample size is, the smaller the surface or the volume of the most stressed zone is, the higher the fatigue limit is.  Moreover, the nominal fatigue limit increases in the presence of stress gradient corresponding to a decreasing stress from the surface. Papadopoulos illustrates with experimental example and makes clearer the ``beneficial gradient effect" (\cite{Papadopoulos1996513}). 
 
-The quantitative estimate of the contribution of the pure size effect made in \cite{Papadopoulos1996513}, using the results of the constant moment tests on specimens of the same radius but different lengths(\figref{fig.sizeeffect}(a)) or of the same length with different radius(\figref{fig.sizeeffect}(b)), is recalled and
+The quantitative estimate of the contribution of the pure size effect made in \cite{Papadopoulos1996513}, using the results of the constant moment tests on specimens of the same radius but different lengths (\figref{fig.sizeeffect}(a)) or of the same length with different radius (\figref{fig.sizeeffect}(b)), is recalled and
 used. The slope of the linear trend observed for the (fatigue limit-R)
 data in \figref{fig.sizeeffect}(b) is much higher than the one for the (fatigue limit-L) data in \figref{fig.sizeeffect}(a).
-\begin{Figure}[!h]{Constant moment bending fatigue limit data: (a) constant radius R; (b) constant length L (Results of Pogoretskii and Karpenko\cite{Pogoretskii1966}, represented by Weber\cite{weber1999fatigue}).}[fig.sizeeffect]
+\begin{Figure}[!h]{Constant moment bending fatigue limit data: (a) constant radius R; (b) constant length L (Results of \cite{Pogoretskii1966}, represented by \cite{weber1999fatigue}).}[fig.sizeeffect]
 	\graphfile*[34]{figures//sizeeffect_length.png}[]
 	\graphfile*[34]{figures//sizeeffect_radius.png}[]
 \end{Figure}
 
 The results of the constant moment tests on specimens of the same radius but different lengths shows that the gradient effect is an order of magnitude higher than the pure size effect. In this case, size effect is proved insignificant compared to the gradient effect at the considered scale. Once the gradient correction is made and a proper multiaxial criterion is used, it appears that the size effect due to increasing the loaded surface area at the notch tip for the different geometries is negligible compared to the gradient effect.
 
-From above it is concluded that the stress gradient factor is the most important contributer to the beneficial effect phenomenon. Fatigue criteria have been generalized by several authors by including a  gradient dependence (\cite{Papadopoulos1996513}) in order to introduce a sensitivity of the endurance limit to difference in stress as a function of length along a gradient field occurring at length scale  $l_g$. Uniaxial normal cyclic stress states with non-zero and zero normal stress gradients, respectively,give some indication about the normal stress gradient effect. The larger the normal stress due to bending, the larger the difference between bending test points and tension-compression ellipse arc (as is shown in \figref{fig2}).
+From above it is concluded that the stress gradient factor is the most important contributer to the beneficial effect phenomenon. Fatigue criteria have been generalized by several authors by including a  gradient dependence (\cite{Papadopoulos1996513}) in order to introduce a sensitivity of the endurance limit to difference in stress as a function of length along a gradient field occurring at length scale  $l_g$. Uniaxial normal cyclic stress states with non-zero and zero normal stress gradients, respectively, give some indication about the normal stress gradient effect. The larger the normal stress due to bending, the larger the difference between bending test points and tension-compression ellipse arc (as is shown in \figref{fig2}).
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures//fig2.jpg} 
@@ -33,9 +33,11 @@ From above it is concluded that the stress gradient factor is the most important
 	\label{fig2}
 \end{figure}
 
-Apart from gradient approaches (\cite{Amargier20101904}, \cite{Papadopoulos1996513}), to take into account the beneficial effect, others approaches such critical volume (\cite{maitournam2009fatigue}), critical distance (\cite{taylor2010theory}, \cite{Araujo200795}), critical layer (\cite{flavenot1983epaisseur}), averaging over a specific volume (\cite{palin2000stress}, \cite{Banvillet2003755}) are used . In fact, all the approaches are equivalent to introducing a length scale. 
+Apart from gradient approaches (\cite{Amargier20101904}, \cite{Papadopoulos1996513}), to take into account the beneficial effect, others approaches such critical volume (\cite{maitournam2009fatigue}), critical distance (\cite{taylor2010theory}, \cite{Araujo200795}), critical layer (\cite{flavenot1983epaisseur}), averaging over a specific volume (\cite{palin2000stress}, \cite{Banvillet2003755}) are used. In fact, all the approaches are equivalent to introducing a length scale. 
+
 In the paper, we consider specifically the gradient approach. We start from the proposition of Luu et al., and propose and analyze a simpler way to account for the gradient effect at a specific length scale. The Crossland criterion (\cite{crossland1956effect}), one of the most widely known HCF criteria, is used to illustrate the approach. Crossland proposed that the second invariant of the deviatoric stress tensor and the hydrostatic stress are the variables governing the endurance limit. 
-The new proposition adds two gradient terms ; it is then calibrated and its predictions are compared to experimental results to check its relevancy.
+
+The new proposition adds two gradient terms; it is then calibrated and its predictions are compared to experimental results to check its relevancy.
 
 
 \section{A first gradient approach (\cite{luu2014formulation})}
@@ -45,7 +47,7 @@ Luu et al. \cite{luu2014formulation} proposed extensions of classical HCF fatigu
 A general form of classical fatigue limit criteria can be written as follows:
 \begin{equation}
 	\label{eq:classical}
-	f(C_a(n^*),N_{max}(n^*))=C_a(n^*)+aN_{max}(n^*)-b\geqslant 0 ,
+	f(C_a(n^*),N_{max}(n^*))=C_a(n^*)+aN_{max}(n^*)-b\leqslant 0 ,
 \end{equation}
 with a, b being two material parameters. $f$ is a function, chosen in many cases as linear, and $n^*$ is the normal vector of the critical plane; $C_a(n^* )$, $N_{max} (n^* )$ are respectively the amplitude of shear stress and the maximum value of the normal stress on the critical plane.
 
@@ -53,7 +55,7 @@ A new class of fatigue criteria extended from classical ones with stress gradien
 
 Besides the stress gradient term appearing in the normal stress part in form of $G=\Delta(\sigma_{11}+\sigma_{22}+\sigma_{33})$, another gradient term, the gradient of the stress tensor amplitude (or alternatively of deviatoric stress tensor amplitude) $\parallel{Y}_a\parallel={\Delta\sigma}_a$ is added to the shear stress amplitude part. Basing on all these analyses a new form of fatigue criteria taking into account gradient effects, is proposed:
 \begin{equation}
-	f(\widetilde{C_a}(n^*),\widetilde{N_{max}}(n^*))=\widetilde{C_a}(n^*)+a\widetilde{N}_{max}(n^*)-b\geqslant 0 ,
+	f(\widetilde{C_a}(n^*),\widetilde{N_{max}}(n^*))=\widetilde{C_a}(n^*)+a\widetilde{N}_{max}(n^*)-b\leqslant 0 ,
 	\label{eq:gradient crossland}
 \end{equation}
 where $\widetilde{C_a}(n^*)$ and $\widetilde{N_{max}}(n^*)$ are extended definitions of the amplitude of shear stress and of the normal stress taking into account the presence of local gradient.
@@ -126,7 +128,7 @@ Surfaces with stresses decreasing in depth are, here and after, considered. Fail
 	\label{crossland-x0-2}
 \end{equation}
 
-To obtain a suitable expression, an expansion of Eq.(\ref{crossland-x0-2}) in performed in the neighborhood of ${x_0}$. The sought formula should account for the beneficial effect of the stress gradient. Considering that the stress is decreasing in depth, we consider the most favorable point in the neighborhood(inf) thus  a negative sign is associated with the norm of the gradient of stress tensor in to the proposed formula. In addition, the gradient term should not only affect hydrostatic stress but also shear stress.
+To obtain a suitable expression, an expansion of Eq.(\ref{crossland-x0-2}) in performed in the neighborhood of ${x_0}$. The sought formula should account for the beneficial effect of the stress gradient. Considering that the stress is decreasing in depth, we consider the most favorable point in the neighborhood (inf), thus a negative sign is associated with the norm of the gradient of stress tensor in the proposed formula. In addition, the gradient term should not only affect hydrostatic stress but also shear stress.
 
 An objective formulation based on the maximum value of deviatoric stress invariants $\sqrt{J_{2,a}}$ and of $\sigma_{H,max}$ in the neighborhood, is finally:
 
@@ -137,7 +139,7 @@ An objective formulation based on the maximum value of deviatoric stress invaria
 In this updated model, we keep the same material parameters $a$ and $b$ as before, and $l_g$ is a characteristic length to be optimized to match the experimental results. The approach has thus only one supplementary material constant, $l_g$, whose calibration is easy.
 
 \section{Optimized Papadopoulos Criterion formulation}
-As seen in Chapter\ref{chp:2}, Papadopoulos (\cite{papadopoulos1993fatigue}) has proposed to opt for a mean value of the accumulated plastic strain on all possible slip systems of representative elementary volume(REV). So he chose to use an average value  of accumulated plastic deformation rather than looking at failure of a single crystal. A spherical coordinate system(\figref{figpapa}) to guide the vector of normal in material plane, and the unit orientation vector $r$ linked to a sliding direction of this plane is used to conduct the integration over all possible orientations.
+As seen in Chapter \ref{chp:2},  \cite{papadopoulos1993fatigue} has proposed to opt for a mean value of the accumulated plastic strain on all possible slip systems of representative elementary volume (REV). So he chose to use an average value  of accumulated plastic deformation rather than looking at failure of a single crystal. A spherical coordinate system (\figref{figpapa}) to guide the vector of normal in material plane, and the unit orientation vector $r$ linked to a sliding direction of this plane is used to conduct the integration over all possible orientations.
 
 \begin{figure}[h!]
 	\centering
@@ -148,13 +150,13 @@ As seen in Chapter\ref{chp:2}, Papadopoulos (\cite{papadopoulos1993fatigue}) has
 \end{figure}
 At any point $O$ of a body, a material plane $\Delta$ can be defined by its unit normal vector $\bf n$. This vector
 $\bf n$ makes an angle $\theta$ with the z-axis of a $Oxyz$ frame attached to the body, and its projection on the $xy$ plane
-makes an angle $\varphi$ with axis $x$. For each plane $\Delta$ a new quantity is introduced as the quadratic mean value, over all the sliding directions of the considered plane, of the resolved shear stress amplitude and denoted as $T_a$.This shear stress quantity was first introduced in Papadopoulos\cite{Papadopoulos1996513}
+makes an angle $\varphi$ with axis $x$. For each plane $\Delta$ a new quantity is introduced as the quadratic mean value, over all the sliding directions of the considered plane, of the resolved shear stress amplitude and denoted as $T_a$.This shear stress quantity was first introduced in \cite{Papadopoulos1996513}
 and was subsequently used by other researchers.The critical plane according to his proposal is that onto which $T_a(\varphi,\theta)$ achieves its maximum value. The fatigue limit criterion is written as:
 \begin{equation}
 	max T_a+\alpha_\infty \sigma_{h,max}\leqslant \gamma_\infty
 	\label{eq.papa}
 \end{equation}
-where $\alpha_\infty$ and $\gamma_\infty$ are material parameters to be determined\cite{papadopoulos2001long}.
+where $\alpha_\infty$ and $\gamma_\infty$ are material parameters to be determined (\cite{papadopoulos2001long}).
 $$\sigma_{h,max}=\max\limits_{t}\left\lbrace \dfrac{1}{3}tr(\uline{\uline{\sigma}}(t))\right\rbrace. $$
 As seen earlier, the construction of $T_a$ is based on the calculation of a local shear stress $\tau$:
 \begin{equation}
@@ -173,10 +175,10 @@ along $\xi$ by the formula:
 Now, for a given plane $\Delta$, i.e. for a fixed pair of angles ($\varphi$, $\theta$),
 the generalized shear stress amplitude $T_a$ is defined as the $L^2$ average in the plane $\Delta$ of the amplitude of resolved shear stress:
 \begin{equation}
-	T_a(\varphi,\theta)=2\sqrt{\dfrac{1}{\pi}\int_{x=0}^{\frac{\pi}{2}} \tau_a^2(\varphi,\theta,\chi)d\chi}
+	T_a(\varphi,\theta)=\sqrt{\dfrac{1}{\pi}\int_{\chi=0}^{2\pi} \tau_a^2(\varphi,\theta,\chi)d\chi}
 	\label{Ta}
 \end{equation}
-We note the fatigue limit in fully reversed torsion $t_{-1}$ and the fatigue limit in fully reversed bending $f_{-1}$. From these two tests we get the parameters from Eq.\ref{eq.papa}:
+We note the fatigue limit in fully reversed torsion $t_{-1}$ and the fatigue limit in fully reversed bending $f_{-1}$. From these two tests we get the parameters from Eq.\eqref{eq.papa}:
 $$\gamma_\infty=t_{-1},$$ 
 $$\alpha_\infty=3\left( \dfrac{t_{-1}}{f_{-1}}-\dfrac{1}{2}\right) .$$
 The Papadopoulos fatigue limit criterion is therefore:
@@ -193,18 +195,18 @@ Now,  the Papadopoulos Criterion can be simply extended  to cases with gradient 
 \section{Optimized Dang Van Criterion formulation}
 The Dang Van criterion as presented in \cite{ballard1995high} and reviewed in Chapter \ref{chp:2} is expressed as:
 \begin{equation}
-	\max \limits_{\vec{n}}\left\lbrace \max \limits_{t}\left\{\tau{(\vec{n},t)}+a_D\sigma_H(t)\right\}\right\rbrace \leqslant b_D.
+	 \max \limits_{t}\left\{\tau{(t)}+a_D\sigma_H(t)\right\} \leqslant b_D.
 	\label{dv}
 \end{equation}
 
-Here, $\tau$ denotes the mesoscopic shear stress and is obtained from a mesoscopic stress tensor $\hat{\bm{\sigma}}$ defined by:
-$$\hat{\bm{\sigma}}(t)=(\bm{\sigma}(t)-s^\star),$$
-where $s^\star$ is the center of the smallest hypersphere circumscribed to the loading path in deviatoric stress space. It is obtained by solving a ``min-max" problem as follows:
-$$s^\star = arg \min\limits_{s_1}\left\{\max\limits_t\parallel s(t)-s_1\parallel\right\}.$$
-In the case of fully reversed loading, the values $s^\star=0$ can be directly deduced without solving the ``min-max problem" as in general case.
+Here, $\tau_a$ denotes the mesoscopic shear stress amplitude and is obtained from a mesoscopic stress tensor $\hat{\bm{\sigma}}$ defined by:
+$$\hat{\uuline{\sigma}}(t)=(\uuline{\sigma}(t)-\uuline{s}^\star).$$
+Here $\uuline{s}^\star$ is the center of the smallest hypersphere circumscribed to the loading path in deviatoric stress space. It is obtained by solving a ``min-max" problem as follows:
+$$\uuline{s}^\star = arg \min\limits_{\underline{\underline{s}}_1}\left\{\max\limits_t\parallel \uuline{s}(t)-\underline{\underline{s}}_1\parallel\right\}.$$
+In the case of fully reversed loading, the values $\uuline{s}^\star=0$ can be directly deduced without solving the ``min-max problem" as in general case.
 
-The principal stress values of stress tensor $\widetilde{\sigma}$ being denoted  by $\hat{\sigma}_{\Rmnum{3}}(t)\leqslant\hat{\sigma}_{\Rmnum{2}}(t)\leqslant\hat{\sigma}_{\Rmnum{1}}(t)$, one gets the maximum shear stress by:
-$$\tau(t)=\dfrac{1}{2}\left( \hat{\sigma}_{\Rmnum{1}}(t)-\hat{\sigma}_{\Rmnum{3}}(t)\right) .$$
+The principal stress values of stress tensor $\uuline{\hat{\sigma}}$ being denoted by $\hat{\sigma}_{\Rmnum{3}}(t)\leqslant\hat{\sigma}_{\Rmnum{2}}(t)\leqslant\hat{\sigma}_{\Rmnum{1}}(t)$, one gets the amplitude of shear stress by:
+$$\max \limits_{\underline{n}}\tau_a(t)=\frac{1}{2}(\hat{\sigma}_{\Rmnum{1}}(t)-\hat{\sigma}_{\Rmnum{3}}(t)).$$
 Moreover, $\sigma_H(t)$ denotes  the hydrostatic stress as a function of the time.
 The material characteristic parameters $a_D$ and $b_D$ are finally  given from traction compression and torsion fatigue limits by  :
 $$a_D=\dfrac{3t_{-1}}{s_{-1}}-\dfrac{3}{2};$$  $$b_D=t_{-1}.$$
@@ -214,9 +216,9 @@ Now,  the Dang Van criterion can be extended to a gradient dependent criterion b
 	\max \limits_{t}\left\{\tau{(t)}+a_D\sigma_H(t)\right\}-l_g\parallel	\max \limits_{t}\left\{{\nabla\tau{(t)}}+a_D\nabla\sigma_H(t)\right\}\parallel\leqslant b_D.
 	\label{modified dangvan}
 \end{equation}
-\section{Calibration of the critera}
+\section{Calibration of the criteria}
 
-In this section, two different uniaxial fatigue tests with stress gradient effects are used to calibrate the optimized gradient Crossland, Papadopoulos and DangVan criteria. An application to a biaxial test fatigue test shows the ability of the proposed approach to account for stress gradient in multiaxial cases. 
+In this section, two different uniaxial fatigue tests with stress gradient effects are used to calibrate the optimized gradient Crossland, Papadopoulos and Dang Van criteria. An application to a biaxial test fatigue test shows the ability of the proposed approach to account for stress gradient in multiaxial cases. 
 
 
 \subsection{Fully reversed 4-point bending and rotating cantilever bending fatigue tests}
@@ -244,7 +246,7 @@ hydrostatics stress takes the value
 \end{equation}
 From the value of  the deviatoric stress
 \begin{equation} 
-	\Delta\uuline{ S}=\Delta\uuline{\sigma}-\dfrac{1}{3}\textrm{tr}\Delta\uuline{\sigma}\uuline{I}=
+	\Delta\uuline{ S}=\Delta\uuline{\sigma}-\dfrac{1}{3}(\textrm{tr}\Delta\uuline{\sigma})\uuline{\mathbbm{1}}=
 	\left(
 	\begin{array}{ccc}
 		\dfrac{4}{3}\sigma_{max} & 0 & 0\\
@@ -303,17 +305,17 @@ We can observe that:
 and that $f_c(R)$ tends to $s_{ref}$ for large values of $R$.
 
 \subsubsection{With Papadopoulos criterion}  
-From Eq.\ref{bending4}, the resolved shear stress $\tau$ acting along a line $\xi$ of a plane $\Delta$ is given by Eq.\ref{eqres}, which in this case leads to:
+From Eq.\eqref{bending4}, the resolved shear stress $\tau$ acting along a line $\xi$ of a plane $\Delta$ is given by Eq.\eqref{eqres}, which in this case leads to:
 \begin{equation}
-	\tau(\varphi,\theta,\chi,t)=\sigma_{xx}sin(2\pi t/P)sin\theta cos\theta sin\chi.
+	\tau(\varphi,\theta,\chi,t)=\sigma_{xx}\textnormal{sin}(2\pi t/P)\textnormal{sin}\theta \textnormal{cos}\theta \textnormal{sin}\chi.
 \end{equation}
 Clearly, for the worse case in $\chi$,  the resolved shear stress amplitude is equal to:
 \begin{equation}
-	\tau_a(\varphi,\theta,\chi)=\sigma_{xx}|sin\theta cos\theta sin\chi|.
+	\tau_a(\varphi,\theta,\chi)=\sigma_{xx}|\textnormal{sin}\theta \textnormal{cos}\theta \textnormal{sin}\chi|.
 \end{equation}
 The generalized shear stress amplitude $T_a$ becomes:
 \begin{equation}
-	T_a(\varphi,\theta)=2\sqrt{\dfrac{1}{\pi}\int_{\chi=0}^{\frac{\pi}{2}}(\sigma_{xx}|sin\theta cos\theta sin\chi|)^2d\chi}
+	T_a(\varphi,\theta)=\sqrt{\dfrac{1}{\pi}\int_{\chi=0}^{2\pi}(\sigma_{xx}|\textnormal{sin}\theta \textnormal{cos}\theta \textnormal{sin}\chi|)^2d\chi}
 \end{equation}
 The maximum value of $T_a$ is obtained at ($\theta=\pi/4$) and at ($\theta=3\pi/4$). It is equal to:
 \begin{equation}
@@ -321,7 +323,7 @@ The maximum value of $T_a$ is obtained at ($\theta=\pi/4$) and at ($\theta=3\pi/
 \end{equation}
 The hydrostatic stress is given by:
 \begin{equation}
-	\sigma_{H}(t)=\dfrac{1}{3}\sigma_{xx}sin(2\pi t/P)
+	\sigma_{H}(t)=\dfrac{1}{3}\sigma_{xx}\textnormal{sin}(2\pi t/P)
 \end{equation}
 The maximum value of $\sigma_H$ reached in a loading cycle is:
 \begin{equation}
@@ -462,7 +464,7 @@ Its range tensor is:
 \end{equation}
 with deviator
 \begin{equation} 
-	\Delta\uuline{ S}=\Delta\uuline{\sigma}-\dfrac{1}{3}\textrm{tr}\Delta\uuline{\sigma}=
+	\Delta\uuline{ S}=\Delta\uuline{\sigma}-\dfrac{1}{3}(\textrm{tr}\Delta\uuline{\sigma})\uuline{\mathbbm{1}}=
 	\left(
 	\begin{array}{ccc}
 		\dfrac{4}{3}\sigma_{a} & 2\tau_a & 0\\
@@ -508,7 +510,7 @@ Crossland criterion with beneficial gradient term as shown in Eq.(\ref{modified 
 \end{equation}
 \subsubsection{With Papadopoulos criterion}
 We can find the resolved shear stress $\tau(\varphi,\theta,\chi ,t)$ with Eq.\eqref{eqres}. Although the intermediate calculations are complicated, the result achieves the very simple form \cite{Papadopoulos1997219}. The generalized shear stress amplitude $T_a$ is then:
-$$T_a(\varphi,\theta)=\sqrt{\dfrac{1}{\pi}\int_{x=0}^{\frac{\pi}{2}} \tau^2(\varphi,\theta,\chi)d\chi}
+$$T_a(\varphi,\theta)=\sqrt{\dfrac{1}{\pi}\int_{\chi=0}^{2\pi} \tau^2(\varphi,\theta,\chi)d\chi}
 =\sqrt{\dfrac{\sigma_a^2}{3}+\tau_a^2}.
 $$
 $$\sigma_{H,max}=\dfrac{1}{3}\sigma_a$$
@@ -558,19 +560,18 @@ proposed in \cite{Papadopoulos1996513}. Nevertheless, these criteria do not take
 stress gradient and consequently do not distinguish between $t_{-1}$
 and $t_{ref}$.
 
-It can be seen from \figref{4340} that the Crossland ellipse arc (Eq. \ref{crossland}) based on the $s_{ref}$-$ t_{ref}$ fatigue limits and the Crossland ellipse arc (Eq. \ref{papa}) based on $f_{-1}$-$t_{-1}$ are different demonstrating clearly the effect of stress gradient. The first curve, obtained within zero normal stress gradient assumption, does not fit the experimental data from combined bending-twisting tests having a non-zero stress gradient.  The difference between test points and classical Crossland ellipse arc near the x-axis where the normal load is predominant, is a proof of the beneficial ``size’’ and gradient effects. Indeed, the difference between two kinds of fatigue test can be clearly seen: the bending test (test points) includes the beneficial effects of the normal stress gradient; the tension–compression test (Crossland ellipse arc) excludes these effects due to the gradient-free stress state.  To account for the shear gradient amplitude effect, a clear distinction must be made between $t_{ref}$
+It can be seen from \figref{4340} that the Crossland ellipse arc (Eq. \ref{crossland}) based on the $s_{ref}$-$ t_{ref}$ fatigue limits and the Crossland ellipse arc (Eq. \ref{papa}) based on $f_{-1}$-$t_{-1}$ are different demonstrating clearly the effect of stress gradient. The first curve, obtained within zero normal stress gradient assumption, does not fit the experimental data from combined bending-twisting tests having a non-zero stress gradient.  The difference between test points and classical Crossland ellipse arc near the x-axis where the normal load is predominant, is a proof of the beneficial ``size’’ and gradient effects. Indeed, the difference between two kinds of fatigue test can be clearly seen: the bending test (test points) includes the beneficial effects of the normal stress gradient; the tension-compression test (Crossland ellipse arc) excludes these effects due to the gradient-free stress state.  To account for the shear gradient amplitude effect, a clear distinction must be made between $t_{ref}$
 determined at the radius $R_{\infty}$ of specimen large enough and $t_{-1}$ determined at the radius $R$ of the considered specimen.
-Then all
-these above analyses affirm, first, the ``size effect'' on fatigue limits
+Then all these above analyses affirm, first, the ``size effect'' on fatigue limits
 (Smaller is Stronger) as well as the beneficial effect of the normal
 stress gradient (Higher Gradient is Stronger), and second, the
 necessity of a distinction between $t_{ref}=t(R_{\infty})$ and $t_{-1}(R)$ when applied to the classical Crossland criterion and the new gradient criterion, respectively. With all such conceptions, the experimental data now agree very well with the ellipse arc based on  the new criteria proposed, as plotted in \figref{4340}. It is also noticed that the substitution of the material parameters by the bending and torsion limits is an unorthodox way to bypass the above described problems for classical criterion. The same ellipse arc is obtained in a more intrinsic way using the proposed criterion.
 
-Our proposal takes into account both gradients of hydrostatic stress and shear stress. For SAE 4340 steel, the tension-compression fatigue limit $S_{ref}=397MPa$ and the torsion fatigue limit $t_{ref}=258MPa$. We use the same set of parameters as the original criteria except the gradient term with length scale $l_g$. Choosing the proper $l_g$(here $l_g=2.5mm$ ) allows us to predict the experiments within the acceptable range as shown in \figref{4340} at the critical locations $y=R$. These results, represented in the $\sigma_a, \tau_a$ plane (the so called fatigue ellipse arc)  illustrate that our proposal is quite satisfactory in biaxial case.	
+Our proposal takes into account both gradients of hydrostatic stress and shear stress. For SAE 4340 steel, the tension-compression fatigue limit $S_{ref}=397\,\textnormal{MPa}$ and the torsion fatigue limit $t_{ref}=258\,\textnormal{MPa}$. We use the same set of parameters as the original criteria except the gradient term with length scale $l_g$. Choosing the proper $l_g$(here $l_g=2.5mm$ ) allows us to predict the experiments within the acceptable range as shown in \figref{4340} at the critical locations $y=R$. These results, represented in the $\sigma_a, \tau_a$ plane (the so called fatigue ellipse arc)  illustrate that our proposal is quite satisfactory in biaxial case.	
 
 \begin{figure}[!h]
 	\includegraphics[width=\textwidth]{figures//4340.png}
-	\caption{Fully reversed combined bending-twisting fatigue limit data (\cite{findley1956theory}, \cite{Papadopoulos1996513}) compared with updated values computed with gradient effects using 	Eq.\ref{eq.arcblack}, Eq.\ref{modified Papadopoulos}, Eq.\ref{Dang Van}, Eq.\ref{crossland} and Eq.\ref{papa} with $l_g = 2.5 \, mm$. In absence of gradient effect, we would get the inner gray ellipse corresponding to classical Crossland criterion.}
+	\caption{Fully reversed combined bending-twisting fatigue limit data (\cite{findley1956theory}, \cite{Papadopoulos1996513}) compared with updated values computed with gradient effects using 	Eq.\eqref{eq.arcblack}, Eq.\eqref{modified Papadopoulos}, Eq.\eqref{Dang Van}, Eq.\eqref{crossland} and Eq.\eqref{papa} with $l_g = 2.5 \, mm$. In absence of gradient effect, we would get the inner gray ellipse corresponding to classical Crossland criterion.}
 	\label{4340}
 \end{figure}
 
@@ -579,7 +580,7 @@ Our proposal takes into account both gradients of hydrostatic stress and shear s
 \newpage
 \section{Discussion}
 \noindent\textbf{Remark 1} (Gradient terms). In this work, the pure size effect has not been considered and only stress gradient effect is modeled. Whereas the latter is dominant rather than totally to the pure size effect as usually believed. 
-A unique gradient term is enough to model the gradient and loading effects. This is introduced either in the normal stress component of the classical fatigue criterion as \cite{Papadopoulos1996513} proposed, or in the shear stress part as presented in \cite{Massonnet1956}. However, in multiaxial fatigue tests, combining two types of stress gradient terms is in principle indispensable to capture the previous effects.
+A unique gradient term is enough to model the gradient and loading effects. This is introduced either in the normal stress component of the classical fatigue criterion as \cite{Papadopoulos1996513} proposed, or in the shear stress part as presented in \cite{Massonnet1956}. However, in multiaxial fatigue tests, combining both normal and shear stress gradient terms is in principle indispensable to capture the previous effects.
 \vspace{6pt} \\
 \textbf{Remark 2} (Material characteristic length scale $l_g$). The values of $l_g$ of the model proposed extend from
 several hundredths of a micron to about a millimeter for cases considered, while the one of the model
@@ -588,8 +589,8 @@ is physically explained by the following reason: we study here the fatigue endur
 specimens and components for which the crack initiation is generally detected by loss of stiffness corresponding to crack length which can reach a millimeter; whereas Ferr{\'e} et al. consider crack nucleation in
 the scale is few dozen microns.
 \vspace{6pt} \\
-\textbf{Remark 3} (Extensions to other load case). The dependence of fatigue limits on both ``size" and gradient effects according to the specimen size (e.g. length,radius) has a ``saturated" or ``insensitive" threshold. That
-means, there always exists a certain ``saturated" value for the specimen size ($L\infty$ ,$R\infty$ ) from which the
+\textbf{Remark 3} (Extensions to other load case). The dependence of fatigue limits on both ``size" and gradient effects according to the specimen size (e.g. length, radius) has a ``saturated" or ``insensitive" threshold. That
+means, there always exists a certain ``saturated" value for the specimen size ($L\infty$, $R\infty$ ) from which the
 fatigue behavior is insensitive to both effects and the proposed criteria exactly reduce to the respective
 classical ones. Nevertheless, it is not easy to compute the gradient in multiaxial loading case.
 
@@ -612,4 +613,4 @@ The proposed criteria shown a good agreement with a number of experiments from t
 more comprehensive introduction of a practical strategy to compute local gradient and validation  for complex loading (real multiaxial loads) could be perspective for this
 research direction. 
 
-In methodological aspect, gradient approach just allow modeling the volumetric stresses instant distribution (related to loading case such as: tension-compression, torsion, plane bending), not volumetric stresses distribution all over the loading cycle (related to rotative bending). Thus the adopted criteria indifferently deal with the plane bending and the rotative bending tests, although their fatigue limits are actually different. Fatigue problems concerning other factors (machining, notches, defects, inclusions, corrosion, etc.) have been left out in this approach and need another approach to address. In particular for notched fatigue problems, this approach may be still applicable. A validation by means of experimental data is needed to examine this possibility. Cases with critical points located inside specimens where the gradient effect can be presumably negative on fatigue resistance, for instance those with presence of residual stresses, can be encountered and have not examined yet. A reexamination of the approach will be the object of the further work.
+In methodological aspect, gradient approach just allows modeling the volumetric stresses instant distribution (related to loading case such as: tension-compression, torsion, plane bending), not volumetric stresses distribution all over the loading cycle (related to rotative bending). Thus the adopted criteria indifferently deal with the plane bending and the rotative bending tests, although their fatigue limits are actually different. Fatigue problems concerning other factors (machining, notches, defects, inclusions, corrosion, etc.) have been left out in this approach and need another approach to address. In particular for notched fatigue problems, this approach may be still applicable. A validation by means of experimental data is needed to examine this possibility. Cases with critical points located inside specimens where the gradient effect can be presumably negative on fatigue resistance, for instance those with presence of residual stresses, can be encountered and have not examined yet. A reexamination of the approach will be the object of the further work.

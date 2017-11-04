@@ -16,13 +16,13 @@ What makes automobile fatigue so difficult to predict is that, unlike standard t
 	\label{complexloading}
 \end{figure}
 
-As we mentioned before, the mean value of $\alpha$ depends on the loading pattern(sinusoidal, linear division points between max and min stresses in unit cycle,...), but our optimal time step numerical strategy is not loading pattern dependent because it equally divides the range of $\alpha$ during the load history, which means the variation amplitude of stress intensity. So in random loading case with only recorded maximum and minimum load history, we first divide linearly between every 2 recorded points into $100$ time steps, and then perform numerical tests with optimal time step method.
+As we mentioned before, the mean value of $\alpha$ depends on the loading pattern (sinusoidal, linear division points between max and min stresses in unit cycle,...), but our optimal time step numerical strategy is not loading pattern dependent because it equally divides the range of $\alpha$ during the load history, which means the variation amplitude of stress intensity. So in random loading case with only recorded maximum and minimum load history, we first divide linearly between every 2 recorded points into $100$ time steps, and then perform numerical tests with optimal time step method.
 
 The first tests are performed on aluminum batches, the characteristics of the sample are shown in Tab.\ref{tab:cetim}.
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{figures//aluminum_cetim.png} 
-\caption{Specimen geometry for fatigue tests of AW-6106 T6 aluminum(sample given by PSA)}
+\caption{Specimen geometry for fatigue tests of AW-6106 T6 aluminum (sample given by PSA)}
 \label{fig:aluminum}
 \end{figure}
 \begin{table}[!h]
@@ -41,14 +41,14 @@ Width		 & $l= 9.95mm$                        \\ \hline
 \end{table}
 
 There are 12 validated uniaxial fatigue tests on the AW-6106 T6 aluminum sample, in which 2 are of constant amplitude load case and 10 involve random  load case. 
-The cyclic stress of test number 1(ep01) and test number 2(ep02) are respectively $131.9MPa$ and $97.0MPa$. We first identify the parameters from these two tests. 
+The cyclic stress of test number 1 (BATCH\_A\_01) and test number 2 (BATCH\_A\_02) are respectively $131.9\,\textnormal{MPa}$ and $97.0\,\textnormal{MPa}$. We first identify the parameters from these two tests. 
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{figures//EP_a_06_random.png} 
 \caption{Random loading history on BATCH\_A\_06 of AW-6106 T6 aluminum (see Tab.\ref{tab:Cetim})}
 \end{figure}	
-The detailed tests information are shown in Tab.\ref{tab:Cetim}. There are 27000($\pm 2.4\%$) recorded points per repetition. 
+The detailed tests information are shown in Tab.\ref{tab:Cetim}. There are 27000 ($\pm 2.4\%$) recorded points per repetition. 
 
 \begin{table}[!h]
 \centering
@@ -84,39 +84,39 @@ BATCH\_B\_12      & nom                & 225.88                               & 
 \label{tab:Cetim}
 \end{table}
 
-We assume the material parameters like Young's modulus $E$, hardening parameter $k$, hydrostatic pressure sensitivity $\lambda_+$(for $\overline{\Sigma}_H=0$ in all cases), macroscopic yield stress $\sigma_y$ and sequence effect sensitivity $a$ are known. We first identify the weakening scales distribution $\beta$, and dissipated energy to failure $W_0$ from cyclic tests ep01 and ep02. Then fit the major damage effect parameter $f$ to see if our assumption is correct or need to be changed. 
+We assume the material parameters like Young's modulus $E$, hardening parameter $k$, hydrostatic pressure sensitivity $\lambda_+$ (for $\overline{\Sigma}_H=0$ in all cases), macroscopic yield stress $\sigma_y$ and sequence effect sensitivity $a$ are known. We first identify the weakening scales distribution $\beta$, and dissipated energy to failure $W_0$ from cyclic tests BATCH\_A\_01 and BATCH\_A\_02. Then fit the major damage effect parameter $f$ to see if our assumption is correct or need to be changed. 
 
 
-The numerical fitting process show that the damage is caused mainly by large stresses (see later). The definition of major stress which affects the value of $\alpha$ now needs to be specified according to the material. To take into account this effect we first find out the proportion stress above a certain value in the repetition signal of random loading, as shown in Tab.\ref{tab.majordamage}.  Here ep\_a and ep\_b are the same material. Since the samples were extracted from aluminum profiles of industrial products,  the two batches correspond to two different times of sampling in the production. The variation is supposed to be representative of the regular tolerances you might have in the production. ep\_a\_01 and ep\_a\_02 are constant amplitude loading which helps identify the power of weakening scale distribution $\beta$. ep\_a\_03 is low cycle fatigue data.  ep\_b\_02 and ep\_b\_03 have infinite life time. The data in the table are grabbed from random signal high cycle fatigue loading history.
+The numerical fitting process show that the damage is caused mainly by large stresses (see later). The definition of major stress which affects the value of $\alpha$ now needs to be specified according to the material. To take into account this effect we first find out the proportion stress above a certain value in the repetition signal of random loading, as shown in Tab.\ref{tab.majordamage}.  Here BATCH\_A and BATCH\_B are the same material. Since the samples were extracted from aluminum profiles of industrial products,  the two batches correspond to two different times of sampling in the production. The variation is supposed to be representative of the regular tolerances you might have in the production. BATCH\_A\_01 and BATCH\_A\_02 are constant amplitude loading which helps identify the power of weakening scale distribution $\beta$. BATCH\_A\_03 is low cycle fatigue data.  BATCH\_B\_02 and BATCH\_B\_03 have infinite life time. The data in the table are grabbed from random signal high cycle fatigue loading history.
 
 \begin{table}[!h]
 \centering
 \begin{tabular}{llllllll}
 \hline
-\textbf{Stress(MPa)\textgreater}  & \textbf{70}    & \textbf{90}    & \textbf{110}   & \textbf{130}    & \textbf{150}    & \textbf{170}    & \textbf{190}    \\
+\textbf{$\Sigma_{a}$(MPa)\textgreater}  & \textbf{70}    & \textbf{90}    & \textbf{110}   & \textbf{130}    & \textbf{150}    & \textbf{170}    & \textbf{190}    \\
 \textbf{$S_{a}$(MPa)\textgreater} & \textbf{57.15} & \textbf{73.48} & \textbf{89.81} & \textbf{106.14} & \textbf{122.47} & \textbf{138.80} & \textbf{155.13} \\ \hline
-\textbf{ep\_a\_04}           &                & 1.962\%        & 0.904\%        & 0.077\%         & 0.037\%         & 0.018\%         & 0.007\%         \\
-\textbf{ep\_a\_05}           &                & 1.604\%        & 0.784\%        & 0.044\%         & 0.030\%         & 0.007\%         & 0.007\%         \\
-\textbf{ep\_a\_06}           &                & 1.645\%        & 0.784\%        & 0.045\%         & 0.030\%         & 0.007\%         & 0.007\%         \\
-\textbf{ep\_a\_07}           &                & 1.632\%        & 0.788\%        & 0.048\%         & 0.029\%         & 0.007\%         & 0.007\%         \\
-\textbf{ep\_a\_08}           &                & 1.644\%        & 0.787\%        & 0.048\%         & 0.037\%         & 0.007\%         & 0.007\%         \\
-\textbf{ep\_a\_09}           &                & 1.655\%        & 0.800\%        & 0.048\%         & 0.037\%         & 0.007\%         & 0.007\%         \\
-\textbf{ep\_a\_10}           &                & 0.768\%        & 0.134\%        & 0.007\%         & 0.000\%         & 0.000\%         & 0.000\%         \\
-\textbf{ep\_a\_11}           &                & 0.772\%        & 0.145\%        & 0.007\%         & 0.000\%         & 0.000\%         & 0.000\%         \\
-\textbf{ep\_a\_12}           &                & 0.779\%        & 0.133\%        & 0.011\%         & 0.000\%         & 0.000\%         & 0.000\%         \\
-\textbf{ep\_a\_13}           &                & 0.775\%        & 0.141\%        & 0.007\%         & 0.000\%         & 0.000\%         & 0.000\%         \\ \hline
-\textbf{ep\_b\_01}           & 4.739\%        & 1.737\%        & 0.840\%        & 0.224\%         & 0.049\%         & 0.034\%         & 0.004\%         \\
-\textbf{ep\_b\_04}           & 1.999\%        & 0.745\%        & 0.156\%        & 0.034\%         & 0.004\%         & 0.000\%         & 0.000\%         \\
-\textbf{ep\_b\_05}           & 2.010\%        & 0.749\%        & 0.148\%        & 0.034\%         & 0.008\%         & 0.000\%         & 0.000\%         \\
-\textbf{ep\_b\_06}           & 1.999\%        & 0.790\%        & 0.118\%        & 0.034\%         & 0.008\%         & 0.000\%         & 0.000\%         \\
-\textbf{ep\_b\_07}           & 2.029\%        & 0.756\%        & 0.152\%        & 0.034\%         & 0.008\%         & 0.000\%         & 0.000\%         \\
-\textbf{ep\_b\_08}           & 1.999\%        & 0.737\%        & 0.137\%        & 0.034\%         & 0.008\%         & 0.000\%         & 0.000\%         \\
-\textbf{ep\_b\_09}           & 4.663\%        & 1.687\%        & 0.798\%        & 0.205\%         & 0.049\%         & 0.034\%         & 0.004\%         \\
-\textbf{ep\_b\_10}           & 4.712\%        & 1.744\%        & 0.809\%        & 0.224\%         & 0.046\%         & 0.034\%         & 0.004\%         \\
-\textbf{ep\_b\_11}           & 4.636\%        & 1.664\%        & 0.790\%        & 0.209\%         & 0.049\%         & 0.034\%         & 0.004\%         \\
-\textbf{ep\_b\_12}           & 0.775\%        & 0.141\%        & 0.007\%        & 0.000\%         & 0.000\%         & 0.000\%         & 0.000\%         \\ \hline
+\textbf{BATCH\_A\_04}           &                & 1.962\%        & 0.904\%        & 0.077\%         & 0.037\%         & 0.018\%         & 0.007\%         \\
+\textbf{BATCH\_A\_05}           &                & 1.604\%        & 0.784\%        & 0.044\%         & 0.030\%         & 0.007\%         & 0.007\%         \\
+\textbf{BATCH\_A\_06}           &                & 1.645\%        & 0.784\%        & 0.045\%         & 0.030\%         & 0.007\%         & 0.007\%         \\
+\textbf{BATCH\_A\_07}           &                & 1.632\%        & 0.788\%        & 0.048\%         & 0.029\%         & 0.007\%         & 0.007\%         \\
+\textbf{BATCH\_A\_08}           &                & 1.644\%        & 0.787\%        & 0.048\%         & 0.037\%         & 0.007\%         & 0.007\%         \\
+\textbf{BATCH\_A\_09}           &                & 1.655\%        & 0.800\%        & 0.048\%         & 0.037\%         & 0.007\%         & 0.007\%         \\
+\textbf{BATCH\_A\_10}           &                & 0.768\%        & 0.134\%        & 0.007\%         & 0.000\%         & 0.000\%         & 0.000\%         \\
+\textbf{BATCH\_A\_11}           &                & 0.772\%        & 0.145\%        & 0.007\%         & 0.000\%         & 0.000\%         & 0.000\%         \\
+\textbf{BATCH\_A\_12}           &                & 0.779\%        & 0.133\%        & 0.011\%         & 0.000\%         & 0.000\%         & 0.000\%         \\
+\textbf{BATCH\_A\_13}           &                & 0.775\%        & 0.141\%        & 0.007\%         & 0.000\%         & 0.000\%         & 0.000\%         \\ \hline
+\textbf{BATCH\_B\_01}           & 4.739\%        & 1.737\%        & 0.840\%        & 0.224\%         & 0.049\%         & 0.034\%         & 0.004\%         \\
+\textbf{BATCH\_B\_04}           & 1.999\%        & 0.745\%        & 0.156\%        & 0.034\%         & 0.004\%         & 0.000\%         & 0.000\%         \\
+\textbf{BATCH\_B\_05}           & 2.010\%        & 0.749\%        & 0.148\%        & 0.034\%         & 0.008\%         & 0.000\%         & 0.000\%         \\
+\textbf{BATCH\_B\_06}           & 1.999\%        & 0.790\%        & 0.118\%        & 0.034\%         & 0.008\%         & 0.000\%         & 0.000\%         \\
+\textbf{BATCH\_B\_07}           & 2.029\%        & 0.756\%        & 0.152\%        & 0.034\%         & 0.008\%         & 0.000\%         & 0.000\%         \\
+\textbf{BATCH\_B\_08}           & 1.999\%        & 0.737\%        & 0.137\%        & 0.034\%         & 0.008\%         & 0.000\%         & 0.000\%         \\
+\textbf{BATCH\_B\_09}           & 4.663\%        & 1.687\%        & 0.798\%        & 0.205\%         & 0.049\%         & 0.034\%         & 0.004\%         \\
+\textbf{BATCH\_B\_10}           & 4.712\%        & 1.744\%        & 0.809\%        & 0.224\%         & 0.046\%         & 0.034\%         & 0.004\%         \\
+\textbf{BATCH\_B\_11}           & 4.636\%        & 1.664\%        & 0.790\%        & 0.209\%         & 0.049\%         & 0.034\%         & 0.004\%         \\
+\textbf{BATCH\_B\_12}           & 0.775\%        & 0.141\%        & 0.007\%        & 0.000\%         & 0.000\%         & 0.000\%         & 0.000\%         \\ \hline
 \end{tabular}
-\caption{Proportion of stress(MPa) above different threshold with $\Sigma_y$=230MPa, test data provided by CETIM on AW-6106 T6 aluminum.}
+\caption{Proportion of stress above different thresholds with $\Sigma_y$=230MPa, test data provided by CETIM on AW-6106 T6 aluminum.}
 \label{tab.majordamage}
 \end{table}
 
@@ -354,7 +354,7 @@ Materials show additional cyclic hardening during this type of loading that is n
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=\textwidth]{figures//outofphasestress.png} 
-	\caption{The $90^\circ$ out-of-phase loading path has been found to produce the largest degree of non-proportional hardening. (\cite{EFATIGUE})}
+	\caption{The $90^\circ$ out-of-phase loading path has been found to produce the largest degree of non-proportional hardening (\cite{EFATIGUE}). }
 	\label{fig.outofphasestress}
 \end{figure}
 
@@ -369,7 +369,7 @@ The $90^\circ$ out-of-phase loading path has been found to produce the largest d
 \graphfile*[52]{figures//AL6082T6_bt2d90_err.png}[Bending-torsion $90^\circ$ out of phase tests on 6082 T6 aluminum(R=-1)]
 \end{Figure}
 
-The model predictive results for the periodic loads of constant amplitude with a radial path are in good agreement with the durations of experimental life. For the latter condition, 90 deg out-of-phase loading was also investigated(\figref{fig.al6082T6err}c). These tests indicated a dramatic change in the number of cycles to failure , $N_F$ , as a result of out-of-phase loading. The influence of the plastic strain path on life is thus clearly demonstrated. It is shown that the total strain energy density, $ΔW_t = ΔW_e+ + ΔW_p$ (\cite{ellyin1991phase}) , correlates with both the in-phase and out-of-phase cyclic tests, and therefore is a proper damage parameter to be used for life predictions. Our microplasticity model does not take this strain path effect into account and we get inaccurate results on this test.
+The model predictive results for the periodic loads of constant amplitude with a radial path are in good agreement with the durations of experimental life. For the latter condition, 90 deg out-of-phase loading was also investigated (\figref{fig.al6082T6err}c). These tests indicated a dramatic change in the number of cycles to failure , $N_F$ , as a result of out-of-phase loading. The influence of the plastic strain path on life is thus clearly demonstrated. It is shown that the total strain energy density, $\Delta W_t = \Delta W_e+ \Delta W_p$ (\cite{ellyin1991phase}) , correlates with both the in-phase and out-of-phase cyclic tests, and therefore is a proper damage parameter to be used for life predictions. Our microplasticity model does not take this strain path effect into account and we get inaccurate results on this test.
 
 
 
@@ -472,7 +472,7 @@ The identification of the parameters consists in minimizing the relative differe
 	\graphfile*[52]{figures//NCD16_bt2D_m_sn.png}[Bending-torsion tests with mean stress on 30NCD16]
 \end{Figure}
 
-\begin{Figure}[!h]{Calibration on  30NCD16 (\cite{Dubar1992}). In figure (c) data 29(same $N_F$ with data30 but with smaller $\sigma_{x,m}$) and 32(2-D with large mean stress)  from Tab.\ref{tab.30ncd16bt} are more dispersed. The numerical tests are carried out using the coefficients of Tab.\ref{30ncdpara2}}[fig.30NCD16err]
+\begin{Figure}[!h]{Calibration on  30NCD16 (\cite{Dubar1992}). In figure (c) test 29 (same $N_F$ with test 30 but with smaller $\sigma_{x,m}$) and test 32 (2-D with large mean stress) from Tab.\ref{tab.30ncd16bt} are more dispersed. The numerical tests are carried out using the coefficients of Tab.\ref{30ncdpara2}}[fig.30NCD16err]
 \graphfile*[52]{figures//NCD16_bt1D_err.png}[Bending and torsion tests on 30NCD16(R=-1)]
 \graphfile*[52]{figures//NCD16_bt2D_m_err.png}[Bending-torsion tests with mean stress on 30NCD16]
 \end{Figure}
@@ -674,7 +674,7 @@ The mechanical properties of this steel are given in Tab.\ref{tab.10HNAPmec}:
 \begin{tabular}{rrrrr}
 \hline
 $Re_{0.2\%}$ & $R_m$   & A    & $\nu$ & E          \\
-418 MPa     & 566 Mpa & 32\% & 0.29  & 215000 Mpa \\ \hline
+418 MPa     & 566 Mpa & 32\% & 0.29  & 215 GPa \\ \hline
 \end{tabular}
 \caption{Mechanical characteristics of steel 10 HNAP, data from \cite{Bedkowski1994}}
 \label{tab.10HNAPmec}
@@ -837,7 +837,7 @@ As the previous tests, we identify the slope $\beta$ in pure torsion tests witho
 \begin{tabular}{|c|c|c|c|c|c|}
 	\hline
 	\textbf{$\beta$} & \textbf{$\lambda_+$} & \textbf{$\lambda_-$} & \textbf{$W_0$} & \textbf{$a$} & \textbf{$f$} \\ \hline
-	5.3    & 1.7 &0         &6.48E8 Pa  & 0.4   & 1.1 \\ \hline
+	5.3    & 1.7 &0         &3.22E7 Pa  & 0.01    & 1.1 \\ \hline
 \end{tabular}
 \caption{Model parameters for 10HNAP steel}
 \label{tab.10HNAP.para}

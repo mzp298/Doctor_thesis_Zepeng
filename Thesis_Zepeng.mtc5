@@ -1,21 +1,11 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.1}Experimental verification}{\reset@font\mtcSfont 41}{section.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.1}Introduction}{\reset@font\mtcSSfont 41}{subsection.2.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.2}Random amplitude 1D tests from Cetim on AW-6106 T6 aluminum}{\reset@font\mtcSSfont 41}{subsection.2.1.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.2}Experimental validation of the model on aluminum 6082 T6}{\reset@font\mtcSfont 47}{section.2.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.1}Presentation of aluminum 6082 T6}{\reset@font\mtcSSfont 47}{subsection.2.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.2}Fatigue tests on aluminum 6082 T6}{\reset@font\mtcSSfont 47}{subsection.2.2.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.3}Identification of model parameters on aluminum 6082 T6}{\reset@font\mtcSSfont 49}{subsection.2.2.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.3}Experimental validation of the model on 30NCD16 steel}{\reset@font\mtcSfont 52}{section.2.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.1}Presentation of steel 30NCD16}{\reset@font\mtcSSfont 52}{subsection.2.3.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.2}Fatigue tests performed by Dubar on steel 30 NCD 16}{\reset@font\mtcSSfont 52}{subsection.2.3.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.3}Identification of model parameters for steel 30 NCD 16}{\reset@font\mtcSSfont 52}{subsection.2.3.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.4}Experimental validation of the model on SM45C steel}{\reset@font\mtcSfont 55}{section.2.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.4.1}Presentation of steel SM45C}{\reset@font\mtcSSfont 55}{subsection.2.4.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.4.2}Fatigue tests performed by Dubar on steel SM45C}{\reset@font\mtcSSfont 56}{subsection.2.4.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.4.3}Identification of model parameters for steel SM45C}{\reset@font\mtcSSfont 58}{subsection.2.4.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.5}Experimental validation of the model on 10 HNAP steel}{\reset@font\mtcSfont 61}{section.2.5}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.5.1}Presentation of the material}{\reset@font\mtcSSfont 61}{subsection.2.5.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.5.2}Description of fatigue tests on 10 HNAP steel}{\reset@font\mtcSSfont 61}{subsection.2.5.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.5.3}Identification of model parameters of 10HNAP steel}{\reset@font\mtcSSfont 63}{subsection.2.5.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.5.4}Simulation of fatigue tests performed on 10HNAP steel}{\reset@font\mtcSSfont 65}{subsection.2.5.4}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.6}Conclusions}{\reset@font\mtcSfont 74}{section.2.6}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.1}Basquin curve}{\reset@font\mtcSfont 6}{section.2.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.2}Basic fatigue criteria }{\reset@font\mtcSfont 7}{section.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.1}Criteria based on stress}{\reset@font\mtcSSfont 8}{subsection.2.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.2}Criteria based on energy}{\reset@font\mtcSSfont 13}{subsection.2.2.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Energy dissipation based on strain energy density}{\reset@font\mtcSSSfont 13}{section*.8}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode A critical plane approach based on energy concepts}{\reset@font\mtcSSSfont 14}{section*.9}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Lamefip Criterion}{\reset@font\mtcSSSfont 16}{section*.11}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.3}Criteria based on plasticity-damage coupling}{\reset@font\mtcSSfont 18}{subsection.2.2.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Criterion of Monchiet et al}{\reset@font\mtcSSSfont 18}{section*.12}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.3}Calculation method without cycle counting}{\reset@font\mtcSfont 21}{section.2.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.1}Morel's method}{\reset@font\mtcSSfont 21}{subsection.2.3.1}}

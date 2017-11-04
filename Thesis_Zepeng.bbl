@@ -1,9 +1,101 @@
-\begin{thebibliography}{35}
+\begin{thebibliography}{85}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Luu et~al.(2014)Luu, Maitournam, and Nguyen]{luu2014formulation}
+Duy-Hao Luu, MH~Maitournam, and QS~Nguyen.
+\newblock Formulation of gradient multiaxial fatigue criteria.
+\newblock \emph{International Journal of Fatigue}, 61:\penalty0 170--183, 2014.
+
+\bibitem[Dang~Van(1999)]{Van1999}
+K~Dang~Van.
+\newblock \emph{Introduction to Fatigue Analysis in Mechanical Design by the
+  Multiscale Approach}, pages 57--88.
+\newblock Springer Vienna, Vienna, 1999.
+\newblock ISBN 978-3-7091-2474-1.
+\newblock \doi{10.1007/978-3-7091-2474-1_2}.
+\newblock URL \url{https://doi.org/10.1007/978-3-7091-2474-1_2}.
+
+\bibitem[Papadopoulos(1993)]{papadopoulos1993fatigue}
+IV~Papadopoulos.
+\newblock \emph{Fatigue limit of metals under multiaxial stress conditions: the
+  microscopic approach}.
+\newblock Joint Research Centre, ISEI, 1993.
+
+\bibitem[{\L}agoda et~al.(1999){\L}agoda, Macha, and
+  Bedkowski]{lagoda1999critical}
+Tadeusz {\L}agoda, Ewald Macha, and W{\l}odzimierz Bedkowski.
+\newblock A critical plane approach based on energy concepts: application to
+  biaxial random tension-compression high-cycle fatigue regime.
+\newblock \emph{International Journal of Fatigue}, 21\penalty0 (5):\penalty0
+  431--443, 1999.
+
+\bibitem[Koutiri(2011)]{koutiri2011effet}
+Imade Koutiri.
+\newblock \emph{Effet des fortes contraintes hydrostatiques sur la tenue en
+  fatigue des mat{\'e}riaux m{\'e}talliques}.
+\newblock PhD thesis, Arts et M{\'e}tiers ParisTech, 2011.
+
+\bibitem[Morel(2000)]{Morel2000101}
+F.~Morel.
+\newblock A critical plane approach for life prediction of high cycle fatigue
+  under multiaxial variable amplitude loading.
+\newblock \emph{International Journal of Fatigue}, 22\penalty0 (2):\penalty0
+  101 -- 119, 2000.
+\newblock ISSN 0142-1123.
+\newblock \doi{http://dx.doi.org/10.1016/S0142-1123(99)00118-8}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0142112399001188}.
+
+\bibitem[Pogoretskii(1966)]{Pogoretskii1966}
+R.~G. Pogoretskii.
+\newblock Effect of test piece length on the fatigue strength of steel in air.
+\newblock \emph{Soviet materials science : a transl. of Fiziko-khimicheskaya
+  mekhanika materialov / Academy of Sciences of the Ukrainian SSR}, 1\penalty0
+  (1):\penalty0 63--66, 1966.
+\newblock ISSN 1573-885X.
+\newblock \doi{10.1007/BF00714989}.
+\newblock URL \url{http://dx.doi.org/10.1007/BF00714989}.
+
+\bibitem[Weber(1999)]{weber1999fatigue}
+Bastien Weber.
+\newblock \emph{Fatigue multiaxiale des structures industrielles sous
+  chargement quelconque}.
+\newblock PhD thesis, Lyon, INSA, 1999.
+
+\bibitem[Papadopoulos and Panoskaltsis(1996)]{Papadopoulos1996513}
+Ioannis~V. Papadopoulos and Vassilis~P. Panoskaltsis.
+\newblock Invariant formulation of a gradient dependent multiaxial high-cycle
+  fatigue criterion.
+\newblock \emph{Engineering Fracture Mechanics}, 55\penalty0 (4):\penalty0 513
+  -- 528, 1996.
+\newblock ISSN 0013-7944.
+\newblock \doi{http://dx.doi.org/10.1016/S0013-7944(96)00047-1}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0013794496000471}.
+
+\bibitem[Massonnet(1955)]{Massonnet1955}
+Charles Massonnet.
+\newblock Le dimensionnement des pièces de machines soumises à la fatigue :
+  contribution expérimentale à l'étude de l'effet de l'échelle et des
+  entailles.
+\newblock \emph{Revue Universelle des Mines}, 9:\penalty0 203--222, 1955.
+
+\bibitem[Moore and Morkovin(1944)]{Moore1944}
+H.F. Moore and D.~Morkovin.
+\newblock Third progress report on the effect of size of specimen on fatigue
+  strength of three types of steel.
+\newblock \emph{ASTM (American Society for Testing and Materials Interna-
+  tional)}, \penalty0 (44):\penalty0 137--158, 1944.
+
+\bibitem[Findley et~al.(1956)Findley, Coleman, and Hanley]{findley1956theory}
+William~Nichols Findley, JJ~Coleman, and BC~Hanley.
+\newblock \emph{Theory for Combined Bending and Torsion Fatigue with Data for
+  SAE4340 Steel}.
+\newblock Division of Engineering, Brown University, 1956.
 
 \bibitem[Huang et~al.(2017)Huang, Tu, and Xuan]{HUANG2017259}
 Yuhui Huang, Shan-Tung Tu, and Fu-Zhen Xuan.
@@ -65,16 +157,15 @@ E.~VIDAL.
 \newblock Prévision de la durée de vie en fatigue multiaxiale sous
   sollicitations d’amplitude variable à l’aide d’un critère global.
 
-\bibitem[Van(1973)]{van1973khmu}
-Dang~Nghiem Van.
-\newblock The khmu in viet nam.
-\newblock \emph{Vietnamese studies}, 36\penalty0 (2):\penalty0 62--140, 1973.
+\bibitem[Stone(2012)]{stone2012fatigue}
+Robert Stone.
+\newblock Fatigue life estimates using goodman diagrams.
+\newblock \emph{Retrieved August}, 17:\penalty0 2012, 2012.
 
-\bibitem[Papadopoulos(2001)]{papadopoulos2001long}
-Ioannis~V Papadopoulos.
-\newblock Long life fatigue under multiaxial loading.
-\newblock \emph{International Journal of Fatigue}, 23\penalty0 (10):\penalty0
-  839--849, 2001.
+\bibitem[Sohar(2011)]{sohar2011lifetime}
+Christian~Rudolf Sohar.
+\newblock \emph{Lifetime controlling defects in tool steels}.
+\newblock Springer Science \& Business Media, 2011.
 
 \bibitem[Crossland(1956)]{crossland1956effect}
 Bernard Crossland.
@@ -105,9 +196,18 @@ Huyen Nguyen~Thi Thu.
   application {\`a} l'usinage assist{\'e} laser}.
 \newblock PhD thesis, Arts et M{\'e}tiers ParisTech, 2008.
 
-\bibitem[Findley(1959)]{findley1959}
-W.M. Findley.
-\newblock \emph{Engng. Industry}, 81(4):\penalty0 301, 1959.
+\bibitem[Dang~Van(1973)]{van1973khmu}
+Nghiem Dang~Van.
+\newblock The khmu in viet nam.
+\newblock \emph{Vietnamese studies}, 36\penalty0 (2):\penalty0 62--140, 1973.
+
+\bibitem[Findley(1959{\natexlab{a}})]{findley1959behavior}
+JD~Findley.
+\newblock Behavior output under chained fixed-ratio requirements in a 24-hour
+  experimental space.
+\newblock In \emph{Journal of the Experimental Analysis of Behavior}, volume~2,
+  pages 258--258. SOC EXP ANALYSIS BEHAVIOR INC INDIANA UNIV DEPT PSYCHOLOGY,
+  BLOOMINGTON, IN 47405, 1959{\natexlab{a}}.
 
 \bibitem[Liu and Zenner(1993)]{liu1993berechnung}
 J~Liu and H~Zenner.
@@ -115,6 +215,44 @@ J~Liu and H~Zenner.
   beanspruchung—teil 1.
 \newblock \emph{Materialwissenschaft und Werkstofftechnik}, 24\penalty0
   (7):\penalty0 240--249, 1993.
+
+\bibitem[Papadopoulos et~al.(1997)Papadopoulos, Davoli, Gorla, Filippini, and
+  Bernasconi]{Papadopoulos1997219}
+Ioannis~V. Papadopoulos, Piermaria Davoli, Carlo Gorla, Mauro Filippini, and
+  Andrea Bernasconi.
+\newblock A comparative study of multiaxial high-cycle fatigue criteria for
+  metals.
+\newblock \emph{International Journal of Fatigue}, 19\penalty0 (3):\penalty0
+  219 -- 235, 1997.
+\newblock ISSN 0142-1123.
+\newblock \doi{http://dx.doi.org/10.1016/S0142-1123(96)00064-3}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0142112396000643}.
+
+\bibitem[Dang~Van et~al.(1986)Dang~Van, Cailletaud, Flavenot, Le~Douaron, and
+  Lieurade]{van1986criterion}
+K~Dang~Van, G~Cailletaud, JF~Flavenot, A~Le~Douaron, and HP~Lieurade.
+\newblock Criterion for high-cycle fatigue failure under multiaxial loading.
+\newblock In \emph{ICBMFF2}, 1986.
+
+\bibitem[Ballard et~al.(1995)Ballard, Van, Deperrois, and
+  Papadopoulos]{ballard1995high}
+P~Ballard, K~Dang Van, A~Deperrois, and YV~Papadopoulos.
+\newblock High cycle fatigue and a finite element analysis.
+\newblock \emph{Fatigue \& Fracture of Engineering Materials \& Structures},
+  18\penalty0 (3):\penalty0 397--411, 1995.
+
+\bibitem[Papadopoulos(2001)]{papadopoulos2001long}
+Ioannis~V Papadopoulos.
+\newblock Long life fatigue under multiaxial loading.
+\newblock \emph{International Journal of Fatigue}, 23\penalty0 (10):\penalty0
+  839--849, 2001.
+
+\bibitem[Macha and Sonsino(1999)]{macha1999energy}
+E~Macha and CM~Sonsino.
+\newblock Energy criteria of multiaxial fatigue failure.
+\newblock \emph{Fatigue and Fracture of Engineering Materials and Structures},
+  22\penalty0 (12):\penalty0 1053--1070, 1999.
 
 \bibitem[Ellyin(1974)]{ellyin1974criterion}
 Fernand Ellyin.
@@ -134,8 +272,8 @@ F~Ellyin, K~Golos, and Z~Xia.
 \newblock In-phase and out-of-phase multiaxial fatigue.
 \newblock \emph{ASME J. Eng. Mater. Technol}, 113:\penalty0 112, 1991.
 
-\bibitem[Froustey~C.(1992)]{Froustey1992}
-Dubar~L. Froustey~C., Laserre~S.
+\bibitem[Froustey et~al.(1992)Froustey, Lasserre, and Dubar]{Froustey1992}
+C~Froustey, S~Lasserre, and L~Dubar.
 \newblock Validit{\'e} des crit{\`e}res de fatigue multiaxiale {\`a}
   l’endurance en flexion-torsion.
 \newblock pages Mat--Tech ‘92’, IITT--International, France, 79--85, 1992.
@@ -152,14 +290,51 @@ Alexis Banvillet.
   chargements r{\'e}els: vers des essais acc{\'e}l{\'e}r{\'e}s.
 \newblock \emph{These de Doctorat}, 2001.
 
+\bibitem[Chaboche and Lesne(1988{\natexlab{a}})]{chaboche1988non}
+JL~Chaboche and PM~Lesne.
+\newblock A non-linear continuous fatigue damage model.
+\newblock \emph{Fatigue \& fracture of engineering materials \& structures},
+  11\penalty0 (1):\penalty0 1--17, 1988{\natexlab{a}}.
+
+\bibitem[Palin-Luc and Lasserre(1998)]{palin1998energy}
+Thierry Palin-Luc and Serge Lasserre.
+\newblock An energy based criterion for high cycle multiaxial fatigue.
+\newblock \emph{European Journal of Mechanics-A/Solids}, 17\penalty0
+  (2):\penalty0 237--251, 1998.
+
+\bibitem[Benabes(2006)]{benabes2006approche}
+J{\'e}r{\^o}me Benabes.
+\newblock \emph{Approche {\'e}nerg{\'e}tique non locale du calcul de dur{\'e}e
+  de vie de structures en fatigue multiaxiale sous chargements d'amplitude
+  variable: application {\`a} une roue de train ferroviaire}.
+\newblock PhD thesis, Arts et M{\'e}tiers ParisTech, 2006.
+
+\bibitem[Ellyin(2012)]{ellyin2012fatigue}
+Fernand Ellyin.
+\newblock \emph{Fatigue damage, crack growth and life prediction}.
+\newblock Springer Science \& Business Media, 2012.
+
+\bibitem[Banvillet et~al.(2003{\natexlab{a}})Banvillet, Palin-Luc, and
+  Lasserre]{banvillet2003volumetric}
+Alexis Banvillet, Thierry Palin-Luc, and Serge Lasserre.
+\newblock A volumetric energy based high cycle multiaxial fatigue citerion.
+\newblock \emph{International Journal of Fatigue}, 25\penalty0 (8):\penalty0
+  755--769, 2003{\natexlab{a}}.
+
+\bibitem[Dowling(1983)]{dowling1983fatigue}
+NE~Dowling.
+\newblock Fatigue life prediction for complex load versus time histories.
+\newblock \emph{Journal of Engineering Materials and Technology}, 105\penalty0
+  (3):\penalty0 206--214, 1983.
+
 \bibitem[Lemaitre et~al.(1999)Lemaitre, Sermage, and Desmorat]{lemaitre1999two}
 J~Lemaitre, JP~Sermage, and R~Desmorat.
 \newblock A two scale damage concept applied to fatigue.
 \newblock \emph{International Journal of fracture}, 97\penalty0 (1):\penalty0
   67--81, 1999.
 
-\bibitem[Lema{\^\i}tre and Chaboche(1985)]{lemaitre1985mecanique}
-J~Lema{\^\i}tre and Jean~Louis Chaboche.
+\bibitem[Lemaitre and Chaboche(1985)]{lemaitre1985mecanique}
+J~Lemaitre and Jean~Louis Chaboche.
 \newblock M{\'e}canique des mat{\'e}riaux solides.
 \newblock 1985.
 
@@ -174,6 +349,189 @@ Vincent Monchiet.
 \newblock \emph{Contributions {\`a} la mod{\'e}lisation microm{\'e}canique de
   l'endommagement et de la fatigue des m{\'e}taux ductiles}.
 \newblock PhD thesis, Lille 1, 2006.
+
+\bibitem[Gurson et~al.(1977)]{gurson1977continuum}
+Arthur~L Gurson et~al.
+\newblock Continuum theory of ductile rupture by void nucleation and growth:
+  Part i—yield criteria and flow rules for porous ductile media.
+\newblock \emph{Journal of engineering materials and technology}, 99\penalty0
+  (1):\penalty0 2--15, 1977.
+
+\bibitem[Leblond et~al.(1995)Leblond, Perrin, and Devaux]{leblond1995improved}
+J-B Leblond, G~Perrin, and J~Devaux.
+\newblock An improved gurson-type model for hardenable ductile metals.
+\newblock \emph{European journal of mechanics. A. Solids}, 14\penalty0
+  (4):\penalty0 499--527, 1995.
+
+\bibitem[Essmann and Mughrabi(1979)]{essmann1979annihilation}
+U~Essmann and H~Mughrabi.
+\newblock Annihilation of dislocations during tensile and cyclic deformation
+  and limits of dislocation densities.
+\newblock \emph{Philosophical Magazine A}, 40\penalty0 (6):\penalty0 731--756,
+  1979.
+
+\bibitem[Charkaluk et~al.(2009)Charkaluk, Constantinescu, Ma{\"\i}tournam, and
+  Van]{charkaluk2009revisiting}
+E~Charkaluk, A~Constantinescu, H~Ma{\"\i}tournam, and K~Dang Van.
+\newblock Revisiting the dang van criterion.
+\newblock \emph{Procedia Engineering}, 1\penalty0 (1):\penalty0 143--146, 2009.
+
+\bibitem[Charkaluk and Constantinescu(2007)]{charkaluk2007approche}
+E~Charkaluk and A~Constantinescu.
+\newblock Approche dissipative en fatigue: influence de la contrainte moyenne
+  en fatigue polycyclique.
+\newblock In \emph{Proceedings National MECAMAT Symposium}, 2007.
+
+\bibitem[Zepeng et~al.(2015)Zepeng, Le~Tallec, and Maitournam]{zepeng2015multi}
+Ma~Zepeng, Patrick Le~Tallec, and Habibou Maitournam.
+\newblock Multi-axial fatigue criteria with length scale and gradient effects.
+\newblock \emph{Procedia Engineering}, 133:\penalty0 60--71, 2015.
+
+\bibitem[Wachtman et~al.(2009)Wachtman, Cannon, and
+  Matthewson]{wachtman2009mechanical}
+John~B Wachtman, W~Roger Cannon, and M~John Matthewson.
+\newblock \emph{Mechanical properties of ceramics}.
+\newblock John Wiley \& Sons, 2009.
+
+\bibitem[Suresh(1998)]{suresh1998fatigue}
+Subra Suresh.
+\newblock \emph{Fatigue of materials}.
+\newblock Cambridge university press, 1998.
+
+\bibitem[Amargier et~al.(2010)Amargier, Fouvry, Chambon, Schwob, and
+  Poupon]{Amargier20101904}
+R.~Amargier, S.~Fouvry, L.~Chambon, C.~Schwob, and C.~Poupon.
+\newblock Stress gradient effect on crack initiation in fretting using a
+  multiaxial fatigue framework.
+\newblock \emph{International Journal of Fatigue}, 32\penalty0 (12):\penalty0
+  1904 -- 1912, 2010.
+\newblock ISSN 0142-1123.
+\newblock \doi{http://dx.doi.org/10.1016/j.ijfatigue.2010.06.004}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0142112310001404}.
+
+\bibitem[Maitournam et~al.(2009)Maitournam, Van, and
+  Flavenot]{maitournam2009fatigue}
+Mahaman~Habibou Maitournam, Ky~Dang Van, and Jean-Fran{\c{c}}ois Flavenot.
+\newblock Fatigue design of notched components with stress gradients and cyclic
+  plasticity.
+\newblock \emph{Advanced Engineering Materials}, 11\penalty0 (9):\penalty0
+  750--754, 2009.
+
+\bibitem[Taylor(2010)]{taylor2010theory}
+David Taylor.
+\newblock \emph{The theory of critical distances: a new perspective in fracture
+  mechanics}.
+\newblock Elsevier, 2010.
+
+\bibitem[Araújo et~al.(2007)Araújo, Susmel, Taylor, Ferro, and
+  Mamiya]{Araujo200795}
+J.A. Araújo, L.~Susmel, D.~Taylor, J.C.T. Ferro, and E.N. Mamiya.
+\newblock On the use of the theory of critical distances and the modified
+  wöhler curve method to estimate fretting fatigue strength of cylindrical
+  contacts.
+\newblock \emph{International Journal of Fatigue}, 29\penalty0 (1):\penalty0 95
+  -- 107, 2007.
+\newblock ISSN 0142-1123.
+\newblock \doi{http://dx.doi.org/10.1016/j.ijfatigue.2006.02.041}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0142112306000776}.
+
+\bibitem[Flavenot and Skalli(1983)]{flavenot1983epaisseur}
+JF~Flavenot and N~Skalli.
+\newblock L’{\'e}paisseur de couche critique ou une nouvelle approche du
+  calcul en fatigue des structures soumisesa des sollicitations multiaxiales.
+\newblock \emph{Mec. Mater. Electr}, 397:\penalty0 15--25, 1983.
+
+\bibitem[Palin-Luc(2000)]{palin2000stress}
+T~Palin-Luc.
+\newblock Stress gradient and size effects in multiaxial fatigue.
+\newblock \emph{Materials Week (Munich, Germany)}, 2000.
+
+\bibitem[Banvillet et~al.(2003{\natexlab{b}})Banvillet, Palin-Luc, and
+  Lasserre]{Banvillet2003755}
+A.~Banvillet, T.~Palin-Luc, and S.~Lasserre.
+\newblock A volumetric energy based high cycle multiaxial fatigue citerion.
+\newblock \emph{International Journal of Fatigue}, 25\penalty0 (8):\penalty0
+  755 -- 769, 2003{\natexlab{b}}.
+\newblock ISSN 0142-1123.
+\newblock \doi{http://dx.doi.org/10.1016/S0142-1123(03)00048-3}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0142112303000483}.
+
+\bibitem[Massonnet(1956)]{Massonnet1956}
+Charles Massonnet.
+\newblock The effect of size, shape and grain size on the fatigue strength of
+  medium carbon steel.
+\newblock \emph{ASTM (American Society for Testing and Materials Int)}, pages
+  954--78, 1956.
+
+\bibitem[Ferr{\'e} et~al.(2013)Ferr{\'e}, Fouvry, Berthel, and
+  Ruiz-Sabariego]{Ferre201356}
+R.~Ferr{\'e}, S.~Fouvry, B.~Berthel, and J.-A. Ruiz-Sabariego.
+\newblock Stress gradient effect on the crack nucleation process of a
+  ti–6al–4v titanium alloy under fretting loading: Comparison between
+  non-local fatigue approaches.
+\newblock \emph{International Journal of Fatigue}, 54:\penalty0 56 -- 67, 2013.
+\newblock ISSN 0142-1123.
+\newblock \doi{https://doi.org/10.1016/j.ijfatigue.2013.03.005}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0142112313000844}.
+
+\bibitem[Lemaitre and Chaboche(1990)]{lemaitre1990mechanics}
+Jean Lemaitre and Jean-Louis Chaboche.
+\newblock \emph{Mechanics of solid materials}.
+\newblock Cambridge university press, 1990.
+
+\bibitem[Chaboche and Lesne(1988{\natexlab{b}})]{FFE:FFE1}
+J.~L. Chaboche and P.~M. Lesne.
+\newblock A non-linear continuous fatigue damage model.
+\newblock \emph{Fatigue , Fracture of Engineering Materials , Structures},
+  11\penalty0 (1):\penalty0 1--17, 1988{\natexlab{b}}.
+\newblock ISSN 1460-2695.
+\newblock \doi{10.1111/j.1460-2695.1988.tb01216.x}.
+\newblock URL \url{http://dx.doi.org/10.1111/j.1460-2695.1988.tb01216.x}.
+
+\bibitem[Xi and Songlin(2008)]{xi2008strengthening}
+Lu~Xi and Zheng Songlin.
+\newblock Strengthening of transmission gear under low-amplitude loads.
+\newblock \emph{Materials Science and Engineering: A}, 488\penalty0
+  (1):\penalty0 55--63, 2008.
+
+\bibitem[Xi and Songlin(2009{\natexlab{a}})]{xi2009strengthening}
+Lu~Xi and Zheng Songlin.
+\newblock Strengthening and damaging under low-amplitude loads below the
+  fatigue limit.
+\newblock \emph{International Journal of Fatigue}, 31\penalty0 (2):\penalty0
+  341--345, 2009{\natexlab{a}}.
+
+\bibitem[Xi and Songlin(2009{\natexlab{b}})]{xi2009changes}
+Lu~Xi and Zheng Songlin.
+\newblock Changes in mechanical properties of vehicle components after
+  strengthening under low-amplitude loads below the fatigue limit.
+\newblock \emph{Fatigue \& Fracture of Engineering Materials \& Structures},
+  32\penalty0 (10):\penalty0 847--855, 2009{\natexlab{b}}.
+
+\bibitem[Sinclair(1952)]{sinclair1952investigation}
+GM~Sinclair.
+\newblock An investigation of the coaxing effect in fatigue of metals.
+\newblock Technical report, DTIC Document, 1952.
+
+\bibitem[Nakajima et~al.(2007)Nakajima, Jung, Uematsu, and
+  Tokaji]{nakajima2007coaxing}
+Masaki Nakajima, Jae~Woong Jung, Yoshihiko Uematsu, and Keiro Tokaji.
+\newblock Coaxing effect in stainless steels and high-strength steels.
+\newblock \emph{Key Engineering Materials}, 345:\penalty0 235--238, 2007.
+
+\bibitem[ASTM(1985)]{ASTM1985}
+ASTM.
+\newblock Standard practices for cycle fatigue counting in fatigue analysis.
+\newblock \emph{Designation E 1049-85, vol. 03.01 of Metal Test Methods and
+  Analytical procedure.}, pages 836--848, 1985.
+
+\bibitem[Findley(1959{\natexlab{b}})]{findley1959}
+W.M. Findley.
+\newblock \emph{Engng. Industry}, 81(4):\penalty0 301, 1959{\natexlab{b}}.
 
 \bibitem[Melan(1938)]{melan1938plastizitat}
 Ernst Melan.
@@ -214,11 +572,6 @@ Ma~Zepeng.
 \newblock Structures under multiaxial fatigue taking consideration of gradients
   of the constraints with time and space variation, 2017.
 
-\bibitem[Lemaitre and Chaboche(1990)]{lemaitre1990mechanics}
-Jean Lemaitre and Jean-Louis Chaboche.
-\newblock \emph{Mechanics of solid materials}.
-\newblock Cambridge university press, 1990.
-
 \bibitem[Leg()]{Legendre}
 {Legendre Gauss Quadrature weights and nodes}.
 \newblock
@@ -226,9 +579,16 @@ Jean Lemaitre and Jean-Louis Chaboche.
 \newblock Accessed: 2004-05-11.
 
 \bibitem[ACHTELIC(1994)]{ACHTELIC1994}
-BEDKOWSKY W. GRZELAK J. MACHA~E. ACHTELIC, H.
+BEDKOWSKY-W. GRZELAK J. MACHA~E. ACHTELIC, H.
 \newblock Fatigue life of 10hnap steel under synchronous random bending and
   torsion.
 \newblock page 421–434, 1994.
+
+\bibitem[De~Vasconcellos(2013)]{de2013comportement}
+Davi~Silva De~Vasconcellos.
+\newblock \emph{Comportement en fatigue avant et apr{\`e}s impact de composites
+  tiss{\'e}s chanvre/{\'e}poxy}.
+\newblock PhD thesis, ISAE-ENSMA Ecole Nationale Sup{\'e}rieure de
+  M{\'e}canique et d'A{\'e}rotechique-Poitiers, 2013.
 
 \end{thebibliography}

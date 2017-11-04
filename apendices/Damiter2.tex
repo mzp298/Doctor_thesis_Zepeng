@@ -1,10 +1,10 @@
 \clearpage
 \begin{lstlisting}[numbers=left, numberstyle=\tiny, keywordstyle=\color{blue!100}, commentstyle=\color{red!30!green!100!blue!100}, frame=shadowbox, rulesepcolor=\color{red!20!green!20!blue!20}]
-***********************************************************************
+********************************************************************************************************
 *
-*  Repeated Core Code to Get Integration on All Scales
+*  Vectorized MATLAB code to get integration on all scales and optimal time step strategy
 *               
-***********************************************************************
+********************************************************************************************************
 hydro(n+1)=1/3*trace(tensor);
 if hydro(n+1)>=0
 yield(n+1)=y-lamplus(end)*hydro(n+1); %yield stress at time step n+1
