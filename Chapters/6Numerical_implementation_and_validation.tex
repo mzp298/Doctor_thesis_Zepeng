@@ -248,7 +248,7 @@ The specimens were made from the drawn bars (diameter 30 mm) and the geometrical
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.7\textwidth]{figures//aluminum6082T6sample.png} 
-\caption{Specimen geometry for fatigue tests of aluminum 6082 T6 (dimension in millimeters)\ref{susmel2003multiaxial}}
+\caption{Specimen geometry for fatigue tests of aluminum 6082 T6 (dimension in millimeters), from \cite{susmel2003multiaxial}}
 \label{fig:aluminum6082T6}
 \end{figure}
 
@@ -440,7 +440,7 @@ The results of combined bending-torsion tests in phase with or without mean stre
 \centering
 \begin{tabular}{|c|c|c|c|c|}
 \hline
-\begin{tabular}[c]{@{}c@{}}Bending Tests\\ (R=-1)\end{tabular} & \begin{tabular}[c]{@{}c@{}}N\\ {[}Cycles{]}\end{tabular} & \begin{tabular}[c]{@{}c@{}}$\sigma_{x,m}$\\ {[}MPa{]}\end{tabular} & \begin{tabular}[c]{@{}c@{}}$\sigma_{x,a}$\\ {[}MPa{]}\end{tabular} & \begin{tabular}[c]{@{}c@{}}$\tau_{xy,a}$\\ {[}MPa{]}\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}c@{}}Bending Tests\end{tabular} & \begin{tabular}[c]{@{}c@{}}N\\ {[}Cycles{]}\end{tabular} & \begin{tabular}[c]{@{}c@{}}$\sigma_{x,m}$\\ {[}MPa{]}\end{tabular} & \begin{tabular}[c]{@{}c@{}}$\sigma_{x,a}$\\ {[}MPa{]}\end{tabular} & \begin{tabular}[c]{@{}c@{}}$\tau_{xy,a}$\\ {[}MPa{]}\end{tabular} \\ \hline
 27 & 80000 & 0 & 600 & 335 \\ \hline
 28 & 200000 & 0 & 548 & 306 \\ \hline
 29 & 120000 & 290 & 0 & 460 \\ \hline
@@ -915,7 +915,7 @@ After determining the parameters of the 10HNAP steel model for each of the batch
 	\label{fig.10HNAPhydro}
 \end{figure}
 
-In \figref{fig.10HNAP1} and \figref{fig.10HNAP2}, we give the prediction results of the torsion tests used to identify $\beta$ and $W_0$ of the model, then we use the bending with various mean stress to get the parameter $\lambda_+$. These are to be taken with caution because of the effect of the gradient because the specimens stressed in tension and in torsion are not of the same nature.
+In \figref{fig.10HNAP1} and \figref{fig.10HNAP2}, we give the prediction results of the torsion tests used to identify $\beta$ and $W_0$ of the model, then we use the bending with various mean stress to get the parameter $\lambda_+$ ($\lambda_-=0$). 
 %%-------------S_eq vs NF----------------------------
 \begin{figure}[!h]
 	\centering
@@ -940,7 +940,7 @@ In \figref{fig.10HNAP1} and \figref{fig.10HNAP2}, we give the prediction results
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=\textwidth]{figures//10HNAP_b1D_m_err.png} 
-	\caption{Calibration on 10HNAP steel, bending tests with various mean stress on 10HNAP, data from Tab.\ref{tab.10HNAPmean}  and results obtained with the coefficients of Tab.\ref{tab.10HNAP.para}}
+	\caption{Calibration on 10HNAP steel, bending tests with various mean stress on 10HNAP, data from Tab.\ref{tab.10HNAPmean}  and results obtained with the coefficients of Tab.\ref{tab.10HNAP.para}. For the case of $\sigma_m=300 \, \textnormal{MPa}$, the macroscopic maximum stress is greater than yield limit, which does not match our assumption that the material stays in elastic regime macroscopically (section \ref{sec:5.4.1}).}
 	\label{fig.10HNAP2}
 \end{figure}
 

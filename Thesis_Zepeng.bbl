@@ -5,11 +5,6 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Luu et~al.(2014)Luu, Maitournam, and Nguyen]{luu2014formulation}
-Duy-Hao Luu, MH~Maitournam, and QS~Nguyen.
-\newblock Formulation of gradient multiaxial fatigue criteria.
-\newblock \emph{International Journal of Fatigue}, 61:\penalty0 170--183, 2014.
-
 \bibitem[Dang~Van(1999)]{Van1999}
 K~Dang~Van.
 \newblock \emph{Introduction to Fatigue Analysis in Mechanical Design by the
@@ -97,6 +92,13 @@ William~Nichols Findley, JJ~Coleman, and BC~Hanley.
   SAE4340 Steel}.
 \newblock Division of Engineering, Brown University, 1956.
 
+\bibitem[Susmel and Petrone(2003)]{susmel2003multiaxial}
+Luca Susmel and Nicola Petrone.
+\newblock Multiaxial fatigue life estimations for 6082-t6 cylindrical specimens
+  under in-phase and out-of-phase biaxial loadings.
+\newblock \emph{European Structural Integrity Society}, 31:\penalty0 83--104,
+  2003.
+
 \bibitem[Huang et~al.(2017)Huang, Tu, and Xuan]{HUANG2017259}
 Yuhui Huang, Shan-Tung Tu, and Fu-Zhen Xuan.
 \newblock Pit to crack transition behavior in proportional and non-proportional
@@ -111,13 +113,6 @@ Yuhui Huang, Shan-Tung Tu, and Fu-Zhen Xuan.
 \bibitem[EFA()]{EFATIGUE}
 Multiaxial strain-life technical background.
 \newblock \url{https://www.efatigue.com/multiaxial/background/strainlife.html}.
-
-\bibitem[Susmel and Petrone(2003)]{susmel2003multiaxial}
-Luca Susmel and Nicola Petrone.
-\newblock Multiaxial fatigue life estimations for 6082-t6 cylindrical specimens
-  under in-phase and out-of-phase biaxial loadings.
-\newblock \emph{European Structural Integrity Society}, 31:\penalty0 83--104,
-  2003.
 
 \bibitem[DUBAR(1992)]{Dubar1992}
 L~DUBAR.
@@ -397,6 +392,11 @@ John~B Wachtman, W~Roger Cannon, and M~John Matthewson.
 Subra Suresh.
 \newblock \emph{Fatigue of materials}.
 \newblock Cambridge university press, 1998.
+
+\bibitem[Luu et~al.(2014)Luu, Maitournam, and Nguyen]{luu2014formulation}
+Duy-Hao Luu, MH~Maitournam, and QS~Nguyen.
+\newblock Formulation of gradient multiaxial fatigue criteria.
+\newblock \emph{International Journal of Fatigue}, 61:\penalty0 170--183, 2014.
 
 \bibitem[Amargier et~al.(2010)Amargier, Fouvry, Chambon, Schwob, and
   Poupon]{Amargier20101904}

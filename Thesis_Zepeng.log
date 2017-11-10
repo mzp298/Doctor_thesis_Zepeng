@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99991 (TeX Live 2014/W32TeX) (preloaded format=xelatex 2015.4.2)  4 NOV 2017 18:38
+This is XeTeX, Version 3.14159265-2.6-0.99991 (TeX Live 2014/W32TeX) (preloaded format=xelatex 2015.4.2)  9 NOV 2017 16:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1671,12 +1671,7 @@ Overfull \hbox (21.71376pt too wide) in paragraph at lines 82--82
 load with two dif-fer-ent meth-ods(enlargement 
  []
 
-[11]
-
-LaTeX Warning: Reference `susmel2003multiaxial' on page xii undefined on input 
-line 105.
-
-[12]
+[11] [12]
 Overfull \hbox (4.3153pt too wide) in paragraph at lines 138--138
  [][] [][][]\T1/ptm/m/n/10.95 Random bending-torsion 2D tests on 10HNAP, data f
 rom Tab.6.26 and Jab-bado [2006]. 
@@ -1748,13 +1743,13 @@ Chapter 2.
 ]
 File: figures//basquin.png Graphic file (type QTm)
  <use  "figures//basquin.png" > [6]
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 101.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 103.
 
 
 (c:/texlive/2014/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [7] [8]
-LaTeX Font Info:    Try loading font information for U+bbm on input line 147.
+LaTeX Font Info:    Try loading font information for U+bbm on input line 149.
 
 (c:/texlive/2014/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
@@ -1806,7 +1801,7 @@ Missing character: There is no ° in font cmr10!
 Missing character: There is no – in font cmr10!
 File: figures//block.png Graphic file (type QTm)
  <use  "figures//block.png" > [25]
-Overfull \hbox (8.69894pt too wide) in paragraph at lines 893--896
+Overfull \hbox (8.69894pt too wide) in paragraph at lines 898--901
 []\T1/ptm/m/n/10.95 The three gen-er-al-ized fa-tigue lim-its rel-a-tive to the
  three blocks are es-ti-mated ac-cord-ing to Eq.[]: 
  []
@@ -1832,38 +1827,6 @@ File: figures//sizeeffect_radius.png Graphic file (type QTm)
 <use  "figures//sizeeffect_radius.png" > [30]
 File: figures//fig2.jpg Graphic file (type QTm)
  <use  "figures//fig2.jpg" >
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 43.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<let>-command' on input line 43.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\NAT@ctype' on input line 43.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 43.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\let' on input line 43.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\let' on input line 43.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\new@ifnextchar' on input line 43.
-
-
-Package natbib Warning: Citation `LUU2014FORMULATION' on page 31 undefined on i
-nput line 48.
-
 [31] [32] [33]
 File: figures//demopp.png Graphic file (type QTm)
  <use  "figures//demopp.png" > [34] [35]
@@ -2092,10 +2055,13 @@ File: figures//Dhat.png Graphic file (type QTm)
  <use  "figures//Dhat.png" > [83] [84] [85]
 File: figures//sequence.png Graphic file (type QTm)
 
-<use  "figures//sequence.png" > [86] [87] [88] [89] [90]
-File: figures//alp_mean_methods.png Graphic file (type QTm)
+<use  "figures//sequence.png" >
 
-<use  "figures//alp_mean_methods.png" >
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[86] [87] [88] [89] [90]
+File: figures//alp_mean_methods.png Graphic file (type QTm)
+ <use  "figures//alp_mean_methods.png" >
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -2103,14 +2069,14 @@ File: figures//alpha_opt_vs_alpha_stepnumber.png Graphic file (type QTm)
 <use  "figures//alpha_opt_vs_alpha_stepnumber.png" > [91] [92]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 775.
+               Default added (so using `tbp') on input line 779.
 
 File: figures//SN_num_ana_stepnumber=30.png Graphic file (type QTm)
 <use  "figures//SN_num_ana_stepnumber=30.png" >
 File: figures//SN_num_ana_stepnumber=100.png Graphic file (type QTm)
 
 <use  "figures//SN_num_ana_stepnumber=100.png" >
-Overfull \hbox (2.0805pt too wide) in paragraph at lines 775--779
+Overfull \hbox (2.0805pt too wide) in paragraph at lines 779--783
 []|  [] 
  []
 
@@ -2119,7 +2085,7 @@ File: figures//SN_num_ana_stepnumber=30_err.png Graphic file (type QTm)
 File: figures//SN_num_ana_stepnumber=100_err.png Graphic file (type QTm)
 
 <use  "figures//SN_num_ana_stepnumber=100_err.png" >
-Overfull \hbox (2.0805pt too wide) in paragraph at lines 779--784
+Overfull \hbox (2.0805pt too wide) in paragraph at lines 783--788
 []|  []
  []
 
@@ -2166,7 +2132,7 @@ File: figures//W_3methods.png Graphic file (type QTm)
 File: figures//W_3methods_enlarge.png Graphic file (type QTm)
 
 <use  "figures//W_3methods_enlarge.png" >
-Underfull \hbox (badness 1939) in paragraph at lines 883--883
+Underfull \hbox (badness 1939) in paragraph at lines 887--887
 []\T1/ptm/m/n/10.95 Figure 5.18 ^^U |Val-i-da-tion of dis-si-pated en-ergy in a
 ll scales with an-a-lyt-i-cal and nu-mer-i-cal
  []
@@ -2196,7 +2162,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 File: figures//D_3methods_100steps_enlarge.png Graphic file (type QTm)
 <use  "figures//D_3methods_100steps_enlarge.png" >
-Underfull \hbox (badness 1199) in paragraph at lines 914--914
+Underfull \hbox (badness 1199) in paragraph at lines 918--918
 []\T1/ptm/m/n/10.95 Figure 5.23 ^^U |Dam-age evo-lu-tion with time un-der si-nu
 -soidal load with two dif-fer-ent meth-
  []
@@ -2238,13 +2204,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [103] [104] [105]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 961.
+               Default added (so using `tbp') on input line 965.
 
 File: figures//high-low-Smax.png Graphic file (type QTm)
 <use  "figures//high-low-Smax.png" >
 File: figures//low-high-Smax.png Graphic file (type QTm)
  <use  "figures//low-high-Smax.png" >
-Overfull \hbox (2.0805pt too wide) in paragraph at lines 961--965
+Overfull \hbox (2.0805pt too wide) in paragraph at lines 965--969
 []|  [] 
  []
 
@@ -2252,7 +2218,7 @@ File: figures//high-low-alp.png Graphic file (type QTm)
 <use  "figures//high-low-alp.png" >
 File: figures//low-high-alp.png Graphic file (type QTm)
  <use  "figures//low-high-alp.png" >
-Overfull \hbox (2.0805pt too wide) in paragraph at lines 965--969
+Overfull \hbox (2.0805pt too wide) in paragraph at lines 969--973
 []|  [] 
  []
 
@@ -2260,7 +2226,7 @@ File: figures//high-low-D.png Graphic file (type QTm)
 <use  "figures//high-low-D.png" >
 File: figures//low-high-D.png Graphic file (type QTm)
  <use  "figures//low-high-D.png" >
-Overfull \hbox (2.0805pt too wide) in paragraph at lines 969--974
+Overfull \hbox (2.0805pt too wide) in paragraph at lines 973--978
 []|  []
  []
 
@@ -2353,14 +2319,6 @@ Overfull \vbox (2.91974pt too high) has occurred while \output is active []
 [120]
 File: figures//aluminum6082T6sample.png Graphic file (type QTm)
  <use  "figures//aluminum6082T6sample.png" >
-
-LaTeX Warning: Reference `susmel2003multiaxial' on page 121 undefined on input 
-line 251.
-
-
-LaTeX Warning: Reference `susmel2003multiaxial' on page 121 undefined on input 
-line 251.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -2608,7 +2566,7 @@ Chapter 7.
 
 
 ] (./Thesis_Zepeng.bbl
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 20.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 15.
 
 (c:/texlive/2014/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
@@ -2625,13 +2583,13 @@ Missing character: There is no ’ in font ptmr8t!
  [154]
 Missing character: There is no — in font ptmr8t!
 
-Underfull \hbox (badness 1895) in paragraph at lines 221--231
+Underfull \hbox (badness 1895) in paragraph at lines 216--226
 \T1/ptm/m/n/10.95 A com-par-a-tive study of mul-ti-ax-ial high-cycle fa-tigue c
 ri-te-ria for met-als.  \T1/ptm/m/it/10.95 In-ter-na-tional
  []
 
 
-Underfull \hbox (badness 1466) in paragraph at lines 221--231
+Underfull \hbox (badness 1466) in paragraph at lines 216--226
 \T1/ptm/m/it/10.95 Jour-nal of Fa-tigue\T1/ptm/m/n/10.95 , 19(3):219 -- 235, 19
 97.  ISSN 0142-1123.  doi: $http : / / dx . doi . org /
  []
@@ -2665,32 +2623,9 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
  [159
 
 
-] [160] (./apendices//EXPLOITATION.tex
-Overfull \hbox (35.8815pt too wide) in paragraph at lines 1--2
-[]\T1/ptm/m/n/10.95 ***********************************************************
-************************* 
- []
-
-
-Overfull \hbox (18.8815pt too wide) in paragraph at lines 5--7
-\T1/ptm/m/n/10.95 *************************************************************
-*********************** 
- []
-
-[161] [162]) (./apendices//REGIME.tex [163]
-Overfull \hbox (35.8815pt too wide) in paragraph at lines 2--3
-[]\T1/ptm/m/n/10.95 ***********************************************************
-************************* 
- []
-
-
-Overfull \hbox (35.8815pt too wide) in paragraph at lines 6--7
-[]\T1/ptm/m/n/10.95 ***********************************************************
-************************* 
- []
-
-
-Overfull \hbox (2.35002pt too wide) in paragraph at lines 30--31
+] [160] (./apendices//EXPLOITATION.tex [161] [162])
+(./apendices//REGIME.tex [163]
+Overfull \hbox (2.35002pt too wide) in paragraph at lines 41--42
 []\T1/ptm/m/n/10.95 To see whether the struc-ture is in elas-tic or plas-tic re
 gime at each time step, we use $[][] \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t 
 \OT1/cmr/m/n/10.95 +
@@ -2699,35 +2634,13 @@ gime at each time step, we use $[][] \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t
 ) (./apendices//3DTENSOR.tex [164
 
 ]
-Overfull \hbox (35.8815pt too wide) in paragraph at lines 2--3
-[]\T1/ptm/m/n/10.95 ***********************************************************
-************************* 
- []
-
-
-Overfull \hbox (35.8815pt too wide) in paragraph at lines 6--7
-[]\T1/ptm/m/n/10.95 ***********************************************************
-************************* 
- []
-
-
-Overfull \hbox (23.81912pt too wide) in paragraph at lines 20--20
+Overfull \hbox (23.81912pt too wide) in paragraph at lines 34--34
 [] 
  []
 
 ) (./apendices//Damiter2.tex [165
 
 ]
-Overfull \hbox (182.98862pt too wide) in paragraph at lines 3--4
-[][][][][] 
- []
-
-
-Overfull \hbox (182.98862pt too wide) in paragraph at lines 7--8
-[][][][][] 
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [166
@@ -2772,10 +2685,10 @@ Package mdframed Info: mdframed works in twoside mode on input line 11.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 11.
-Package mdframed Info: mdframed works in twoside mode on input line 24.
+Package mdframed Info: mdframed works in twoside mode on input line 42.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 24.
+(mdframed)              on input line 42.
 File: figures/SMEMAG2.png Graphic file (type QTm)
 
 <use  "figures/SMEMAG2.png" >)
@@ -2801,10 +2714,7 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                in the Thesis_Zepeng.log file.
 
 
-Package natbib Warning: There were undefined citations.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 36--91
+Underfull \hbox (badness 10000) in paragraph at lines 55--91
 
  []
 
@@ -2824,18 +2734,15 @@ Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 91.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 91.
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 91.
  ) 
 Here is how much of TeX's memory you used:
- 35750 strings out of 493734
- 625183 string characters out of 6149469
- 930567 words of memory out of 5000000
- 38066 multiletter control sequences out of 15000+600000
+ 35747 strings out of 493734
+ 625157 string characters out of 6149469
+ 941832 words of memory out of 5000000
+ 38063 multiletter control sequences out of 15000+600000
  57304 words of font info for 111 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  74i,23n,80p,10448b,1772s stack positions out of 5000i,500n,10000p,200000b,80000s

@@ -179,7 +179,9 @@ In the following section, we introduce the sale dependent mean stress effect in 
 
 \section{Weakening scales and yield function}
 \label{sec:5.4}
+
 \subsection{The concept of weakening scales} 
+\label{sec:5.4.1}
 
 We follow the Dang Van paradigm. The structure is elastic at the macroscopic scale. At each material points, there is a stochastic distribution of weak points which will undergo strong plastic yielding, without contributing to the overall macroscopic stress. From a microscopic point of view, there is a distribution of weakening scales, namely $s\in[1,\infty)$. In order to introduce our concept, let us imagine that we can measure the macroscopic stress intensity at present time by a given value $S_{a}$. Let $\sigma_y$ be the yield limit before weakening. Then we imagine that for a given scale $s$:
 
@@ -349,8 +351,10 @@ using an effective intensity ${A}_{\uppercase\expandafter{\romannumeral2}}^*={A}
 $$\alpha=1 - a\left\langle \dfrac{\dfrac{1}{2}{A}_{\uppercase\expandafter{\romannumeral2}}-\sigma_{-1}M(\sigma_H) }{\sigma_{u} -{A}_{\uppercase\expandafter{\romannumeral2}}}\right\rangle,$$
 $$M(\sigma_H) =M_0 \left(1-3c\sigma_{H,max}\right).$$
 
+$M(\sigma_H)$ is chosen so as to describe the well-known linear dependency (section \ref{sec:5.3}), between mean stress and the fatigue limit.
+
 Eq.\eqref{chabochemulti} writes equivalently:
-\begin{equation}\delta [1-(1-D)^{\gamma+1}]^{1-\alpha}=(1-\alpha)(\gamma+1)\left(\dfrac{{A}_{\uppercase\expandafter{\romannumeral2}} }{M(\Sigma_H)}\right)^\gamma \delta N=\dfrac{1}{N_F(\sigma)}\delta N.
+\begin{equation}\delta [1-(1-D)^{\gamma+1}]^{1-\alpha}=(1-\alpha)(\gamma+1)\left(\dfrac{{A}_{\uppercase\expandafter{\romannumeral2}} }{M(\sigma_H)}\right)^\gamma \delta N=\dfrac{1}{N_F(\sigma)}\delta N.
 \label{integration}
 \end{equation}
 Here $N_F(\sigma)$ denotes the number of cycles at intensity $\sigma$ to failure as obtained by integration of Eq.\eqref{integration} from $D=0$ to $D=1$. 
@@ -420,7 +424,7 @@ d \tilde{D}=\tilde{D}^\alpha\dfrac{d W}{W_0}=\tilde{D}^\alpha\dfrac{W_{cyc}d N}{
 
 The replacement of $d W$ by $W_{cyc}dN$ is only introduced to handle cyclic loadings if they occur. The number of cycles to failure in constant loading case, obtained by integrating $\tilde{D}$ from $\tilde{D}_0$ to 1 is then:
 $$N_F=\dfrac{W_0}{\left( 1-\alpha\right)W_{cyc} }\left( 1-\tilde{D}_0^{1-\alpha}\right) .$$
-With initial damage $D_0=0$, we finally get with our proposed expression Eq.\eqref{eq.wcyc} of cyclic energy dissipation:
+With initial damage $\tilde{D}_0=0$, we finally get with our proposed expression Eq.\eqref{eq.wcyc} of cyclic energy dissipation:
 \begin{equation}
 N_F=\dfrac{W_0}{\left( 1-\alpha\right)W_{cyc} }=\dfrac{W_0}{(1-\alpha)C_1}S_{a}^{-\beta-1}.
 \label{eq.NFWcyc}
@@ -568,7 +572,7 @@ In this model we have five independent coefficients in addition to the construct
 \section{Numerical strategy}
 \label{sec:5.7}
 \subsection{Scale discretization}
-We now need to propose a practical implementation strategy for our final model of section \ref{sec:5.6.3}.Our first approach takes one cycle as unit time. We compute analytically by Eq.\eqref{eq:w} the energy dissipation at each scale during this cycle. The method is valid for simple loading history and which includes the integration on all weakening scales. The damage $\tilde{D}$ is then accumulated after each cycle by numerical integration of Eq.\eqref{eq.final4} until we get to the fatigue limit of $\tilde{D}=1$.
+We now need to propose a practical implementation strategy for our final model of section \ref{sec:5.6.3}. Our first approach takes one cycle as unit time. We compute analytically by Eq.\eqref{eq:w} the energy dissipation at each scale during this cycle. The method is valid for simple loading history and which includes the integration on all weakening scales. The damage $\tilde{D}$ is then accumulated after each cycle by numerical integration of Eq.\eqref{eq.final4} until we get to the fatigue limit of $\tilde{D}=1$.
 
 However, there are certain limitations of this method. Firstly we need a load history decomposition in cycles. Secondly in real life the perfect close loop cycle is hardly applicable. Finally, we need to approximate $\alpha$  by its average value per cycle which is computed numerically and can not be done analytically.
 
@@ -656,7 +660,7 @@ That is to say, when the structure is in elastic regime at time $t$ and scale $s
 
 Knowing the distinction between elastic and plastic regime under multiple scales, we compute the general expression of the dissipated energy rate at scale $s$.
 \begin{equation}
-\dot{w}(s)=\left( \uline{\uline{S}}-\uline{\uline{b}}\right) :\dot{\uline{\uline{\varepsilon}}}^p=\gamma\dfrac{  \left(\sigma_y-\lambda \Sigma_H\right)}{s}.
+\dot{w}(s)=\left( \uline{\uline{S}}-\uline{\uline{b}}\right) :\dot{\uline{\uline{\varepsilon}}}^p=\xi\dfrac{  \left(\sigma_y-\lambda \Sigma_H\right)}{s}.
 \label{w}
 \end{equation}
 
@@ -664,14 +668,14 @@ From Eq.\eqref{eta} and Eq.\eqref{eta2} in annex, we get:
 
 \begin{equation}
 	\begin{split}
-		E\gamma dt&=\left\langle \left| \left|\uline{\uline{S}}-\uline{\uline{b}}\right| \right|_{trial}-\dfrac{ \left(\sigma_y-\lambda \Sigma_H\right)}{s}\right\rangle /\left(\dfrac{1}{1+\nu}+\dfrac{k}{E-k} \right)
+		E\xi dt&=\left\langle \left| \left|\uline{\uline{S}}-\uline{\uline{b}}\right| \right|_{trial}-\dfrac{ \left(\sigma_y-\lambda \Sigma_H\right)}{s}\right\rangle /\left(\dfrac{1}{1+\nu}+\dfrac{k}{E-k} \right)
 		\\&=\left\langle \left| \left|\uline{\uline{S}}-\uline{\uline{b}}\right| \right|_{trial}-\dfrac{ \left(\sigma_y-\lambda \Sigma_H\right)}{s}\right\rangle\dfrac{(E-k)(1+\nu) }{(E+k\nu)},
 	\end{split}
 	\label{gamma}
 \end{equation}
 where $\langle$ $\rangle$ is Macaulay bracket symbol defined as $\langle m\rangle=0$ if $m\leqslant0$, otherwise $\langle m\rangle=m$. Thus the dissipated energy rate only depends on the evolution of the variable $\left( \uline{\uline{S}}-\uline{\uline{b}}\right)$, which must therefore be mentioned during the whole cycle under study.
 
-We replace $\gamma$ deduced from Eq.\eqref{gamma} in Eq.\eqref{w} to give the expression of local energy dissipation rate at scale $s$:
+We replace $\xi$ deduced from Eq.\eqref{gamma} in Eq.\eqref{w} to give the expression of local energy dissipation rate at scale $s$:
 \begin{equation}
 \dot{w}(s)dt=\dfrac{(E-k)(1+\nu) }{E(E+k\nu)}\left\langle  \left| \left|\uline{\uline{S}}-\uline{\uline{b}}\right| \right|_{trial}-\dfrac{ \left(\sigma_y-\lambda \Sigma_H\right)}{s}\right\rangle \dfrac{ \left(\sigma_y-\lambda \Sigma_H\right)}{s}.
 \label{dW}
@@ -726,9 +730,9 @@ If $\alpha$ varies significantly, we use optimal time step numerical method to u
 
 
 For $t_{ref}(j)$ and $\alpha_{ref}(j)=\alpha(t_{ref}(j))$ given, we set
-$$\Delta t_{ref}(j)=\sum_{\substack{t(i)\geqslant t_{ref}(j)\\\left\| \alpha(i)-\alpha_{ref}(j)\right\|\leqslant \Delta\alpha }}\Delta t, \quad t_{ref}(j+1)=t_{ref}(j)+\Delta t_{ref}(j).$$
+$$\Delta t_{ref}(j)=\sum_{\substack{t(i)\geqslant t_{ref}(j)\\\left\| \alpha(i)-\alpha_{ref}(j)\right\|\leqslant \Delta\alpha }}\Delta t,$$ $$t_{ref}(j+1)=t_{ref}(j)+\Delta t_{ref}(j).$$
 The same goes for the dissipated energy:
-$$\Delta W_{ref}(j)=\sum_{\substack{t(i)\geqslant t_{ref}(j)\\\left\| \alpha(i)-\alpha_{ref}(j)\right\|\leqslant \Delta\alpha} }W_{cyc}(i) , \quad W_{ref}(j+1)=W_{ref}(j)+\Delta W_{ref}(j).$$
+$$\Delta W_{ref}(j)=\sum_{\substack{t(i)\geqslant t_{ref}(j)\\\left\| \alpha(i)-\alpha_{ref}(j)\right\|\leqslant \Delta\alpha} }W_{cyc}(i) ,$$ $$W_{ref}(j+1)=W_{ref}(j)+\Delta W_{ref}(j).$$
 
 We finally use these new time steps with corresponding $\alpha_{ref}$ and $W_{ref}$ to update the damage by looping on all the following cycles with the new optimal time steps $j$ and cycles $N$, and updating damage in each cycle by:
 \begin{equation}

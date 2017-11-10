@@ -4,11 +4,6 @@ The top-level auxiliary file: Thesis_Zepeng.aux
 A level-1 auxiliary file: Chapters/1Introduction.aux
 A level-1 auxiliary file: Chapters/2Fatigue_life_calculation_methods.aux
 A level-1 auxiliary file: Chapters/3Space_gradient_effects.aux
-Case mismatch error between cite keys LUU2014FORMULATION and luu2014formulation
----line 43 of file Chapters/3Space_gradient_effects.aux
- : \citation{LUU2014FORMULATION
- :                             }
-I'm skipping whatever remains of this command
 A level-1 auxiliary file: Chapters/4Time_varying_load_the_standard_approach.aux
 A level-1 auxiliary file: Chapters/5Handling_general_loadings.aux
 A level-1 auxiliary file: Chapters/6Numerical_implementation_and_validation.aux
@@ -207,4 +202,4 @@ warning$ -- 12
 while$ -- 263
 width$ -- 0
 write$ -- 1167
-(There were 42 error messages)
+(There were 41 error messages)
